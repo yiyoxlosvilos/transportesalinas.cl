@@ -9,11 +9,11 @@
 	require_once __dir__."/../../../controlador/utilidadesControlador.php";
 	require_once __dir__."/../../../controlador/bodegaControlador.php";
 	
-	$mvc2       = new Viajes();
+	$mvc2       = new controlador();
 	$ventas 	= new Ventas();
 	$recursos   = new Recursos();
 	$productos  = new Productos();
-	$centroCosto= new CentroCostos();
+	$centroCosto= new Viajes();
 	$bodega     = new Bodega();
 
 	$accion      = $_REQUEST['accion'];

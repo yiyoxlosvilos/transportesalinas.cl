@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html>
 <body id="body-pd">
-  <div class="row paddingtop40px mt-5">
+  <div class="row">
     <div class="d-flex flex-wrap align-items-center mb-4">
     <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
     <div class="ms-auto">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <hr>
-    <div class="row mt-3" id="traer_productos_categoria">
+    <div class="row" id="traer_productos_categoria">
       <div class="row">
               <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
                 <div class="nav-link  col text-center active cursor" data-bs-toggle="tab" href="#home1" role="tab">

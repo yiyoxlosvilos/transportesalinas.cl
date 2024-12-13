@@ -10,9 +10,9 @@ function traer_menu_principal(acceso) {
 function traer_menu(acceso) {
     const url_link  = document.getElementById('url_link').value;
 
-    $("#body-pd").html('');
-    $('#body-pd').load(url_link+"app/recursos/img/loader.svg");
-    $('#body-pd').load(url_link+"app/vistas/viajes/php/validador.php", {accion:acceso});
+    $("#traer_productos_categoria").html('');
+    $('#traer_productos_categoria').load(url_link+"app/recursos/img/loader.svg");
+    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:acceso});
 }
 
 function asignar_productos_cotizacion() {

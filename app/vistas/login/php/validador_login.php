@@ -35,7 +35,7 @@
 					if($result[0]["us_cli_tipoUsuario"] == 1){
 						$info   = array('success' => true, 
 									'msg' 	  => "Usuario Correcto", 
-									'link' 	  => controlador::$rutaAPP."dashboard");
+									'link' 	  => controlador::$rutaAPP."centro_costo");
 					}elseif($result[0]["us_cli_tipoUsuario"] == 2){
 						$info   = array('success' => true, 
 									'msg' 	  => "Usuario Correcto", 

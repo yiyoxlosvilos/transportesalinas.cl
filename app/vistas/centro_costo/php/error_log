@@ -1,0 +1,25 @@
+[07-Mar-2023 19:14:48 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/centroc1/public_html/demos/transportes/app/controlador/recursosControlador.php on line 1051
+[07-Mar-2023 19:14:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Recursos::atos_cotizacion_anexos() in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php:1885
+Stack trace:
+#0 /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/cotizacion_ver.php(23): CentroCostos->cotizacion_clientes_ver('104', '03', '2023')
+#1 {main}
+  thrown in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1885
+[07-Mar-2023 19:14:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Recursos::atos_cotizacion_anexos() in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php:1885
+Stack trace:
+#0 /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/cotizacion_ver.php(23): CentroCostos->cotizacion_clientes_ver('104', '03', '2023')
+#1 {main}
+  thrown in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1885
+[07-Mar-2023 19:16:34 UTC] PHP Fatal error:  Uncaught Error: Class 'CentroCostos' not found in /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/cotizacion_ver.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/cotizacion_ver.php on line 8
+[07-Mar-2023 19:16:37 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1629
+[08-Mar-2023 11:53:46 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1629
+[08-Mar-2023 11:56:46 UTC] PHP Parse error:  syntax error, unexpected '')"></span></div>' (T_ENCAPSED_AND_WHITESPACE) in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1183
+[08-Mar-2023 12:00:34 UTC] PHP Parse error:  syntax error, unexpected '')"></span></div>' (T_ENCAPSED_AND_WHITESPACE) in /home/centroc1/public_html/demos/transportes/app/controlador/centroCostoControlador.php on line 1183
+[08-Mar-2023 12:03:21 UTC] PHP Fatal error:  Uncaught Error: Class 'CentroCostos' not found in /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/panel_edp.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/centroc1/public_html/demos/transportes/app/vistas/centro_costo/php/panel_edp.php on line 11
+[16-Mar-2023 19:19:10 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/centroc1/public_html/demos/transportes/app/controlador/recursosControlador.php on line 161
+[16-Mar-2023 19:19:10 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/centroc1/public_html/demos/transportes/app/controlador/recursosControlador.php on line 221

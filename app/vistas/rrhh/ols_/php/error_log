@@ -1,0 +1,2 @@
+[16-Nov-2022 18:27:40 America/Santiago] PHP Warning:  move_uploaded_file(../../../repositorio/documento_trabajador/202211161827.pdf): failed to open stream: No such file or directory in /home/centroc1/public_html/transcap.cl/app/vistas/rrhh/php/validador.php on line 196
+[16-Nov-2022 18:27:40 America/Santiago] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpbH8fnr' to '../../../repositorio/documento_trabajador/202211161827.pdf' in /home/centroc1/public_html/transcap.cl/app/vistas/rrhh/php/validador.php on line 196

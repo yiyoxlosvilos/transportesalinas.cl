@@ -1,0 +1,4 @@
+[22-Jun-2022 17:14:40 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined method Bodega::productos_informe_mermas_bodega() in /home/centroc1/public_html/pruebahcc.centrocomercio2.cl/app/vistas/bodega/php/validador_merma.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/centroc1/public_html/pruebahcc.centrocomercio2.cl/app/vistas/bodega/php/validador_merma.php on line 43

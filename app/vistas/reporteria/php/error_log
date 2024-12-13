@@ -1,0 +1,5 @@
+[04-Nov-2022 16:03:29 America/Santiago] PHP Fatal error:  Uncaught Error: Class 'CentroCostos' not found in /home/centroc1/public_html/transcap.cl/app/controlador/reporteriaControlador.php:1230
+Stack trace:
+#0 /home/centroc1/public_html/transcap.cl/app/vistas/reporteria/php/validador_reporteria.php(78): Reporteria->listado_estados_pagos_finalizados()
+#1 {main}
+  thrown in /home/centroc1/public_html/transcap.cl/app/controlador/reporteriaControlador.php on line 1230

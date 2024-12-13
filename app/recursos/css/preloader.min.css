@@ -1,0 +1,91 @@
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.pace .pace-progress {
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,0,1) 35%, rgba(228,230,15,1) 100%);
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 100%;
+	width: 100%;
+	height: 5px
+}
+
+.pace-inactive .pace-progress {
+	display: none
+}
+
+.pace .pace-activity {
+	display: block;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 0;
+	width: 150px;
+	height: 150px;
+	background: #e4e60f;
+	-webkit-transition: -webkit-transform .3s;
+	transition: -webkit-transform .3s;
+	transition: transform .3s;
+	transition: transform .3s, -webkit-transform .3s;
+	-webkit-transform: translateX(100%) translateY(-100%) rotate(45deg);
+	transform: translateX(100%) translateY(-100%) rotate(45deg);
+	pointer-events: none;
+}
+
+.pace.pace-active .pace-activity {
+	-webkit-transform: translateX(50%) translateY(-50%) rotate(45deg);
+	transform: translateX(50%) translateY(-50%) rotate(45deg)
+}
+
+.pace .pace-activity::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	content: '';
+	position: absolute;
+	display: block;
+	bottom: 18px;
+	left: 65px;
+	width: 20px;
+	height: 20px;
+	border: solid 2px transparent;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	border-radius: 50%;
+	-webkit-animation: pace-spinner .4s linear infinite;
+	animation: pace-spinner .4s linear infinite
+}
+
+@-webkit-keyframes pace-spinner {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes pace-spinner {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+		transform: rotate(0)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+
+/*# sourceMappingURL=preloader.min.css.map */

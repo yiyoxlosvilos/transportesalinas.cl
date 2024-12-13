@@ -47,7 +47,7 @@
 					</script>';
 			break;
 		case 'asignar_producto':
-			echo '	<div class="container"><div class="row d-flex justify-content-center mt-100">
+			echo '	<div class="container"><div class="row d-flex justify-content-center mt-100 border rounded shadow">
 					    <p align="left" class="text-danger font-weight-light h3"><i class="fas fa-truck-moving text-danger"></i>&nbsp;&nbsp;Asignar Flete</p>
 					    <div class="col-md-7">
 					    	'.$bodega->select_productos_multiple(1, 1).' 

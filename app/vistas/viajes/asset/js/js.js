@@ -1240,7 +1240,7 @@ function asignar_arriendo() {
     const url_link  = document.getElementById('url_link').value;
     var accion      = "asignar_arriendo";
 
-    var idServicio  = document.getElementById('idServicio').value;
+    var idServicio  = "";
 
     $("#traer_menu").html('');
     $('#traer_menu').load(url_link+"/app/recursos/img/loader.svg");

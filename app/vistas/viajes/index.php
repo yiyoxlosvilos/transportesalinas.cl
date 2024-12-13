@@ -16,8 +16,8 @@
   // MENU
   $mvc2->menu_usuarios();
 ?>
-<script src="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/js/js.js?v=<?= rand() ?>"></script>
-<link href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
+<script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
+<link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 
 <script src="<?= controlador::$rutaAPP ?>app/recursos/js/table.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/recursos/css/table.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
@@ -27,42 +27,86 @@
 <html>
 <body id="body-pd">
   <div class="row paddingtop40px mt-5">
-    <div class="card-block text-center">
-
-      <button class="btn btn-light bg-gradient" onclick="location.reload()"><i class="fa fa-home h4 text-dark"></i>&nbsp;<span class="ocultar"></span></button>
-
-      <button class="btn btn-danger bg-gradient" href="app/vistas/centro_costo/php/panel_cotizacion.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-receipt h4 text-white"></i>&nbsp;<span class="ocultar">Cotizaci&oacute;n</span></button>
-
-      <button class="btn btn-success bg-gradient" href="app/vistas/centro_costo/php/panel_caja.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-handshake h4 text-white"></i>&nbsp;<span class="ocultar">Servicios</span></button>
-      
-      <button class="btn btn-primary bg-gradient" href="app/vistas/centro_costo/php/estado_pago.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-hand-holding-usd h4 text-white"></i>&nbsp;<span class="ocultar">EDP</span></button>
-
-      <button class="btn btn-dark bg-gradient" onclick="traer_menu_principal('centro_costo')"><i class="fas fa-suitcase h4 text-white"></i>&nbsp;<span class="ocultar">Centro&nbsp;Costo</span></button>
-
-      <button class="btn btn-warning bg-gradient" href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/php/panel_bodega.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-user-check h4 text-white"></i>&nbsp;<span class="ocultar">Clientes</span></button>
-
+    <div class="d-flex flex-wrap align-items-center mb-4">
+    <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
+    <div class="ms-auto">
+      <button class="btn btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
     </div>
+    <div class="ms-auto">
+      <button class="btn btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-truck-moving h4 text-white"></i> <span class="ocultar">Fletes</span></button>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-primary" onclick="asignar_arriendo()"><i class="fas fa-truck h4 text-white"></i> <span class="ocultar">Arriendos</span></button>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign h4 text-white"></i> <span class="ocultar">Gastos</span></button>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-success" onclick="facturas_proveedores()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Proveedores</span></button>
+    </div>
+    <div class="ms-auto">
+      <button class="btn btn-warning" onclick="facturas_clientes()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Clientes</span></button>
+    </div>
+  </div>
+  <hr>
     <div class="row mt-3" id="traer_productos_categoria">
-      <h3 class="border-bottom m-1">Cotizaciones Pendientes</h3>
-      <div class="col-md-12 border shadow">
-        <div class="row"><?= $centroCostos->panel_cotizaciones() ?></div>
-      </div>
-      <h3 class="border-bottom m-1 mt-5">Servicios Activos</h3>
-      <div class="col-md-12 border shadow">
-        <div class="row"><?= $centroCostos->servicios_activos() ?></div>
-      </div>
-      <h3 class="border-bottom p-2 mt-5">Cotizaciones Aceptadas</h3>
-      <div class="col-md-12 border shadow">
-        <div class="row"><?= $centroCostos->panel_cotizaciones_aceptadas() ?></div>
-      </div>
-      <h3 class="border-bottom p-2 mt-5">Servicios Aceptados</h3>
-      <div class="col-md-12 border shadow" >
-        <div class="row"><?= $centroCostos->servicios_aceptados() ?></div>
-      </div>
-      <h3 class="border-bottom p-2 mt-5">EDP Pagados</h3>
-      <div class="col-md-12 border shadow" >
-        <div class="row"><?= $centroCostos->edp_aceptados() ?></div>
-      </div>
+      <div class="row">
+              <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
+                <div class="nav-link  col text-center active cursor" data-bs-toggle="tab" href="#home1" role="tab">
+                    <span class="mdi mdi-truck-check-outline cursor h5">&nbsp;&nbsp;Fletes</span>
+                </div>
+                <div class="nav-link  col text-center cursor" data-bs-toggle="tab" href="#transporte" role="tab">
+                    <span class="mdi mdi-bus cursor h5">&nbsp;&nbsp;Traslados</span>
+                </div>
+                <div class="nav-link  col text-center cursor" data-bs-toggle="tab" href="#arriendos" role="tab">
+                    <span class="mdi mdi-truck-outline cursor h5">&nbsp;&nbsp;Arriendos</span>
+                </div>
+                <div class="nav-link col  text-center cursor" data-bs-toggle="tab" href="#profile1" role="tab">
+                    <span class="mdi mdi-currency-usd cursor h5">&nbsp;&nbsp;Gastos</span>
+                </div>
+                <div class="nav-link col  text-center cursor" data-bs-toggle="tab" href="#messages1" role="tab">
+                  <span class="mdi mdi-inbox-full h5 cursor">&nbsp;&nbsp;Facturas</span>
+                </div>
+              </div>
+              <div class="tab-content border" id="v-pills-tabContent">
+                <div class="tab-pane active" id="home1" role="tabpanel">
+                  <div class="d-flex flex-wrap align-items-center mb-4">
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Fletes</h3>
+                  </div>
+                  
+                </div>
+                <div class="tab-pane" id="transporte" role="tabpanel">
+                  <div class="d-flex flex-wrap align-items-center mb-4">
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Traslados</h3>
+                  </div>
+                  
+                </div>
+                <div class="tab-pane" id="arriendos" role="tabpanel">
+                  <div class="d-flex flex-wrap align-items-center mb-4">
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Arriendos</h3>
+                  </div>
+                 
+                </div>
+                <div class="tab-pane" id="profile1" role="tabpanel">
+                  <div class="d-flex flex-wrap align-items-center mb-4">
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Gastos</h3>
+                  </div>
+                  
+                </div>
+                <div class="tab-pane" id="messages1" role="tabpanel">
+                  <div class="d-flex flex-wrap align-items-center mb-4">
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Facturas</h3>
+                  </div>
+                  <p class="h4">Facturas Proveedores</p>
+                  
+                  <p class="h4">Facturas Clientes</p>
+                  
+                </div>
+              </div>
+            </div>
     </div>
   </div>
 </body>

@@ -21,7 +21,7 @@ function traer_menu_principal(acceso) {
 
     $("#traer_productos_categoria").html('');
     $('#traer_productos_categoria').load(url_link+"app/recursos/img/loader.svg");
-    $('#traer_productos_categoria').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:acceso});
+    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:acceso});
 }
 
 function traer_menu(acceso) {
@@ -29,7 +29,7 @@ function traer_menu(acceso) {
 
     $("#traer_menu").html('');
     $('#traer_menu').load(url_link+"app/recursos/img/loader.svg");
-    $('#traer_menu').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:acceso});
+    $('#traer_menu').load(url_link+"app/vistas/viajes/php/validador.php", {accion:acceso});
 }
 
 function asignar_productos_cotizacion() {
@@ -44,7 +44,7 @@ function asignar_productos_cotizacion() {
     if(productos.length > 0){
         $("#resultado_merma").html('');
         $('#resultado_merma').load(url_link+"/app/recursos/img/loader.svg");
-        $('#resultado_merma').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, productos:productos});
+        $('#resultado_merma').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, productos:productos});
     }
 }
 
@@ -149,7 +149,7 @@ function grabar_flete() {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -244,7 +244,7 @@ function editar_flete(idFlete) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -288,7 +288,7 @@ function quitar_flete(idFlete) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -353,7 +353,7 @@ function quitar_gasto(idGasto) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -382,14 +382,14 @@ function obtener_informe(idServicio){
     const url_link  = document.getElementById('url_link').value;
     var accion      = "obtener_informe";
 
-    window.open(url_link+"app/vistas/centro_costo/php/validador.php?accion="+accion+"&idServicio="+idServicio, '_BLANK');
+    window.open(url_link+"app/vistas/viajes/php/validador.php?accion="+accion+"&idServicio="+idServicio, '_BLANK');
 }
 
 function obtener_informe_edp(idEstadoPago){
     const url_link  = document.getElementById('url_link').value;
     var accion      = "obtener_informe_edp";
 
-    window.open(url_link+"app/vistas/centro_costo/php/validador.php?accion="+accion+"&idEstadoPago="+idEstadoPago, '_BLANK');
+    window.open(url_link+"app/vistas/viajes/php/validador.php?accion="+accion+"&idEstadoPago="+idEstadoPago, '_BLANK');
 }
 
 function crear_servicio() {
@@ -428,7 +428,7 @@ function crear_servicio() {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -466,7 +466,7 @@ function mostrar_servicios_asignados() {
     if(inputServicio.length > 0){
         $("#resultado").html('');
         $('#resultado').load(url_link+"/app/recursos/img/loader.svg");
-        $('#resultado').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, inputServicio:inputServicio});
+        $('#resultado').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, inputServicio:inputServicio});
         
         $("#procesar").fadeIn(500);
     }
@@ -488,7 +488,7 @@ function procesar_edp() {
     $("#procesar_edp").html('');
     $("#progressbar").hide();
     $('#procesar_edp').load(url_link+"/app/recursos/img/loader.svg");
-    $('#procesar_edp').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, codigo_edp:codigo_edp, glosa:glosa, inputServicio:inputServicio, fecha_pago:fecha_pago});
+    $('#procesar_edp').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, codigo_edp:codigo_edp, glosa:glosa, inputServicio:inputServicio, fecha_pago:fecha_pago});
 }
 
 function finalizar_edp() {
@@ -527,7 +527,7 @@ function finalizar_edp() {
                 formData.append('total_pagar', total_pagar);
                 formData.append('accion', accion);
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -560,7 +560,7 @@ function nuevo_cliente_control() {
 
     $("#panel_caja").html('');
     $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion});
+    $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
 }
 
 function grabar_nuevo_cliente_control(){
@@ -608,7 +608,7 @@ function grabar_nuevo_cliente_control(){
         if (result.isConfirmed) {
           $("#panel_caja").html('');
           $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-          $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
+          $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
         }
     })
   } 
@@ -620,7 +620,7 @@ function traer_editar_cliente(idCliente) {
 
   $("#editar_trabajador").html('');
   $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
-  $('#editar_trabajador').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCliente:idCliente});
+  $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente});
 }
 
 function grabar_editar_cliente_control(idCliente){
@@ -668,7 +668,7 @@ function grabar_editar_cliente_control(idCliente){
         if (result.isConfirmed) {
           $("#editar_trabajador").html('');
           $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
-          $('#editar_trabajador').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCliente:idCliente, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
+          $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
         }
     })
   } 
@@ -689,7 +689,7 @@ function quitar_cliente(idCliente){
         if (result.isConfirmed) {
           $("#editar_trabajador").html('');
           $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
-          $('#editar_trabajador').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCliente:idCliente});
+          $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente});
         }
     }) 
 }
@@ -756,7 +756,7 @@ function crear_cotizacion() {
             if (result.isConfirmed) {
               $("#panel_caja").html('');
               $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-              $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, codigo_servicio:codigo_servicio, fecha_inicio:fecha_inicio, fecha_termino:fecha_termino, comentario_servicio:comentario_servicio, clientes:clientes, titulo_items:titulo_items, unidad_items:unidad_items, monto_items:monto_items, exento_items:exento_items, descuentos:descuentos});
+              $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, codigo_servicio:codigo_servicio, fecha_inicio:fecha_inicio, fecha_termino:fecha_termino, comentario_servicio:comentario_servicio, clientes:clientes, titulo_items:titulo_items, unidad_items:unidad_items, monto_items:monto_items, exento_items:exento_items, descuentos:descuentos});
             }
         }) 
     }      
@@ -816,7 +816,7 @@ function agregar_items_cotizacion() {
             if (result.isConfirmed) {
               $("#panel_caja").html('');
               $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-              $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, codigo_cotizacion:codigo_cotizacion, titulo_items:titulo_items, unidad_items:unidad_items, monto_items:monto_items, exento_items:exento_items});
+              $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, codigo_cotizacion:codigo_cotizacion, titulo_items:titulo_items, unidad_items:unidad_items, monto_items:monto_items, exento_items:exento_items});
             }
         }) 
     }      
@@ -838,7 +838,7 @@ function quitar_items_cotizacion(idCotizacion) {
         if (result.isConfirmed) {
           $("#panel_caja").html('');
           $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-          $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
+          $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
         }
     })      
 }
@@ -859,7 +859,7 @@ function aceptar_cotizacion(idCotizacion) {
         if (result.isConfirmed) {
           $("#panel_caja").html('');
           $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-          $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
+          $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
         }
     })      
 }
@@ -880,7 +880,7 @@ function rechazar_cotizacion(idCotizacion) {
         if (result.isConfirmed) {
           $("#panel_caja").html('');
           $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
-          $('#panel_caja').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
+          $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
         }
     })      
 }
@@ -891,7 +891,7 @@ function traer_editar_cotizacion(idCotizacion){
     
     $("#editar_cliente").html('');
     $('#editar_cliente').load(url_link+"/app/recursos/img/loader.svg");
-    $('#editar_cliente').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion});  
+    $('#editar_cliente').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion});  
 }
 
 function grabar_editar_cotizacion(idCotizacion) {
@@ -916,7 +916,7 @@ function grabar_editar_cotizacion(idCotizacion) {
         if (result.isConfirmed) {
             $("#editar_cliente").html('');
             $('#editar_cliente').load(url_link+"/app/recursos/img/loader.svg");
-            $('#editar_cliente').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion, fecha_inicio:fecha_inicio, fecha_termino:fecha_termino, comentario_servicio:comentario_servicio, clientes:clientes, descuentos:descuentos});
+            $('#editar_cliente').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion, fecha_inicio:fecha_inicio, fecha_termino:fecha_termino, comentario_servicio:comentario_servicio, clientes:clientes, descuentos:descuentos});
         }
     })       
 }
@@ -927,7 +927,7 @@ function traer_editar_items_cotizacion(idItems){
     
     $("#editar_items").html('');
     $('#editar_items').load(url_link+"/app/recursos/img/loader.svg");
-    $('#editar_items').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idItems:idItems});  
+    $('#editar_items').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idItems:idItems});  
 }
 
 function grabar_editar_items_cotizacion(idItems) {
@@ -951,7 +951,7 @@ function grabar_editar_items_cotizacion(idItems) {
         if (result.isConfirmed) {
             $("#editar_cliente").html('');
             $('#editar_cliente').load(url_link+"/app/recursos/img/loader.svg");
-            $('#editar_cliente').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idItems:idItems, titulo:titulo, unidad:unidad, monto:monto, exento:exento});
+            $('#editar_cliente').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idItems:idItems, titulo:titulo, unidad:unidad, monto:monto, exento:exento});
         }
     })       
 }
@@ -977,7 +977,7 @@ function editar_edp(idEdp) {
 
     $("#editar_edp").html('');
     $('#editar_edp').load(url_link+"/app/recursos/img/loader.svg");
-    $('#editar_edp').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idEdp:idEdp}); 
+    $('#editar_edp').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idEdp:idEdp}); 
 }
 
 function grabar_editar_edp(idEdp){
@@ -1000,7 +1000,7 @@ function grabar_editar_edp(idEdp){
         if (result.isConfirmed) {
             $("#editar_edp").html('');
             $('#editar_edp').load(url_link+"/app/recursos/img/loader.svg");
-            $('#editar_edp').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idEdp:idEdp, codigo_edp:codigo_edp, fecha_pago:fecha_pago, glosa:glosa});
+            $('#editar_edp').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idEdp:idEdp, codigo_edp:codigo_edp, fecha_pago:fecha_pago, glosa:glosa});
         }
     }) 
 }
@@ -1021,7 +1021,7 @@ function eliminar_edp(idEdp) {
         if (result.isConfirmed) {
             $("#editar_edp").html('');
             $('#editar_edp').load(url_link+"/app/recursos/img/loader.svg");
-            $('#editar_edp').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idEdp:idEdp});
+            $('#editar_edp').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idEdp:idEdp});
         }
     }) 
 }
@@ -1039,7 +1039,7 @@ function mostrar_clientes() {
 
     $("#traer_productos_categoria").html('');
     $('#traer_productos_categoria').load(url_link+"app/recursos/img/loader.svg");
-    $('#traer_productos_categoria').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, cliente_id:cliente_id});
+    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, cliente_id:cliente_id});
 }
 
 function nuevo_documento_edp(idEstadoPago) {
@@ -1048,7 +1048,7 @@ function nuevo_documento_edp(idEstadoPago) {
 
   $("#panel_documentos").html('');
   $('#panel_documentos').load(url_link+"/app/recursos/img/loader.svg");
-  $('#panel_documentos').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idEstadoPago:idEstadoPago});
+  $('#panel_documentos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idEstadoPago:idEstadoPago});
 }
 
 function subir_documento_edp() {
@@ -1139,7 +1139,7 @@ function agregar_imagen_cotizacion(idCotizacion) {
 
   $("#imagen_cotizacion").html('');
   $('#imagen_cotizacion').load(url_link+"/app/recursos/img/loader.svg");
-  $('#imagen_cotizacion').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
+  $('#imagen_cotizacion').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCotizacion:idCotizacion});
 }
 
 function subir_documento_cotizacion() {
@@ -1233,7 +1233,7 @@ function asignar_traslados() {
 
     $("#traer_menu").html('');
     $('#traer_menu').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_menu').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idServicio:idServicio});
+    $('#traer_menu').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idServicio:idServicio});
 }
 
 function asignar_arriendo() {
@@ -1244,7 +1244,7 @@ function asignar_arriendo() {
 
     $("#traer_menu").html('');
     $('#traer_menu').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_menu').load(url_link+"app/vistas/centro_costo/php/validador.php", {accion:accion, idServicio:idServicio});
+    $('#traer_menu').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idServicio:idServicio});
 }
 
 function agregar_fechas() {
@@ -1333,7 +1333,7 @@ function grabar_nuevo_traslado(idServicio) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -1456,7 +1456,7 @@ function grabar_nuevo_arriendo(idServicio) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -1578,7 +1578,7 @@ function editar_arriendo(idArriendo) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,
@@ -1663,7 +1663,7 @@ function editar_traslado(idTraslado) {
                 formData.append('accion', accion);
               
             $.ajax({
-              url:         url_link+"app/vistas/centro_costo/php/validador.php",
+              url:         url_link+"app/vistas/viajes/php/validador.php",
               type:        "POST",
               data :       formData,
               processData: false,

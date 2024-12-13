@@ -5,7 +5,7 @@
 		protected $esta_conectado = false;
 
 		 public function __construct() {
-	        $this->conexion = new mysqli("localhost", "centroc1", "x*5m-bG7B47EfS", "centroc1_tr4nsc4p_cc");
+	        $this->conexion = new mysqli("localhost", "centroc1", "x*5m-bG7B47EfS", "centroc1_transportesanilas");
 	    }
 
 		public function conectar(){
@@ -16,7 +16,7 @@
 				$this->esta_conectado = false;
 			} else {
 				$this->esta_conectado = true;
-				$this->conexion = new mysqli("localhost", "centroc1", "x*5m-bG7B47EfS", "centroc1_tr4nsc4p_cc");
+				$this->conexion = new mysqli("localhost", "centroc1", "x*5m-bG7B47EfS", "centroc1_transportesanilas");
 			}
 
 			return $this->esta_conectado;

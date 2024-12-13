@@ -1,7 +1,7 @@
 <?php
 	class controlador {
 
-		public static $rutaAPP = "https://transcap.cl/";
+		public static $rutaAPP = "https://transportesalinas.cl/";
 
 		// MANTENEDOR DE SESSIONES
 		public function login() {

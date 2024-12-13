@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html>
 <body id="body-pd">
-  <div class="row">
+  <div class="row paddingtop40px mt-5">
     <div class="d-flex flex-wrap align-items-center mb-4">
     <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
     <div class="ms-auto">

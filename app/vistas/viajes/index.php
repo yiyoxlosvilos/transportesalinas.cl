@@ -31,11 +31,11 @@
 
       <button class="btn btn-light bg-gradient" onclick="location.reload()"><i class="fa fa-home h4 text-dark"></i>&nbsp;<span class="ocultar"></span></button>
 
-      <button class="btn btn-danger bg-gradient" href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/php/panel_cotizacion.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-receipt h4 text-white"></i>&nbsp;<span class="ocultar">Cotizaci&oacute;n</span></button>
+      <button class="btn btn-danger bg-gradient" href="app/vistas/centro_costo/php/panel_cotizacion.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-receipt h4 text-white"></i>&nbsp;<span class="ocultar">Cotizaci&oacute;n</span></button>
 
-      <button class="btn btn-success bg-gradient" href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/php/panel_caja.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-handshake h4 text-white"></i>&nbsp;<span class="ocultar">Servicios</span></button>
+      <button class="btn btn-success bg-gradient" href="app/vistas/centro_costo/php/panel_caja.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-handshake h4 text-white"></i>&nbsp;<span class="ocultar">Servicios</span></button>
       
-      <button class="btn btn-primary bg-gradient" href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/php/estado_pago.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-hand-holding-usd h4 text-white"></i>&nbsp;<span class="ocultar">EDP</span></button>
+      <button class="btn btn-primary bg-gradient" href="app/vistas/centro_costo/php/estado_pago.php" data-fancybox data-type="iframe" data-preload="true" data-width="1200" data-height="1200"><i class="fas fa-hand-holding-usd h4 text-white"></i>&nbsp;<span class="ocultar">EDP</span></button>
 
       <button class="btn btn-dark bg-gradient" onclick="traer_menu_principal('centro_costo')"><i class="fas fa-suitcase h4 text-white"></i>&nbsp;<span class="ocultar">Centro&nbsp;Costo</span></button>
 

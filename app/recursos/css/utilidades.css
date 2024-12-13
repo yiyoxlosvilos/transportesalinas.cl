@@ -597,7 +597,7 @@ h6 {
 }
 
 body::-webkit-scrollbar {
-  width: 0.55em;
+  width: 0.65em;
 }
  
 body::-webkit-scrollbar-track {

@@ -28,17 +28,21 @@
                 <span class="nav_logo-name">Centro Comercio</span>
             </a>
                 <div class="nav_list">
-                    <a href="centro_costo" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'centro_costo'); ?>" >
+                    <!-- <a href="centro_costo" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'centro_costo'); ?>" >
                         <i class="bi bi-badge-cc nav_icon"></i>
                         <span class="nav_name">Centro Costo</span>
+                    </a> -->
+                    <a href="dashboard" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'dashboard'); ?>" <?= $display ?>>
+                        <i class="bi bi-graph-up-arrow nav_icon"></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="viajes" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'bitacora'); ?>" <?= $display ?>>
+                        <i class="bi bi-calendar2-week nav_icon"></i>
+                        <span class="nav_name">Viajes</span>
                     </a>
                     <a href="bitacora" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'bitacora'); ?>" <?= $display ?>>
                         <i class="bi bi-calendar2-week nav_icon"></i>
                         <span class="nav_name">Bitacora</span>
-                    </a>
-                    <a href="dashboard" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'dashboard'); ?>" <?= $display ?>>
-                        <i class="bi bi-graph-up-arrow nav_icon"></i>
-                        <span class="nav_name">Dashboard</span>
                     </a>
                     <a href="productos" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'productos'); ?>" <?= $display ?>>
                         <i class='bi bi-truck nav_icon'></i><span class="nav_name">Maquinaria</span>
@@ -56,7 +60,7 @@
                         <i class='bi bi-person-rolodex nav_icon'></i> <span class="nav_name">RR.HH</span>
                     </a>
                     <a href="parametros" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'parametros'); ?>" <?= $display ?>>
-                        <i class='bi bi-wrench-adjustable-circle nav_icon'></i> <span class="nav_name">Parametros</span> 
+                        <i class='bi bi-wrench-adjustable-circle nav_icon'></i> <span class="nav_name">Parámetros</span> 
                     </a>
                 </div>
             </div>

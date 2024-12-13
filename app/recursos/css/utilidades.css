@@ -605,6 +605,6 @@ body::-webkit-scrollbar-track {
 }
  
 body::-webkit-scrollbar-thumb {
-    background: rgb(86,212,39);
-    background: linear-gradient(180deg, rgba(86,212,39,1) 0%, rgba(86,212,39,1) 19%, rgba(173,255,0,1) 100%);
+    background: rgb(0,92,149);
+    background: linear-gradient(180deg, rgba(0,92,149,1) 0%, rgba(0,92,149,1) 19%, rgba(2,50,80,1) 100%);
 }

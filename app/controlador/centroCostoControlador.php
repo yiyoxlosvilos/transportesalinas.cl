@@ -472,7 +472,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  		</span>
 							</div>
 							<div class="col-sm-4 p-3  bg-white ">
-								<h6>Valor Flete:</h6>
+								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
 						  		</span>

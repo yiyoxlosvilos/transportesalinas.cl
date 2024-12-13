@@ -28,10 +28,10 @@
                 <span class="nav_logo-name">Centro Comercio</span>
             </a>
                 <div class="nav_list">
-                    <!-- <a href="centro_costo" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'centro_costo'); ?>" >
+                    <a href="centro_costo" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'centro_costo'); ?>" >
                         <i class="bi bi-badge-cc nav_icon"></i>
                         <span class="nav_name">Centro Costo</span>
-                    </a> -->
+                    </a>
                     <a href="dashboard" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'dashboard'); ?>" <?= $display ?>>
                         <i class="bi bi-graph-up-arrow nav_icon"></i>
                         <span class="nav_name">Dashboard</span>

@@ -181,9 +181,10 @@ a {
 
 .nav_link {
     position: relative;
-    color: var(--first-color-light);
+    color: #FFFFFF;
     margin-bottom: 1.5rem;
-    transition: .3s
+    transition: .3s;
+    font-size: 14px;
 }
 
 .nav_link:hover {

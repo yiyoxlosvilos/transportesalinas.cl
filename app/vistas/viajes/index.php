@@ -76,7 +76,7 @@
               <div class="tab-content border" id="v-pills-tabContent">
                 <div class="tab-pane active" id="home1" role="tabpanel">
                   <div class="d-flex flex-wrap align-items-center mb-4">
-                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Fletes</h3>
+                    <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                   </div>
                   
                 </div>

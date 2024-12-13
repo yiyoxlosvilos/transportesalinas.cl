@@ -463,7 +463,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			for ($i = 0; $i < count($data); $i++) {
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
-				$html .= '<div class="row shadow-sm">
+				$html .= '<div class="row m-1">
 							<div class="col-sm-4 p-3  bg-white ">
 								<h6>Tracto:</h6>
 								<span class="text-dark">

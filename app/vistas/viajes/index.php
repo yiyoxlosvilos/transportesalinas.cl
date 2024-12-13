@@ -58,7 +58,7 @@
       <div class="row">
               <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
                 <div class="nav-link  col text-center active cursor" data-bs-toggle="tab" href="#home1" role="tab">
-                    <span class="mdi mdi-truck-check-outline cursor h5">&nbsp;&nbsp;Fletes</span>
+                    <span class="mdi mdi-truck-check-outline cursor h5">&nbsp;&nbsp;Viajes</span>
                 </div>
                 <div class="nav-link  col text-center cursor" data-bs-toggle="tab" href="#transporte" role="tab">
                     <span class="mdi mdi-bus cursor h5">&nbsp;&nbsp;Traslados</span>

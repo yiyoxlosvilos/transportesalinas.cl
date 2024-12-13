@@ -4,12 +4,12 @@
 	require_once __dir__."/../../../controlador/controlador.php";
 	require_once __dir__."/../../../controlador/ventasControlador.php";
 	require_once __dir__."/../../../controlador/productosControlador.php";
-	require_once __dir__."/../../../controlador/centroCostoControlador.php";
+	require_once __dir__."/../../../controlador/viajesControlador.php";
 	require_once __dir__."/../../../controlador/recursosControlador.php";
 	require_once __dir__."/../../../controlador/utilidadesControlador.php";
 	require_once __dir__."/../../../controlador/bodegaControlador.php";
 	
-	$mvc2       = new controlador();
+	$mvc2       = new Viajes();
 	$ventas 	= new Ventas();
 	$recursos   = new Recursos();
 	$productos  = new Productos();

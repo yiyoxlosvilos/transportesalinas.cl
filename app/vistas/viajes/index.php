@@ -1,10 +1,10 @@
 <?php
   require_once __dir__."/../../controlador/utilidadesControlador.php";
   require_once __dir__."/../../controlador/recursosControlador.php";
-  require_once __dir__."/../../controlador/centroCostoControlador.php";
+  require_once __dir__."/../../controlador/viajesControlador.php";
   require_once __dir__."/../../recursos/head.php";
 
-  $centroCostos= new CentroCostos();
+  $centroCostos= new Viajes();
   $recursos    = new Recursos();
   $mvc2        = new controlador();
   $mvc2->iniciar_sesion();

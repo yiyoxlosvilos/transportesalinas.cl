@@ -47,7 +47,7 @@
 					</script>';
 			break;
 		case 'asignar_producto':
-			echo '	<div class="row d-flex justify-content-center mt-100">
+			echo '	<div class="container"><div class="row d-flex justify-content-center mt-100">
 					    <p align="left" class="text-danger font-weight-light h3"><i class="fas fa-truck-moving text-danger"></i>&nbsp;&nbsp;Asignar Flete</p>
 					    <div class="col-md-7">
 					    	'.$bodega->select_productos_multiple(1, 1).' 
@@ -59,6 +59,7 @@
 					    </div>
 					    <hr class="mt-2 mb-3"/>
 					    <div class="col-md-15" id="resultado_merma"></div>
+					</div>
 					</div>
 					<script>
 						$(document).ready(function() { 

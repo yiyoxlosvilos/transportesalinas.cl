@@ -36,6 +36,9 @@
 				case 'bitacora':
 					$mvc->bitacora();
 					break;
+				case 'viajes':
+					$mvc->viajes();
+					break;
 				case 'cerrar':
 					$mvc->cerrar_sesion();
 					break;

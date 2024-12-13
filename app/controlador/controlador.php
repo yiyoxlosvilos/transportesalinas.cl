@@ -81,6 +81,10 @@
 
 		public function bitacora(){
 			include_once(__dir__."/../vistas/bitacora/index.php");
+		}
+
+		public function viajes(){
+			include_once(__dir__."/../vistas/viajes/index.php");
 		}	
 	}
 

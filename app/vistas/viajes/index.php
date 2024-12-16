@@ -32,25 +32,25 @@
     <div class="d-flex flex-wrap align-items-center mb-4">
     <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
     <div class="ms-auto">
-      <button class="btn btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
+      <button class="btn btn-sm btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-truck-moving h4 text-white"></i> <span class="ocultar">Viajes</span></button>
+      <button class="btn btn-sm btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-truck-moving h4 text-white"></i> <span class="ocultar">Viajes</span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>
+      <button class="btn btn-sm btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-primary" onclick="asignar_arriendo()"><i class="fas fa-truck h4 text-white"></i> <span class="ocultar">Arriendos</span></button>
+      <button class="btn btn-sm btn-primary" onclick="asignar_arriendo()"><i class="fas fa-truck h4 text-white"></i> <span class="ocultar">Arriendos</span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign h4 text-white"></i> <span class="ocultar">Gastos</span></button>
+      <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign h4 text-white"></i> <span class="ocultar">Gastos</span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-success" onclick="facturas_proveedores()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Proveedores</span></button>
+      <button class="btn btn-sm btn-success" onclick="facturas_proveedores()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Proveedores</span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-warning" onclick="facturas_clientes()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Clientes</span></button>
+      <button class="btn btn-sm btn-warning" onclick="facturas_clientes()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Clientes</span></button>
     </div>
   </div>
   <hr>

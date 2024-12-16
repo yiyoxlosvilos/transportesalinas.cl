@@ -464,69 +464,69 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
 				$html .= '<div class="row m-1 bg-soft-light">
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
 								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">
 									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
 						  			<input type="hidden" name="idProducto" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Tracto:</h6>
 								<span class="text-dark">
 									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
 						  			<input type="hidden" name="idProducto" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>N&deg; Guia:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guia" autocomplete="off">
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Origen:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputOrigen', 1).'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Destino:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputDestino', 1).'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Fecha Carga:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputCarga" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Fecha Arribo:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputArribo" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Fecha Descarga:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputDescarga" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Chofer:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_trabajadores().'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Semirremolque ?:</h6>
 								<div class="row">
 									<span class="col">
@@ -540,7 +540,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							  		</span>
 								</div>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Estadia ?:</h6>
 								<div class="row">
 									<span class="col">

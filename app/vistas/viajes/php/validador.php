@@ -52,7 +52,7 @@
 					    <div class="col-md-7">
 					    	'.$bodega->select_productos_multiple(1, 1).' 
 					    </div>
-					    <div class="col-md-3">
+					    <div class="col-md-3 my-3">
 					        <button class="btn btn-primary waves-effect waves-light waves-light " type="button" onclick="asignar_productos_cotizacion()"><i class="bi bi-search"></i>
 					        </button>
 					    </div>

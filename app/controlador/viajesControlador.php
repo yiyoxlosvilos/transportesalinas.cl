@@ -464,7 +464,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
 				$html .= '<div class="row m-1 bg-soft-light">
-							<div class="col-sm-4 p-3  bg-white ">
+							<div class="col-sm-4 p-3">
 								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">
 									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'

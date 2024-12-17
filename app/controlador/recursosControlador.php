@@ -1453,6 +1453,8 @@
 			$sql  	= $this->datos_trabajadores(1);
 
 			$html   = '<select name="inputTrabajador" id="inputTrabajador" class="form-select shadow">';
+			$html   .= '<option value="0">Seleccionar</option>';
+
 
 			for ($i=0; $i < count($sql); $i++) { 
 				if($sql[$i]['tra_id'] == $idTrabajador){

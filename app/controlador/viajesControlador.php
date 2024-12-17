@@ -480,7 +480,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$html .= '<div class="row m-1 bg-soft-light">
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
-								<h6>Viaje N&deg;: '.$_SESSION["IDEMPRESA"].', '.$_SESSION["IDSUCURSAL"].'</h6>
+								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">
 									'.Utilidades::numeros($correlativo).'
 						  			<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">

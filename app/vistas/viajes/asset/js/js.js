@@ -1763,7 +1763,7 @@ function calcular_valor_viaje(){
     }
 }
 
-function tipos_estados_pagos(){
+function calcular_fecha_pago(){
     var estados_pagos  = document.getElementById('tipos_estados_pagos').value;
     var inputFechaPago = document.getElementById('inputFechaPago').value;
 

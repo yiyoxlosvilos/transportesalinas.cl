@@ -1753,9 +1753,10 @@ function agregarInputGuia() {
 function calcular_valor_viaje(){
     var inputFlete      = document.getElementById('inputFlete').value;
     var inputDescuento  = document.getElementById('inputDescuento').value;
+    var inputMontoEstadia = document.getElementById('inputMontoEstadia').value;
 
     if (parseInt(inputFlete) > 0 && parseInt(inputDescuento) <= parseInt(inputFlete)) {
-        total = parseInt(inputFlete)-parseInt(inputDescuento);
+        total = (parseInt(inputFlete)+parseInt(inputMontoEstadia))-parseInt(inputDescuento);
         $("#total-viaje").html(money_format(total));
     }
 }

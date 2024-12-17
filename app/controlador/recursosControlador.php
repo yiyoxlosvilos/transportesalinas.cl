@@ -1470,7 +1470,7 @@
 		public function seleccionar_companante($idTrabajador = 0){
 			$sql  	= $this->datos_trabajadores(1);
 
-			$html   = '<select name="inputAcompanante" id="inputAcompanante" class="form-select shadow">';
+			$html   = '<select name="inputAcompanante" id="inputAcompanante" class="form-select shadow" multiple>';
 
 			for ($i=0; $i < count($sql); $i++) { 
 				if($sql[$i]['tra_id'] == $idTrabajador){

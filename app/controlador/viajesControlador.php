@@ -205,10 +205,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow" id="maquinarias">
 							<thead>
 							<tr class="table-info">
-								<th align="left">Fecha&nbsp;Cargu&iacute;o</th>
-								<th align="left">Fecha&nbsp;Arribo</th>
-								<th align="left">Conductor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-								<th align="left">Rut&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+								<th align="left">Datos&nbsp;Tripulación</th>
+								<th align="left">Datos&nbsp;Viaje</th>
+								<th align="left">Clientes</th>
+								<th align="left">Rut</th>
 								<th align="left">Tracto&nbsp;&nbsp;&nbsp;&nbsp;</th>
 								<th align="left">Rampla</th>
 								<th align="left">Origen</th>
@@ -252,8 +252,34 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					$nombre_destino = $destino[0]['nombre'];
 				}
 
+				$acompanantes= '';
+
+				if($sql[$i]['fle_acompanante'] != ''){
+					$explorar_acompanante = explode(",", $sql[$i]['fle_acompanante']);
+
+					for ($d=0; $d < count($explorar_acompanante); $d++) {
+						$acompa = $recursos->datos_trabajador($explorar_acompanante[$d]);
+						
+						$acompanantes .= '<div class="row">
+										<div class="col">Acompañante:</div>
+										<div class="col">'.$acompa[0]['tra_nombre'].'</div>
+									</div>';
+					}
+
+					
+				}
+
 				$html  .= '<tr>
-								<td><small>'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</small></td>
+								<td>
+									<div class="row">
+										<div class="col">Conductor:</div>
+										<div class="col">'.$trabajador[0]['tra_nombre'].'</div>
+									</div>
+									'.$acompanantes.'
+								</td>
+
+
+									<small>'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</small></td>
 								<td><small>'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</small></td>
 								<td><small>'.$trabajador[0]['tra_nombre'].'</small></td>
 								<td><small>'.Utilidades::rut($trabajador[0]['tra_rut']).'</small></td>

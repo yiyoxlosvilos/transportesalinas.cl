@@ -271,12 +271,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 				$html  .= '<tr>
-								<td>
+								<td><small>
 									<div class="row">
 										<div class="col"><b>Conductor:</b></div>
 										<div class="col">'.ucfirst(ucwords($trabajador[0]['tra_nombre'])).'</div>
 									</div>
-									'.$acompanantes.'
+									'.$acompanantes.'</small>
 								</td>
 
 

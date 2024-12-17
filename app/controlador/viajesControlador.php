@@ -259,10 +259,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 					for ($d=0; $d < count($explorar_acompanante); $d++) {
 						$acompa = $recursos->datos_trabajador($explorar_acompanante[$d]);
-						
-						$acompanantes .= '<div class="row">
-										<div class="col">Acompañante:</div>
-										<div class="col">'.$acompa[0]['tra_nombre'].'</div>
+
+						$acompanantes .= '<div class="row border-top">
+										<div class="col"><b>Acompañante:</b></div>
+										<div class="col">'.ucfirst($acompa[0]['tra_nombre']).'</div>
 									</div>';
 					}
 
@@ -272,8 +272,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$html  .= '<tr>
 								<td>
 									<div class="row">
-										<div class="col">Conductor:</div>
-										<div class="col">'.$trabajador[0]['tra_nombre'].'</div>
+										<div class="col"><b>Conductor:</b></div>
+										<div class="col">'.ucfirst($trabajador[0]['tra_nombre']).'</div>
 									</div>
 									'.$acompanantes.'
 								</td>

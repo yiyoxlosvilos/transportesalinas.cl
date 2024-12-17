@@ -480,7 +480,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$html .= '<div class="row m-1 bg-soft-light">
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
-								<h5>Viaje N&deg;: '.Utilidades::numeros($correlativo).'</h5>
+								<h5>Viaje N&deg;: <br>'.Utilidades::numeros($correlativo).'</h5>
 								<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
@@ -535,8 +535,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									'.$recursos->seleccionar_trabajadores().'
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
-								<h6>Semirremolque ?:</h6>
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+								<h6>¿Semirremolque?:</h6>
 								<div class="row">
 									<span class="col">
 										<select class="form-control shadow" id="inputRemolque" onchange="semirremolque()">
@@ -549,8 +549,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							  		</span>
 								</div>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
-								<h6>Estadia ?:</h6>
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+								<h6>¿Estadia?:</h6>
 								<div class="row">
 									<span class="col">
 										<select class="form-control shadow" id="inputEstadia" onchange="estadia()">

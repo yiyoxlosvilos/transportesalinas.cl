@@ -90,7 +90,15 @@
 			$inputAcompanante_items    = $_REQUEST['inputAcompanante_items'];
 			$inputDescuento    = $_REQUEST['inputDescuento'];
 
-			$grabar         = $centroCosto->grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento);
+			$tipos_estados_pagos    = $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago    = $_REQUEST['inputFechaPago'];
+			$clientes    = $_REQUEST['clientes'];
+
+			
+
+
+
+			$grabar         = $centroCosto->grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes);
 
 			echo $grabar;
 			break;

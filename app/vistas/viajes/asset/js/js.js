@@ -69,6 +69,11 @@ function grabar_flete() {
     var inputGlosa         = document.getElementById('inputGlosa').value;
     var inputDescuento         = document.getElementById('inputDescuento').value;
 
+    var tipos_estados_pagos         = document.getElementById('tipos_estados_pagos').value;
+    var inputFechaPago         = document.getElementById('inputFechaPago').value;
+    var clientes         = document.getElementById('clientes').value;
+
+
     var inputOrigen_items  = new Array();
     $('#inputOrigen option:selected').each(function(){
         inputOrigen_items.push($(this).val());
@@ -154,6 +159,9 @@ function grabar_flete() {
                 formData.append('inputGlosa', inputGlosa);
                 formData.append('inputGuia_items', inputGuia_items);
                 formData.append('inputDescuento', inputDescuento);
+                formData.append('tipos_estados_pagos', tipos_estados_pagos);
+                formData.append('inputFechaPago', inputFechaPago);
+                formData.append('clientes', clientes);
                 formData.append('accion', accion);
               
             $.ajax({

@@ -77,7 +77,6 @@
 			$idServicio 		= $_REQUEST['idServicio'];
 			$idProducto 		= $_REQUEST['idProducto'];
 			$inputFlete 		= $_REQUEST['inputFlete'];
-			$inputGuia 			= $_REQUEST['inputGuia'];
 			$inputOrigen 		= $_REQUEST['inputOrigen'];
 			$inputDestino 		= $_REQUEST['inputDestino'];
 			$inputCarga 		= $_REQUEST['inputCarga'];
@@ -88,8 +87,10 @@
 			$inputMontoEstadia 	= $_REQUEST['inputMontoEstadia'];
 			$inputGlosa 		= $_REQUEST['inputGlosa'];
 			$inputGuia_items    = $_REQUEST['inputGuia_items'];
+			$inputAcompanante_items    = $_REQUEST['inputAcompanante_items'];
+			$inputDescuento    = $_REQUEST['inputDescuento'];
 
-			$grabar         = $centroCosto->grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga);
+			$grabar         = $centroCosto->grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento);
 
 			if($grabar){
 				return '<script>

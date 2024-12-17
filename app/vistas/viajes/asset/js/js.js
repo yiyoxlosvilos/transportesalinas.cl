@@ -67,6 +67,7 @@ function grabar_flete() {
     var inputRampla        = document.getElementById('inputProducto').value;
     var inputMontoEstadia  = document.getElementById('inputMontoEstadia').value;
     var inputGlosa         = document.getElementById('inputGlosa').value;
+    var inputDescuento         = document.getElementById('inputDescuento').value;
 
     var inputOrigen_items  = new Array();
     $('#inputOrigen option:selected').each(function(){
@@ -141,7 +142,6 @@ function grabar_flete() {
                 formData.append('idServicio', idServicio);
                 formData.append('idProducto', idProducto_items);
                 formData.append('inputFlete', inputFlete);
-                formData.append('inputGuia', inputGuia);
                 formData.append('inputOrigen', inputOrigen_items);
                 formData.append('inputDestino', inputDestino_items);
                 formData.append('inputDescarga', inputDescarga);
@@ -153,6 +153,7 @@ function grabar_flete() {
                 formData.append('inputMontoEstadia', inputMontoEstadia);
                 formData.append('inputGlosa', inputGlosa);
                 formData.append('inputGuia_items', inputGuia_items);
+                formData.append('inputDescuento', inputDescuento);
                 formData.append('accion', accion);
               
             $.ajax({

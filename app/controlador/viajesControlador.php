@@ -619,9 +619,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$recursos 	= new Recursos();
 			$hoy 		= Utilidades::fecha_hoy();
 
-			$guias = json_decode($inputGuia);
+			$guias   = implode(",", $inputGuia);
+			$aompana = implode(",", $inputGuia);
 
-			$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$guias', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga')");
+			$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga, fle_acompanante) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$guias', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga', '$aompana')");
 
 			//$recursos->cambiar_producto_estado($idProducto, 1);
 

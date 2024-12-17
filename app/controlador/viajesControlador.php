@@ -529,10 +529,16 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<input type="date" class="form-control shadow" id="inputDescarga" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
 								<h6>Chofer:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_trabajadores().'
+						  		</span>
+							</div>
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+								<h6>Acompañante/es:</h6>
+								<span class="text-dark">
+									'.$recursos->seleccionar_companante().'
 						  		</span>
 							</div>
 							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">

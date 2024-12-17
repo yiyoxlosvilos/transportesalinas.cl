@@ -1467,6 +1467,24 @@
 			return $html;
 		}
 
+		public function seleccionar_companante($idTrabajador = 0){
+			$sql  	= $this->datos_trabajadores(1);
+
+			$html   = '<select name="inputAcompanante" id="inputAcompanante" class="form-select shadow">';
+
+			for ($i=0; $i < count($sql); $i++) { 
+				if($sql[$i]['tra_id'] == $idTrabajador){
+					$html   .= '<option value="'.$sql[$i]['tra_id'].'" selected="selected">'.$sql[$i]['tra_nombre'].'</option>';
+				}else{
+					$html   .= '<option value="'.$sql[$i]['tra_id'].'">'.$sql[$i]['tra_nombre'].'</option>';
+				}
+			}
+
+			$html   .= '</select>';
+
+			return $html;
+		}
+
 		public function seleccionar_productos_general($idCategoria = 0, $idProducto = 0){
 			$script = '';
 			if ($idCategoria > 0) {

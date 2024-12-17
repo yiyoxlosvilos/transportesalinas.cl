@@ -495,8 +495,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>N&deg; Guia:</h6>
-								<div class="container bg-white rounded" id="contenedorInputs">
-									<div class="row text-dark">
+								<div class="container" id="contenedorInputs">
+									<div class="row text-dark mb-2">
 										<div class="col">
 											<input type="text" class="form-control shadow" id="inputGuia" name="inputGuia[]" placeholder="N&deg; Guia" autocomplete="off">
 										</div>

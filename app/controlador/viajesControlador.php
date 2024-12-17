@@ -499,13 +499,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  			</div>
 						  		</div>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
 								<h6>Origen:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputOrigen', 1).'
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
 								<h6>Destino:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputDestino', 1).'

@@ -263,7 +263,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 						$acompanantes .= '<div class="row border-top">
 										<div class="col"><b>Acompañante '.$cont_acompanantes++.':</b></div>
-										<div class="col">'.ucfirst($acompa[0]['tra_nombre']).'</div>
+										<div class="col">'.ucfirst(ucwords($acompa[0]['tra_nombre'])).'</div>
 									</div>';
 					}
 
@@ -274,7 +274,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<div class="row">
 										<div class="col"><b>Conductor:</b></div>
-										<div class="col">'.ucfirst($trabajador[0]['tra_nombre']).'</div>
+										<div class="col">'.ucfirst(ucwords($trabajador[0]['tra_nombre'])).'</div>
 									</div>
 									'.$acompanantes.'
 								</td>

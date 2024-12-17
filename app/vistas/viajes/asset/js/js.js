@@ -171,7 +171,8 @@ function grabar_flete() {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  location.reload();
+                    console.log(sec);
+                  //location.reload();
                 })  
               },
               error:       function(sec) {

@@ -623,11 +623,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			//$recursos->cambiar_producto_estado($idProducto, 1);
 
-			if($sql){
-                return TRUE;
-            }else{
-                return FALSE;
-            }
+			return $sql;
 		}
 
 		public function formulario_editar_flete($idFlete){

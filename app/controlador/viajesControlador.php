@@ -479,15 +479,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 			$html .= '<div class="row m-1 bg-soft-light">
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
+							<div class="col-xxl-4 col-xl-3 col-sm-12">
 								<h5>Viaje N&deg;: <br>'.Utilidades::numeros($correlativo).'</h5>
 								<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>Tracto/os:</h6>
 								'.$productos.'
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>N&deg; Guia/as:</h6>
 								<div class="container" id="contenedorInputs">
 									<div class="row text-dark mb-2">
@@ -499,49 +499,49 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  			</div>
 						  		</div>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>Origen:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputOrigen', 1).'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>Destino:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_localidad(0, 'inputDestino', 1).'
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>Fecha Carga:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputCarga" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>Fecha Arribo:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputArribo" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>Fecha Descarga:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputDescarga" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>Chofer:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_trabajadores().'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>Acompañante/es:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_companante().'
 						  		</span>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>¿Semirremolque?:</h6>
 								<div class="row">
 									<span class="col">
@@ -555,7 +555,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							  		</span>
 								</div>
 							</div>
-							<div class="col-xxl-6 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-6 col-xl-3 col-sm-12 ">
 								<h6>¿Estadia?:</h6>
 								<div class="row">
 									<span class="col">
@@ -569,13 +569,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							  		</span>
 								</div>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+							<div class="col-xxl-4 col-xl-3 col-sm-12 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
 						  		</span>
 							</div>
-							<div class="col-sm-12 p-3 ">
+							<div class="col-sm-12 ">
 								<h6>Descripción del Trabajo:</h6>
 								<span class="text-dark">
 									<textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" row="5"></textarea>

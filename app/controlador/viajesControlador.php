@@ -635,7 +635,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$hoy 		= Utilidades::fecha_hoy();
 
 			try {
-				$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga, fle_acompanante, fle_descuento, fle_estado_pago, fle_fecha_pago, fle_clientes) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$inputGuia', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga', '$inputAcompanante_items', '$inputDescuento', , '$tipos_estados_pagos', '$inputFechaPago', '$clientes')");
+				$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga, fle_acompanante, fle_descuento, fle_estado_pago, fle_fecha_pago, fle_clientes) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$inputGuia', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga', '$inputAcompanante_items', '$inputDescuento', '$tipos_estados_pagos', '$inputFechaPago', '$clientes')");
 
 				//$recursos->cambiar_producto_estado($idProducto, 1);
 

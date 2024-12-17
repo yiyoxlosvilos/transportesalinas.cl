@@ -575,6 +575,16 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
 						  		</span>
 							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
+								<h6>Descuentos:</h6>
+								<span class="text-dark">
+									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="0">
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
+								<h6>Total Viaje:</h6>
+								<h6 class="text-primary" id="total-viaje"></h6>
+							</div>
 							<div class="col-sm-12 pt-2 ">
 								<h6>Descripción del Trabajo:</h6>
 								<span class="text-dark">

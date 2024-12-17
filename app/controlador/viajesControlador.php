@@ -283,15 +283,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-6"><b>Fecha&nbsp;Carga:</b></div>
+											<div class="col-6"><b>&nbsp;Fecha&nbsp;Carga:</b></div>
 											<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</div>
 										</div>
 										<div class="row">
-											<div class="col-6"><b>Fecha&nbsp;Arribo:</b></div>
+											<div class="col-6"><b>&nbsp;Fecha&nbsp;Arribo:</b></div>
 											<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</div>
 										</div>
 										<div class="row">
-											<div class="col-6"><b>Fecha&nbsp;Descarga:</b></div>
+											<div class="col-6"><b>&nbsp;Fecha&nbsp;Descarga:</b></div>
 											<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</div>
 										</div>
 									</small>

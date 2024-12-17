@@ -592,7 +592,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
 								<h6>Fecha de Pago:</h6>
 								<span class="text-dark">
-									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
+									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.Utilidades::fecha_hoy().'" autocomplete="off" onchange="calcular_fecha_pago()">
+									<span class="text-danger" id="respuesta-pago"></span>
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">

@@ -1762,3 +1762,28 @@ function calcular_valor_viaje(){
         $("#total-viaje").html(money_format(total));
     }
 }
+
+function tipos_estados_pagos(){
+    var estados_pagos  = document.getElementById('tipos_estados_pagos').value;
+    var inputFechaPago = document.getElementById('inputFechaPago').value;
+
+    if (estados_pagos > 0 && estados_pagos != 1) {
+
+        if (estados_pagos == 2) {
+            dias = 15;
+        } else if (estados_pagos == 3) {
+            dias = 30;
+        } else if (estados_pagos == 4) {
+            dias = 60;
+        } else if (estados_pagos == 5) {
+            dias = 90;
+        }
+
+        const nuevaFecha = new Date(inputFechaPago); // Crea una nueva instancia de Date
+        nuevaFecha.setDate(nuevaFecha.getDate() + dias); // Suma los días
+        $("#respuesta-pago").html("Fecha Próxima de pago: "+nuevaFecha);
+
+    } else {
+        $("#respuesta-pago").html("");
+    }
+}

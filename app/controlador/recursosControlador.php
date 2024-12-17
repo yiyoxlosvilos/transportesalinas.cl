@@ -2108,7 +2108,7 @@
 			$sql  	= $this->selectQuery("SELECT * FROM tipos_estados_pagos
 										  WHERE    		tipo_estado = 1");
 
-			$html   = '<select onchange="tipos_estados_pagos()" name="tipos_estados_pagos" id="tipos_estados_pagos" class="form-select shadow">
+			$html   = '<select onchange="calcular_fecha_pago()" name="tipos_estados_pagos" id="tipos_estados_pagos" class="form-select shadow">
 						<option value="0">Seleccionar</option>';
 
 			for ($i=0; $i < count($sql); $i++) { 

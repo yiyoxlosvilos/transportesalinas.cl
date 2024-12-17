@@ -470,7 +470,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$productos .= '<span class="text-dark">
 									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
 						  			<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
-						  		</span>';
+						  		</span><br>';
 			}
 
 			$html .= '<div class="row m-1 bg-soft-light">

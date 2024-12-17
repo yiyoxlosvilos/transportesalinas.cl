@@ -56,16 +56,15 @@ function grabar_flete() {
     const url_link = document.getElementById('url_link').value;
     var accion     = "grabar_flete";
 
-    var idServicio         = document.getElementById('idServicio').value;
-    var idProducto         = document.getElementById('idProducto').value;
+    var idServicio         = document.getElementById('correlativo').value;
     var inputFlete         = document.getElementById('inputFlete').value;
-    var inputGuia          = document.getElementById('inputGuia').value;
     var inputOrigen        = document.getElementById('inputOrigen').value;
     var inputDestino       = document.getElementById('inputDestino').value;
     var inputCarga         = document.getElementById('inputCarga').value;
     var inputArribo        = document.getElementById('inputArribo').value;
     var inputDescarga      = document.getElementById('inputDescarga').value;
     var inputTrabajador    = document.getElementById('inputTrabajador').value;
+    var inputAcompanante   = document.getElementById('inputAcompanante').value;
     var inputRampla        = document.getElementById('inputProducto').value;
     var inputMontoEstadia  = document.getElementById('inputMontoEstadia').value;
     var inputGlosa         = document.getElementById('inputGlosa').value;
@@ -80,12 +79,31 @@ function grabar_flete() {
         inputDestino_items.push($(this).val());
     });
 
+    var inputGuia_items = []; // Creamos un array vacío
+
+    // Recorremos todos los inputs de texto con name="inputGuia[]"
+    $('input[name="inputGuia[]"]').each(function () {
+        // Obtenemos el valor del input y lo añadimos al array
+        var valor = $(this).val().trim(); // .trim() elimina espacios en blanco
+        if (valor !== "") { // Verificamos que no esté vacío
+            inputGuia_items.push(valor);
+        }
+    });
+
+    var idProducto_items = []; // Creamos un array vacío
+
+    // Recorremos todos los inputs de texto con name="idProducto[]"
+    $('input[name="idProducto[]"]').each(function () {
+        // Obtenemos el valor del input y lo añadimos al array
+        var valor1 = $(this).val().trim(); // .trim() elimina espacios en blanco
+        if (valor1 !== "") { // Verificamos que no esté vacío
+            idProducto_items.push(valor1);
+        }
+    });
+
     if (inputFlete.length == 0) {
         $("#inputFlete").focus();
         Swal.fire("Alerta", "** Ingresar monto Flete **", "warning");
-    } else if(inputGuia.length == 0) {
-        $("#inputGuia").focus();
-        Swal.fire("Alerta", "** Ingresar N&deg; Guia **", "warning");
     } else if(inputOrigen.length == 0) {
         $("#inputOrigen").focus();
         Swal.fire("Alerta", "** Seleccionar Origen **", "warning");
@@ -107,7 +125,7 @@ function grabar_flete() {
     } else {
 
         Swal.fire({
-          title:              '¿ Desea Crear Flete ?',
+          title:              '¿ Desea Crear Viaje ?',
           showDenyButton:     false,
           showCancelButton:   true,
           confirmButtonText:  'SI',
@@ -117,7 +135,7 @@ function grabar_flete() {
           if (result.isConfirmed) {
             var formData = new FormData();
                 formData.append('idServicio', idServicio);
-                formData.append('idProducto', idProducto);
+                formData.append('idProducto', idProducto_items);
                 formData.append('inputFlete', inputFlete);
                 formData.append('inputGuia', inputGuia);
                 formData.append('inputOrigen', inputOrigen_items);
@@ -129,6 +147,7 @@ function grabar_flete() {
                 formData.append('inputRampla', inputRampla);
                 formData.append('inputMontoEstadia', inputMontoEstadia);
                 formData.append('inputGlosa', inputGlosa);
+                formData.append('inputGuia_items', inputGuia_items);
                 formData.append('accion', accion);
               
             $.ajax({

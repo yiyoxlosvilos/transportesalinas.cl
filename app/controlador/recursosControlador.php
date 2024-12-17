@@ -2103,6 +2103,27 @@
 			return $sql;
 		}
 
+		public function select_tipos_estados_pagos($idTipo = 0){
+			
+			$sql  	= $this->selectQuery("SELECT * FROM tipos_estados_pagos
+										  WHERE    		tipo_estado = 1");
+
+			$html   = '<select onchange="tipos_estados_pagos()" name="tipos_estados_pagos" id="tipos_estados_pagos" class="form-select shadow">
+						<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i < count($sql); $i++) { 
+				if($sql[$i]['tipo_id'] == $idTipo){
+					$html   .= '<option value="'.$sql[$i]['tipo_id'].'" selected="selected">'.$sql[$i]['tipo_nombre'].'</option>';
+				}else{
+					$html   .= '<option value="'.$sql[$i]['tipo_id'].'">'.$sql[$i]['tipo_nombre'].'</option>';
+				}
+			}
+
+			$html   .= '</select>';
+
+			return $html;
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

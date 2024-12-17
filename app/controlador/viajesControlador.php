@@ -585,6 +585,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<h6>Total Viaje:</h6>
 								<h4 class="text-primary" id="total-viaje"></h4>
 							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
+								<h6>Estado Viaje:</h6>
+								'.$recursos->select_tipos_estados_pagos().'
+							</div>
 							<div class="col-sm-12 pt-2 ">
 								<h6>Descripción del Trabajo:</h6>
 								<span class="text-dark">

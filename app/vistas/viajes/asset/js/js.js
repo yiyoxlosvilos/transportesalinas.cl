@@ -64,7 +64,6 @@ function grabar_flete() {
     var inputArribo        = document.getElementById('inputArribo').value;
     var inputDescarga      = document.getElementById('inputDescarga').value;
     var inputTrabajador    = document.getElementById('inputTrabajador').value;
-    var inputAcompanante   = document.getElementById('inputAcompanante').value;
     var inputRampla        = document.getElementById('inputProducto').value;
     var inputMontoEstadia  = document.getElementById('inputMontoEstadia').value;
     var inputGlosa         = document.getElementById('inputGlosa').value;
@@ -77,6 +76,11 @@ function grabar_flete() {
     var inputDestino_items  = new Array();
     $('#inputDestino option:selected').each(function(){
         inputDestino_items.push($(this).val());
+    });
+
+    var inputAcompanante_items  = new Array();
+    $('#inputAcompanante option:selected').each(function(){
+        inputAcompanante_items.push($(this).val());
     });
 
     var inputGuia_items = []; // Creamos un array vacío
@@ -144,6 +148,7 @@ function grabar_flete() {
                 formData.append('inputCarga', inputCarga);
                 formData.append('inputArribo', inputArribo);
                 formData.append('inputTrabajador', inputTrabajador);
+                formData.append('inputAcompanante_items', inputAcompanante_items);
                 formData.append('inputRampla', inputRampla);
                 formData.append('inputMontoEstadia', inputMontoEstadia);
                 formData.append('inputGlosa', inputGlosa);

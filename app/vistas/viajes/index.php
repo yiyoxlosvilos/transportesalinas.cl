@@ -35,7 +35,7 @@
       <button class="btn btn-sm btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
     </div>
     <div class="ms-auto">
-      <button class="btn btn-sm btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-truck-moving h4 text-white"></i> <span class="ocultar">Viajes</span></button>
+      <button class="btn btn-sm btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast h4 text-white"></i> <span class="ocultar">Viajes</span></button>
     </div>
     <div class="ms-auto">
       <button class="btn btn-sm btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>

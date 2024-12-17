@@ -492,7 +492,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<div class="container" id="contenedorInputs">
 									<div class="row text-dark mb-2">
 										<div class="col">
-											<input type="text" class="form-control shadow" id="inputGuia" name="inputGuia[]" placeholder="N&deg; Guia" autocomplete="off">
+											<input type="text" class="form-control" id="inputGuia" name="inputGuia[]" placeholder="N&deg; Guia" autocomplete="off">
 										</div>
 										<div class="col-1 pt-2">
 											<i class="bi bi-plus-circle-fill text-success cursor" id="add-op" onclick="agregarInputGuia()"></i></div> 

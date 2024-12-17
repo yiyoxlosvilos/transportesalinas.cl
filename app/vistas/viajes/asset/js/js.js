@@ -1717,7 +1717,7 @@ function agregarInputGuia() {
 
   const inputGuia = document.createElement("input");
   inputGuia.type = "text";
-  inputGuia.className = "form-control shadow";
+  inputGuia.className = "form-control";
   inputGuia.name = "inputGuia[]";
   inputGuia.placeholder = "N° Guia";
   inputGuia.autocomplete = "off";

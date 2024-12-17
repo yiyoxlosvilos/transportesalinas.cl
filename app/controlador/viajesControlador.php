@@ -586,8 +586,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<h4 class="text-primary" id="total-viaje"></h4>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
-								<h6>Estado Viaje:</h6>
+								<h6>Estado de Pago:</h6>
 								'.$recursos->select_tipos_estados_pagos().'
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
+								<h6>Fecha de Pago:</h6>
+								<span class="text-dark">
+									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.Utilidades::fecha_hoy().'" autocomplete="off" >
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
+								<h6>Cliente:</h6>
+								'.$recursos->select_clientes().'
 							</div>
 							<div class="col-sm-12 pt-2 ">
 								<h6>Descripción del Trabajo:</h6>

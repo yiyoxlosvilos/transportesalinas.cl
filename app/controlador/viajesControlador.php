@@ -565,20 +565,20 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							  			</select>
 							  		</span>
 							  		<span class="col" style="display:none;" id="estadia">
-										<input type="text" class="form-control shadow" id="inputMontoEstadia" placeholder="Monto Estadia" autocomplete="off" value="0"  onchange="calcular_valor_viaje()">
+										<input type="text" class="form-control shadow" id="inputMontoEstadia" placeholder="Monto Estadia" autocomplete="off" value="0"  onkeyup="calcular_valor_viaje()">
 							  		</span>
 								</div>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
-									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0" onchange="calcular_valor_viaje()">
+									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0" onkeyup="calcular_valor_viaje()">
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">
 								<h6>Descuentos:</h6>
 								<span class="text-dark">
-									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="0" onchange="calcular_valor_viaje()">
+									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="0" onkeyup="calcular_valor_viaje()">
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-2 ">

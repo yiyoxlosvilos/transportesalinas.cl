@@ -467,10 +467,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			for ($i = 0; $i < count($data); $i++) {
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
-				$productos .= '<span class="text-dark">
-									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
-						  			<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
-						  		</span><br>';
+				$productos .= '<div class="container">
+									<div class="row text-dark">
+										<div class="col">
+											'.ucfirst($datos_nombre[0]['prod_cli_producto']).'<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
+										</div>
+										<div class="col">'.Utilidades::format_patente(ucwords($datos_nombre[0]['prod_cli_patente'])).'</div> 
+						  			</div>
+						  		</div>';
 			}
 
 			$html .= '<div class="row m-1 bg-soft-light">

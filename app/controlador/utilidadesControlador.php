@@ -675,5 +675,21 @@
 			return $tipo;
 		}
 
+		public static function format_patente($patente) {
+	        // Verifica si el texto tiene al menos 6 caracteres
+	        if (strlen($patente) === 6) {
+	            // Divide el string en partes
+	            $parte1 = substr($patente, 0, 2); // primeras dos letras
+	            $parte2 = substr($patente, 2, 2); // siguiente par de números
+	            $parte3 = substr($patente, 4, 2); // últimos dos números
+
+	            // Combina con guiones
+	            return "{$parte1}-{$parte2}-{$parte3}";
+	        }
+
+	        // Retorna el texto original si no tiene el formato esperado
+	        return $patente;
+	    }
+
 	}
 ?>

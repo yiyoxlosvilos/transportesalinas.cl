@@ -1781,7 +1781,7 @@ function calcular_fecha_pago(){
 
         const nuevaFecha = new Date(inputFechaPago); // Crea una nueva instancia de Date
         nuevaFecha.setDate(nuevaFecha.getDate() + dias); // Suma los días
-        $("#respuesta-pago").html("Fecha Próxima de pago: "+nuevaFecha);
+        $("#respuesta-pago").html("Fecha Próxima de pago: "+nuevaFecha.toLocaleDateString());
 
     } else {
         $("#respuesta-pago").html("");

@@ -18,7 +18,7 @@
 				$script .= " AND prod_cli_categoria = $tipo";
 			}
 
-			$html = '<select id="productos" class="border rounded" placeholder="Buscar y seleccionar productos" >';
+			$html = '<select id="productos" class="border rounded" placeholder="Buscar y seleccionar productos" multiple>';
 			$sql  = $this->selectQuery("SELECT * FROM product_cliente
 										WHERE 		  prod_cli_estado = $estado
 										$script

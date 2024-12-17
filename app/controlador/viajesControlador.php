@@ -462,23 +462,28 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$data[$key] = $value;
 			}
 
+			$productos = '';
+
 			for ($i = 0; $i < count($data); $i++) {
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
-				$html .= '<div class="row m-1 bg-soft-light">
+				$productos .= '<span class="text-dark">
+									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
+						  			<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
+						  		</span>';
+			}
+
+			$html .= '<div class="row m-1 bg-soft-light">
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
 								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">
-									'.Utilidades::miles($correlativo).'
+									'.Utilidades::numeros($correlativo).'
 						  			<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Tracto:</h6>
-								<span class="text-dark">
-									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
-						  			<input type="hidden" name="idProducto" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
-						  		</span>
+								'.$productos.'
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>Valor Viaje:</h6>
@@ -578,7 +583,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  		</tr>
 						  	</table>
 					  	</div>';
-			}
 
 			$html .= '<div class="col-3 mx-auto" style="display:none;" id="continuar">
 					  	<button type="button" id="cancelar" class="btn btn-primary form-control shadow" onclick="parent.location.reload()">Continuar&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button>

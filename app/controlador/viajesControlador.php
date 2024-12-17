@@ -465,7 +465,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			for ($i = 0; $i < count($data); $i++) {
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
-				$html .= '<div class="row bg-soft-light">
+				$html .= '<div class="row m-1 bg-soft-light">
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
 								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">

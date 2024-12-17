@@ -27,6 +27,7 @@
 				$_SESSION["USRCORREO"]  = $result[0]["us_cli_mail"];
 				$_SESSION["NOMBREUSER"] = $result[0]["us_cli_nombre"];
 				$_SESSION["IDSUCURSAL"] = $result[0]["us_cli_sucursal"];
+				$_SESSION["IDEMPRESA"]  = $result[0]["us_cli_empresa"];
 				
 				if($result[0]["us_cli_tipoUsuario"] == 1 OR $result[0]["us_cli_tipoUsuario"] == 2){
 

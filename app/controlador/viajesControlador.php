@@ -451,6 +451,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function asignar_productos_cotizacion($idProducto){
 			$recursos    = new Recursos();
 
+			$correlativo = $recursos->correlativo_viajes($_SESSION["IDEMPRESA"], $_SESSION["IDSUCURSAL"]);
+
 			$html 	     = '<div class="row mt-4">';
 			$data        = array();
 			$productos   = '';
@@ -467,8 +469,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3">
 								<h6>Viaje N&deg;:</h6>
 								<span class="text-dark">
-									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
-						  			<input type="hidden" name="idProducto" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
+									'.Utilidades::miles($correlativo).'
+						  			<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">

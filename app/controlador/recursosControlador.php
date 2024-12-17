@@ -2060,6 +2060,29 @@
 			return $html;
 		}
 
+		public function correlativo_viajes($idEmpresa, $idSucursal){
+			$data = 0;
+			$sql  = $this->selectQuery("SELECT 	cont_ven_correlativo 
+										FROM 	conteo_viajes 
+										WHERE 	cont_ven_idEmpresa = $idEmpresa
+										AND   	cont_ven_idSucursal= $idSucursal");
+
+			for ($i=0; $i < count($sql); $i++) { 
+				$data += $sql[$i]['cont_ven_correlativo'];
+			}
+
+			return $data;// code...
+		}
+
+		public function upCorrelativo_viajes($idEmpresa, $idSucursal){
+			$sql = $this->update_query("UPDATE conteo_viajes 
+										SET    cont_ven_correlativo = cont_ven_correlativo+1 
+										WHERE 	cont_ven_idEmpresa = $idEmpresa
+										AND   	cont_ven_idSucursal= $idSucursal");
+
+			return $sql;
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

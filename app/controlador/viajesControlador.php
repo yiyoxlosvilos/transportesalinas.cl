@@ -488,12 +488,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								'.$productos.'
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
-								<h6>Valor Viaje:</h6>
-								<span class="text-dark">
-									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
-						  		</span>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
 								<h6>N&deg; Guia/as:</h6>
 								<div class="container" id="contenedorInputs">
 									<div class="row text-dark mb-2">
@@ -568,6 +562,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<input type="text" class="form-control shadow" id="inputMontoEstadia" placeholder="Monto Estadia" autocomplete="off" value="0">
 							  		</span>
 								</div>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
+								<h6>Valor Viaje:</h6>
+								<span class="text-dark">
+									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="0">
+						  		</span>
 							</div>
 							<div class="col-sm-12 p-3 ">
 								<h6>Descripción del Trabajo:</h6>

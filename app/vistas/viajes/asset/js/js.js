@@ -1682,3 +1682,51 @@ function facturas_clientes() {
     $('#traer_menu').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_menu').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion, idServicio:idServicio});
 }
+
+
+function agregarInputGuia() {
+  // Obtenemos el contenedor principal donde se agregarán los inputs
+  const contenedorInputs = document.getElementById("contenedorInputs");
+
+  // Creamos el contenedor principal para el bloque nuevo
+  const contenedor = document.createElement("div");
+  contenedor.className = "container bg-white rounded mb-2"; // Clase para separar visualmente
+
+  // Creamos la fila (row) que contendrá las columnas
+  const row = document.createElement("div");
+  row.className = "row text-dark";
+
+  // Columna para el input
+  const colInput = document.createElement("div");
+  colInput.className = "col";
+
+  const inputGuia = document.createElement("input");
+  inputGuia.type = "text";
+  inputGuia.className = "form-control shadow";
+  inputGuia.name = "inputGuia[]";
+  inputGuia.placeholder = "N° Guia";
+  inputGuia.autocomplete = "off";
+
+  // Columna para el ícono de eliminar
+  const colIcono = document.createElement("div");
+  colIcono.className = "col-1 pt-2";
+
+  const iconoEliminar = document.createElement("i");
+  iconoEliminar.className = "bi bi-x-circle-fill text-danger";
+  iconoEliminar.style.cursor = "pointer";
+
+  // Evento para eliminar el bloque al hacer clic en el ícono
+  iconoEliminar.addEventListener("click", function () {
+    contenedor.remove(); // Elimina el bloque completo
+  });
+
+  // Estructura: añadimos input y ícono dentro del row
+  colInput.appendChild(inputGuia); // Añade el input a su columna
+  colIcono.appendChild(iconoEliminar); // Añade el ícono a su columna
+  row.appendChild(colInput); // Añade la columna del input al row
+  row.appendChild(colIcono); // Añade la columna del ícono al row
+  contenedor.appendChild(row); // Añade el row al contenedor principal
+
+  // Insertamos el nuevo bloque debajo de los existentes
+  contenedorInputs.appendChild(contenedor);
+}

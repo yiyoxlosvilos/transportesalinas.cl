@@ -484,7 +484,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<input type="hidden" name="correlativo" id="correlativo" value="'.$correlativo.'">
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
-								<h6>Tracto:</h6>
+								<h6>Tracto/os:</h6>
 								'.$productos.'
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">

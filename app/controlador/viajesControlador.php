@@ -263,7 +263,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 						$acompanantes .= '<div class="row">
 										<div class="col-6"><b>Acompañante '.$cont_acompanantes++.':</b></div>
-										<div class="col-6">'.ucfirst(ucwords(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</div>
+										<div class="col-6">'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</div>
 									</div>';
 					}
 
@@ -275,7 +275,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<small>
 										<div class="row">
 											<div class="col-6"><b>Conductor:</b></div>
-											<div class="col-6">'.ucfirst(ucwords(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
+											<div class="col-6">'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
 										</div>
 										'.$acompanantes.'
 									</small>

@@ -449,6 +449,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 		public function asignar_productos_cotizacion($idProducto){
+			session_start();
 			$recursos    = new Recursos();
 
 			$correlativo = $recursos->correlativo_viajes($_SESSION["IDEMPRESA"], $_SESSION["IDSUCURSAL"]);

@@ -500,7 +500,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="col">
 											<input type="text" class="form-control shadow" id="inputGuia" name="inputGuia[]" placeholder="N&deg; Guia" autocomplete="off">
 										</div>
-										<div class="col-1 pt-2"><i class="bi bi-plus-circle-fill text-success" id="add-op" onclick="agregarInputGuia()"></i></div> 
+										<div class="col-1 pt-2">
+											<i class="bi bi-plus-circle-fill text-success" id="add-op" onclick="agregarInputGuia()"></i></div> 
 						  			</div>
 						  		</div>
 							</div>

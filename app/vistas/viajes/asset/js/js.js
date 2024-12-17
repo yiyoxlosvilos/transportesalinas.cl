@@ -1688,13 +1688,9 @@ function agregarInputGuia() {
   // Obtenemos el contenedor principal donde se agregarán los inputs
   const contenedorInputs = document.getElementById("contenedorInputs");
 
-  // Creamos el contenedor principal para el bloque nuevo
-  const contenedor = document.createElement("div");
-  contenedor.className = "container bg-white rounded mb-2"; // Clase para separar visualmente
-
-  // Creamos la fila (row) que contendrá las columnas
+  // Creamos el contenedor de la fila (row)
   const row = document.createElement("div");
-  row.className = "row text-dark";
+  row.className = "row mb-2"; // Usamos 'row' y margen inferior para separación
 
   // Columna para el input
   const colInput = document.createElement("div");
@@ -1715,18 +1711,17 @@ function agregarInputGuia() {
   iconoEliminar.className = "bi bi-x-circle-fill text-danger";
   iconoEliminar.style.cursor = "pointer";
 
-  // Evento para eliminar el bloque al hacer clic en el ícono
+  // Evento para eliminar la fila completa
   iconoEliminar.addEventListener("click", function () {
-    contenedor.remove(); // Elimina el bloque completo
+    row.remove(); // Elimina la fila completa
   });
 
-  // Estructura: añadimos input y ícono dentro del row
-  colInput.appendChild(inputGuia); // Añade el input a su columna
-  colIcono.appendChild(iconoEliminar); // Añade el ícono a su columna
-  row.appendChild(colInput); // Añade la columna del input al row
-  row.appendChild(colIcono); // Añade la columna del ícono al row
-  contenedor.appendChild(row); // Añade el row al contenedor principal
+  // Estructura: añadimos input y el ícono dentro del row
+  colInput.appendChild(inputGuia);
+  colIcono.appendChild(iconoEliminar);
+  row.appendChild(colInput);
+  row.appendChild(colIcono);
 
-  // Insertamos el nuevo bloque debajo de los existentes
-  contenedorInputs.appendChild(contenedor);
+  // Agregamos la fila directamente al contenedor principal
+  contenedorInputs.appendChild(row);
 }

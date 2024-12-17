@@ -616,10 +616,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 		public function grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga){
-			$recursos = new Recursos();
-			$hoy = Utilidades::fecha_hoy();
+			$recursos 	= new Recursos();
+			$hoy 		= Utilidades::fecha_hoy();
 
-			$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$inputGuia', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga')");
+			$guias = json_decode($inputGuia);
+
+			$sql = $this->insert_query("INSERT INTO fletes(fle_venta, fle_producto, fle_rampla, fle_valor, fle_guia, fle_origen, fle_destino, fle_carga, fle_arribo, fle_chofer, fle_estadia, fle_glosa, fle_creacion, fle_estado, fle_descarga) VALUES('$idServicio', '$idProducto', '$inputRampla', '$inputFlete', '$guias', '$inputOrigen', '$inputDestino', '$inputCarga', '$inputArribo', '$inputTrabajador', '$inputMontoEstadia', '$inputGlosa', '$hoy', 1, '$inputDescarga')");
 
 			//$recursos->cambiar_producto_estado($idProducto, 1);
 

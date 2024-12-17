@@ -195,12 +195,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			return $mostrar;
 		}
 
-		public function traer_fletes_asigandos($idServicio){
+		public function traer_fletes_asigandos(){
 			$recursos= new Recursos();
 
 			$sql     = $this->selectQuery("SELECT * FROM fletes
-										   WHERE  		 fle_servicio = $idServicio
-										   AND    		 fle_estado   = 1");
+										   WHERE  		 fle_venta  > 0
+										   AND    		 fle_estado = 1");
 
 			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow" id="maquinarias">
 							<thead>

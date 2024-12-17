@@ -78,7 +78,7 @@
                   <div class="d-flex flex-wrap align-items-center mb-4">
                     <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                   </div>
-                  
+                   <?= $centroCostos->traer_fletes_asigandos() ?>
                 </div>
                 <div class="tab-pane" id="transporte" role="tabpanel">
                   <div class="d-flex flex-wrap align-items-center mb-4">

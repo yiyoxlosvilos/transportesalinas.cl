@@ -261,7 +261,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					for ($d=0; $d < count($explorar_acompanante); $d++) {
 						$acompa = $recursos->datos_trabajador($explorar_acompanante[$d]);
 
-						$acompanantes .= '<div class="row border-top">
+						$acompanantes .= '<div class="row border-top mx-1">
 										<div class="col"><b>Acompañante '.$cont_acompanantes++.':</b></div>
 										<div class="col">'.ucfirst(ucwords($acompa[0]['tra_nombre'])).'</div>
 									</div>';

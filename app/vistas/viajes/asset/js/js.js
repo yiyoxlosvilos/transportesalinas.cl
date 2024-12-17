@@ -1754,7 +1754,7 @@ function calcular_valor_viaje(){
     var inputFlete      = document.getElementById('inputFlete').value;
     var inputDescuento  = document.getElementById('inputDescuento').value;
 
-    if (inputFlete > 0 && inputDescuento <= inputFlete) {
+    if (parseInt(inputFlete) > 0 && parseInt(inputDescuento) <= parseInt(inputFlete)) {
         total = parseInt(inputFlete)-parseInt(inputDescuento);
         $("#total-viaje").html(money_format(total));
     }

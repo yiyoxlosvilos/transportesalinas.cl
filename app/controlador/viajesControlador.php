@@ -253,6 +253,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 				$acompanantes= '';
+				$cont_acompanantes= 1;
 
 				if($sql[$i]['fle_acompanante'] != ''){
 					$explorar_acompanante = explode(",", $sql[$i]['fle_acompanante']);
@@ -261,7 +262,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						$acompa = $recursos->datos_trabajador($explorar_acompanante[$d]);
 
 						$acompanantes .= '<div class="row border-top">
-										<div class="col"><b>Acompañante:</b></div>
+										<div class="col"><b>Acompañante '.$cont_acompanantes++.':</b></div>
 										<div class="col">'.ucfirst($acompa[0]['tra_nombre']).'</div>
 									</div>';
 					}

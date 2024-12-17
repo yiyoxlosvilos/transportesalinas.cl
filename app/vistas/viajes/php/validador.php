@@ -92,22 +92,7 @@
 
 			$grabar         = $centroCosto->grabar_flete($idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento);
 
-			if($grabar){
-				return '<script>
-						Swal.fire({
-	                      title:              "Registro Realizado correctamente ",
-	                      icon:               "success",
-	                      showDenyButton:     false,
-	                      showCancelButton:   false,
-	                      confirmButtonText:  "OK",
-	                      cancelButtonText:   "NO",
-	                    }).then((result) => {
-	                      location.reload();
-	                    }) 
-					  </script>';
-			}else{
-				return '<script>Swal.fire("Error", " ", "error");</script>';
-			}
+			echo $grabar;
 			break;
 		case 'editar_flete':
 			$idFlete 			= $_REQUEST['idFlete'];

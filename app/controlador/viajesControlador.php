@@ -494,7 +494,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 p-3 ">
-								<h6>N&deg; Guia:</h6>
+								<h6>N&deg; Guia/as:</h6>
 								<div class="container" id="contenedorInputs">
 									<div class="row text-dark mb-2">
 										<div class="col">

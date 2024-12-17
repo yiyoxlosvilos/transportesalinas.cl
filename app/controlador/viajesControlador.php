@@ -271,12 +271,30 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 				$html  .= '<tr>
-								<td><small>
-									<div class="row m-1">
-										<div class="col"><b>Conductor:</b></div>
-										<div class="col">'.ucfirst(ucwords($trabajador[0]['tra_nombre'])).'</div>
-									</div>
-									'.$acompanantes.'</small>
+								<td>
+									<small>
+										<div class="row m-1">
+											<div class="col"><b>Conductor:</b></div>
+											<div class="col">'.ucfirst(ucwords($trabajador[0]['tra_nombre'])).'</div>
+										</div>
+										'.$acompanantes.'
+									</small>
+								</td>
+								<td>
+									<small>
+										<div class="row m-1">
+											<div class="col"><b>Fecha Carga:</b></div>
+											<div class="col">'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</div>
+										</div>
+										<div class="row m-1">
+											<div class="col"><b>Fecha Arribo:</b></div>
+											<div class="col">'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</div>
+										</div>
+										<div class="row m-1">
+											<div class="col"><b>Fecha Descarga:</b></div>
+											<div class="col">'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</div>
+										</div>
+									</small>
 								</td>
 
 

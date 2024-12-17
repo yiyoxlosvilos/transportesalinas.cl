@@ -468,7 +468,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			for ($i = 0; $i < count($data); $i++) {
 				$datos_nombre = $recursos->datos_productos($data[$i]);
 
-				$productos .= '<div class="container">
+				$productos .= '<div class="container bg-white rounded">
 									<div class="row text-dark">
 										<div class="col">
 											'.ucfirst($datos_nombre[0]['prod_cli_producto']).'<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">

@@ -472,7 +472,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="col">
 											'.ucfirst($datos_nombre[0]['prod_cli_producto']).'<input type="hidden" name="idProducto[]" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
 										</div>
-										<div class="col">'.ucwords(Utilidades::format_patente($datos_nombre[0]['prod_cli_patente'])).'</div> 
+										<div class="col">'.Utilidades::format_patente($datos_nombre[0]['prod_cli_patente']).'</div> 
 						  			</div>
 						  		</div>';
 			}

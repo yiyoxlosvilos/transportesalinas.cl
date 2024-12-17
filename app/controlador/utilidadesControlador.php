@@ -688,7 +688,7 @@
 	        }
 
 	        // Retorna el texto original si no tiene el formato esperado
-	        return $patente;
+	        return strtoupper($patente);
 	    }
 
 	}

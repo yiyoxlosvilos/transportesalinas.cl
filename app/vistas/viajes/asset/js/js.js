@@ -1708,7 +1708,7 @@ function agregarInputGuia() {
   colIcono.className = "col-1 pt-2";
 
   const iconoEliminar = document.createElement("i");
-  iconoEliminar.className = "bi bi-x-circle-fill text-danger";
+  iconoEliminar.className = "bi bi-x-circle-fill cursor text-danger";
   iconoEliminar.style.cursor = "pointer";
 
   // Evento para eliminar la fila completa

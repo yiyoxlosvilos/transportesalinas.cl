@@ -18,6 +18,8 @@
   $hoy         = Utilidades::fecha_hoy();
 
   $idFlete     = $_REQUEST['idFlete'];
+
+  $datos_fletes = $recursos->datos_fletes_id($idFlete);
 ?>
 <script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
@@ -160,28 +162,26 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-sm align-self-center">
                                                         <div class="mt-4 mt-sm-0">
-                                                            <p class="mb-1">Invested Amount</p>
-                                                            <h4>$ 6134.39</h4>
-
-                                                            <p class="text-muted mb-4"> + 0.0012.23 ( 0.2 % ) <i class="mdi mdi-arrow-up ms-1 text-success"></i></p>
-
+                                                            <h3><?= Utilidades::monto3($datos_fletes[0]['fle_monto']) ?></h3>
                                                             <div class="row g-0">
                                                                 <div class="col-6">
                                                                     <div>
-                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Income</p>
-                                                                        <h5 class="fw-medium">$ 2632.46</h5>
+                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Abono</p>
+                                                                        <h5 class="fw-medium"><?= Utilidades::monto3(0) ?></h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div>
-                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Expenses</p>
-                                                                        <h5 class="fw-medium">-$ 924.38</h5>
+                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Descuentos</p>
+                                                                        <h5 class="fw-medium">-<?= Utilidades::monto3($datos_fletes[0]['fle_descuento']) ?></h5>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="mt-2">
-                                                                <a href="#" class="btn btn-primary btn-sm">View more <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                                <a href="#" class="btn btn-success btn-sm">Agregar Abono<i class="mdi mdi-arrow-right ms-1"></i></a>
+
+                                                                 <a href="#" class="btn btn-primary btn-sm">Pagar<i class="mdi mdi-arrow-right ms-1"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>

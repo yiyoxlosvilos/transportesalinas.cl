@@ -786,46 +786,52 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        $datos_nombre = $recursos->datos_productos($datos_flete[$i]['fle_producto']);
 
 		        $html .= '<div class="row shadow-sm">
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">
 		                    ' . ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']) . '
 		                    <input type="hidden" name="idProducto" value="' . $datos_nombre[0]['prod_cli_id'] . '">
 		                </span>
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Valor Flete:</h6>
 		                <input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_valor'] . '">
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                <input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guía" autocomplete="off" value="' . $datos_flete[$i]['fle_guia'] . '">
 		            </div>
-		            <div class="col-sm-6 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Origen:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputOrigen', 1) . '
 		            </div>
-		            <div class="col-sm-6 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Destino:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2) . '
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Carga:</h6>
 		                <input type="date" class="form-control shadow" id="inputCarga" value="' . $datos_flete[$i]['fle_carga'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Arribo:</h6>
 		                <input type="date" class="form-control shadow" id="inputArribo" value="' . $datos_flete[$i]['fle_arribo'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Descarga:</h6>
 		                <input type="date" class="form-control shadow" id="inputDescarga" value="' . $datos_flete[$i]['fle_descarga'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Chofer:</h6>
 		                ' . $recursos->seleccionar_trabajadores($datos_flete[$i]['fle_chofer']) . '
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Acompañante/es:</h6>
+								<span class="text-dark">
+									'.$recursos->seleccionar_companante($datos_flete[$i]['fle_acompanante']).'
+						  		</span>
+					</div>
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Semirremolque:</h6>
 		                <div class="row">
 		                    <div class="col" id="semirremolque">
@@ -833,7 +839,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
-		            <div class="col-sm-4 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
@@ -841,11 +847,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
-		            <div class="col-sm-12 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Descripción del Trabajo:</h6>
 		                <textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" rows="5">' . $datos_flete[$i]['fle_glosa'] . '</textarea>
 		            </div>
-		            <div class="col-sm-12 bg-white">
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <button type="button" class="btn btn-success form-control shadow" onclick="editar_flete(' . $datos_flete[$i]['fle_id'] . ')">
 		                    Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i>
 		                </button>

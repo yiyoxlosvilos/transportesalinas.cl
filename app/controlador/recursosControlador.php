@@ -1475,7 +1475,7 @@
 			$html   = '<select name="inputAcompanante" id="inputAcompanante" class="form-select shadow" multiple>';
 
 			for ($i=0; $i < count($sql); $i++) { 
-				if($sql[$i]['tra_id'] == $idTrabajador){
+				if(in_array($sql[$i]['tra_id'], $idTrabajador)){
 					$html   .= '<option value="'.$sql[$i]['tra_id'].'" selected="selected">'.$sql[$i]['tra_nombre'].'</option>';
 				}else{
 					$html   .= '<option value="'.$sql[$i]['tra_id'].'">'.$sql[$i]['tra_nombre'].'</option>';

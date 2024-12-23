@@ -186,7 +186,7 @@
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Descargar e Imprimir</h3>
                             <div class="col-lg-15">
-                              <button class="btn btn-danger fas fa-file-pdf text-white h2" href="<?= controlador::$rutaAPP?>/app/vistas/viajes/php/cotizacion_ver.php?idCotizacion=<?= $datos_fletes[0]['fle_id'] ?>" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"> Descargar e Imprimir</button>
+                              <button class="btn btn-danger fas fa-file-pdf text-white h2" href="<?= controlador::$rutaAPP?>/app/vistas/viajes/php/viajes_ver.php?idCotizacion=<?= $datos_fletes[0]['fle_id'] ?>" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"> Descargar e Imprimir</button>
 
                               <button class="btn btn-success fas fa-file-excel text-white h2" href="<?= controlador::$rutaAPP?>/app/vistas/viajes/php/cotizacion_ver.php?idCotizacion=<?= $datos_fletes[0]['fle_id'] ?>" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"> Descargar Excel</button>
                             </div>

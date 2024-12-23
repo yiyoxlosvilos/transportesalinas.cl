@@ -886,6 +886,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <button type="button" class="btn btn-success form-control shadow" onclick="editar_flete(' . $datos_flete[$i]['fle_id'] . ')">
 		                    Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i>
 		                </button>
+		            </div>
+		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <button type="button" class="btn btn-danger form-control shadow" onclick="quitar_flete(' . $datos_flete[$i]['fle_id'] . ')">
 		                    Quitar&nbsp;<i class="far fa-window-close text-dark"></i>
 		                </button>

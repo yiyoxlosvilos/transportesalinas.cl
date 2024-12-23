@@ -231,7 +231,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					$nombre_tracto .= $tractos[0]['prod_cli_patente'];
 				}
 
-				$explorar_rampla = explode(",", $sql[$i]['fle_producto']);
+				$explorar_rampla = explode(",", $sql[$i]['fle_rampla']);
 				if(count($explorar_rampla) > 1){
 					$nombre_rampla = '<ul>';
 					for ($o=0; $o < count($explorar_rampla); $o++) {

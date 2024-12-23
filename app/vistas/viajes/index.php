@@ -36,7 +36,7 @@
                   <div class="card-body">
                     <ul class="sidebar-left-icons nav nav-pills" id="add-product-pills-tab" role="tablist">
                       <li class="nav-item" role="presentation"> 
-                        <a class="nav-link" id="overview-project-tab" data-bs-toggle="pill" href="#overview-project" role="tab" aria-controls="overview-project" aria-selected="false" tabindex="-1">
+                        <a class="nav-link active" id="overview-project-tab" data-bs-toggle="pill" href="#overview-project" role="tab" aria-controls="overview-project" aria-selected="false" tabindex="-1">
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
@@ -77,7 +77,7 @@
                           <div class="product-tab-content">
                             <h6>Gastos</h6>
                           </div></a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link active" id="attachment-tab" data-bs-toggle="pill" href="#attachment" role="tab" aria-controls="attachment" aria-selected="true">
+                      <li class="nav-item" role="presentation"><a class="nav-link " id="attachment-tab" data-bs-toggle="pill" href="#attachment" role="tab" aria-controls="attachment" aria-selected="true">
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">

@@ -111,7 +111,7 @@
                             <h3 class="text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                           </div>
                           <div class="col">
-                            <button class="btn btn-sm btn-success" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
+                            <button class="btn btn-sm btn-dark" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
                           </div>
                           <div class="col-15 mt-3 border" id="traer_productos_categoria">
                              <?= $centroCostos->traer_fletes_asigandos() ?>

@@ -113,17 +113,7 @@
                       <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
                       </div>
                       <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
-                        <div class="row mb-2">
-                          <div class="col-md-6 mb-2">
-                            <h3>Documentos.</h3>           
-                          </div>
-                          <div class="col-md-6 mb-2">
-                            <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
-                          </div>
-                          <div class="col-md-15 mb-2" id="panel_documentos">
-                           
-                          </div>
-                      </div>
+                        
                       </div>
                       <div class="tab-pane fade" id="activity-project" role="tabpanel" aria-labelledby="activity-project-tab"> </div>
                     </div>

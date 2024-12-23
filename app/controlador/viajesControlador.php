@@ -942,6 +942,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									</div>';
 					}
 
+				}else{
+					$origenes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($sql[$i]['fle_origen']).'</div>
+									</div>';
 				}
 
 				$destinos .= '';
@@ -954,17 +958,21 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									</div>';
 					}
 
+				}else{
+					$destinos .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($sql[$i]['fle_destino']).'</div>
+									</div>';
 				}
 		        
 
 		        $html .= '<div class="row shadow-sm">
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">
 		                    ' . $productos . '		                    
 		                </span>
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
 		            </div>
@@ -976,15 +984,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Destino:</h6>
 		                ' . $destinos . '
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Fecha Carga:</h6>
 		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_carga']).'
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Fecha Arribo:</h6>
 		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_arribo']).'
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Fecha Descarga:</h6>
 		                 '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_descarga']).'
 		            </div>';

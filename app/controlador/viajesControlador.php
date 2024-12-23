@@ -944,7 +944,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				}else{
 					$origenes .= '<div class="row">
-										<div class="col-6">2'.$recursos->nombre_localidad($sql[$i]['fle_origen']).'</div>
+										<div class="col-6">2'.$recursos->nombre_localidad($sql[$i]['fle_origen']).' '.$sql[$i]['fle_origen'].'</div>
 									</div>';
 				}
 

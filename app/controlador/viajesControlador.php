@@ -932,8 +932,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        	$guias .= ucfirst($datos_flete[$i]['fle_guia']);
 			    }
 
-			    $origenes .= '';
-			    if($sql[$i]['fle_origen'] != ''){
+			    $origenes .= '*';
+			    if(!is_array($datos_flete[$i]['fle_origen'])){
 					$explorar_origen = explode(",", $sql[$i]['fle_origen']);
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
@@ -949,7 +949,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 				$destinos .= '';
-			    if($sql[$i]['fle_destino'] != ''){
+			    if(!is_array($datos_flete[$i]['fle_destino'])){
 					$explorar_origen = explode(",", $sql[$i]['fle_destino']);
 
 					for ($pp=0; $pp < count($explorar_origen); $pp++) {

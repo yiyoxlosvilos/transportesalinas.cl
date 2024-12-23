@@ -904,13 +904,23 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    $productos_id = '';
 
 		    for ($i = 0; $i < count($datos_flete); $i++) {
-		        
-		        $productos = '';
-		        foreach ($datos_flete[$i]['fle_producto'] as $key) {
-		        	$datos_nombre = $recursos->datos_productos($key);
+
+		    	if (!is_array($datos_flete[$i]['fle_producto'])) {
+			        $idTrabajador = explode(',', $datos_flete[$i]['fle_producto']);
+
+			        $productos = '';
+		        	for ($jj = 0; $jj < count($idTrabajador); $jj++) {
+
+			        	$datos_nombre = $recursos->datos_productos($idTrabajador[$jj]['fle_producto']);
+
+			        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
+			        }
+			    }else{
+			    	$datos_nombre = $recursos->datos_productos($datos_flete[$i]['fle_producto']);
 
 		        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
-		        }
+			    }
+		        
 
 		        $html .= '<div class="row shadow-sm">
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">

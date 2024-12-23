@@ -106,7 +106,7 @@
                         </div>
                       </div>
                       <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
-                        <?= $centroCostos->formulario_editar_flete($idFlete) ?>
+                        
                       </div>
                       <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
                       </div>

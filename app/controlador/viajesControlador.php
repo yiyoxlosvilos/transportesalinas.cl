@@ -284,7 +284,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-8">
+											<div class="col-10">
 												<div class="row">
 													<div class="col-6"><b>Conductor: </b></div>
 													<div class="col-6 text-primary"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</b></div>
@@ -297,7 +297,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-8">
+											<div class="col-10">
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Origen:</b> </div>
 													<div class="col-6 text-primary"><b>'.ucfirst($nombre_origen).'</b></div>

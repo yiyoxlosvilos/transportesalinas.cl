@@ -108,14 +108,14 @@
                       <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                         <div class="row">
                           <div class="col-15 mb-3">
+                            <div class="d-flex flex-wrap align-items-center mb-4">
+                              <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
+                            </div>
                             <div class="ms-auto">
                               <button class="btn btn-sm btn-success" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
                             </div>
                           </div>
                           <div class="col-15" id="traer_productos_categoria">
-                            <div class="d-flex flex-wrap align-items-center mb-4">
-                              <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
-                            </div>
                              <?= $centroCostos->traer_fletes_asigandos() ?>
                           </div>
     

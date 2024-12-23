@@ -2816,7 +2816,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								</tr>
 							  </table>';
 			$html.= '<div class="row">';
-			$html .= $this->mostrar_formulario_flete($datos_cotizacion[0]['fle_id']);
+			$html .= $this->mostrar_formulario_flete2($datos_cotizacion[0]['fle_id']);
 			$html.= '</div>';
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">

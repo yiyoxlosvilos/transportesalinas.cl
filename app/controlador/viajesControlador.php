@@ -256,7 +256,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						$acompa = $recursos->datos_trabajador($explorar_acompanante[$d]);
 
 						$acompanantes .= '<div class="row">
-										<div class="col"><b>Acompañante '.$cont_acompanantes++.':</b>'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</div>
+										<div class="col"><b>Acompañante '.$cont_acompanantes++.': </b>'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</div>
 									</div>';
 					}
 
@@ -279,7 +279,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col"><b>Conductor:</b>'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
+											<div class="col"><b>Conductor: </b>'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
 										</div>
 										'.$acompanantes.'
 									</small>

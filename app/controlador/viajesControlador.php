@@ -869,7 +869,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 							<button type="button" id="grabar" class="btn btn-danger form-control shadow" onclick="quitar_flete('.$datos_flete[$i]['fle_id'].')">Quitar&nbsp;<i class="far fa-window-close text-dark"></i></button>
 
-					  	</div>';
+					  	</div></div>';
 			}
 
 			return $html;

@@ -255,7 +255,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 						$acompanantes .= '<div class="row">
 										<div class="col-6"><b>Acompañante '.$cont_acompanantes++.':</b></div> 
-										<div class="col-6 text-success"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</b></div>
+										<div class="col-6 text-primary"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</b></div>
 									</div>';
 					}
 
@@ -285,8 +285,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-6">
-												<div class="row">
+											<div class="row">
 													<div class="col-6"><b>&nbsp;Origen:</b> </div>
 													<div class="col-6 text-primary"><b>'.ucfirst($nombre_origen).'</b></div>
 													<div class="col-6"><b>&nbsp;Destino:</b> </div>
@@ -304,7 +303,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col-6"><b>&nbsp;Fecha&nbsp;Descarga:</b></div>
 													<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</div>
 												</div>
-											</div>
 										</div>
 									</small>
 								</td>

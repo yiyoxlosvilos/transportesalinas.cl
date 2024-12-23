@@ -148,6 +148,11 @@
     });
   });
   $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#inputAcompanante", {
+      removeItemButton: true,
+    });
+  });
+  $(document).ready(function() { 
     var multipleCancelButton = new Choices("#inputDestino", {
       removeItemButton: true,
     });

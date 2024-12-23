@@ -801,11 +801,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>N&deg; Guía:</h6>
 		                <input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guía" autocomplete="off" value="' . $datos_flete[$i]['fle_guia'] . '">
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Origen:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputOrigen', 1) . '
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Destino:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2) . '
 		            </div>

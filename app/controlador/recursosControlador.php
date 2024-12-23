@@ -1933,6 +1933,20 @@
 			return $html;
 		}
 
+		public function nombre_trabajador($idTrabajador){
+			$sql    = $this->selectQuery("SELECT * FROM trabajadores
+										  WHERE 		tra_id = $idTrabajador");
+
+			return ucfirst($sql[0]['tra_nombre']);
+		}
+
+		public function nombre_clientes($idCliente){
+			$sql    = $this->selectQuery("SELECT * FROM clientes
+				   						  WHERE  		cli_id   = $idCliente");
+
+			return ucfirst($sql[0]['cli_nombre']);
+		}
+
 		public function nombre_marca_bodega($id){
 			$data   = 0;
 			$sql    = $this->selectQuery("SELECT * FROM marca_producto_bodega

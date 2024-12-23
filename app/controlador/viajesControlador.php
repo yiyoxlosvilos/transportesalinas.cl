@@ -932,8 +932,29 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        	$guias .= ucfirst($datos_flete[$i]['fle_guia']);
 			    }
 
+			    $origenes .= '';
+			    if($sql[$i]['fle_origen'] != ''){
+					$explorar_origen = explode(",", $sql[$i]['fle_origen']);
 
+					for ($d=0; $d < count($explorar_origen); $d++) {
+						$origenes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
+									</div>';
+					}
 
+				}
+
+				$destinos .= '';
+			    if($sql[$i]['fle_destino'] != ''){
+					$explorar_origen = explode(",", $sql[$i]['fle_destino']);
+
+					for ($pp=0; $pp < count($explorar_origen); $pp++) {
+						$destinos .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$pp]['fle_origen']).'</div>
+									</div>';
+					}
+
+				}
 		        
 
 		        $html .= '<div class="row shadow-sm">
@@ -949,39 +970,55 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		            </div>
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Origen:</h6>
-		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputOrigen', 1, 'readonly') . '
+		                ' . $origenes . '
 		            </div>
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Destino:</h6>
-		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2, 'readonly') . '
+		                ' . $destinos . '
 		            </div>
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Carga:</h6>
-		                <input type="date" class="form-control shadow" id="inputCarga" value="' . $datos_flete[$i]['fle_carga'] . '" autocomplete="off">
+		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_carga']).'
 		            </div>
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Arribo:</h6>
-		                <input type="date" class="form-control shadow" id="inputArribo" value="' . $datos_flete[$i]['fle_arribo'] . '" autocomplete="off">
+		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_arribo']).'
 		            </div>
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Fecha Descarga:</h6>
-		                <input type="date" class="form-control shadow" id="inputDescarga" value="' . $datos_flete[$i]['fle_descarga'] . '" autocomplete="off">
-		            </div>
-		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+		                 '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_descarga']).'
+		            </div>';
+
+
+
+		         $acompanantes .= '';
+			    if($sql[$i]['fle_acompanante'] != ''){
+					$explorar_aco = explode(",", $sql[$i]['fle_acompanante']);
+
+					for ($aco=0; $aco < count($explorar_aco); $aco++) {
+						$acompanantes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
+									</div>';
+					}
+
+				}
+
+		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Chofer:</h6>
-		                ' . $recursos->seleccionar_trabajadores($datos_flete[$i]['fle_chofer']) . '
+		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
 		            </div>
 		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 								<h6>Acompañante/es:</h6>
-								<span class="text-dark">
-									'.$recursos->seleccionar_companante($datos_flete[$i]['fle_acompanante']).'
-						  		</span>
-					</div>
-		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+								'.$acompanantes.'
+					</div>';
+
+			    $datos_rampla = $recursos->datos_productos($datos_flete[$i]['fle_rampla']);
+
+		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Semirremolque:</h6>
 		                <div class="row">
 		                    <div class="col" id="semirremolque">
-		                        ' . $recursos->seleccionar_productos_general(2, $datos_flete[$i]['fle_rampla']) . '
+		                        ' . ucfirst($datos_rampla[0]['prod_cli_producto']) . ' - ' . ucwords($datos_rampla[0]['prod_cli_patente']) . '
 		                    </div>
 		                </div>
 		            </div>
@@ -989,20 +1026,20 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
-		                        <input type="text" class="form-control shadow" id="inputMontoEstadia" placeholder="Monto Estadía" autocomplete="off" value="' . $datos_flete[$i]['fle_estadia'] . '">
+		                        <h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_estadia']).'</h4>
 		                    </div>
 		                </div>
 		            </div>
 		            <div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
-									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_valor'] . '" onkeyup="calcular_valor_viaje()">
+								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</h4>
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
 								<h6>Descuentos:</h6>
 								<span class="text-dark">
-									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_descuento'] . '" onkeyup="calcular_valor_viaje()">
+								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
@@ -1022,11 +1059,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
 								<h6>Cliente:</h6>
-								'.$recursos->select_clientes($datos_flete[$i]['fle_cliente']).'
+								'.$recursos->nombre_clientes($datos_flete[$i]['fle_cliente']).'
 							</div>
 		            <div class="col-xxl-15 col-xl-15 col-sm-12 pt-3 ">
 		                <h6>Descripción del Trabajo:</h6>
-		                <textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" rows="5">' . $datos_flete[$i]['fle_glosa'] . '</textarea>
+		                ' . $datos_flete[$i]['fle_glosa'] . '
 		            </div>
 		        </div>';
 		    }

@@ -1083,12 +1083,16 @@
 			return $html;
 		}
 
-		public function seleccionar_localidad2($idFlete = 0, $nombre, $tipo_localidad = 0){
+		public function seleccionar_localidad2($idFlete = 0, $nombre, $tipo_localidad = 0, $acciones= 0){
 
 			$sql  	= $this->selectQuery("SELECT * FROM cl_comuna
 										  WHERE    		estado = 1");
+			$acciones='';
+			if($acciones=='readonly'){
+				$acciones='readonly';
+			}
 
-			$html   = '<select name="'.$nombre.'" id="'.$nombre.'" class="form-select shadow" multiple="multiple">
+			$html   = '<select name="'.$nombre.'" id="'.$nombre.'" class="form-select shadow" multiple="multiple" '.$acciones.'>
 						<option value="0">Seleccionar Localidad</option>';
 
 			if($idFlete > 0){

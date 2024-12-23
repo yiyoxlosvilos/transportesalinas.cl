@@ -821,17 +821,17 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Fecha Descarga:</h6>
 		                <input type="date" class="form-control shadow" id="inputDescarga" value="' . $datos_flete[$i]['fle_descarga'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Chofer:</h6>
 		                ' . $recursos->seleccionar_trabajadores($datos_flete[$i]['fle_chofer']) . '
 		            </div>
-		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 								<h6>Acompañante/es:</h6>
 								<span class="text-dark">
 									'.$recursos->seleccionar_companante($datos_flete[$i]['fle_acompanante']).'
 						  		</span>
 					</div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Semirremolque:</h6>
 		                <div class="row">
 		                    <div class="col" id="semirremolque">

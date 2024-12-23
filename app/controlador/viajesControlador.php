@@ -788,88 +788,88 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$html .= '<div class="row shadow-sm">
 							<div class="col-sm-4   bg-white ">
 								<h6>Tracto:</h6>
-								<span class="text-dark">
+								
 									'.ucfirst($datos_nombre[0]['prod_cli_producto']).' - '.ucwords($datos_nombre[0]['prod_cli_patente']).'
 						  			<input type="hidden" name="idProducto" id="idProducto" value="'.$datos_nombre[0]['prod_cli_id'].'">
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Valor Flete:</h6>
-								<span class="text-dark">
+								
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="'.$datos_flete[$i]['fle_valor'].'">
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>N&deg; Guia:</h6>
-								<span class="text-dark">
+								
 									<input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guia" autocomplete="off" value="'.$datos_flete[$i]['fle_guia'].'">
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-6   bg-white ">
 								<h6>Origen:</h6>
-								<span class="text-dark">
+								
 									'.$recursos->seleccionar_localidad2($idFlete, 'inputOrigen', 1).'
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-6   bg-white ">
 								<h6>Destino:</h6>
-								<span class="text-dark">
+								
 									'.$recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2).'
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Fecha Carga:</h6>
-								<span class="text-dark">
+								
 									<input type="date" class="form-control shadow" id="inputCarga" value="'.$datos_flete[$i]['fle_carga'].'" autocomplete="off" >
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Fecha Arribo:</h6>
-								<span class="text-dark">
+								
 									<input type="date" class="form-control shadow" id="inputArribo" value="'.$datos_flete[$i]['fle_arribo'].'" autocomplete="off" >
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Fecha Descarga:</h6>
-								<span class="text-dark">
+								
 									<input type="date" class="form-control shadow" id="inputDescarga" value="'.$datos_flete[$i]['fle_descarga'].'" autocomplete="off" >
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Chofer:</h6>
-								<span class="text-dark">
+								
 									'.$recursos->seleccionar_trabajadores($datos_flete[$i]['fle_chofer']).'
-						  		</span>
+						  		
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Semirremolque:</h6>
 								<div class="row">
-							  		<span class="col"   id="semirremolque">
+							  		<div class="col"   id="semirremolque">
 										'.$recursos->seleccionar_productos_general(2, $datos_flete[$i]['fle_rampla']).'
-							  		</span>
+							  		</div>
 								</div>
 							</div>
 							<div class="col-sm-4   bg-white ">
 								<h6>Estadia:</h6>
 								<div class="row">
-							  		<span class="col" id="estadia">
+							  		<div class="col" id="estadia">
 										<input type="text" class="form-control shadow" id="inputMontoEstadia" placeholder="Monto Estadia" autocomplete="off" value="'.$datos_flete[$i]['fle_estadia'].'">
-							  		</span>
+							  		</div>
 								</div>
 							</div>
 
 							<div class="col-sm-12   bg-white ">
 								<h6>Descripción del Trabajo:</h6>
-								<span class="text-dark">
+								
 									<textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" row="5">'.$datos_flete[$i]['fle_glosa'].'</textarea>
-						  		</span>
+						  	
 							</div>
 
 							<button type="button" id="grabar" class="btn btn-success form-control shadow" onclick="editar_flete('.$datos_flete[$i]['fle_id'].')">Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i></button>
 
 							<button type="button" id="grabar" class="btn btn-danger form-control shadow" onclick="quitar_flete('.$datos_flete[$i]['fle_id'].')">Quitar&nbsp;<i class="far fa-window-close text-dark"></i></button>
 
-					  	</div></div>';
+					  	</div>';
 			}
 
 			return $html;

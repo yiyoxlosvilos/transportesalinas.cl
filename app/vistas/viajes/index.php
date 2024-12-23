@@ -108,7 +108,7 @@
                       <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                         <div class="row">
                           <div class="col-15 mb-3">
-                            <div class="d-flex flex-wrap align-items-center mb-4">
+                            <div class="col">
                               <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                             </div>
                             <div class="ms-auto">

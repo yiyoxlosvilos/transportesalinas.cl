@@ -33,7 +33,7 @@
                         <span class="nav_name">Centro Costo</span>
                     </a> -->
                     <a href="viajes" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'viajes'); ?>" <?= $display ?>>
-                        <i class="bi bi-calendar2-week nav_icon"></i>
+                        <i class="fas fa-shipping-fast nav_icon"></i>
                         <span class="nav_name">Viajes</span>
                     </a>
                     <a href="bitacora" class="nav_link <?= Utilidades::activo_get($_GET["action"], 'bitacora'); ?>" <?= $display ?>>

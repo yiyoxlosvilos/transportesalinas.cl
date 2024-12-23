@@ -947,11 +947,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
 		            </div>
-		            <div class="col-xxl-12 col-xl-12 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Origen:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputOrigen', 1, 'readonly') . '
 		            </div>
-		            <div class="col-xxl-12 col-xl-12 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Destino:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2, 'readonly') . '
 		            </div>

@@ -1089,7 +1089,7 @@
 										  WHERE    		estado = 1");
 			$acciones='';
 			if($acciones=='readonly'){
-				$acciones='readonly';
+				$acciones='disabled';
 			}
 
 			$html   = '<select name="'.$nombre.'" id="'.$nombre.'" class="form-select shadow" multiple="multiple" '.$acciones.'>

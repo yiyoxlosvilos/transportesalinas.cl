@@ -138,7 +138,41 @@
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Ingresar Pagos</h3>
-                          </div>    
+                          </div>
+                          <div class="col-md-15 mb-2">
+                            <div class="card"> 
+                              <div class="card-header">
+                                <div class="header-top">
+                                  <h5>Summary</h5>
+                                </div>
+                              </div>
+                              <div class="card-body"> 
+                                <ul class="cart-summary">
+                                  <li> 
+                                    <h6>Subtotal </h6><span>$1315.00</span>
+                                  </li>
+                                  <li> 
+                                    <h6>Coupon Discount</h6><span>(-) 0.00</span>
+                                  </li>
+                                  <li> 
+                                    <h6>Shipping</h6><span class="txt-primary">Free</span>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul class="product-total">
+                                <li> 
+                                  <h4>Total</h4>
+                                  <h4>$1315.00</h4>
+                                </li>
+                                <li>
+                                  <ul class="cart-buttons">
+                                    <li><a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a></li>
+                                    <li> <a class="btn btn-hover-effect" href="product-grid-view.html"><span><i class="fa-solid fa-caret-left fa-lg"></i></span>Return to Shopping                        </a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>  
                         </div>
                       </div>
                       <div class="tab-pane fade active" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">

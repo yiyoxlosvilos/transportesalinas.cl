@@ -847,6 +847,37 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
+		            <div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Valor Viaje:</h6>
+								<span class="text-dark">
+									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_valor'] . '" onkeyup="calcular_valor_viaje()">
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Descuentos:</h6>
+								<span class="text-dark">
+									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_descuento'] . '" onkeyup="calcular_valor_viaje()">
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Total Viaje:</h6>
+								<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Estado de Pago:</h6>
+								'.$recursos->select_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Fecha de Viaje:</h6>
+								<span class="text-dark">
+									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.$datos_flete[$i]['fle_fecha_pago'].'" autocomplete="off" onchange="calcular_fecha_pago()">
+									<span class="text-danger" id="respuesta-pago"></span>
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+								<h6>Cliente:</h6>
+								'.$recursos->select_clientes($datos_flete[$i]['fle_cliente']).'
+							</div>
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>Descripción del Trabajo:</h6>
 		                <textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" rows="5">' . $datos_flete[$i]['fle_glosa'] . '</textarea>

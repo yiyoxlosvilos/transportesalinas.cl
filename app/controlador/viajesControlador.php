@@ -255,7 +255,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 						$acompanantes .= '<div class="row">
 										<div class="col-6"><b>Acompañante '.$cont_acompanantes++.':</b></div> 
-										<div class="col-6 text-light"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</b></div>
+										<div class="col-6 text-success"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($acompa[0]['tra_nombre']))).'</b></div>
 									</div>';
 					}
 

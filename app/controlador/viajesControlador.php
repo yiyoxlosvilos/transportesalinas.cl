@@ -306,15 +306,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 												</div>
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Fecha&nbsp;Carga:</b></div>
-													<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</div>
+													<div class="col-6 text-success"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</b></div>
 												</div>
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Fecha&nbsp;Arribo:</b></div>
-													<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</div>
+													<div class="col-6 text-dark"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</b></div>
 												</div>
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Fecha&nbsp;Descarga:</b></div>
-													<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</div>
+													<div class="col-6 text-danger"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</b></div>
 												</div>
 											</div>
 										</div>

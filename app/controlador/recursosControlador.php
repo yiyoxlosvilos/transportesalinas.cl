@@ -1469,23 +1469,31 @@
 			return $html;
 		}
 
-		public function seleccionar_companante($idTrabajador = 0){
-			$sql  	= $this->datos_trabajadores(1);
+		public function seleccionar_companante($idTrabajador = [])
+		{
+		    // Aseguramos que $idTrabajador sea un array, por si solo pasan un único ID
+		    if (!is_array($idTrabajador)) {
+		        $idTrabajador = explode(',', $idTrabajador);
+		    }
 
-			$html   = '<select name="inputAcompanante" id="inputAcompanante" class="form-select shadow" multiple>';
+		    $sql = $this->datos_trabajadores(1);
 
-			for ($i=0; $i < count($sql); $i++) { 
-				if(in_array($idTrabajador, $sql[$i]['tra_id'])){
-					$html   .= '<option value="'.$sql[$i]['tra_id'].'" selected="selected">'.$sql[$i]['tra_nombre'].'</option>';
-				}else{
-					$html   .= '<option value="'.$sql[$i]['tra_id'].'">'.$sql[$i]['tra_nombre'].'</option>';
-				}
-			}
+		    $html = '<select name="inputAcompanante[]" id="inputAcompanante" class="form-select shadow" multiple>';
 
-			$html   .= '</select>';
+		    for ($i = 0; $i < count($sql); $i++) {
+		        // Verificamos si el ID del trabajador actual está en el array $idTrabajador
+		        if (in_array($sql[$i]['tra_id'], $idTrabajador)) {
+		            $html .= '<option value="' . $sql[$i]['tra_id'] . '" selected="selected">' . $sql[$i]['tra_nombre'] . '</option>';
+		        } else {
+		            $html .= '<option value="' . $sql[$i]['tra_id'] . '">' . $sql[$i]['tra_nombre'] . '</option>';
+		        }
+		    }
 
-			return $html;
+		    $html .= '</select>';
+
+		    return $html;
 		}
+
 
 		public function seleccionar_productos_general($idCategoria = 0, $idProducto = 0){
 			$script = '';

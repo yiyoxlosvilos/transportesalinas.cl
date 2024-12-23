@@ -121,7 +121,7 @@
                             <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
                           </div>
                           <div class="col-md-15 mb-2" id="panel_documentos">
-                            <!-- <?= $rrhh->traer_documentos_asociados($idTrabajador); ?> -->
+                           
                           </div>
                       </div>
                       </div>

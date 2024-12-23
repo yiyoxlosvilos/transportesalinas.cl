@@ -114,45 +114,6 @@
               <div class="col-xxl-10 recent-xl-77 col-xl-9 box-col-9">
                 <div class="row">
                   <div class="col-12">
-                    <div class="common-project-header common-space m-b-20"> 
-                      <div class="common-space">
-                        <div class="pe-sm-3"> 
-                          <h5>Dashboard<span class="badge badge-light-warning ms-2">In Progress</span></h5><span class="c-o-light">Create a brand logo design for a admin.</span>
-                        </div>
-                        <div class="common-align">
-                          <div class="customers">
-                            <ul> 
-                              <li class="d-inline-block"><img class="img-40 rounded-circle" src="../assets/images/dashboard/user/10.jpg" alt="user"></li>
-                              <li class="d-inline-block"><img class="img-40 rounded-circle" src="../assets/images/dashboard/user/11.jpg" alt="user"></li>
-                              <li class="d-inline-block"> 
-                                <div class="common-circle bg-lighter-danger">A</div>
-                              </li>
-                              <li class="d-inline-block"><img class="img-40 rounded-circle" src="../assets/images/dashboard/user/1.jpg" alt="user"></li>
-                              <li class="d-inline-block">
-                                <div class="bg-lighter-dark common-circle"><span class="f-w-500">9+</span></div>
-                              </li>
-                            </ul>
-                          </div>
-                          <h6>All tasks : 24</h6>
-                        </div>
-                      </div>
-                      <div class="common-align">
-                        <ul class="common-align"> 
-                          <li><span>Create Date :</span>
-                            <svg>
-                              <use href="../assets/svg/icon-sprite.svg#vector-calendar"></use>
-                            </svg><span>10 Jul, 2024 </span>
-                          </li>
-                          <li> <span>Due Date :</span>
-                            <svg>
-                              <use href="../assets/svg/icon-sprite.svg#vector-calendar"></use>
-                            </svg><span>10 Aug, 2024</span>
-                          </li>
-                        </ul><a class="btn btn-primary" href="projectcreate.html" target="_blank"><i class="fa-solid fa-plus"></i> Add Project  </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12">
                     <div class="tab-content" id="add-product-pills-tabContent">
                       <div class="tab-pane fade" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                         <div class="row"> 

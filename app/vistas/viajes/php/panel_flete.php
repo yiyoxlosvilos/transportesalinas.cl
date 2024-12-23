@@ -186,9 +186,9 @@
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Descargar e Imprimir</h3>
                             <div class="col-lg-15">
-                              <span class="fas fa-file-pdf text-danger cursor" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></span>
+                              <h3 class="fas fa-file-pdf text-danger cursor" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800">Descargar e Imprimir</h3>
 
-                              <span class="fas fa-file-excel text-success cursor" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></span>
+                              <h3 class="fas fa-file-excel text-success cursor" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800">Descargar Excel</h3>
                             </div>
                           </div>    
                         </div>

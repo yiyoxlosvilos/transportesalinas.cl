@@ -920,6 +920,17 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
 			    }
+
+			    if (!is_array($datos_flete[$i]['fle_guia'])) {
+			        $idguia = explode(',', $datos_flete[$i]['fle_guia']);
+
+			        $guias = '';
+		        	for ($jj = 0; $jj < count($idguia); $jj++) {
+			        	$guias .= ucfirst($idguia[$jj]['fle_guia']).' ';
+			        }
+			    }else{
+		        	$guias .= ucfirst($datos_flete[$i]['fle_guia']);
+			    }
 		        
 
 		        $html .= '<div class="row shadow-sm">
@@ -931,7 +942,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		            </div>
 		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
-		                <input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guía" autocomplete="off" value="' . $datos_flete[$i]['fle_guia'] . '">
+		                ' . $guias . '
 		            </div>
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Origen:</h6>

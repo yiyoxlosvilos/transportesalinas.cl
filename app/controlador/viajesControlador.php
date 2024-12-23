@@ -205,17 +205,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow" id="maquinarias">
 							<thead>
 							<tr class="table-info">
-								<th align="left">Datos&nbsp;Tripulación</th>
-								<th align="left">Datos&nbsp;Viaje</th>
-								<th align="left">Clientes</th>
-								<th align="left">Rut</th>
-								<th align="left">Tracto&nbsp;&nbsp;&nbsp;&nbsp;</th>
-								<th align="left">Rampla</th>
-								<th align="left">Origen</th>
-								<th align="left">Destino</th>
-								<th align="left">N&deg;&nbsp;Guia</th>
-								<th align="left">Tarifa&nbsp;Flete</th>
-								<th align="left">Estadia</th>
+								<th align="left">Información&nbsp;Tracto</th>
+								<th align="left">Información&nbsp;Tripulación</th>
+								<th align="left">Información&nbsp;Viaje</th>
+								<th align="left">Información&nbsp;Cliente</th>
+								<th align="left">Estado&nbsp;de&nbsp;Viaje</th>
 								<th align="left">&nbsp;</th>
 							</tr>
 							</thead>
@@ -283,6 +277,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
+											<div class="col-6"><b>&nbsp;Origen:</b></div>
+											<div class="col-6">'.$nombre_origen.'</div>
+										</div>
+										<div class="row">
+											<div class="col-6"><b>&nbsp;Destino:</b></div>
+											<div class="col-6">'.$nombre_destino.'</div>
+										</div>
+										<div class="row">
 											<div class="col-6"><b>&nbsp;Fecha&nbsp;Carga:</b></div>
 											<div class="col-6">'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</div>
 										</div>
@@ -296,10 +298,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										</div>
 									</small>
 								</td>
-
-
-									<small>'.Utilidades::arreglo_fecha2($sql[$i]['fle_carga']).'</small></td>
-								<td><small>'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</small></td>
 								<td><small>'.$trabajador[0]['tra_nombre'].'</small></td>
 								<td><small>'.Utilidades::rut($trabajador[0]['tra_rut']).'</small></td>
 								<td><small>'.$producto[0]['prod_cli_patente'].'</small></td>

@@ -227,7 +227,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					}
 					$nombre_tracto .= '</ul>';
 				}else{
-					$tractos     	= $recursos->datos_productos($explorar_tracto[$o]);
+					$tractos     	= $recursos->datos_productos($sql[$i]['fle_producto']);
 					$nombre_tracto .= $tractos[0]['prod_cli_patente'];
 				}
 
@@ -240,7 +240,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					}
 					$nombre_rampla .= '</ul>';
 				}else{
-					$ramplas     	= $recursos->datos_productos($explorar_tracto[$o]);
+					$ramplas     	= $recursos->datos_productos($sql[$i]['fle_rampla']);
 					$nombre_rampla .= $ramplas[0]['prod_cli_patente'];
 				}
 

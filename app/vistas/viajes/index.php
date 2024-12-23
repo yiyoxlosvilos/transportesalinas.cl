@@ -107,9 +107,9 @@
                     <div class="tab-content" id="add-product-pills-tabContent">
                       <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                         <div class="row">
-                          <div class="col-15">
+                          <div class="col-15 mb-3">
                             <div class="ms-auto">
-                              <button class="btn btn-sm btn-success" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast h4 text-white"></i> <span class="ocultar">Nuevo Viajes</span></button>
+                              <button class="btn btn-sm btn-success" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
                             </div>
                           </div>
                           <div class="col-15" id="traer_productos_categoria">

@@ -40,7 +40,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-shipping-fast h4"></i>
+                              <i class="fas fa-shipping-fast h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -51,7 +51,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-bus h4"></i>
+                              <i class="fas fa-bus h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -61,7 +61,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-truck h4"></i>
+                              <i class="fas fa-truck h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -71,7 +71,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                             <i class="fas fa-dollar-sign h4"></i>
+                             <i class="fas fa-dollar-sign h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -81,7 +81,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-receipt h4"></i>
+                              <i class="fas fa-receipt h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -91,7 +91,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-receipt h4"></i>
+                              <i class="fas fa-receipt h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">

@@ -16,7 +16,7 @@
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center slide-in-elliptic-top-fwd">
                                 <a href="index.php" class="d-block auth-logo">
-                                    <img src="<?= controlador::$rutaAPP ?>app/recursos/img/logo_nuevo.png" alt="" height="99">
+                                    <img src="<?= controlador::$rutaAPP ?>app/recursos/img/logo_cc2.png" alt="" height="99">
                                 </a>
                             </div>
                             <div class="auth-content my-auto">

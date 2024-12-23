@@ -351,7 +351,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col-6"><b>&nbsp;Monto&nbsp;Estadia:</b></div>
 													<div class="col-6 text-danger"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</b></div>
 												</div>
-												<div class="row">
+												<div class="row mt-2">
 													<div class="col">
 														<center>
 															<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>

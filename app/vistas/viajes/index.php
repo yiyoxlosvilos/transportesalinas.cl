@@ -113,7 +113,7 @@
                           <div class="col">
                             <button class="btn btn-sm btn-dark" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
                           </div>
-                          <div class="col-15 mt-3 border" id="traer_productos_categoria">
+                          <div class="col-15 mt-3" id="traer_productos_categoria">
                              <?= $centroCostos->traer_fletes_asigandos() ?>
                           </div>
     

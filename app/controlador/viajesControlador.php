@@ -289,6 +289,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col-6"><b>Conductor: </b></div>
 													<div class="col-6 text-primary"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</b></div>
 												</div>
+												<div class="row">
+													<div class="col"><b>&nbsp;</b></div>
+												</div>
 												<div class="row border-bottom">
 													<div class="col"><b>&nbsp;</b></div>
 												</div>

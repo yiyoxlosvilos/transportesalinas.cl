@@ -938,13 +938,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
 						$origenes .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
+										<div class="col-6">1'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
 									</div>';
 					}
 
 				}else{
 					$origenes .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($sql[$i]['fle_origen']).'</div>
+										<div class="col-6">2'.$recursos->nombre_localidad($sql[$i]['fle_origen']).'</div>
 									</div>';
 				}
 

@@ -31,11 +31,11 @@
         </div>
         <div class="col-lg-5 mb-2">
           <label for="inputSueldo"><b>E-Mail:</b></label>
-            <input type="text" class="form-control shadow" id="inputEmail" placeholder="Escribir Sueldo">
+            <input type="text" class="form-control shadow" id="inputEmail" placeholder="Escribir Email">
         </div>
         <div class="col-lg-5 mb-2">
           <label for="inputCargo"><b>Contrase&ntilde;a</b></label>
-          <input type="password" class="form-control shadow" id="inputContrasena" placeholder="Escribir Cargo" autocomplete="off">
+          <input type="password" class="form-control shadow" id="inputContrasena" placeholder="Escribir Contraseña" autocomplete="off">
         </div>
         <div class="col-lg-5 mb-2">
           <label for="inputCategoria"><b>Sucursal</b></label>

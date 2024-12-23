@@ -878,7 +878,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<h6>Cliente:</h6>
 								'.$recursos->select_clientes($datos_flete[$i]['fle_cliente']).'
 							</div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-15 col-xl-15 col-sm-12 pt-3 ">
 		                <h6>Descripción del Trabajo:</h6>
 		                <textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" rows="5">' . $datos_flete[$i]['fle_glosa'] . '</textarea>
 		            </div>

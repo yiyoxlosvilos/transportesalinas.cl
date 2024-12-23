@@ -223,12 +223,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					$nombre_tracto = '<ul>';
 					for ($o=0; $o < count($explorar_tracto); $o++) {
 						$tractos     	= $recursos->datos_productos($explorar_tracto[$o]);
-						$nombre_tracto .= '<li>'.$tractos[0]['nombre'].'</li>';
+						$nombre_tracto .= '<li>'.$tractos[0]['prod_cli_patente'].'</li>';
 					}
 					$nombre_tracto .= '</ul>';
 				}else{
 					$tractos     	= $recursos->datos_productos($explorar_tracto[$o]);
-					$nombre_tracto .= $tractos[0]['nombre'];
+					$nombre_tracto .= $tractos[0]['prod_cli_patente'];
 				}
 
 				$explorar_rampla = explode(",", $sql[$i]['fle_producto']);
@@ -236,12 +236,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					$nombre_rampla = '<ul>';
 					for ($o=0; $o < count($explorar_rampla); $o++) {
 						$ramplas     	= $recursos->datos_productos($explorar_rampla[$o]);
-						$nombre_rampla .= '<li>'.$ramplas[0]['nombre'].'</li>';
+						$nombre_rampla .= '<li>'.$ramplas[0]['prod_cli_patente'].'</li>';
 					}
 					$nombre_rampla .= '</ul>';
 				}else{
 					$ramplas     	= $recursos->datos_productos($explorar_tracto[$o]);
-					$nombre_rampla .= $ramplas[0]['nombre'];
+					$nombre_rampla .= $ramplas[0]['prod_cli_patente'];
 				}
 
 				$explorar_origen = explode(",", $sql[$i]['fle_origen']);

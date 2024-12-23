@@ -267,12 +267,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
-											<div class="col-6">'.$producto[0]['prod_cli_patente'].'</div>
+											<div class="col"><b>Tracto&nbsp;Patente:</b> '.$producto[0]['prod_cli_patente'].'</div>
 										</div>
 										<div class="row">
-											<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
-											<div class="col-6">'.$rampla[0]['prod_cli_patente'].'</div>
+											<div class="col"><b>Rampla&nbsp;Patente:</b> '.$rampla[0]['prod_cli_patente'].'</div>
 										</div>
 									</small>
 								</td>

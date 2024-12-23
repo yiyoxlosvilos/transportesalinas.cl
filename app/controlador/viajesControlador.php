@@ -932,19 +932,19 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        	$guias .= ucfirst($datos_flete[$i]['fle_guia']);
 			    }
 
-			    $origenes .= '*';
+			    $origenes .= '';
 			    if(is_array($datos_flete[$i]['fle_origen'])){
 					$explorar_origen = explode(",", $datos_flete[$i]['fle_origen']);
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
 						$origenes .= '<div class="row">
-										<div class="col-6">1'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
 									</div>';
 					}
 
 				}else{
 					$origenes .= '<div class="row">
-										<div class="col-6">2'.$recursos->nombre_localidad($datos_flete[$i]['fle_origen']).' '.$datos_flete[$i]['fle_origen'].'</div>
+										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_origen']).'</div>
 									</div>';
 				}
 

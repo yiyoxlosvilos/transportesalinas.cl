@@ -266,20 +266,32 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col"><b>Tracto&nbsp;Patente:</b> '.$producto[0]['prod_cli_patente'].'</div>
+											<div class="col-8">
+												 <div class="row">
+													<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
+													<div class="col-6 text-primary"><b>'.$producto[0]['prod_cli_patente'].'</b></div>
+												</div>
+												<div class="row">
+													<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
+													<div class="col-6 text-primary"><b>'.$rampla[0]['prod_cli_patente'].'</b></div>
+												</div>
+											</div>
 										</div>
-										<div class="row">
-											<div class="col"><b>Rampla&nbsp;Patente:</b> '.$rampla[0]['prod_cli_patente'].'</div>
-										</div>
+
+										
 									</small>
 								</td>
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-6"><b>Conductor: </b></div>
-											<div class="col-6 text-primary"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</b></div>
+											<div class="col-8">
+												<div class="row">
+													<div class="col-6"><b>Conductor: </b></div>
+													<div class="col-6 text-primary"><b >'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</b></div>
+												</div>
+												'.$acompanantes.'
+											</div>
 										</div>
-										'.$acompanantes.'
 									</small>
 								</td>
 								<td>

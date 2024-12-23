@@ -933,8 +933,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			    }
 
 			    $origenes .= '*';
-			    if(is_array($sql[$i]['fle_origen'])){
-					$explorar_origen = explode(",", $sql[$i]['fle_origen']);
+			    if(is_array($datos_flete[$i]['fle_origen'])){
+					$explorar_origen = explode(",", $datos_flete[$i]['fle_origen']);
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
 						$origenes .= '<div class="row">
@@ -944,13 +944,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				}else{
 					$origenes .= '<div class="row">
-										<div class="col-6">2'.$recursos->nombre_localidad($sql[$i]['fle_origen']).' '.$sql[$i]['fle_origen'].'</div>
+										<div class="col-6">2'.$recursos->nombre_localidad($datos_flete[$i]['fle_origen']).' '.$datos_flete[$i]['fle_origen'].'</div>
 									</div>';
 				}
 
 				$destinos .= '';
-			    if(is_array($sql[$i]['fle_destino'])){
-					$explorar_origen = explode(",", $sql[$i]['fle_destino']);
+			    if(is_array($datos_flete[$i]['fle_destino'])){
+					$explorar_origen = explode(",", $datos_flete[$i]['fle_destino']);
 
 					for ($pp=0; $pp < count($explorar_origen); $pp++) {
 						$destinos .= '<div class="row">
@@ -960,7 +960,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				}else{
 					$destinos .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($sql[$i]['fle_destino']).'</div>
+										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_destino']).'</div>
 									</div>';
 				}
 		        

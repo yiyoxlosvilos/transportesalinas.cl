@@ -1083,7 +1083,7 @@
 			return $html;
 		}
 
-		public function seleccionar_localidad2($idFlete = 0, $nombre, $tipo_localidad = 0, $acciones= 0){
+		public function seleccionar_localidad2($idFlete = 0, $nombre, $tipo_localidad = 0, $acciones= ''){
 
 			$sql  	= $this->selectQuery("SELECT * FROM cl_comuna
 										  WHERE    		estado = 1");

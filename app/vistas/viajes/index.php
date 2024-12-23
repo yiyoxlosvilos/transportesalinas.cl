@@ -112,7 +112,7 @@
                               <button class="btn btn-sm btn-success" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast h4 text-white"></i> <span class="ocultar">Nuevo Viajes</span></button>
                             </div>
                           </div>
-                          <div class="col-15">
+                          <div class="col-15" id="traer_productos_categoria">
                             <div class="d-flex flex-wrap align-items-center mb-4">
                               <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                             </div>

@@ -126,7 +126,7 @@
                           </div>    
                         </div>
                       </div>
-                      <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
+                      <div class="tab-pane fade active" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Descargar e Imprimir</h3>

@@ -2591,8 +2591,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function cotizacion_clientes_ver($idCotizacion, $mes, $ano){
 	    	$recursos 		  = new Recursos();
 
-	    	$datos_cotizacion = $recursos->datos_cotizacion_id($idCotizacion);
-  			$datos_clientes   = $recursos->datos_clientes($datos_cotizacion[0]['coti_cliente']);
+	    	$datos_cotizacion = $recursos->datos_fletes_id($idCotizacion);
+
+  			$datos_clientes   = $recursos->datos_clientes($datos_cotizacion[0]['fle_cliente']);
 
   			$anexos_datos     = $recursos->datos_cotizacion_anexos($idCotizacion);
 
@@ -2620,18 +2621,17 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h4 class="text-primary" align="center">Cotizaci&oacute;n N&deg;: '.$datos_cotizacion[0]['coti_codigo'].'</h4>
+							  <h4 class="text-primary" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h4>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
 									<td><b>Rut:</b><br><small>'.Utilidades::rut($datos_clientes[0]['cli_rut']).'</small></td>
 									<td><b>Giro:</b><br><small>'.$datos_clientes[0]['cli_giro'].'</small></td>
-									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fecha2($datos_cotizacion[0]['coti_fecha']).'</small></td>
-									<td><b>Valido Hasta:</b><br><small>'.Utilidades::arreglo_fecha2($datos_cotizacion[0]['coti_vigencia']).'</small></td>
+									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fecha2($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
 			$html.= '<div class="row">';
-			$html.= $this->traer_items_cotizacion_print($datos_cotizacion[0]['coti_codigo']);
+			$html .= $this->mostrar_formulario_flete($datos_cotizacion[0]['fle_id']);
 			$html.= '</div>';
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
@@ -2639,25 +2639,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<td align="center"><b>Terminos y Condiciones:</b></td>
 						</tr>
 						<tr>
-							<td><p class="text-justify">'.str_replace('.', '. ', $datos_cotizacion[0]['coti_glosa']).'</p></td>
+							<td><p class="text-justify">'.str_replace('.', '. ', $datos_cotizacion[0]['fle_glosa']).'</p></td>
 						</tr>
 					</table>';
-
-			if(count($anexos_datos) > 0){
-				$html.= '<div style="page-break-after: always;"></div>';
-				$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
-							<tr>
-								<td align="center"><b>Anexos Cotizaci&oacute;n:</b></td>
-							</tr>
-						</table>
-						<div class="row">';
-
-						for ($i=0; $i < count($anexos_datos); $i++) { 
-							$html .= '<div class="col-6"><img src="'.controlador::$rutaAPP.'app/repositorio/documento_edp/'.$anexos_datos[$i]['doc_ruta'].'" class="img-thumbnail"></div>';
-						}
-
-				$html.= '</div>';
-			}
 
 	    	return $html;
 	    }

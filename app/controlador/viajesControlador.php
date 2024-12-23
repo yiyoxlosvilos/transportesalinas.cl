@@ -380,7 +380,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 												<div class="row mt-2">
 													<div class="col">
 														<center>
-															<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
+															<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
 														</center>
 													</div>
 												</div>

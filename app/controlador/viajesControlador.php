@@ -266,7 +266,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$html  .= '<tr>
 								<td>
-									
+									<small>
 										<div class="row">
 											<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
 											<div class="col-6">'.$producto[0]['prod_cli_patente'].'</div>
@@ -275,19 +275,19 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 											<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
 											<div class="col-6">'.$rampla[0]['prod_cli_patente'].'</div>
 										</div>
-									
+									</small>
 								</td>
 								<td>
-									
+									<small>
 										<div class="row">
 											<div class="col-6"><b>Conductor:</b></div>
 											<div class="col-6">'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
 										</div>
 										'.$acompanantes.'
-									
+									</small>
 								</td>
 								<td>
-									
+									<small>
 										<div class="row">
 											<div class="col-6">
 												<div class="row">
@@ -312,8 +312,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 												</div>
 											</div>
 										</div>
-										
-									
+									</small>
 								</td>
 								
 								<td>

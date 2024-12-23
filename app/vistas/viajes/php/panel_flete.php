@@ -140,38 +140,54 @@
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Ingresar Pagos</h3>
                           </div>
                           <div class="col-md-15 mb-2">
-                            <div class="card"> 
-                              <div class="card-header">
-                                <div class="header-top">
-                                  <h5>Summary</h5>
-                                </div>
-                              </div>
-                              <div class="card-body"> 
-                                <ul class="cart-summary">
-                                  <li> 
-                                    <h6>Subtotal </h6><span>$1315.00</span>
-                                  </li>
-                                  <li> 
-                                    <h6>Coupon Discount</h6><span>(-) 0.00</span>
-                                  </li>
-                                  <li> 
-                                    <h6>Shipping</h6><span class="txt-primary">Free</span>
-                                  </li>
-                                </ul>
-                              </div>
-                              <ul class="product-total">
-                                <li> 
-                                  <h4>Total</h4>
-                                  <h4>$1315.00</h4>
-                                </li>
-                                <li>
-                                  <ul class="cart-buttons">
-                                    <li><a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a></li>
-                                    <li> <a class="btn btn-hover-effect" href="product-grid-view.html"><span><i class="fa-solid fa-caret-left fa-lg"></i></span>Return to Shopping                        </a></li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </div>
+                            <div class="card card-h-100">
+                                            <!-- card body -->
+                                            <div class="card-body">
+                                                <div class="d-flex flex-wrap align-items-center mb-4">
+                                                    <h5 class="card-title me-2">Invested Overview</h5>
+                                                    <div class="ms-auto">
+                                                        <select class="form-select form-select-sm">
+                                                            <option value="MAY" selected="">May</option>
+                                                            <option value="AP">April</option>
+                                                            <option value="MA">March</option>
+                                                            <option value="FE">February</option>
+                                                            <option value="JA">January</option>
+                                                            <option value="DE">December</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="row align-items-center">
+                                                    <div class="col-sm align-self-center">
+                                                        <div class="mt-4 mt-sm-0">
+                                                            <p class="mb-1">Invested Amount</p>
+                                                            <h4>$ 6134.39</h4>
+
+                                                            <p class="text-muted mb-4"> + 0.0012.23 ( 0.2 % ) <i class="mdi mdi-arrow-up ms-1 text-success"></i></p>
+
+                                                            <div class="row g-0">
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Income</p>
+                                                                        <h5 class="fw-medium">$ 2632.46</h5>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Expenses</p>
+                                                                        <h5 class="fw-medium">-$ 924.38</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mt-2">
+                                                                <a href="#" class="btn btn-primary btn-sm">View more <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                           </div>  
                         </div>
                       </div>

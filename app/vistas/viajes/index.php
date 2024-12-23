@@ -121,6 +121,12 @@
                       </div>
 
                       <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
+                        <div class="col">
+                            <button class="btn btn-sm btn-dark" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Traslado</span></button>
+                          </div>
+                          <div class="col-15 mt-3" id="traer_productos_categoria">
+                             <?= $centroCostos->listado_de_traslados() ?>
+                          </div>
                       </div>
                       <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
                       </div>

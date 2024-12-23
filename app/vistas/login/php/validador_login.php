@@ -36,11 +36,11 @@
 					if($result[0]["us_cli_tipoUsuario"] == 1){
 						$info   = array('success' => true, 
 									'msg' 	  => "Usuario Correcto", 
-									'link' 	  => controlador::$rutaAPP."centro_costo");
+									'link' 	  => controlador::$rutaAPP."viajes");
 					}elseif($result[0]["us_cli_tipoUsuario"] == 2){
 						$info   = array('success' => true, 
 									'msg' 	  => "Usuario Correcto", 
-									'link' 	  => controlador::$rutaAPP."ventas");
+									'link' 	  => controlador::$rutaAPP."viajes");
 					}
 					
 				}

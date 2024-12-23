@@ -1061,8 +1061,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
 								<h6>Fecha de Viaje:</h6>
 								<span class="text-dark">
-									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.$datos_flete[$i]['fle_fecha_pago'].'" autocomplete="off" onchange="calcular_fecha_pago()">
-									<span class="text-danger" id="respuesta-pago"></span>
+								' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_fecha_pago']) . '
+		
 						  		</span>
 							</div>
 							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">

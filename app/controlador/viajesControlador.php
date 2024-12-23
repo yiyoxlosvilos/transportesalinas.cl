@@ -266,7 +266,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-8">
+											<div class="col">
 												 <div class="row">
 													<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
 													<div class="col-6 text-primary"><b>'.$producto[0]['prod_cli_patente'].'</b></div>

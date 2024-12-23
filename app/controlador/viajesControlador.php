@@ -268,6 +268,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
+											<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
+											<div class="col-6">'.$producto[0]['prod_cli_patente'].'</div>
+										</div>
+										<div class="row">
+											<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
+											<div class="col-6">'.$rampla[0]['prod_cli_patente'].'</div>
+										</div>
+									</small>
+								</td>
+								<td>
+									<small>
+										<div class="row">
 											<div class="col-6"><b>Conductor:</b></div>
 											<div class="col-6">'.ucfirst(mb_strtolower(Utilidades::matar_espacio($trabajador[0]['tra_nombre']))).'</div>
 										</div>
@@ -298,15 +310,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										</div>
 									</small>
 								</td>
-								<td><small>'.$trabajador[0]['tra_nombre'].'</small></td>
-								<td><small>'.Utilidades::rut($trabajador[0]['tra_rut']).'</small></td>
-								<td><small>'.$producto[0]['prod_cli_patente'].'</small></td>
-								<td><small>'.$rampla[0]['prod_cli_patente'].'</small></td>
-								<td><small>'.$nombre_origen.'</small></td>
-								<td><small>'.$nombre_destino.'</small></td>
-								<td><small>'.$sql[$i]['fle_guia'].'</small></td>
-								<td align="center"><small>'.Utilidades::monto3($sql[$i]['fle_valor']).'</small></td>
-								<td align="center"><small>'.Utilidades::monto3($sql[$i]['fle_estadia']).'</small></td>
+								
 								<td>
 									<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
 								</td>

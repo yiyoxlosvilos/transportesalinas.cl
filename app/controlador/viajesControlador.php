@@ -218,6 +218,32 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$rampla     = $recursos->datos_productos($sql[$i]['fle_rampla']);
 				$trabajador = $recursos->datos_trabajador($sql[$i]['fle_chofer']);
 
+				$explorar_tracto = explode(",", $sql[$i]['fle_producto']);
+				if(count($explorar_tracto) > 1){
+					$nombre_tracto = '<ul>';
+					for ($o=0; $o < count($explorar_tracto); $o++) {
+						$tractos     	= $recursos->datos_productos($explorar_tracto[$o]);
+						$nombre_tracto .= '<li>'.$tractos[0]['nombre'].'</li>';
+					}
+					$nombre_tracto .= '</ul>';
+				}else{
+					$tractos     	= $recursos->datos_productos($explorar_tracto[$o]);
+					$nombre_tracto .= $tractos[0]['nombre'];
+				}
+
+				$explorar_rampla = explode(",", $sql[$i]['fle_producto']);
+				if(count($explorar_rampla) > 1){
+					$nombre_rampla = '<ul>';
+					for ($o=0; $o < count($explorar_rampla); $o++) {
+						$ramplas     	= $recursos->datos_productos($explorar_rampla[$o]);
+						$nombre_rampla .= '<li>'.$ramplas[0]['nombre'].'</li>';
+					}
+					$nombre_rampla .= '</ul>';
+				}else{
+					$ramplas     	= $recursos->datos_productos($explorar_tracto[$o]);
+					$nombre_rampla .= $ramplas[0]['nombre'];
+				}
+
 				$explorar_origen = explode(",", $sql[$i]['fle_origen']);
 				if(count($explorar_origen) > 1){
 					$nombre_origen = '<ul>';
@@ -269,11 +295,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 											<div class="col">
 												 <div class="row">
 													<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
-													<div class="col-6 text-primary"><b>'.$producto[0]['prod_cli_patente'].'</b></div>
+													<div class="col-6 text-primary"><b>'.$nombre_tracto.'</b></div>
 												</div>
 												<div class="row">
 													<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
-													<div class="col-6 text-primary"><b>'.$rampla[0]['prod_cli_patente'].'</b></div>
+													<div class="col-6 text-primary"><b>'.$nombre_rampla.'</b></div>
 												</div>
 											</div>
 										</div>

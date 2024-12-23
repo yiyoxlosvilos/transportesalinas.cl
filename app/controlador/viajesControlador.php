@@ -1000,8 +1000,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 
 		         $acompanantes .= '';
-			    if($sql[$i]['fle_acompanante'] != ''){
-					$explorar_aco = explode(",", $sql[$i]['fle_acompanante']);
+			    if($datos_flete[$i]['fle_acompanante'] != ''){
+					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
 
 					for ($aco=0; $aco < count($explorar_aco); $aco++) {
 						$acompanantes .= '<div class="row">

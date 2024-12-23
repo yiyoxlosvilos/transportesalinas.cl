@@ -865,20 +865,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						  		</span>
 							</div>
 
-							<table class="table border rounded table-striped" align="center" cellpadding="0" cellspacing="0">
-						  		<tr>
-						  			<th colspan="2">
-						  				<div class="row">
-						  					<div class="col">
-											  	<button type="button" id="grabar" class="btn btn-success form-control shadow" onclick="editar_flete('.$datos_flete[$i]['fle_id'].')">Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i></button>
-											</div>
-											<div class="col">
-											  	<button type="button" id="grabar" class="btn btn-danger form-control shadow" onclick="quitar_flete('.$datos_flete[$i]['fle_id'].')">Quitar&nbsp;<i class="far fa-window-close text-dark"></i></button>
-											</div>
-						  				</div>
-						  			</th>
-						  		</tr>
-						  	</table>
+							<button type="button" id="grabar" class="btn btn-success form-control shadow" onclick="editar_flete('.$datos_flete[$i]['fle_id'].')">Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i></button>
+
+							<button type="button" id="grabar" class="btn btn-danger form-control shadow" onclick="quitar_flete('.$datos_flete[$i]['fle_id'].')">Quitar&nbsp;<i class="far fa-window-close text-dark"></i></button>
+
 					  	</div>';
 			}
 

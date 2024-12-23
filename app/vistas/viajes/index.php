@@ -30,33 +30,32 @@
 <body id="body-pd">
   <div class="row paddingtop40px mt-5">
     <div class="d-flex flex-wrap align-items-center mb-4">
-    <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
+      <span class="h2 animate__animated animate__pulse"><i class="bi bi-bookmark ocultar"></i> <span class="cursor" onclick="location.reload()"></span></span>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-soft-light waves-effect waves-light" onclick="location.reload()"><i class="fas fa-home h4 text-info"></i> <span class="ocultar"></span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast h4 text-white"></i> <span class="ocultar">Viajes</span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-primary" onclick="asignar_arriendo()"><i class="fas fa-truck h4 text-white"></i> <span class="ocultar">Arriendos</span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign h4 text-white"></i> <span class="ocultar">Gastos</span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-success" onclick="facturas_proveedores()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Proveedores</span></button>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-sm btn-warning" onclick="facturas_clientes()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Clientes</span></button>
+      </div>
     </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-danger" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast h4 text-white"></i> <span class="ocultar">Viajes</span></button>
-    </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-info" onclick="asignar_traslados()"><i class="fas fa-bus h4 text-white"></i> <span class="ocultar">Traslados</span></button>
-    </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-primary" onclick="asignar_arriendo()"><i class="fas fa-truck h4 text-white"></i> <span class="ocultar">Arriendos</span></button>
-    </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign h4 text-white"></i> <span class="ocultar">Gastos</span></button>
-    </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-success" onclick="facturas_proveedores()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Proveedores</span></button>
-    </div>
-    <div class="ms-auto">
-      <button class="btn btn-sm btn-warning" onclick="facturas_clientes()"><i class="fas fa-receipt h4 text-white"></i> <span class="ocultar">Facturas Clientes</span></button>
-    </div>
-  </div>
-  <hr>
+    <hr>
     <div class="row" id="traer_productos_categoria">
-      <div class="row">
-              <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
+      <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
                 <div class="nav-link  col text-center active cursor" data-bs-toggle="tab" href="#home1" role="tab">
                     <span class="mdi mdi-truck-check-outline cursor h5">&nbsp;&nbsp;Viajes</span>
                 </div>
@@ -72,8 +71,8 @@
                 <div class="nav-link col  text-center cursor" data-bs-toggle="tab" href="#messages1" role="tab">
                   <span class="mdi mdi-inbox-full h5 cursor">&nbsp;&nbsp;Facturas</span>
                 </div>
-              </div>
-              <div class="tab-content border" id="v-pills-tabContent">
+      </div>
+      <div class="tab-content border" id="v-pills-tabContent">
                 <div class="tab-pane active" id="home1" role="tabpanel">
                   <div class="d-flex flex-wrap align-items-center mb-4">
                     <h3 class="text-center text-primary mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
@@ -107,8 +106,7 @@
                   <p class="h4">Facturas Clientes</p>
                   
                 </div>
-              </div>
-            </div>
+      </div>
     </div>
   </div>
 </body>

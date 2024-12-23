@@ -55,7 +55,7 @@
     </div>
     <hr>
     <div class="row" id="traer_productos_categoria">
-      <div class="row nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
+      <div class="col-15 nav nav-pills navbar navbar-expand-lg navbar-light " id="v-pills-tab" aria-orientation="horizontal" role="tablist">
                 <div class="nav-link  col text-center active cursor" data-bs-toggle="tab" href="#home1" role="tab">
                     <span class="mdi mdi-truck-check-outline cursor h5">&nbsp;&nbsp;Viajes</span>
                 </div>

@@ -102,7 +102,8 @@
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalles de Viaje</h3>
-                          </div>    
+                          </div> 
+                          <div class="col-lg-15"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div>   
                         </div>
                       </div>
                       <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">

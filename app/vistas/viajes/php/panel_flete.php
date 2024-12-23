@@ -96,7 +96,7 @@
               </div>
               <div class="col-xxl-10 recent-xl-77 col-xl-9 box-col-9">
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col">
                     <div class="tab-content" id="add-product-pills-tabContent">
                       <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                         <div class="row">

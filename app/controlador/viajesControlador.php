@@ -286,9 +286,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 											<div class="col-6">
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Origen:</b> </div>
-													<div class="col-6">'.$nombre_origen.'</div>
+													<div class="col-6">'.ucfirst($nombre_origen).'</div>
 													<div class="col-6"><b>&nbsp;Destino:</b> </div>
-													<div class="col-6">'.$nombre_destino.'</div>
+													<div class="col-6">'.ucfirst($nombre_destino).'</div>
 												</div>
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Fecha&nbsp;Carga:</b></div>

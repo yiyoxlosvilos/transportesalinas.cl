@@ -204,7 +204,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow" id="maquinarias">
 							<thead>
-							<tr class="table-info">
+							<tr class="table-dark">
 								<th align="left">Información&nbsp;Tracto</th>
 								<th align="left">Información&nbsp;Tripulación</th>
 								<th align="left">Información&nbsp;Viaje</th>

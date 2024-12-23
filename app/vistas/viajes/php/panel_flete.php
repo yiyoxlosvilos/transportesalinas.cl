@@ -146,28 +146,18 @@
                                             <!-- card body -->
                                             <div class="card-body">
                                                 <div class="d-flex flex-wrap align-items-center mb-4">
-                                                    <h5 class="card-title me-2">Invested Overview</h5>
-                                                    <div class="ms-auto">
-                                                        <select class="form-select form-select-sm">
-                                                            <option value="MAY" selected="">May</option>
-                                                            <option value="AP">April</option>
-                                                            <option value="MA">March</option>
-                                                            <option value="FE">February</option>
-                                                            <option value="JA">January</option>
-                                                            <option value="DE">December</option>
-                                                        </select>
-                                                    </div>
+                                                    <h5 class="card-title me-2">Total Viaje</h5>
                                                 </div>
             
                                                 <div class="row align-items-center">
                                                     <div class="col-sm align-self-center">
                                                         <div class="mt-4 mt-sm-0">
-                                                            <h3><?= Utilidades::monto3($datos_fletes[0]['fle_monto']) ?></h3>
+                                                            <h3><?= Utilidades::monto3($datos_fletes[0]['fle_valor']-$datos_fletes[0]['fle_descuento']) ?></h3>
                                                             <div class="row g-0">
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <p class="mb-2 text-muted text-uppercase font-size-11">Abono</p>
-                                                                        <h5 class="fw-medium"><?= Utilidades::monto3(0) ?></h5>
+                                                                        <h5 class="fw-medium">-<?= Utilidades::monto3(0) ?></h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">

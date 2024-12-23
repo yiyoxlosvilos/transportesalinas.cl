@@ -1795,3 +1795,13 @@ function calcular_fecha_pago(){
         $("#respuesta-pago").html("");
     }
 }
+
+
+function traer_nuevo_documento(idTrabajador) {
+  const url_link = document.getElementById('url_link').value;
+  var accion     = "traer_nuevo_documento";
+
+  $("#panel_documentos").html('');
+  $('#panel_documentos').load(url_link+"/app/recursos/img/loader.svg");
+  $('#panel_documentos').load(url_link+"app/vistas/rrhh/php/validador.php", {accion:accion, idTrabajador:idTrabajador});
+}

@@ -3741,6 +3741,42 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                 return FALSE;
             }
 	    }
+
+	     public function traer_documentos_asociados($idTrabajador){
+	    	$recursos = new Recursos();
+	    	$sql      = $this->selectQuery("SELECT * FROM documentos_flete
+					    				    WHERE  		  doc_trabajador = $idTrabajador");
+
+			$html     = '<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Titulo</th>
+									<th>Fecha T&eacute;rmino</th>
+									<th>&nbsp;</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>';
+			//doc_id, doc_titulo, doc_ruta, doc_fin_documento
+			for ($i=0; $i < count($sql); $i++) {
+				$html  .= '
+						<tr class="cambiazo">
+							<td>'.$sql[$i]['doc_titulo'].'</td>
+							<td>'.$sql[$i]['doc_fin_documento'].'</td>
+							<td align="center">
+								<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/repositorio/documento_trabajador/'.$sql[$i]['doc_ruta'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1200"><i class="bi bi-eye"></i></button>
+							</td>
+							<td align="center">
+								<button class="btn btn-danger" type="button" onclick="quitar_documento_trabajador('.$sql[$i]['doc_id'].')"><i class="bi-trash"></i></button>
+							</td>
+						</tr>';
+			}
+
+			$html .= '</tbody>
+					</table>';
+
+			return $html;
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

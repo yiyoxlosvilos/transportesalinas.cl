@@ -118,7 +118,20 @@
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Anexos Viaje</h3>
-                          </div>    
+                          </div>
+                          <div class="col-lg-15">
+                            <div class="row mb-2">
+                              <div class="col-md-6 mb-2">
+                                <h3>Documentos.</h3>           
+                              </div>
+                              <div class="col-md-6 mb-2">
+                                <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
+                              </div>
+                              <div class="col-md-15 mb-2" id="panel_documentos">
+                                <?= $centroCostos->traer_documentos_asociados($idFlete); ?>
+                              </div>
+                          </div>
+                          </div>   
                         </div>
                       </div>
                       <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">

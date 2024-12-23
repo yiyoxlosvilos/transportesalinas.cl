@@ -777,7 +777,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$recursos    = new Recursos();
 			$datos_flete = $recursos->datos_fletes_id($idFlete);
 
-			$html 	     = '<div class="row mt-4">';
+			$html 	     = '';
 			$data        = array();
 			$productos   = '';
 			$productos_id= '';

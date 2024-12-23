@@ -322,7 +322,34 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								</td>
 								
 								<td>
-									<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
+									<small>
+										<div class="row">
+											<div class="col-10">
+												<div class="row">
+													<div class="col-6"><b>&nbsp;Cliente:</b> </div>
+													<div class="col-6 text-primary"><b> </b></div>
+													<div class="col-6"><b>&nbsp;Estado&nbsp;Viaje:</b> </div>
+													<div class="col-6 text-primary"><b></b></div>
+												</div>
+												<div class="row border-bottom">
+													<div class="col"><b>&nbsp;</b></div>
+												</div>
+												<div class="row">
+													<div class="col-6"><b>&nbsp;Monto&nbsp;Viaje:</b></div>
+													<div class="col-6 text-dark"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</b></div>
+												</div>
+												<div class="row">
+													<div class="col-6"><b>&nbsp;Monto&nbsp;Estadia:</b></div>
+													<div class="col-6 text-danger"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</b></div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<i class="far fa-eye text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_flete.php?idFlete='.$sql[$i]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+									</small>
 								</td>
 							</tr>';
 				

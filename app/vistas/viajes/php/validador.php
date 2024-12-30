@@ -990,11 +990,10 @@
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTitulo"><b>* Titulo:</b></label>
 				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">
-				    <label for="inputTipo">&nbsp;</label>
+				    <br>
 				    <label for="inputFecha"><b>* Fecha:</b></label>
 				    <input type="date" name="inputFecha" name="inputFecha" class="form-control shadow">
-				    <label for="inputTipo">&nbsp;</label>
-				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <br>
 				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">

@@ -982,6 +982,34 @@
 
 			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items);
 			break;
+		case 'traer_bitacora':
+			$html = '
+				<div class="row">
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputTitulo"><b>* Titulo:</b></label>
+				    <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <textarea class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
+				  </div>
+				  <div class="col-lg-15 p-3 border">
+				    <label for="inputSucursal"><b>Descripción</b></label>
+				    <span id="validador_curso"></span>
+				    <textarea class="form-control shadow" id="inputDescripcion" rows="5"></textarea>
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputPrecio"><b>* Fecha:</b></label>
+				    <input type="date" name="inputDFecha" name="inputDFecha">
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputTipo">&nbsp;</label>
+				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_arriendo(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
+				  </div>
+				</div>';
+
+			return $html;
+			break;
 		default:
 			break;
 	}

@@ -127,7 +127,7 @@
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="nueva_bitacora()"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
-                <div class="col-12" style="background-color: #f7f7f7"></div> 
+                <div class="col-12" style="background-color: #f7f7f7" id="panel_bitacora"></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">

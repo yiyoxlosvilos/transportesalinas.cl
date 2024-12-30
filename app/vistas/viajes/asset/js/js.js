@@ -1816,7 +1816,8 @@ function nueva_bitacora(idFlete) {
 }
 
 function grabar_bitacora(idFlete) {
-    var accion = "grabar_bitacora";
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "grabar_bitacora";
 
     var inputTitulo       = document.getElementById('inputTitulo').value;
     var inputDescripcion  = document.getElementById('inputDescripcion').value;

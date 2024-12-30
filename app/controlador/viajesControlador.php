@@ -302,7 +302,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<td>
 									<small>
 										<div class="row">
-											<div class="col-10">
+											<div class="col">
 												 <div class="row">
 													<div class="col-6"><b>Tracto:</b></div>
 													<div class="col-6 text-primary"><b>'.$nombre_tracto.'</b></div>

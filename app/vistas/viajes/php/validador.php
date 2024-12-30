@@ -983,30 +983,34 @@
 			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items);
 			break;
 		case 'traer_bitacora':
+			$idBitacora = $_REQUEST['idBitacora'];
+
 			$html = '
 				<div class="row col-10 justify-content-center mx-5 mt-3">
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTitulo"><b>* Titulo:</b></label>
-				    <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">
+				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputDescripcion"><b>* Descripción:</b></label>
 				    <textarea class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
 				  </div>
-				  <div class="col-lg-15 p-3 border">
-				    <label for="inputSucursal"><b>Descripción</b></label>
-				    <span id="validador_curso"></span>
-				    <textarea class="form-control shadow" id="inputDescripcion" rows="5"></textarea>
-				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
-				    <label for="inputPrecio"><b>* Fecha:</b></label>
-				    <input type="date" name="inputDFecha" name="inputDFecha" class="form-control shadow">
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" name="inputFecha" class="form-control shadow">
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTipo">&nbsp;</label>
-				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_arriendo(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
+				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
 				  </div>
 				</div>';
+
+			echo $html;
+			break;
+		case 'cargar_bitacora':
+			$idBitacora = $_REQUEST['idBitacora'];
+
+			$html = $centroCosto->cargar_bitacora($idBitacora);
 
 			echo $html;
 			break;

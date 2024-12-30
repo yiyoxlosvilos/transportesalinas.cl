@@ -1806,11 +1806,81 @@ function traer_nuevo_documento(idTrabajador) {
   $('#panel_documentos').load(url_link+"app/vistas/rrhh/php/validador.php", {accion:accion, idTrabajador:idTrabajador});
 }
 
-function nueva_bitacora() {
+function nueva_bitacora(idBitacora) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "traer_bitacora";
 
     $("#panel_bitacora").html('');
     $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
+    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idBitacora:idBitacora});
+}
+
+function grabar_bitacora(idBitacora) {
+    var accion = "grabar_bitacora";
+
+    var inputTitulo       = document.getElementById('inputTitulo').value;
+    var inputDescripcion  = document.getElementById('inputDescripcion').value;
+    var inputFecha        = document.getElementById('inputFecha').value;
+
+    if (inputTitulo.length == 0) {
+        $("#inputTitulo").focus();
+        Swal.fire("Alerta", "** Ingresar Título **", "warning");
+    } else if(inputDescripcion.length == 0) {
+        $("#inputDescripcion").focus();
+        Swal.fire("Alerta", "** Ingresar Descripción **", "warning");
+    } else if(inputFecha.length == 0) {
+        $("#inputFecha").focus();
+        Swal.fire("Alerta", "** Ingresar Fecha **", "warning");
+    } else {
+
+        Swal.fire({
+          title:              '¿ Desea agregar bitacora ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idBitacora', idBitacora);
+                formData.append('inputTitulo', inputTitulo);
+                formData.append('inputDescripcion', inputDescripcion);
+                formData.append('inputFecha', inputFecha);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  cargar_bitacora();
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
+    }
+}
+
+function cargar_bitacora(idBitacora) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "cargar_bitacora";
+
+    $("#panel_bitacora").html('');
+    $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idBitacora:idBitacora});
 }

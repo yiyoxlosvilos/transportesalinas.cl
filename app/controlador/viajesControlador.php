@@ -3977,6 +3977,48 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			return $html;
 		}
+
+		public function cargar_bitacora($idBitacora){
+			$recursos = new Recursos();
+
+	    	$sql      = $this->selectQuery("SELECT * FROM bitacora_servicios
+					    				    WHERE  		  bit_id = $idBitacora");
+
+			$html     = '';
+
+			foreach ($sql as $dato) {
+				$html .= '
+					<div class="col-lg-4">
+                        <div class="card border border-primary">
+                            <div class="card-header bg-transparent border-primary">
+                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$dato['bit_titulo'].'</h5>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+					<div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header bg-transparent border-bottom">
+                                '.$dato['bit_titulo'].'
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="card-blockquote mb-0">
+                                    <p>'.$dato['bit_glosa'].'.</p>
+                                    <footer class="blockquote-footer mt-0 font-size-12">
+                                        Fecha: <cite title="Source Title">'.$dato['bit_creacion'].'</cite>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>';
+			}
+
+			return $html;
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

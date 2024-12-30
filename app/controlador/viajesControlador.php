@@ -3997,7 +3997,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$sql[$i]['bit_titulo'].'</h5>
 	                            </div>
 	                            <div class="card-body">
-	                                <h5 class="card-title">'.$sql[$i]['bit_titulo'].'</h5>
 	                                <p class="card-text">'.$sql[$i]['bit_glosa'].'.</p>
 	                                <footer class="blockquote-footer mt-0 font-size-12">
 	                                    Fecha: <cite title="Source Title">'.$sql[$i]['bit_creacion'].'</cite>

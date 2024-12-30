@@ -993,7 +993,7 @@
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputDescripcion"><b>* Descripción:</b></label>
-				    <textarea class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
+				    <textarea rows="8" class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputFecha"><b>* Fecha:</b></label>

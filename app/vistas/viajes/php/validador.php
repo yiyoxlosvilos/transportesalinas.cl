@@ -984,7 +984,7 @@
 			break;
 		case 'traer_bitacora':
 			$html = '
-				<div class="row">
+				<div class="row col-8">
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTitulo"><b>* Titulo:</b></label>
 				    <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">
@@ -1000,7 +1000,7 @@
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputPrecio"><b>* Fecha:</b></label>
-				    <input type="date" name="inputDFecha" name="inputDFecha">
+				    <input type="date" name="inputDFecha" name="inputDFecha" class="form-control shadow">
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTipo">&nbsp;</label>

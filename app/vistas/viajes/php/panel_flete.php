@@ -49,6 +49,20 @@
                             <h6>Detalles</h6>
                           </div></a>
                       </li>
+
+                      <li class="nav-item" role="presentation"> 
+                        <a class="nav-link" id="overview-bitacora-tab" data-bs-toggle="pill" href="#overview-bitacora" role="tab" aria-controls="overview-bitacora" aria-selected="false" tabindex="-1">
+                          <div class="absolute-border"></div>
+                          <div class="nav-rounded">
+                            <div class="product-icons">
+                              <i class="fas fa-shipping-fast h6"></i>
+                            </div>
+                          </div>
+                          <div class="product-tab-content">
+                            <h6>Bitacora</h6>
+                          </div></a>
+                      </li>
+
                       <li class="nav-item" role="presentation"> <a class="nav-link" id="target-project-tab" data-bs-toggle="pill" href="#target-project" role="tab" aria-controls="target-project" aria-selected="false" tabindex="-1">
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
@@ -103,6 +117,14 @@
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalles de Viaje</h3>
                 </div> 
                 <div class="col-12" style="background-color: #ffffe4"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div> 
+              </div>
+            </div>
+            <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Bitacora de Viaje</h3>
+                </div> 
+                <div class="col-12"></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">

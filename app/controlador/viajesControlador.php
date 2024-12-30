@@ -1069,7 +1069,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							</div>
 							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Estado de Pago:</h6>
-								'.$recursos->select_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
+								'.$recursos->nombre_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
 							</div>
 							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Fecha de Viaje:</h6>

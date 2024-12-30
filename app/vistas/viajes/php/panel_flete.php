@@ -55,7 +55,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-shipping-fast h6"></i>
+                              <i class="fas fa-book h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">

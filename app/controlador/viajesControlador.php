@@ -3983,7 +3983,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			try {
 				$sql      = $this->selectQuery("SELECT * FROM bitacora_servicios
-						    				    WHERE  		  bit_id 			= $idServicio
+						    				    WHERE  		  bit_servicio		= $idServicio
 						    				    AND 		  bit_tipo_servicio = $bit_tipo_servicio
 						    				    ORDER BY      bit_creacion DESC");
 

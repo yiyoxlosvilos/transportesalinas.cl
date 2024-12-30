@@ -990,19 +990,17 @@
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTitulo"><b>* Titulo:</b></label>
 				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <label for="inputTipo">&nbsp;</label>
+				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputDescripcion"><b>* Descripción:</b></label>
 				    <textarea rows="8" class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
-				  </div>
-				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputFecha"><b>* Fecha:</b></label>
 				    <input type="date" name="inputFecha" name="inputFecha" class="form-control shadow">
 				  </div>
-				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
-				    <label for="inputTipo">&nbsp;</label>
-				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
-				  </div>
+	
 				</div>';
 
 			echo $html;

@@ -992,7 +992,7 @@
 				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">
 				    <br>
 				    <label for="inputFecha"><b>* Fecha:</b></label>
-				    <input type="date" name="inputFecha" name="inputFecha" class="form-control shadow">
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
 				    <br>
 				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
 				  </div>

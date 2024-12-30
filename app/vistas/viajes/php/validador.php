@@ -986,7 +986,7 @@
 			$idBitacora = $_REQUEST['idBitacora'];
 
 			$html = '
-				<div class="row col-10 justify-content-center mx-5 mt-3">
+				<div class="row col-10 justify-content-center mx-5 my-5">
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputTitulo"><b>* Titulo:</b></label>
 				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">

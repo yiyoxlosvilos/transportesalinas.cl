@@ -1,14 +1,4 @@
-:root {
-    --header-height: 		3rem;
-    --nav-width: 			68px;
-    --first-color: 			#008ce3;
-    --first-color-light: 	#072801;
-    --white-color: 			#FFFFFF;
-    --head-color: 			#F3F3F3;
-    --body-font: 			"Open Sans", sans-serif;
-    --normal-font-size: 	1rem;
-    --z-fixed: 				100
-}
+
 .cambiazo:hover{
     background-color:       #FFFBC7;
 }

@@ -364,7 +364,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col-6"><b>&nbsp;Cliente:</b> </div>
 													<div class="col-6 text-primary"><b>'.$recursos->nombre_clientes($sql[$i]['fle_cliente']).'</b></div>
 													<div class="col-6"><b>&nbsp;Estado&nbsp;Viaje:</b> </div>
-													<div class="col-6 text-primary"><b>'.$sql[$i]['fle_estado'].'</b></div>
+													<div class="col-6 text-primary"><b>'.$recursos->nombre_tipos_estados_pagos($sql[$i]['fle_estado']).'</b></div>
 												</div>
 												<div class="row border-bottom">
 													<div class="col"><b>&nbsp;</b></div>

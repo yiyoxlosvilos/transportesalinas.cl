@@ -2150,6 +2150,13 @@
 			return $html;
 		}
 
+		public function nombre_tipos_estados_pagos($idEstadoPago){
+			$sql    = $this->selectQuery("SELECT * FROM tipos_estados_pagos
+				   						  WHERE  		tipo_id    = $idEstadoPago");
+
+			return ucfirst($sql[0]['cli_nombre']);
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

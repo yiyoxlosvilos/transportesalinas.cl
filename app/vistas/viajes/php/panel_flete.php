@@ -33,9 +33,7 @@
 <input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
 <input type="hidden" name="idServicio" id="idServicio" value="ALL">
 
-<div class="row" id="procesar_venta">
-
-  <div class="row scope-bottom-wrapper">
+  <div class="row scope-bottom-wrapper" id="procesar_venta">
               <div class="col-xxl-2 recent-xl-23 col-xl-3 box-col-3">
                 <div class="card"> 
                   <div class="card-body">
@@ -199,7 +197,6 @@
                 </div>
               </div>
       </div>
-</div>
 <script>
   $(document).ready(function() { 
     var multipleCancelButton = new Choices("#inputOrigen", {

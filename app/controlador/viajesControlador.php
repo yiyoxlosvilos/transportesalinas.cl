@@ -3981,32 +3981,38 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function cargar_bitacora($idServicio, $bit_tipo_servicio){
 			$recursos = new Recursos();
 
-	    	$sql      = $this->selectQuery("SELECT * FROM bitacora_servicios
-					    				    WHERE  		  bit_id 			= $idServicio
-					    				    AND 		  bit_tipo_servicio = $bit_tipo_servicio
-					    				    ORDER BY      bit_fecha DESC");
+			try {
+				$sql      = $this->selectQuery("SELECT * FROM bitacora_servicios
+						    				    WHERE  		  bit_id 			= $idServicio
+						    				    AND 		  bit_tipo_servicio = $bit_tipo_servicio
+						    				    ORDER BY      bit_fecha DESC");
 
-			$html     = '';
+				$html     = '';
 
-			foreach ($sql as $dato) {
-				$html .= '
-					<div class="col-lg-4">
-                        <div class="card border border-primary">
-                            <div class="card-header bg-transparent border-primary">
-                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$dato['bit_titulo'].'</h5>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">'.$dato['bit_titulo'].'</h5>
-                                <p class="card-text">'.$dato['bit_glosa'].'.</p>
-                                <footer class="blockquote-footer mt-0 font-size-12">
-                                    Fecha: <cite title="Source Title">'.$dato['bit_creacion'].'</cite>
-                                </footer>
-                            </div>
-                        </div>
-                    </div>';
+				foreach ($sql as $dato) {
+					$html .= '
+						<div class="col-lg-4">
+	                        <div class="card border border-primary">
+	                            <div class="card-header bg-transparent border-primary">
+	                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$dato['bit_titulo'].'</h5>
+	                            </div>
+	                            <div class="card-body">
+	                                <h5 class="card-title">'.$dato['bit_titulo'].'</h5>
+	                                <p class="card-text">'.$dato['bit_glosa'].'.</p>
+	                                <footer class="blockquote-footer mt-0 font-size-12">
+	                                    Fecha: <cite title="Source Title">'.$dato['bit_creacion'].'</cite>
+	                                </footer>
+	                            </div>
+	                        </div>
+	                    </div>';
+				}
+
+				return $html;
+			} catch (Exception $e) {
+				return $e;
 			}
 
-			return $html;
+	    	
 		}
 
 		public function grabar_bitacora($idFlete, $inputTitulo, $inputDescripcion, $inputFecha, $tipo_servicio){

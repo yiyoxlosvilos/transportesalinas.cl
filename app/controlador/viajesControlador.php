@@ -202,7 +202,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										   WHERE  		 fle_venta  > 0
 										   AND    		 fle_estado = 1");
 
-			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow border" id="maquinarias">
+			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow-sm border" id="maquinarias">
 							<thead>
 							<tr class="table-dark">
 								<th align="left">Tracto</th>

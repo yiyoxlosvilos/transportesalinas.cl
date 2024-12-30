@@ -3989,18 +3989,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$html     = '***';
 
-				foreach ($sql as $dato) {
+				for ($i=0; $i < count($sql); $i++) {
 					$html .= '
 						<div class="col-lg-4">
 	                        <div class="card border border-primary">
 	                            <div class="card-header bg-transparent border-primary">
-	                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$dato['bit_titulo'].'</h5>
+	                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$sql[$i]['bit_titulo'].'</h5>
 	                            </div>
 	                            <div class="card-body">
-	                                <h5 class="card-title">'.$dato['bit_titulo'].'</h5>
-	                                <p class="card-text">'.$dato['bit_glosa'].'.</p>
+	                                <h5 class="card-title">'.$sql[$i]['bit_titulo'].'</h5>
+	                                <p class="card-text">'.$sql[$i]['bit_glosa'].'.</p>
 	                                <footer class="blockquote-footer mt-0 font-size-12">
-	                                    Fecha: <cite title="Source Title">'.$dato['bit_creacion'].'</cite>
+	                                    Fecha: <cite title="Source Title">'.$sql[$i]['bit_creacion'].'</cite>
 	                                </footer>
 	                            </div>
 	                        </div>

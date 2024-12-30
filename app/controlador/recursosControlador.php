@@ -2154,7 +2154,7 @@
 			$sql    = $this->selectQuery("SELECT * FROM tipos_estados_pagos
 				   						  WHERE  		tipo_id    = $idEstadoPago");
 
-			return ucfirst($sql[0]['cli_nombre']);
+			return ucfirst($sql[0]['tipo_nombre']);
 		}
 
 

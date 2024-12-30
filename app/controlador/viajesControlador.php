@@ -4013,7 +4013,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$hoy = Utilidades::fecha_hoy();
 
 			try {
-				$this->insert_query("INSERT INTO `bitacora_servicios` (`bit_servicio`, `bit_tipo_servicio`, `bit_titulo`, `bit_glosa`, `bit_creacion`, `bit_estado`) VALUES ($idFlete, $tipo_servicio, $inputTitulo, $inputDescripcion, $hoy, 1)");
+				$this->insert_query("INSERT INTO bitacora_servicios (bit_servicio, bit_tipo_servicio, bit_titulo, bit_glosa, bit_creacion, bit_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputTitulo', '$inputDescripcion', '$hoy', '1')");
 
 				return json_encode("realizado");
 			} catch (Exception $e) {

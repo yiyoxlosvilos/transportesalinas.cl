@@ -1060,25 +1060,25 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
-		                        <h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_estadia']).'</h4>
+		                        <strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_estadia']).'</strong>
 		                    </div>
 		                </div>
 		            </div>
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
-								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</h4>
+								<strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</strong>
 						  		</span>
 							</div>
 							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Descuentos:</h6>
 								<span class="text-dark">
-								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
+								<strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</strong>
 						  		</span>
 							</div>
 							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Total Viaje:</h6>
-								<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
+								<strong class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</strong>
 							</div>
 							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Estado de Pago:</h6>

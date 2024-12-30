@@ -239,7 +239,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						$nombre_rampla .= '<li>'.$ramplas[0]['prod_cli_patente'].'</li>';
 					}
 					$nombre_rampla .= '</ul>';
-				}else{
+				}elseif($sql[$i]['fle_rampla'] != ''){
 					$ramplas     	= $recursos->datos_productos($sql[$i]['fle_rampla']);
 					$nombre_rampla .= $ramplas[0]['prod_cli_patente'];
 				}
@@ -288,6 +288,16 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					
 				}
 
+				$ramplas = '';
+
+				if($sql[$i]['fle_rampla'] != ''){
+					$ramplas .= '
+								<div class="row">
+									<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
+									<div class="col-6 text-primary"><b>'.$nombre_rampla.'</b></div>
+								</div>';	
+				}
+
 				$html  .= '<tr>
 								<td>
 									<small>
@@ -298,9 +308,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col-6 text-primary"><b>'.$nombre_tracto.'</b></div>
 												</div>
 												<div class="row">
-													<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
-													<div class="col-6 text-primary"><b>'.$nombre_rampla.'</b></div>
+													<div class="col"><b>&nbsp;</b></div>
 												</div>
+												<div class="row border-bottom">
+													<div class="col"><b>&nbsp;</b></div>
+												</div>
+												'.$ramplas.'
 											</div>
 										</div>
 

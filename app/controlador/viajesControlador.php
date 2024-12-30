@@ -976,6 +976,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_destino']).'</div>
 									</div>';
 				}
+
+				$datos_clientes = $recursos->datos_clientes($datos_flete[$i]['fle_cliente']);
 		        
 
 		        $html .= '
@@ -1094,6 +1096,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Cliente:</h6>
 								'.$recursos->nombre_clientes($datos_flete[$i]['fle_cliente']).'
+							</div>
+							<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Rut:</h6>
+								'.Utilidades::rut($datos_clientes[0]['cli_rut']).'
 							</div>
 		            <div class="col-xxl-15 col-xl-15 col-sm-12 pt-3 ">
 		                <h6>Descripción del Trabajo:</h6>

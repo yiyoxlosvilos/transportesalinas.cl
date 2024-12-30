@@ -217,7 +217,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$producto   = $recursos->datos_productos($sql[$i]['fle_producto']);
 				$rampla     = $recursos->datos_productos($sql[$i]['fle_rampla']);
 				$trabajador = $recursos->datos_trabajador($sql[$i]['fle_chofer']);
-
+				$nombre_tracto ='';
 				$explorar_tracto = explode(",", $sql[$i]['fle_producto']);
 				if(count($explorar_tracto) > 1){
 					$nombre_tracto = '<ul>';

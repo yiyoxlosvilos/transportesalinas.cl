@@ -1865,7 +1865,7 @@ function grabar_bitacora(idFlete) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  cargar_bitacora();
+                  cargar_bitacora(idFlete);
                 })  
               },
               error:       function(sec) {

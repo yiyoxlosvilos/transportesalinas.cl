@@ -20,7 +20,7 @@
                                 </a>
                             </div>
                             <div class="auth-content my-auto">
-                                <form  class="needs-validation color-gris padding_3 sombra_plana borde bounce-in-left" novalidate>
+                                <form  class="needs-validation color-gris padding_3 shadow-sm border bounce-in-left" novalidate>
                                     <div class="mb-3">
                                         <label class="form-label" for="usuario">Usuario</label>
                                         <input type="text" class="form-control" id="usuario" placeholder="Ingresar Usuario" name="usuario" required>

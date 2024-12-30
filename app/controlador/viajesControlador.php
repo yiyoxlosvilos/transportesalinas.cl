@@ -978,7 +978,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 		        
 
-		        $html .= '<div class="row shadow-sm">
+		        $html .= '<div class="row border">
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">

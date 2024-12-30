@@ -1008,7 +1008,7 @@
 				  </div>
 				</div>';
 
-			return $html;
+			echo $html;
 			break;
 		default:
 			break;

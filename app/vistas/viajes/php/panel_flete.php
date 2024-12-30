@@ -99,11 +99,11 @@
           <div class="tab-content" id="add-product-pills-tabContent">
             <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
               <div class="row">
-                <div class="col-8">
+                <div class="col-12">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalles de Viaje</h3>
                 </div> 
-                <div class="col-xxl-6 col-xl- col-sm-6"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div> 
-                <div class="col-xxl-6 col-xl- col-sm-6">8</div> 
+                <div class="col-xxl-6 col-xl-6 col-sm-12"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div> 
+                <div class="col-xxl-6 col-xl-6 col-sm-12">8</div> 
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">

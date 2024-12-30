@@ -293,7 +293,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				if($sql[$i]['fle_rampla'] != ''){
 					$ramplas .= '
 								<div class="row">
-									<div class="col-6"><b>Rampla&nbsp;Patente:</b></div>
+									<div class="col-6"><b>Rampla:</b></div>
 									<div class="col-6 text-primary"><b>'.$nombre_rampla.'</b></div>
 								</div>';	
 				}
@@ -304,7 +304,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="row">
 											<div class="col-10">
 												 <div class="row">
-													<div class="col-6"><b>Tracto&nbsp;Patente:</b></div>
+													<div class="col-6"><b>Tracto:</b></div>
 													<div class="col-6 text-primary"><b>'.$nombre_tracto.'</b></div>
 												</div>
 												<div class="row">

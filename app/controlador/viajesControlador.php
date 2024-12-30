@@ -4012,9 +4012,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function grabar_bitacora($idFlete, $inputTitulo, $inputDescripcion, $inputFecha, $tipo_servicio){
 			$hoy = Utilidades::fecha_hoy();
 
-			$this->insert_query("INSERT INTO `bitacora_servicios` (`bit_servicio`, `bit_tipo_servicio`, `bit_titulo`, `bit_glosa`, `bit_creacion`, `bit_estado`) VALUES ($idFlete, $tipo_servicio, $inputTitulo, $inputDescripcion, $hoy, 1)");
+			try {
+				$this->insert_query("INSERT INTO `bitacora_servicios` (`bit_servicio`, `bit_tipo_servicio`, `bit_titulo`, `bit_glosa`, `bit_creacion`, `bit_estado`) VALUES ($idFlete, $tipo_servicio, $inputTitulo, $inputDescripcion, $hoy, 1)");
 
-			return json_encode("realizado");
+				return json_encode("realizado");
+			} catch (Exception $e) {
+				return $e;
+			}
+
+			
 		}
 	    
 	   /**  FIN CENTRO COSTO  **/

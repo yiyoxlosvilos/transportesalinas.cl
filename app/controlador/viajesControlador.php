@@ -3987,7 +3987,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						    				    AND 		  bit_tipo_servicio = $bit_tipo_servicio
 						    				    ORDER BY      bit_creacion DESC");
 
-				$html     = '';
+				$html     = '***';
 
 				foreach ($sql as $dato) {
 					$html .= '

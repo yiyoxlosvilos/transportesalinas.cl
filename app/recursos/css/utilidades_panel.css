@@ -24,6 +24,14 @@
     box-sizing: border-box
 }
 
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family:            "Open Sans", sans-serif;
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
 
 a {
     text-decoration: none

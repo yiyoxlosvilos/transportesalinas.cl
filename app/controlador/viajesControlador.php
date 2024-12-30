@@ -980,7 +980,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		        $html .= '
 
-		        <div class="row border">
+		        <div class="row">
 		        	<div class="col-xxl-12 col-xl-12 col-sm-12 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '

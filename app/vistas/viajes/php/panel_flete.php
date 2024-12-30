@@ -94,46 +94,46 @@
                 </div>
     </div>
     <div class="col-xxl-10 recent-xl-77 col-xl-9 box-col-9">
-                <div class="row">
-                  <div class="col">
-                    <div class="tab-content" id="add-product-pills-tabContent">
-                      <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
-                        <div class="row">
-                          <div class="col-8">
-                            <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalles de Viaje</h3>
-                          </div> 
-                          <div class="col-lg-15"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div>   
-                        </div>
+      <div class="row">
+        <div class="col">
+          <div class="tab-content" id="add-product-pills-tabContent">
+            <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalles de Viaje</h3>
+                </div> 
+                <div class="col-lg-15"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div>   
+              </div>
+            </div>
+            <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Viaje</h3>
+                </div>
+                <div class="col-lg-15"><?= $centroCostos->formulario_editar_flete($idFlete); ?></div>   
+              </div>
+            </div>
+            <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
+              <div class="row">
+                <div class="col-8">
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Anexos Viaje</h3>
+                </div>
+                <div class="col-lg-15">
+                  <div class="row mb-2">
+                      <div class="col-md-6 mb-2">
+                        <h3>Documentos.</h3>           
                       </div>
-                      <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
-                        <div class="row">
-                          <div class="col-8">
-                            <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Viaje</h3>
-                          </div>
-                          <div class="col-lg-15"><?= $centroCostos->formulario_editar_flete($idFlete); ?></div>   
-                        </div>
+                      <div class="col-md-6 mb-2">
+                        <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
                       </div>
-                      <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
-                        <div class="row">
-                          <div class="col-8">
-                            <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Anexos Viaje</h3>
-                          </div>
-                          <div class="col-lg-15">
-                            <div class="row mb-2">
-                              <div class="col-md-6 mb-2">
-                                <h3>Documentos.</h3>           
-                              </div>
-                              <div class="col-md-6 mb-2">
-                                <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
-                              </div>
-                              <div class="col-md-15 mb-2" id="panel_documentos">
-                                <?= $centroCostos->traer_documentos_asociados($idFlete); ?>
-                              </div>
-                          </div>
-                          </div>   
-                        </div>
+                      <div class="col-md-15 mb-2" id="panel_documentos">
+                        <?= $centroCostos->traer_documentos_asociados($idFlete); ?>
                       </div>
-                      <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
+                  </div>
+                </div>   
+              </div>
+            </div>
+            <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Ingresar Pagos</h3>
@@ -177,8 +177,8 @@
                                         </div>
                           </div>  
                         </div>
-                      </div>
-                      <div class="tab-pane fade active" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
+            </div>
+            <div class="tab-pane fade active" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
                         <div class="row">
                           <div class="col-8">
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Descargar e Imprimir</h3>
@@ -189,11 +189,10 @@
                             </div>
                           </div>    
                         </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 <script>

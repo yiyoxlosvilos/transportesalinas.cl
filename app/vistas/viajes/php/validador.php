@@ -1020,7 +1020,7 @@
 		case 'cargar_bitacora':
 			$idFlete = $_REQUEST['idFlete'];
 
-			$html = $centroCostos->cargar_bitacora($idFlete, 1);
+			$html = $centroCosto->cargar_bitacora($idFlete, 1);
 
 			echo $html;
 			break;

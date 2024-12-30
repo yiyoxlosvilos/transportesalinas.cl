@@ -370,12 +370,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 													<div class="col"><b>&nbsp;</b></div>
 												</div>
 												<div class="row">
-													<div class="col-6"><b>&nbsp;Monto&nbsp;Viaje:</b></div>
-													<div class="col-6 text-dark"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_arribo']).'</b></div>
+													<div class="col-6"><b>&nbsp;Total&nbsp;Viaje:</b></div>
+													<div class="col-6 text-dark"><b>'.Utilidades::monto3($sql[$i]['fle_valor']-$sql[$i]['fle_descuento']+$sql[$i]['fle_estadia']).'</b></div>
 												</div>
 												<div class="row">
 													<div class="col-6"><b>&nbsp;Monto&nbsp;Estadia:</b></div>
-													<div class="col-6 text-danger"><b>'.Utilidades::arreglo_fecha2($sql[$i]['fle_descarga']).'</b></div>
+													<div class="col-6 text-danger"><b>'.Utilidades::monto3($sql[$i]['fle_estadia']).'</b></div>
 												</div>
 												<div class="row mt-2">
 													<div class="col">

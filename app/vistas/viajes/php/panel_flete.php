@@ -59,7 +59,7 @@
                             </div>
                           </div>
                           <div class="product-tab-content">
-                            <h6>Bitacora</h6>
+                            <h6>Bitácora</h6>
                           </div></a>
                       </li>
 
@@ -122,7 +122,7 @@
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Bitacora de Viaje</h3>
+                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Bitácora de Viaje</h3>
                 </div>
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="nueva_bitacora()"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>

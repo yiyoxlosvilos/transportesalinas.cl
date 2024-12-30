@@ -125,7 +125,7 @@
                   <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Bitacora de Viaje</h3>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Agregar</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora()"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
                 <div class="col-12" style="background-color: #f7f7f7"></div> 
               </div>

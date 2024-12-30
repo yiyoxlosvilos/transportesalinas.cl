@@ -1005,10 +1005,13 @@
 
 			echo $html;
 			break;
-		case 'cargar_bitacora':
-			$idBitacora = $_REQUEST['idBitacora'];
+		case 'grabar_bitacora':
+			$idFlete 			= $_REQUEST['idFlete'];
+			$inputTitulo 		= $_REQUEST['inputTitulo'];
+			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
+			$inputFecha 		= $_REQUEST['inputFecha'];
 
-			$html = $centroCosto->cargar_bitacora($idBitacora);
+			$html = $centroCosto->grabar_bitacora($idFlete, $inputTitulo, $inputDescripcion, $inputFecha, 1);
 
 			echo $html;
 			break;

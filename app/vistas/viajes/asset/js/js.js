@@ -1806,16 +1806,16 @@ function traer_nuevo_documento(idTrabajador) {
   $('#panel_documentos').load(url_link+"app/vistas/rrhh/php/validador.php", {accion:accion, idTrabajador:idTrabajador});
 }
 
-function nueva_bitacora(idBitacora) {
+function nueva_bitacora(idFlete) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "traer_bitacora";
 
     $("#panel_bitacora").html('');
     $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idBitacora:idBitacora});
+    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
 
-function grabar_bitacora(idBitacora) {
+function grabar_bitacora(idFlete) {
     var accion = "grabar_bitacora";
 
     var inputTitulo       = document.getElementById('inputTitulo').value;
@@ -1843,7 +1843,7 @@ function grabar_bitacora(idBitacora) {
         }).then((result) => {
           if (result.isConfirmed) {
             var formData = new FormData();
-                formData.append('idBitacora', idBitacora);
+                formData.append('idFlete', idFlete);
                 formData.append('inputTitulo', inputTitulo);
                 formData.append('inputDescripcion', inputDescripcion);
                 formData.append('inputFecha', inputFecha);

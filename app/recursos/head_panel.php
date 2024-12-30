@@ -38,6 +38,7 @@
 <script src="<?= controlador::$rutaAPP ?>app/recursos/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
 <!-- Bootstrap Css -->
+<link href="<?= controlador::$rutaAPP ?>app/recursos/css/utilidades_panel.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 <link href="<?= controlador::$rutaAPP ?>app/recursos/css/bootstrap.min.css?v=<?= rand() ?>" id="bootstrap-style" rel="stylesheet" type="text/css" />
 
 <!-- Animate Css -->

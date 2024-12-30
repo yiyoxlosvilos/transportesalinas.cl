@@ -985,7 +985,7 @@
 			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items);
 			break;
 		case 'traer_bitacora':
-			$idBitacora = $_REQUEST['idBitacora'];
+			$idFlete = $_REQUEST['idFlete'];
 
 			$html = '
 				<div class="row col-10 justify-content-center mx-5 my-5">
@@ -996,7 +996,7 @@
 				    <label for="inputFecha"><b>* Fecha:</b></label>
 				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
 				    <br>
-				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idBitacora.')">Grabar <i class="bi bi-save"></i></button>
+				    <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputDescripcion"><b>* Descripción:</b></label>

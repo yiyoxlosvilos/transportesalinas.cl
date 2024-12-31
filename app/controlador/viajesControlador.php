@@ -217,6 +217,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$producto   = $recursos->datos_productos($sql[$i]['fle_producto']);
 				$rampla     = $recursos->datos_productos($sql[$i]['fle_rampla']);
 				$trabajador = $recursos->datos_trabajador($sql[$i]['fle_chofer']);
+
 				$nombre_tracto ='';
 				$explorar_tracto = explode(",", $sql[$i]['fle_producto']);
 				if(count($explorar_tracto) > 1){
@@ -232,6 +233,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 				$explorar_rampla = explode(",", $sql[$i]['fle_rampla']);
+
 				if(count($explorar_rampla) > 1){
 					$nombre_rampla = '<ul>';
 					for ($o=0; $o < count($explorar_rampla); $o++) {
@@ -239,7 +241,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						$nombre_rampla .= '<li>'.strtoupper($ramplas[0]['prod_cli_patente']).'</li>';
 					}
 					$nombre_rampla .= '</ul>';
-				}elseif($sql[$i]['fle_rampla'] != ''){
+				}elseif($sql[$i]['fle_rampla'] != '' && $sql[$i]['fle_rampla'] > 0){
 					$ramplas     	= $recursos->datos_productos($sql[$i]['fle_rampla']);
 					$nombre_rampla .= strtoupper($ramplas[0]['prod_cli_patente']);
 				}

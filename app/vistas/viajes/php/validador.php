@@ -104,7 +104,6 @@
 			break;
 		case 'editar_flete':
 			$idFlete 			= $_REQUEST['idFlete'];
-			$idServicio 		= $_REQUEST['idServicio'];
 			$idProducto 		= $_REQUEST['idProducto'];
 			$inputFlete 		= $_REQUEST['inputFlete'];
 			$inputOrigen 		= $_REQUEST['inputOrigen'];
@@ -124,7 +123,7 @@
 			$inputFechaPago    = $_REQUEST['inputFechaPago'];
 			$clientes    = $_REQUEST['clientes'];
 
-			$grabar         = $centroCosto->editar_flete($idFlete, $idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes);
+			$grabar         = $centroCosto->editar_flete($idFlete, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes);
 
 			if($grabar){
 				echo '<script>

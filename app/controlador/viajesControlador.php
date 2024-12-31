@@ -1298,7 +1298,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 
-		public function editar_flete($idFlete, $idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes){
+		public function editar_flete($idFlete, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes){
 			$hoy = Utilidades::fecha_hoy();
 
 			$sql = $this->update_query("UPDATE fletes
@@ -1306,7 +1306,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										    fle_producto = '$idProducto',
 										    fle_rampla = '$inputRampla',
 										    fle_valor = '$inputFlete',
-										    fle_guia = '$inputGuia',
+										    fle_guia = '$inputGuia_items',
 										    fle_origen = '$inputOrigen',
 										    fle_destino = '$inputDestino',
 										    fle_carga = '$inputCarga',
@@ -1314,15 +1314,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										    fle_chofer = '$inputTrabajador',
 										    fle_estadia = '$inputMontoEstadia',
 										    fle_glosa = '$inputGlosa',
-										    fle_creacion = '$hoy',
-										    fle_estado = '$estado',
+										    fle_modifica = '$hoy',
 										    fle_descarga = '$inputDescarga',
 										    fle_acompanante = '$inputAcompanante_items',
 										    fle_descuento = '$inputDescuento',
 										    fle_estado_pago = '$tipos_estados_pagos',
 										    fle_fecha_pago = '$inputFechaPago',
 										    fle_cliente = '$clientes'
-										WHERE fle_venta = '$idServicio'");
+										WHERE fle_id = '$idFlete'");
 
 			if($sql){
                 return TRUE;

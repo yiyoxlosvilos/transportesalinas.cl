@@ -196,7 +196,6 @@ function editar_flete(idFlete) {
     const url_link         = document.getElementById('url_link').value;
     var accion             = "editar_flete";
 
-    var idServicio         = document.getElementById('correlativo').value;
     var inputFlete         = document.getElementById('inputFlete').value;
     var inputOrigen        = document.getElementById('inputOrigen').value;
     var inputDestino       = document.getElementById('inputDestino').value;
@@ -285,7 +284,6 @@ function editar_flete(idFlete) {
           if (result.isConfirmed) {
             var formData = new FormData();
                 formData.append('idFlete', idFlete);
-                formData.append('idServicio', idServicio);
                 formData.append('idProducto', idProducto_items);
                 formData.append('inputFlete', inputFlete);
                 formData.append('inputOrigen', inputOrigen_items);

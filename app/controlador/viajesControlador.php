@@ -1034,14 +1034,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		            </div>';
 
 
-
 		         $acompanantes .= '';
 			    if($datos_flete[$i]['fle_acompanante'] != ''){
 					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
 
 					for ($aco=0; $aco < count($explorar_aco); $aco++) {
 						$acompanantes .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
+										<div class="col-6">'.$recursos->nombre_trabajador($explorar_aco[$aco]['fle_acompanante']).'</div>
 									</div>';
 					}
 

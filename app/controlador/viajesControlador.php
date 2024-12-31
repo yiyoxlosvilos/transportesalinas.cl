@@ -1298,22 +1298,31 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 
-		public function editar_flete($idFlete, $idProducto, $inputFlete, $inputGuia, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga){
+		public function editar_flete($idFlete, $idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes){
 			$hoy = Utilidades::fecha_hoy();
-			$sql = $this->update_query("UPDATE 	fletes
-										SET    	fle_producto 	= '$idProducto',
-												fle_rampla 		= '$inputRampla', 
-												fle_valor 		= '$inputFlete', 
-												fle_guia 		= '$inputGuia', 
-												fle_origen 		= '$inputOrigen', 
-												fle_destino 	= '$inputDestino', 
-												fle_carga 		= '$inputCarga', 
-												fle_arribo 		= '$inputArribo',
-												fle_descarga    = '$inputDescarga',
-												fle_chofer 		= '$inputTrabajador', 
-												fle_estadia 	= '$inputMontoEstadia', 
-												fle_glosa 		= '$inputGlosa'
-										WHERE   fle_id 			= $idFlete");
+
+			$sql = $this->update_query("UPDATE fletes
+										SET
+										    fle_producto = '$idProducto',
+										    fle_rampla = '$inputRampla',
+										    fle_valor = '$inputFlete',
+										    fle_guia = '$inputGuia',
+										    fle_origen = '$inputOrigen',
+										    fle_destino = '$inputDestino',
+										    fle_carga = '$inputCarga',
+										    fle_arribo = '$inputArribo',
+										    fle_chofer = '$inputTrabajador',
+										    fle_estadia = '$inputMontoEstadia',
+										    fle_glosa = '$inputGlosa',
+										    fle_creacion = '$hoy',
+										    fle_estado = '$estado',
+										    fle_descarga = '$inputDescarga',
+										    fle_acompanante = '$inputAcompanante_items',
+										    fle_descuento = '$inputDescuento',
+										    fle_estado_pago = '$tipos_estados_pagos',
+										    fle_fecha_pago = '$inputFechaPago',
+										    fle_cliente = '$clientes'
+										WHERE fle_venta = '$idServicio'");
 
 			if($sql){
                 return TRUE;

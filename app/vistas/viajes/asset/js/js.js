@@ -196,9 +196,8 @@ function editar_flete(idFlete) {
     const url_link         = document.getElementById('url_link').value;
     var accion             = "editar_flete";
 
-    var idProducto         = document.getElementById('idProducto').value;
+    var idServicio         = document.getElementById('correlativo').value;
     var inputFlete         = document.getElementById('inputFlete').value;
-    var inputGuia          = document.getElementById('inputGuia').value;
     var inputOrigen        = document.getElementById('inputOrigen').value;
     var inputDestino       = document.getElementById('inputDestino').value;
     var inputCarga         = document.getElementById('inputCarga').value;
@@ -208,17 +207,57 @@ function editar_flete(idFlete) {
     var inputRampla        = document.getElementById('inputProducto').value;
     var inputMontoEstadia  = document.getElementById('inputMontoEstadia').value;
     var inputGlosa         = document.getElementById('inputGlosa').value;
+    var inputDescuento         = document.getElementById('inputDescuento').value;
+
+    var tipos_estados_pagos         = document.getElementById('tipos_estados_pagos').value;
+    var inputFechaPago         = document.getElementById('inputFechaPago').value;
+    var clientes         = document.getElementById('clientes').value;
+
+
+    var inputOrigen_items  = new Array();
+    $('#inputOrigen option:selected').each(function(){
+        inputOrigen_items.push($(this).val());
+    });
+
+    var inputDestino_items  = new Array();
+    $('#inputDestino option:selected').each(function(){
+        inputDestino_items.push($(this).val());
+    });
+
+    var inputAcompanante_items  = new Array();
+    $('#inputAcompanante option:selected').each(function(){
+        inputAcompanante_items.push($(this).val());
+    });
+
+    var inputGuia_items = []; // Creamos un array vacío
+
+    // Recorremos todos los inputs de texto con name="inputGuia[]"
+    $('input[name="inputGuia[]"]').each(function () {
+        // Obtenemos el valor del input y lo añadimos al array
+        var valor = $(this).val().trim(); // .trim() elimina espacios en blanco
+        if (valor !== "") { // Verificamos que no esté vacío
+            inputGuia_items.push(valor);
+        }
+    });
+
+    var idProducto_items = []; // Creamos un array vacío
+
+    // Recorremos todos los inputs de texto con name="idProducto[]"
+    $('input[name="idProducto[]"]').each(function () {
+        // Obtenemos el valor del input y lo añadimos al array
+        var valor1 = $(this).val().trim(); // .trim() elimina espacios en blanco
+        if (valor1 !== "") { // Verificamos que no esté vacío
+            idProducto_items.push(valor1);
+        }
+    });
 
     if (inputFlete.length == 0) {
         $("#inputFlete").focus();
         Swal.fire("Alerta", "** Ingresar monto Flete **", "warning");
-    } else if(inputGuia.length == 0) {
-        $("#inputGuia").focus();
-        Swal.fire("Alerta", "** Ingresar N&deg; Guia **", "warning");
-    } else if(inputOrigen == 0) {
+    } else if(inputOrigen.length == 0) {
         $("#inputOrigen").focus();
         Swal.fire("Alerta", "** Seleccionar Origen **", "warning");
-    } else if(inputDestino == 0) {
+    } else if(inputDestino.length == 0) {
         $("#inputDestino").focus();
         Swal.fire("Alerta", "** Seleccionar Destino **", "warning");
     } else if(inputCarga.length == 0) {
@@ -236,7 +275,7 @@ function editar_flete(idFlete) {
     } else {
 
         Swal.fire({
-          title:              'Desea editar Flete ?',
+          title:              '¿ Desea Crear Viaje ?',
           showDenyButton:     false,
           showCancelButton:   true,
           confirmButtonText:  'SI',
@@ -246,18 +285,24 @@ function editar_flete(idFlete) {
           if (result.isConfirmed) {
             var formData = new FormData();
                 formData.append('idFlete', idFlete);
-                formData.append('idProducto', idProducto);
+                formData.append('idServicio', idServicio);
+                formData.append('idProducto', idProducto_items);
                 formData.append('inputFlete', inputFlete);
-                formData.append('inputGuia', inputGuia);
-                formData.append('inputOrigen', inputOrigen);
-                formData.append('inputDestino', inputDestino);
+                formData.append('inputOrigen', inputOrigen_items);
+                formData.append('inputDestino', inputDestino_items);
+                formData.append('inputDescarga', inputDescarga);
                 formData.append('inputCarga', inputCarga);
                 formData.append('inputArribo', inputArribo);
-                formData.append('inputDescarga', inputDescarga);
                 formData.append('inputTrabajador', inputTrabajador);
+                formData.append('inputAcompanante_items', inputAcompanante_items);
                 formData.append('inputRampla', inputRampla);
                 formData.append('inputMontoEstadia', inputMontoEstadia);
                 formData.append('inputGlosa', inputGlosa);
+                formData.append('inputGuia_items', inputGuia_items);
+                formData.append('inputDescuento', inputDescuento);
+                formData.append('tipos_estados_pagos', tipos_estados_pagos);
+                formData.append('inputFechaPago', inputFechaPago);
+                formData.append('clientes', clientes);
                 formData.append('accion', accion);
               
             $.ajax({
@@ -275,7 +320,7 @@ function editar_flete(idFlete) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  parent.location.reload();
+                  cargar_editar_flete(idFlete);
                 })  
               },
               error:       function(sec) {
@@ -1880,6 +1925,15 @@ function grabar_bitacora(idFlete) {
 function cargar_bitacora(idFlete) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "cargar_bitacora";
+
+    $("#panel_bitacora").html('');
+    $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}
+
+function cargar_editar_flete(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "cargar_editar_flete";
 
     $("#panel_bitacora").html('');
     $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");

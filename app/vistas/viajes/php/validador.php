@@ -104,9 +104,9 @@
 			break;
 		case 'editar_flete':
 			$idFlete 			= $_REQUEST['idFlete'];
+			$idServicio 		= $_REQUEST['idServicio'];
 			$idProducto 		= $_REQUEST['idProducto'];
 			$inputFlete 		= $_REQUEST['inputFlete'];
-			$inputGuia 			= $_REQUEST['inputGuia'];
 			$inputOrigen 		= $_REQUEST['inputOrigen'];
 			$inputDestino 		= $_REQUEST['inputDestino'];
 			$inputCarga 		= $_REQUEST['inputCarga'];
@@ -116,8 +116,15 @@
 			$inputRampla 		= $_REQUEST['inputRampla'];
 			$inputMontoEstadia 	= $_REQUEST['inputMontoEstadia'];
 			$inputGlosa 		= $_REQUEST['inputGlosa'];
+			$inputGuia_items    = $_REQUEST['inputGuia_items'];
+			$inputAcompanante_items    = $_REQUEST['inputAcompanante_items'];
+			$inputDescuento    = $_REQUEST['inputDescuento'];
 
-			$grabar         = $centroCosto->editar_flete($idFlete, $idProducto, $inputFlete, $inputGuia, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga);
+			$tipos_estados_pagos    = $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago    = $_REQUEST['inputFechaPago'];
+			$clientes    = $_REQUEST['clientes'];
+
+			$grabar         = $centroCosto->editar_flete($idFlete, $idServicio, $idProducto, $inputFlete, $inputGuia_items, $inputOrigen, $inputDestino, $inputCarga, $inputArribo, $inputTrabajador, $inputRampla, $inputMontoEstadia, $inputGlosa, $inputDescarga, $inputAcompanante_items, $inputDescuento, $tipos_estados_pagos, $inputFechaPago, $clientes);
 
 			if($grabar){
 				echo '<script>
@@ -1027,6 +1034,13 @@
 			$idFlete = $_REQUEST['idFlete'];
 
 			$html = $centroCosto->cargar_bitacora($idFlete, 1);
+
+			echo $html;
+			break;
+		case 'cargar_editar_flete':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = $centroCosto->formulario_editar_flete($idFlete, 1);
 
 			echo $html;
 			break;

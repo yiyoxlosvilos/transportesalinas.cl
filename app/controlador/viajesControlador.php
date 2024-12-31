@@ -1303,7 +1303,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$sql = $this->update_query("UPDATE fletes
 										SET
-										    fle_producto = '$idProducto',
 										    fle_rampla = '$inputRampla',
 										    fle_valor = '$inputFlete',
 										    fle_guia = '$inputGuia_items',

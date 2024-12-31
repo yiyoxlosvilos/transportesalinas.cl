@@ -1933,7 +1933,7 @@ function cargar_editar_flete(idFlete) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "cargar_editar_flete";
 
-    $("#panel_bitacora").html('');
-    $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+    $("#panel_editar").html('');
+    $('#panel_editar').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_editar').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }

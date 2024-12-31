@@ -799,14 +799,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        $datos_nombre = $recursos->datos_productos($datos_flete[$i]['fle_producto']);
 
 		        $html .= '<div class="row shadow-sm">
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">
 		                    ' . ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']) . '
 		                    <input type="hidden" name="idProducto" value="' . $datos_nombre[0]['prod_cli_id'] . '">
 		                </span>
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                <input type="text" class="form-control shadow" id="inputGuia" placeholder="N&deg; Guía" autocomplete="off" value="' . $datos_flete[$i]['fle_guia'] . '">
 		            </div>
@@ -818,15 +818,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Destino:</h6>
 		                ' . $recursos->seleccionar_localidad2($idFlete, 'inputDestino', 2) . '
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Fecha Carga:</h6>
 		                <input type="date" class="form-control shadow" id="inputCarga" value="' . $datos_flete[$i]['fle_carga'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Fecha Arribo:</h6>
 		                <input type="date" class="form-control shadow" id="inputArribo" value="' . $datos_flete[$i]['fle_arribo'] . '" autocomplete="off">
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Fecha Descarga:</h6>
 		                <input type="date" class="form-control shadow" id="inputDescarga" value="' . $datos_flete[$i]['fle_descarga'] . '" autocomplete="off">
 		            </div>
@@ -848,7 +848,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
@@ -856,34 +856,34 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
-		            <div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Valor Viaje:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputFlete" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_valor'] . '" onkeyup="calcular_valor_viaje()">
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Descuentos:</h6>
 								<span class="text-dark">
 									<input type="text" class="form-control shadow" id="inputDescuento" placeholder="Valor" autocomplete="off" value="' . $datos_flete[$i]['fle_descuento'] . '" onkeyup="calcular_valor_viaje()">
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Total Viaje:</h6>
 								<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Estado de Pago:</h6>
 								'.$recursos->select_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Fecha de Viaje:</h6>
 								<span class="text-dark">
 									<input type="date" class="form-control shadow" id="inputFechaPago" value="'.$datos_flete[$i]['fle_fecha_pago'].'" autocomplete="off" onchange="calcular_fecha_pago()">
 									<span class="text-danger" id="respuesta-pago"></span>
 						  		</span>
 							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-12 pt-3 ">
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 								<h6>Cliente:</h6>
 								'.$recursos->select_clientes($datos_flete[$i]['fle_cliente']).'
 							</div>
@@ -891,12 +891,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Descripción del Trabajo:</h6>
 		                <textarea class="form-control shadow" id="inputGlosa" placeholder="Glosa" rows="5">' . $datos_flete[$i]['fle_glosa'] . '</textarea>
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <button type="button" class="btn btn-success form-control shadow" onclick="editar_flete(' . $datos_flete[$i]['fle_id'] . ')">
 		                    Editar&nbsp;<i class="fas fa-truck-moving text-dark"></i>
 		                </button>
 		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-12 pt-3 ">
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <button type="button" class="btn btn-danger form-control shadow" onclick="quitar_flete(' . $datos_flete[$i]['fle_id'] . ')">
 		                    Quitar&nbsp;<i class="far fa-window-close text-dark"></i>
 		                </button>

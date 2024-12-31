@@ -274,7 +274,7 @@ function editar_flete(idFlete) {
     } else {
 
         Swal.fire({
-          title:              '¿ Desea Crear Viaje ?',
+          title:              '¿ Desea editar Viaje ?',
           showDenyButton:     false,
           showCancelButton:   true,
           confirmButtonText:  'SI',

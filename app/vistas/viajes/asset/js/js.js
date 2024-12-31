@@ -211,6 +211,7 @@ function editar_flete(idFlete) {
     var tipos_estados_pagos         = document.getElementById('tipos_estados_pagos').value;
     var inputFechaPago         = document.getElementById('inputFechaPago').value;
     var clientes         = document.getElementById('clientes').value;
+    var inputGuia         = document.getElementById('inputGuia').value;
 
 
     var inputOrigen_items  = new Array();
@@ -228,16 +229,16 @@ function editar_flete(idFlete) {
         inputAcompanante_items.push($(this).val());
     });
 
-    var inputGuia_items = []; // Creamos un array vacío
+    // var inputGuia_items = []; // Creamos un array vacío
 
-    // Recorremos todos los inputs de texto con name="inputGuia[]"
-    $('input[name="inputGuia[]"]').each(function () {
-        // Obtenemos el valor del input y lo añadimos al array
-        var valor = $(this).val().trim(); // .trim() elimina espacios en blanco
-        if (valor !== "") { // Verificamos que no esté vacío
-            inputGuia_items.push(valor);
-        }
-    });
+    // // Recorremos todos los inputs de texto con name="inputGuia[]"
+    // $('input[name="inputGuia[]"]').each(function () {
+    //     // Obtenemos el valor del input y lo añadimos al array
+    //     var valor = $(this).val().trim(); // .trim() elimina espacios en blanco
+    //     if (valor !== "") { // Verificamos que no esté vacío
+    //         inputGuia_items.push(valor);
+    //     }
+    // });
 
     var idProducto_items = []; // Creamos un array vacío
 
@@ -296,7 +297,7 @@ function editar_flete(idFlete) {
                 formData.append('inputRampla', inputRampla);
                 formData.append('inputMontoEstadia', inputMontoEstadia);
                 formData.append('inputGlosa', inputGlosa);
-                formData.append('inputGuia_items', inputGuia_items);
+                formData.append('inputGuia_items', inputGuia);
                 formData.append('inputDescuento', inputDescuento);
                 formData.append('tipos_estados_pagos', tipos_estados_pagos);
                 formData.append('inputFechaPago', inputFechaPago);

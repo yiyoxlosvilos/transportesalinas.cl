@@ -3642,7 +3642,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$html .= ' </tbody>
 						<tfooter>
 						<tr>
-							<td colspan="4">&nbsp;</td>
+							<td colspan="5">&nbsp;</td>
 							<th align="right">NETO:</th>
 							<th align="left">'.Utilidades::monto($neto).'</th>
 						</tr>

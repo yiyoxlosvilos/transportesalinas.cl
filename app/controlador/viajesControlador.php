@@ -2874,7 +2874,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
 									<td><b>Rut:</b><br><small>'.Utilidades::rut($datos_clientes[0]['cli_rut']).'</small></td>
 									<td><b>Giro:</b><br><small>'.$datos_clientes[0]['cli_giro'].'</small></td>
-									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fecha2($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
+									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
 			$html .= $this->mostrar_formulario_flete2($datos_cotizacion[0]['fle_id']);

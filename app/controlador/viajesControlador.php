@@ -4242,10 +4242,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio){
 			$hoy = Utilidades::fecha_hoy();
+			$hora = Utilidades::hora();
+
+			$usuario = $_SESSION['IDUSER'];
+			$empresa = $_SESSION['IDEMPRESA'];
+			$idSucursal = $_SESSION['IDSUCURSAL'];
 
 			try {
 
-				$this->insert_query("INSERT INTO abonos_servicios (abo_servicio, abo_tipo_servicio, abo_monto, abo_descripcion, abo_fecha, abo_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputAbono', '$inputDescripcion', '$hoy', '1')");
+				$abono = $this->insert_query("INSERT INTO abonos_servicios (abo_servicio, abo_tipo_servicio, abo_monto, abo_descripcion, abo_fecha, abo_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputAbono', '$inputDescripcion', '$hoy', '1')");
+
+				$this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_abono) 
+					   VALUES(4, '$idFlete', '$tipo_servicio', '$inputAbono', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$abono')");
 
 				return json_encode("realizado");
 			} catch (Exception $e) {

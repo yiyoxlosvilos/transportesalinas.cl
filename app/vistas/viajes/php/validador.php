@@ -1043,6 +1043,63 @@
 
 			echo $html;
 			break;
+		case 'traer_nuevo_documento':
+			$html = ' <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 mb-2">
+				        <label for="inputTitulo"><b>Titulo</b></label>
+				        <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Titulo" autocomplete="off">
+				      </div>
+					  <div dir=rtl class="file-loading col-xxl-6 col-xl-6 col-sm-12 pt-3">
+		    			<input id="input-b8" name="input-b8[]" multiple type="file">
+					  </div>
+
+
+					  <script>
+						$(document).ready(function() {
+							$("#input-b8").fileinput({
+								tl: true,
+								dropZoneEnabled: false,
+								allowedFileExtensions: ["jpg", "png", "pdf"]
+							});
+						});
+					  </script>';
+
+			echo $html;
+			break;
+		case 'subir_documento_servicios':
+			$inputTitulo  = $_REQUEST['inputTitulo'];
+			$idTrabajador = $_REQUEST['idTrabajador'];
+
+			if ($_FILES){
+
+				$name    			= $_FILES['file']['name'];
+			    $extraer 			= explode(".", $name);
+				$nombre  			= date("Ymd")."".date("Hi").".".$extraer[1];
+				$destino 			= "../../../repositorio/documento_servicios/".$nombre;
+				$tipo   			= $_FILES['file']["type"];
+				$ruta_provisional   = $_FILES['file']["tmp_name"];
+				$carpeta            = "../../../repositorio/documento_servicios/";
+
+				if(move_uploaded_file($_FILES['file']['tmp_name'], $destino)){
+					$rrhh->grabar_insertar_documento($nombre, $inputTitulo, $idTrabajador);
+				
+				}else{
+			  		return false;
+			  	}
+			}else{
+				return false;
+			}
+			break;
+		case 'quitar_documento_servicios':
+			$idDocu = $_REQUEST['idDocu'];
+
+			$grabar = $rrhh->quitar_documento_trabajador($idDocu);
+		
+			if ($grabar > 0) {
+				return true;
+			}else{
+				return false;
+			}
+			break;
 		default:
 			break;
 	}

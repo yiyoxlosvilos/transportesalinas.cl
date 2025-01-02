@@ -4001,7 +4001,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				for ($i=0; $i < count($sql); $i++) {
 					$html .= '
 						<div class="col-lg-4">
-	                        <div class="card border border-primary">
+	                        <div class="card border">
 	                            <div class="card-header bg-transparent border-primary">
 	                                <h5 class="my-0 text-primary"><i class="fas fa-comment-alt me-3"></i> '.$sql[$i]['bit_titulo'].'</h5>
 	                            </div>

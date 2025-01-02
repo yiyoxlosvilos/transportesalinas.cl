@@ -1131,6 +1131,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		    for ($i = 0; $i < count($datos_flete); $i++) {
 
+
+		    	$titulo_pago = 'Pagar';
+		    	if($datos_flete[$i]['fle_estado_pago'] == 1){
+		    		$titulo_pago = 'Pagado';
+		    	}
+
 		    	if (!is_array($datos_flete[$i]['fle_producto'])) {
 			        $idTrabajador = explode(',', $datos_flete[$i]['fle_producto']);
 
@@ -1294,7 +1300,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						 	</span>
 					</div>
 					<div class="col-15 pt-3 border mb-3 mt-3">
-						<h4>Total Pagado:</h4>
+						<h4>Total '.$titulo_pago.':</h4>
 						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']+$datos_flete[$i]['fle_estadia']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
 					</div>
 					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">

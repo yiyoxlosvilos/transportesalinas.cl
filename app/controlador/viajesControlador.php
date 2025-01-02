@@ -4157,6 +4157,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 
 		public function panel_abonos($idFlete, $tipo_servicio, $nuevo_total){
+			$recursos = new Recursos();
 			$abonos = $recursos->datos_abonos_id($idFlete, $tipo_servicio);
 
 			$abonado 	= 0;

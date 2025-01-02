@@ -1209,10 +1209,10 @@
 		                    	<span class="counter-value text-dark" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border-top">Total a Pagar</span>
-		                    <h4 class="mb-3 border">
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate ">Total a Pagar</span>
+		                    <h3 class="mb-3 border">
 		                    	<span class="counter-value text-primary" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
-		                    </h4>
+		                    </h3>
 
 		                  </div>
 		                </div>
@@ -1225,7 +1225,7 @@
 				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
 				    <br>
 				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
-				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar">
+				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
 				    <br>
 				    <div class="row">
 				    	<div class="col">

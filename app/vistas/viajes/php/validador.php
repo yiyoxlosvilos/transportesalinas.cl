@@ -1194,19 +1194,24 @@
 		              <div class="card-body">
 		                <div class="row align-items-center">
 		                  <div class="col">
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total: </span>
 		                    <h4 class="mb-3">
 		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos: </span>
 		                    <h4 class="mb-3">
 		                    	<span class="counter-value text-dark" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Estadia</span>
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Estadia: </span>
 		                    <h4 class="mb-3">
 		                    	<span class="counter-value text-dark" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Abonos: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$abonado.'">'.Utilidades::monto($abonado).'</span>
 		                    </h4>
 
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate ">Total a Pagar</span>

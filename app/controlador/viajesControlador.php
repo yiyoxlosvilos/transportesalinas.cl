@@ -4166,6 +4166,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<tr>
 									<th>Monto</th>
 									<th>Fecha</th>
+									<th>Descripción</th>
 									<th>&nbsp;</th>
 								</tr>
 							</thead>
@@ -4179,6 +4180,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<tr class="cambiazo">
 							<td>'.Utilidades::monto3($abonos[$i]['abo_monto']).'</td>
 							<td>'.Utilidades::arreglo_fecha2($abonos[$i]['abo_fecha']).'</td>
+							<td>'.ucfirst($abonos[$i]['abo_descripcion']).'</td>
 							<td align="center">
 								<button class="btn btn-danger" type="button" onclick="quitar_abono('.$abonos[$i]['abo_id'].', '.$idFlete.')"><i class="bi-trash"></i></button>
 							</td>

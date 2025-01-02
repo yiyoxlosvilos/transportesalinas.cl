@@ -1228,11 +1228,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        }
 
 		        $html .= '
-		        	<div class="col-6 pt-3 ">
+		        	<div class="col-6 pt-3 border">
 		                <h6>Origen:</h6>
 		                ' . $origenes . '
 		            </div>
-		            <div class="col-6 pt-3 ">
+		            <div class="col-6 pt-3 border">
 		                <h6>Destino:</h6>
 		                ' . $destinos . '
 		            </div>
@@ -1249,11 +1249,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                 '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_descarga']).'
 		            </div>';
 
-		        $html .='<div class="col-6 pt-3 ">
+		        $html .='<div class="col-6 pt-3 border">
 		                <h6>Chofer:</h6>
 		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
 		                </div>';
-		        $html .='<div class="col-6 pt-3 ">
+		        $html .='<div class="col-6 pt-3 border mb-3">
 		                <h6 '.$ocultar.'>Acompañante/es:</h6>
 						'.$acompanantes.'
 		            </div>';
@@ -1285,8 +1285,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
 						 	</span>
 					</div>
-					<div class="col-15 pt-3 border">
-						<h4>Total Viaje:</h4>
+					<div class="col-15 pt-3 border mb-3">
+						<h4>Total Pagado:</h4>
 						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
 					</div>
 					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">

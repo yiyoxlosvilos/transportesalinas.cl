@@ -4003,7 +4003,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<div class="col-lg-4">
 	                        <div class="card border">
 	                            <div class="card-header bg-transparent border-light">
-	                                <h5 class="my-0 text-primary">'.$sql[$i]['bit_titulo'].' <i class="fas fa-times text-danger me-3" onclick="quitar_bitacora('.$sql[$i]['bit_id'].')"></i></h5>
+	                            	<div class="row">
+	                            		<div class="col">
+	                            			<h5 class="my-0 text-primary">'.$sql[$i]['bit_titulo'].'</h5>
+	                            		</div>
+	                            		<div class="col-2">
+	                            			<h5 class="my-0 text-primary"><i class="fas fa-times text-danger me-3" onclick="quitar_bitacora('.$sql[$i]['bit_id'].')"></i></h5>
+	                            		</div>
+	                            	</div>
+	                                
 	                            </div>
 	                            <div class="card-body">
 	                                <p class="card-text text-justify">'.$sql[$i]['bit_glosa'].'.</p>

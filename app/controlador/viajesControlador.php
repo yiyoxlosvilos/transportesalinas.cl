@@ -1215,7 +1215,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        <div class="row">';
 		        $html .='<div class="col-4 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
-		                ' . $guias . '
+		                ' . $datos_flete[$i]['fle_guia'] . '
 		            </div>';
 		        $html .='<div class="col-4 pt-3 ">
 		                <h6>Tracto:</h6>

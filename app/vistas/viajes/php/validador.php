@@ -1199,14 +1199,14 @@
 		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos: </span>
-		                    <h4 class="mb-3">
-		                    	<span class="counter-value text-dark" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
-		                    </h4>
-
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Estadia: </span>
 		                    <h4 class="mb-3">
 		                    	<span class="counter-value text-dark" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
 		                    </h4>
 
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Abonos: </span>
@@ -1234,7 +1234,7 @@
 				    <br>
 				    <div class="row">
 				    	<div class="col">
-				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Procesar Pago<i class="bi bi-save"></i></button>
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Procesar Pago <i class="bi bi-save"></i></button>
 				    	</div>
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>

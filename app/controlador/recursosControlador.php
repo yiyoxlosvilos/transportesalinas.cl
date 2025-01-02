@@ -2165,7 +2165,7 @@
 			return $sql;
 		}
 
-		public function select_productos_simple($idCategoria = 0){
+		public function select_productos_simple($idCliente, $idCategoria = 0){
 			$script = '';
 			if ($idCategoria > 0) {
 				$script .= " AND prod_cli_categoria = $idCategoria";

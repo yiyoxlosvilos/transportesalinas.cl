@@ -1335,7 +1335,7 @@ function asignar_traslados() {
     const url_link  = document.getElementById('url_link').value;
     var accion      = "asignar_traslados";
 
-    var idServicio  = document.getElementById('idServicio').value;
+    var idServicio  = '';
 
     $("#traer_traslados").html('');
     $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");

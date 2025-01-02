@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 	date_default_timezone_set("America/Santiago");
 	require_once __dir__."/../../../controlador/controlador.php";
 	require_once __dir__."/../../../controlador/ventasControlador.php";
@@ -1146,13 +1146,17 @@
 			echo $html;
 			break;
 		case 'grabar_abono':
+			$usuario = $_SESSION['IDUSER'];
+			$empresa = $_SESSION['IDEMPRESA'];
+			$idSucursal = $_SESSION['IDSUCURSAL'];
+
 			$idFlete 			= $_REQUEST['idFlete'];
 			$inputAbono 		= $_REQUEST['inputAbono'];
 			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
 			$inputFecha 		= $_REQUEST['inputFecha'];
 			$tipo_dte 		= $_REQUEST['tipo_dte'];
 
-			$html = $centroCosto->grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, 1, $tipo_dte);
+			$html = $centroCosto->grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, 1, $tipo_dte, $usuario, $empresa, $idSucursal);
 
 			echo $html;
 			break;

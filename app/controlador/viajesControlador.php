@@ -4240,14 +4240,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 
-		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio, $tipo_dte){
-			session_start();
+		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio, $tipo_dte, $usuario, $empresa, $idSucursal){
 			$hoy = Utilidades::fecha_hoy();
 			$hora = Utilidades::hora();
-
-			$usuario = $_SESSION['IDUSER'];
-			$empresa = $_SESSION['IDEMPRESA'];
-			$idSucursal = $_SESSION['IDSUCURSAL'];
 
 			$datos_fletes = $recursos->datos_fletes_id($idFlete);
 			$cliente      = $datos_fletes[0]['fle_cliente'];

@@ -2122,7 +2122,7 @@ function traer_procesar_pago(idFlete) {
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
 
-function quitar_bitacora(idBitacora) {
+function quitar_bitacora(idBitacora, idServicio) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "quitar_bitacora";
 
@@ -2136,6 +2136,7 @@ function quitar_bitacora(idBitacora) {
         }).then((result) => {
           if (result.isConfirmed) {
             var formData = new FormData();
+                formData.append('idServicio', idServicio);
                 formData.append('idBitacora', idBitacora);
                 formData.append('accion', accion);
               
@@ -2154,7 +2155,7 @@ function quitar_bitacora(idBitacora) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  cargar_bitacora(idFlete);
+                  cargar_bitacora(idServicio);
                 })  
               },
               error:       function(sec) {

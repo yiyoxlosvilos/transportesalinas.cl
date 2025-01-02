@@ -209,5 +209,5 @@
     });
   });
 
-  traer_traslados_editar(<?= $idTraslado ?>);
+  traer_traslados_editar(<?= $idTraslados ?>);
 </script>

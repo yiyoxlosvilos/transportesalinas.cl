@@ -4288,7 +4288,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 		public function quitar_abono($idAbono){
-			$grabar = $this->delete_query("DELETE FROM abonos_servicios
+			$this->delete_query("DELETE FROM abonos_servicios
 					   					   WHERE       abo_id = $idAbono");
 
 			$this->delete_query("DELETE FROM caja_cliente

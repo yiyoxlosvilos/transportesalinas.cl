@@ -4075,6 +4075,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$nuevo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])-$abonos);
 
+			$viejo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']));
+
 			$html = '<div class="row">
                     <div class="col-xl-3 col-sm-6">
                       <!-- card -->
@@ -4190,6 +4192,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$abono_data .= '</tbody>
 							</table>';
 
+			$total_restante = ($nuevo_total-$abonado);
+
+			if($nuevo_total == 0){
+				$total_restante = 0;
+			}else{
+				$total_restante = ($nuevo_total-$abonado);
+			}
+
 			$html = '<div class="row">
 
 						<div class="col-xxl-6 col-xl-6 col-sm-12">
@@ -4218,7 +4228,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                            <div class="col">
 		                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Restante</span>
 		                              <h3 class="mb-3">
-		                                <span class="counter-value text-dark" data-target="'.($nuevo_total-$abonado).'">'.Utilidades::monto($nuevo_total-$abonado).'</span>
+		                                <span class="counter-value text-dark" data-target="'.($total_restante).'">'.Utilidades::monto($total_restante).'</span>
 		                              </h3>
 		                            </div>
 		                          </div>

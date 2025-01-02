@@ -2019,7 +2019,7 @@ function grabar_abono(idFlete) {
     } else if(inputDescripcion.length == 0) {
         $("#inputDescripcion").focus();
         Swal.fire("Alerta", "** Ingresar Descripción **", "warning");
-    }  else if(nuevo_total < inputAbono) {
+    }  else if(parseInt(nuevo_total) < parseInt(inputAbono)) {
         $("#inputAbono").focus();
         Swal.fire("Alerta", "** Ingresar Abono Menor al monto Total **", "warning");
     } else if(inputFecha.length == 0) {

@@ -24,19 +24,19 @@
     <div class="container mb-4 shadow p-4">
       <div class="row">
         <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
-          <h6>* Origen:</h6>
+          <b>* Origen:</b>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputOrigen', 0) ?>
           </span>
         </div>
         <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
-          <h6>* Destino:</h6>
+          <b>* Destino:</b>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputDestino', 0) ?>
           </span>
         </div>
         <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
-          <h6>Regreso:</h6>
+          <b>Regreso:</b>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputRegreso', 0) ?>
           </span>

@@ -151,8 +151,8 @@
                   <h3 class="text-dark mb-2"><i class="fas fa-paperclip"></i> Anexos Viaje</h3>
                 </div>
                 <div class="col">
-                        <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
-                      </div>
+                  <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
+                </div>
                 <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idFlete, 1); ?></div>    
               </div>
             </div>
@@ -161,7 +161,16 @@
                 <div class="col-8">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Ingreso de Pagos</h3>
                 </div>
-                <div class="col-md-15 mb-2">
+                <!-- botones -->
+                <div class="col">
+                  <button class="btn btn-sm btn-dark" onclick="traer_nuevo_abono(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
+                </div>
+                <div class="col">
+                  <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>
+                </div>
+                <!-- !botones -->
+
+                <div class="col-md-15 mb-2 mt-3">
                   <div class="row">
                     <div class="col-xl-3 col-sm-6">
                       <!-- card -->

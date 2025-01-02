@@ -1183,7 +1183,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 
-		         $acompanantes .= '';
+		        $acompanantes = '';
+		        $cont_acomp   = 0;
 			    if($datos_flete[$i]['fle_acompanante'] != ''){
 					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
 
@@ -1191,12 +1192,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						$acompanantes .= '<div class="row">
 										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
 									</div>';
+
+						$cont_acomp++;
 					}
-
 				}
-
-		        
-		        
 
 		        $html .= '
 		        <div class="row shadow-sm">
@@ -1209,7 +1208,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		        $datos_rampla = $recursos->datos_productos($datos_flete[$i]['fle_rampla']);
 
-		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-6 pt-3 ">
+		        $html .='<div class="col-3 pt-3 ">
 		                <h6>Semirremolque:</h6>
 		                <div class="row">
 		                    <div class="col" id="semirremolque">
@@ -1222,14 +1221,17 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
 		            </div>';
+		        $ocultar = 'hidden';
+		        if($cont_acomp > 0){
+		        	$ocultar = '';
+		        }
+
 		        $html .='<div class="col-3 pt-3 ">
 		                <h6>Chofer:</h6>
 		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
-		            </div>
-		            <div class="col-3 pt-3 ">
-						<h6>Acompañante/es:</h6>
+		                <h6 '.$ocultar.'>Acompañante/es:</h6>
 						'.$acompanantes.'
-					</div>';
+		            </div>';
 		        $html .= '
 		        	<div class="col-6 pt-3 ">
 		                <h6>Origen:</h6>

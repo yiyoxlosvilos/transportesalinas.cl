@@ -1044,7 +1044,7 @@
 			echo $html;
 			break;
 		case 'traer_nuevo_documento':
-			$html = ' <div class="col-xxl-8 col-xl-8 col-sm-12 pt-3 mb-2 mx-2">
+			$html = ' <div class="col-xxl-8 col-xl-8 col-sm-12 pt-3 mb-2 mx-5">
 				        <label for="inputTitulo"><b>Titulo</b></label>
 				        <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Titulo" autocomplete="off">
 				      </div>

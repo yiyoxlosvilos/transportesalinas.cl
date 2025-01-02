@@ -4403,6 +4403,62 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			
 		}
+
+		public function cotizacion_traslados_ver($idCotizacion, $mes, $ano){
+	    	$recursos 		  = new Recursos();
+
+	    	$datos_cotizacion = $recursos->datos_fletes_id($idCotizacion);
+
+  			$datos_clientes   = $recursos->datos_clientes($datos_cotizacion[0]['fle_cliente']);
+
+  			$anexos_datos     = $recursos->datos_cotizacion_anexos($idCotizacion);
+
+	    	$empresa    	  = $recursos->datos_empresa();
+	    	$parametros 	  = $recursos->datos_parametros();
+
+	    	$html 	  	= '<div class="row">
+			    			<table width="100%" align="center">
+								<tr>
+									<td width="33.3%">
+										 <table style="font-size:14px;" cellpadding="1">
+										 	<tr>
+										 		<td><small>'.$empresa[0]['emp_razonsocial'].'</small></td>
+										 	</tr>
+										 	<tr>
+										 		<td><small>'.Utilidades::rut($empresa[0]['emp_rut']).'</small></td>
+										 	</tr>
+										 	<tr>
+										 		<td><small>'.$empresa[0]['emp_direccion'].'</small></td>
+										 	</tr>
+										 </table>
+									</td>
+									<td width="33.3%">&nbsp;</td>
+									<td width="33.3%" align="center">
+									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
+								</tr>
+							  </table>
+							  <h3 class="text-primary my-2" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h3>
+							  <table width="100%" align="center" class="border table" cellpadding="1">
+								<tr>
+									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
+									<td><b>Rut:</b><br><small>'.Utilidades::rut($datos_clientes[0]['cli_rut']).'</small></td>
+									<td><b>Giro:</b><br><small>'.$datos_clientes[0]['cli_giro'].'</small></td>
+									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
+								</tr>
+							  </table>';
+			$html .= $this->mostrar_formulario_flete2($datos_cotizacion[0]['fle_id']);
+
+			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
+						<tr>
+							<td align="center"><b>Terminos y Condiciones:</b></td>
+						</tr>
+						<tr>
+							<td><p class="text-justify">'.str_replace('.', '. ', $datos_cotizacion[0]['fle_glosa']).'</p></td>
+						</tr>
+					</table>';
+
+	    	return $html;
+	    }
 	    
 	   /**  FIN CENTRO COSTO  **/
 

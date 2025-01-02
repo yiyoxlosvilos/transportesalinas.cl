@@ -1339,7 +1339,7 @@ function asignar_traslados() {
 
     $("#traer_traslados").html('');
     $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idServicio:idServicio});
+    $('#traer_traslados').load(url_link+"app/vistas/viajes/php/nuevo_traslado.php", {accion:accion, idServicio:idServicio});
 }
 
 function asignar_arriendo() {

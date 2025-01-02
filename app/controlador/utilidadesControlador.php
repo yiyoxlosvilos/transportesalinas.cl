@@ -248,7 +248,7 @@
 
 		public static function monto_color($monto){
 			if($monto > 0){
-				return "<span class='text-info'>$&nbsp;".number_format($monto,0, ',','.')."</span>";
+				return "<span class='text-primary'>$&nbsp;".number_format($monto,0, ',','.')."</span>";
 			}elseif($monto < 0){
 				return "<span class='text-danger'>$&nbsp;".number_format($monto*-1,0, ',','.')."</span>";
 			}else{

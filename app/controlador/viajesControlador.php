@@ -3971,7 +3971,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$html  .= '
 						<tr class="cambiazo">
 							<td>'.$sql[$i]['doc_titulo'].'</td>
-							<td>'.$sql[$i]['doc_fecha'].'</td>
+							<td>'.Utilidades::arreglo_fecha2($sql[$i]['doc_fecha']).'</td>
 							<td align="center">
 								<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/repositorio/documento_servicios/'.$sql[$i]['doc_ruta'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1200"><i class="bi bi-eye"></i></button>
 							</td>

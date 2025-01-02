@@ -951,9 +951,10 @@
 			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
 			$clientes 			= $_REQUEST['clientes'];
 			$inputAcompanante 	= $_REQUEST['inputAcompanante'];
+			$productos 	= $_REQUEST['productos'];
 
 
-			$centroCosto->grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante);
+			$centroCosto->grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante, $productos);
 			break;
 		case 'grabar_nuevo_arriendo':
 			$idServicio 		= $_REQUEST['idServicio'];
@@ -998,9 +999,10 @@
 			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
 			$clientes 			= $_REQUEST['clientes'];
 			$inputAcompanante 	= $_REQUEST['inputAcompanante'];
+			$productos 	= $_REQUEST['productos'];
 
 
-			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante);
+			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante, $productos);
 			break;
 		case 'traer_bitacora':
 			$idFlete = $_REQUEST['idFlete'];

@@ -54,6 +54,12 @@
           <div class="row" id="cantidad_fechas"></div>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Tracto:</b>
+          <span class="text-dark">
+            <?= $recursos->select_productos_simple() ?>
+            </span>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
           <b>Chofer:</b>
           <span class="text-dark">
             <?= $recursos->seleccionar_trabajadores() ?>

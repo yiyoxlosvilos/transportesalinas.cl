@@ -3664,7 +3664,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			return $html;
 	    }
-	    public function grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante){
+	    public function grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante, $productos){
 			$hoy 		= Utilidades::fecha_hoy();
 
 			$mostrar_regreso = '';
@@ -3674,7 +3674,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$traslados = $inputOrigen.','.$inputDestino.''.$mostrar_regreso;
 
-			$sql 		= $this->insert_query("INSERT INTO traslados(traslados, traslados_cantidad, traslados_fechas, traslados_valor, traslados_descripcion, traslados_estado, traslados_estado_pago, traslados_fecha_pago, traslados_chofer, traslados_acompanantes, traslados_cliente) VALUES('$traslados', '$inputCantidad', '$inputFecha_items', '$inputValor', '$inputDescripcion', 1, '$tipos_estados_pagos', '$inputFechaPago', '$inputTrabajador', '$inputAcompanante', '$clientes')");
+			$sql 		= $this->insert_query("INSERT INTO traslados(traslados, traslados_cantidad, traslados_fechas, traslados_valor, traslados_descripcion, traslados_estado, traslados_estado_pago, traslados_fecha_pago, traslados_chofer, traslados_acompanantes, traslados_cliente, traslados_productos) VALUES('$traslados', '$inputCantidad', '$inputFecha_items', '$inputValor', '$inputDescripcion', 1, '$tipos_estados_pagos', '$inputFechaPago', '$inputTrabajador', '$inputAcompanante', '$clientes', '$productos')");
 
 			if($sql){
                 return TRUE;
@@ -3960,7 +3960,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
             }
 	    }
 
-	    public function editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante){
+	    public function editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante, $productos){
 			$hoy 		= Utilidades::fecha_hoy();
 
 			$mostrar_regreso = '';
@@ -3982,8 +3982,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 												traslados_estado_pago 	= '$tipos_estados_pagos',
 												traslados_fecha_pago 	= '$inputFechaPago',
 												traslados_cliente 		= '$clientes',
-												traslados_acompanantes 	= '$inputAcompanante'
-
+												traslados_acompanantes 	= '$inputAcompanante', 
+												traslados_productos 	= '$productos'
 										WHERE   traslados_id 			= $idTraslado");
 
 			if($sql){
@@ -4566,6 +4566,209 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			return $html;
 	    }
+
+	    public function mostrar_formulario_traslados($idTraslados) {
+		    $recursos    = new Recursos();
+		    $datos_flete = $recursos->datos_traslados_id($idTraslados);
+
+		    $html        = '';
+		    $data        = array();
+		    $productos   = '';
+		    $productos_id = '';
+
+		    for ($i = 0; $i < count($datos_flete); $i++) {
+
+		    	if (!is_array($datos_flete[$i]['fle_producto'])) {
+			        $idTrabajador = explode(',', $datos_flete[$i]['fle_producto']);
+
+			        $productos = '';
+		        	for ($jj = 0; $jj < count($idTrabajador); $jj++) {
+
+			        	$datos_nombre = $recursos->datos_productos($idTrabajador[$jj]['fle_producto']);
+
+			        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
+			        }
+			    }else{
+			    	$datos_nombre = $recursos->datos_productos($datos_flete[$i]['fle_producto']);
+
+		        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
+			    }
+
+			    if (!is_array($datos_flete[$i]['fle_guia'])) {
+			        $idguia = explode(',', $datos_flete[$i]['fle_guia']);
+
+			        $guias = '';
+		        	for ($jj = 0; $jj < count($idguia); $jj++) {
+			        	$guias .= ucfirst($idguia[$jj]['fle_guia']).' ';
+			        }
+			    }else{
+		        	$guias .= ucfirst($datos_flete[$i]['fle_guia']);
+			    }
+
+			    $origenes .= '';
+			    if(is_array($datos_flete[$i]['fle_origen'])){
+					$explorar_origen = explode(",", $datos_flete[$i]['fle_origen']);
+
+					for ($d=0; $d < count($explorar_origen); $d++) {
+						$origenes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['fle_origen']).'</div>
+									</div>';
+					}
+
+				}else{
+					$origenes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_origen']).'</div>
+									</div>';
+				}
+
+				$destinos .= '';
+			    if(is_array($datos_flete[$i]['fle_destino'])){
+					$explorar_origen = explode(",", $datos_flete[$i]['fle_destino']);
+
+					for ($pp=0; $pp < count($explorar_origen); $pp++) {
+						$destinos .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$pp]['fle_origen']).'</div>
+									</div>';
+					}
+
+				}else{
+					$destinos .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_destino']).'</div>
+									</div>';
+				}
+
+				$datos_clientes = $recursos->datos_clientes($datos_flete[$i]['fle_cliente']);
+		        
+
+		        $html .= '
+
+		        <div class="row">
+		        	<div class="col-xxl-12 col-xl-12 col-sm-12 pt-3 ">
+		                <h6>N&deg; Guía:</h6>
+		                ' . $guias . '
+		            </div>';
+
+
+		        $html .='
+		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Tracto:</h6>
+		                <span class="text-dark">
+		                    ' . $productos . '		                    
+		                </span>
+		            </div>';
+
+		        if($datos_flete[$i]['fle_rampla'] != ''){
+		        	$html .='
+			        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+			                <h6>Semirremolque:</h6>
+			                <div class="row">
+			                    <div class="col" id="semirremolque">
+			                        ' . ucfirst($datos_rampla[0]['prod_cli_producto']) . ' - ' . ucwords($datos_rampla[0]['prod_cli_patente']) . '
+			                    </div>
+			                </div>
+			            </div>';
+		        }
+
+		        $html .='
+		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Origen:</h6>
+		                ' . $origenes . '
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Destino:</h6>
+		                ' . $destinos . '
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Fecha Carga:</h6>
+		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_carga']).'
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Fecha Arribo:</h6>
+		                '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_arribo']).'
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Fecha Descarga:</h6>
+		                 '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_descarga']).'
+		            </div>';
+
+
+		         $acompanantes .= '';
+			    if($datos_flete[$i]['fle_acompanante'] != ''){
+					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
+
+					for ($aco=0; $aco < count($explorar_aco); $aco++) {
+						$acompanantes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_trabajador($explorar_aco[$aco]['fle_acompanante']).'</div>
+									</div>';
+					}
+
+				}
+
+		        $html .='<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Chofer:</h6>
+		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Acompañante/es:</h6>
+								'.$acompanantes.'
+					</div>';
+
+			    $datos_rampla = $recursos->datos_productos($datos_flete[$i]['fle_rampla']);
+
+		        $html .='
+		        	
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Estadía:</h6>
+		                <div class="row">
+		                    <div class="col" id="estadia">
+		                        <strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_estadia']).'</strong>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Valor Viaje:</h6>
+								<span class="text-dark">
+								<strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</strong>
+						  		</span>
+							</div>
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Descuentos:</h6>
+								<span class="text-dark">
+								<strong class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</strong>
+						  		</span>
+							</div>
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Total Viaje:</h6>
+								<strong class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']+$datos_flete[$i]['fle_estadia']) . '</strong>
+							</div>
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Estado de Pago:</h6>
+								'.$recursos->nombre_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
+							</div>
+							<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Fecha de Viaje:</h6>
+								<span class="text-dark">
+								' . Utilidades::arreglo_fecha2($datos_flete[$i]['fle_fecha_pago']) . '
+		
+						  		</span>
+							</div>
+							<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Cliente:</h6>
+								'.$recursos->nombre_clientes($datos_flete[$i]['fle_cliente']).'
+							</div>
+							<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">
+								<h6>Rut:</h6>
+								'.Utilidades::rut($datos_clientes[0]['cli_rut']).'
+							</div>
+		            <div class="col-xxl-15 col-xl-15 col-sm-12 pt-3 ">
+		                <h6>Descripción del Trabajo:</h6>
+		                ' . $datos_flete[$i]['fle_glosa'] . '
+		            </div>
+		        </div>';
+		    }
+
+		    return $html;
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

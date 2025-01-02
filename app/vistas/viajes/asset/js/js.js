@@ -2101,6 +2101,7 @@ function grabar_nuevo_traslado(idServicio) {
     var tipos_estados_pagos= document.getElementById('tipos_estados_pagos').value;
     var inputFechaPago     = document.getElementById('inputFechaPago').value;
     var clientes           = document.getElementById('clientes').value;
+    var productos           = document.getElementById('productos').value;
 
     var inputFecha         = document.getElementsByName('inputFecha[]');
     var inputFecha_items   = "";
@@ -2154,6 +2155,7 @@ function grabar_nuevo_traslado(idServicio) {
                 formData.append('inputFechaPago', inputFechaPago);
                 formData.append('clientes', clientes);
                 formData.append('inputAcompanante', inputAcompanante_items);
+                formData.append('productos', productos);
                 formData.append('accion', accion);
               
             $.ajax({
@@ -2193,6 +2195,7 @@ function editar_traslado(idTraslado) {
     var inputValor         = document.getElementById('inputValor').value;
     var inputCantidad      = document.getElementById('inputCantidad').value;
     var inputDescripcion   = document.getElementById('inputDescripcion').value;
+    var productos           = document.getElementById('productos').value;
 
     var inputFecha         = document.getElementsByName('inputFecha[]');
 
@@ -2253,6 +2256,7 @@ function editar_traslado(idTraslado) {
                 formData.append('inputFechaPago', inputFechaPago);
                 formData.append('clientes', clientes);
                 formData.append('inputAcompanante', inputAcompanante_items);
+                formData.append('productos', productos);
                 
                 formData.append('accion', accion);
               

@@ -1373,7 +1373,7 @@
 										  WHERE    		prod_cli_estado = 1".$script);
 
 			$html   = '<select name="productos" id="productos" class="form-select shadow" onchange="traer_formulario_adicionar('.$boleta.')">
-						<option value="0">Seleccionar producto</option>';
+						<option value="0">Seleccionar</option>';
 
 			for ($i=0; $i < count($sql); $i++) { 
 				if($sql[$i]['prod_cli_id'] == $idCliente){
@@ -2163,6 +2163,31 @@
 										   AND  		 abo_tipo_servicio 	= $idTipoServicio");
 
 			return $sql;
+		}
+
+		public function select_productos_simple($idCategoria = 0){
+			$script = '';
+			if ($idCategoria > 0) {
+				$script .= " AND prod_cli_categoria = $idCategoria";
+			}
+			
+			$sql  	= $this->selectQuery("SELECT * FROM product_cliente
+										  WHERE    		prod_cli_estado = 1".$script);
+
+			$html   = '<select name="productos" id="productos" class="form-select shadow">
+						<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i < count($sql); $i++) { 
+				if($sql[$i]['prod_cli_id'] == $idCliente){
+					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'" selected="selected">'.$sql[$i]['prod_cli_producto'].'</option>';
+				}else{
+					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'">'.$sql[$i]['prod_cli_producto'].' - '.$sql[$i]['prod_cli_patente'].'</option>';
+				}
+			}
+
+			$html   .= '</select>';
+
+			return $html;
 		}
 
 

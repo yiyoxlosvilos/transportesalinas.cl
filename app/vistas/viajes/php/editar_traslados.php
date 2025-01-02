@@ -83,6 +83,12 @@
             ?>
           </div>
         </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Tracto:</b>
+          <span class="text-dark">
+            <?= $recursos->select_productos_simple($datos_traslado[0]['traslados_productos']) ?>
+            </span>
+        </div>
         <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <b>Chofer:</b>
           <span class="text-dark">

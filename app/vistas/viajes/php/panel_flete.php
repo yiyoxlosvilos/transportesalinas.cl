@@ -162,42 +162,29 @@
                             <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Ingresar Pagos</h3>
                           </div>
                           <div class="col-md-15 mb-2">
-                            <div class="card card-h-100">
-                                            <!-- card body -->
-                                            <div class="card-body">
-                                                <div class="d-flex flex-wrap align-items-center mb-4">
-                                                    <h5 class="card-title me-2">Total Viaje</h5>
-                                                </div>
-            
-                                                <div class="row align-items-center">
-                                                    <div class="col-sm align-self-center">
-                                                        <div class="mt-4 mt-sm-0">
-                                                            <h3><?= Utilidades::monto3($datos_fletes[0]['fle_valor']-$datos_fletes[0]['fle_descuento']) ?></h3>
-                                                            <div class="row g-0">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Abono</p>
-                                                                        <h5 class="fw-medium">-<?= Utilidades::monto3(0) ?></h5>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <p class="mb-2 text-muted text-uppercase font-size-11">Descuentos</p>
-                                                                        <h5 class="fw-medium">-<?= Utilidades::monto3($datos_fletes[0]['fle_descuento']) ?></h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="mt-2">
-                                                                <a href="#" class="btn btn-success btn-sm">Agregar Abono<i class="mdi mdi-arrow-right ms-1"></i></a>
-
-                                                                 <a href="#" class="btn btn-primary btn-sm">Pagar<i class="mdi mdi-arrow-right ms-1"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                            <div class="row">
+                              <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <span class="text-muted mb-3 lh-1 d-block text-truncate">My Wallet</span>
+                                                <h4 class="mb-3">
+                                                    $<span class="counter-value" data-target="865.2">865.2</span>k
+                                                </h4>
                                             </div>
+                                            <div class="resize-triggers"><div class="expand-trigger"><div style="width: 136px; height: 59px;"></div></div><div class="contract-trigger"></div></div></div>
                                         </div>
+                                        <div class="text-nowrap">
+                                            <span class="badge bg-soft-success text-success">+$20.9k</span>
+                                            <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div>
+                            </div>
                           </div>  
                         </div>
             </div>

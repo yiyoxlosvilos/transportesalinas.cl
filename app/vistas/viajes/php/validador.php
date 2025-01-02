@@ -1244,7 +1244,6 @@
 				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
 				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
 				    <br>
-				    <br>
 				    <label for="tipo_dte"><b>Forma de Pago:</b></label>
 				    <select id="tipo_dte" class="form-select bordes sombraPlana">
 		                <option value="1">- Boleta.</option>

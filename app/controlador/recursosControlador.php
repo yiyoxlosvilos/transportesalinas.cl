@@ -2159,7 +2159,7 @@
 
 		public function datos_abonos_id($idServicio, $idTipoServicio){
 			$sql     = $this->selectQuery("SELECT * FROM abonos_servicios
-										   WHERE  		 abo_id 			= $idServicio
+										   WHERE  		 abo_servicio		= $idServicio
 										   AND  		 abo_tipo_servicio 	= $idTipoServicio");
 
 			return $sql;

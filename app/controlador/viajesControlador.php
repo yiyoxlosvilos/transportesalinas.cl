@@ -4148,9 +4148,69 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                     </div>
 
                   </div>
-                  <div class="row" id="panel_montos"></div>';
+                  <div class="row" id="panel_montos">
+                  	'.$this->panel_abonos($idFlete, 1, $nuevo_total).'
+                  </div>';
 
             return $html;
+		}
+
+
+		public function panel_abonos($idFlete, $tipo_servicio, $total){
+			$abonos = $recursos->datos_abonos_id($idFlete, $tipo_servicio);
+
+			$abonado 	= 0;
+			$abono_data = '';
+			for ($i=0; $i < count($abonos); $i++) { 
+
+				$abono_data .= '';
+
+				$abonado += $abonos[$i]['abo_monto'];
+			}
+
+			$html = '<div class="row">
+
+						<div class="col-xxl-6 col-xl-6 col-sm-12">
+							<!-- card -->
+		                      <div class="card card-h-200 border shadow-sm">
+		                        <!-- card body -->
+		                        <div class="card-body">
+		                          <div class="row align-items-center">
+		                            <div class="col">
+		                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Abonado</span>
+		                              <h4 class="mb-3">
+		                                <span class="counter-value text-success" data-target="'.$abonado.'">'.Utilidades::monto($abonado).'</span>
+		                              </h4>
+		                            </div>
+		                          </div>
+		                        </div><!-- end card body -->
+		                      </div>
+		                    <!-- end card -->
+		                    <!-- card -->
+		                      <div class="card card-h-200 border shadow-sm">
+		                        <!-- card body -->
+		                        <div class="card-body">
+		                          <div class="row align-items-center">
+		                            <div class="col">
+		                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Restante</span>
+		                              <h4 class="mb-3">
+		                                <span class="counter-value text-success" data-target="'.($nuevo_total-$abonado).'">'.Utilidades::monto($nuevo_total-$abonado).'</span>
+		                              </h4>
+		                            </div>
+		                          </div>
+		                        </div><!-- end card body -->
+		                      </div>
+		                    <!-- end card -->
+						</div>
+						<div class="col-xxl-6 col-xl-6 col-sm-12">
+							'.$abono_data.'
+						</div>
+
+					</div>';
+
+			if ($abonado > 0) {
+				return $html;
+			}
 		}
 
 

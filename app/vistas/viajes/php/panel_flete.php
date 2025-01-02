@@ -163,7 +163,7 @@
                 </div>
                 <!-- botones -->
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="traer_nuevo_abono(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
+                  <button class="btn btn-sm btn-danger" onclick="traer_nuevo_abono(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
                 </div>
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>

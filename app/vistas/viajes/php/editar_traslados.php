@@ -122,10 +122,17 @@
 </div>
 <script>
   $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#productos", {
+      removeItemButton: true,
+    });
+  });
+
+  $(document).ready(function() { 
     var multipleCancelButton = new Choices("#inputOrigen", {
       removeItemButton: true,
     });
   });
+  
   $(document).ready(function() { 
     var multipleCancelButton = new Choices("#inputDestino", {
       removeItemButton: true,

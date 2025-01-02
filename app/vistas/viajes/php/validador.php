@@ -1196,22 +1196,22 @@
 		                  <div class="col">
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
 		                    <h4 class="mb-3">
-		                    	<span class="counter-value text-success" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
+		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
 		                    </h4>
 
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
 		                    <h4 class="mb-3">
-		                    	<span class="counter-value text-success" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
+		                    	<span class="counter-value text-dark" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
 		                    </h4>
 
 		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Estadia</span>
 		                    <h4 class="mb-3">
-		                    	<span class="counter-value text-success" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
+		                    	<span class="counter-value text-dark" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border-top">Total a Pagar</span>
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border">Total a Pagar</span>
 		                    <h4 class="mb-3">
-		                    	<span class="counter-value text-success" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
+		                    	<span class="counter-value text-primary" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
 		                    </h4>
 
 		                  </div>

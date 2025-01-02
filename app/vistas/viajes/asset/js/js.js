@@ -2007,12 +2007,10 @@ function grabar_abono(idFlete) {
     var accion     = "grabar_abono";
 
     var inputFecha       = document.getElementById('inputFecha').value;
-    var inputDescripcion  = document.getElementById('inputDescripcion').value;
-    var inputAbono        = document.getElementById('inputAbono').value;
-    var tipo_dte        = document.getElementById('tipo_dte').value;
-
-    var nuevo_total        = document.getElementById('nuevo_total').value;
-
+    var inputDescripcion = document.getElementById('inputDescripcion').value;
+    var inputAbono       = document.getElementById('inputAbono').value;
+    var tipo_dte         = document.getElementById('tipo_dte').value;
+    var nuevo_total      = document.getElementById('nuevo_total').value;
 
     if (inputAbono == 0) {
         $("#inputAbono").focus();

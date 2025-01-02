@@ -2217,7 +2217,7 @@ function grabar_pago(idFlete) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  traer_panel_pagos(idFlete);
+                  traer_finalizar_pagos(idFlete);
                 })  
               },
               error:       function(sec) {
@@ -2227,4 +2227,13 @@ function grabar_pago(idFlete) {
           }
         })
     }
+}
+
+function traer_finalizar_pagos(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_finalizar_pagos";
+
+    $("#panel_montos").html('');
+    $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }

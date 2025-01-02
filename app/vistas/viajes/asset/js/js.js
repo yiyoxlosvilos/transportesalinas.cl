@@ -1112,21 +1112,22 @@ function nuevo_documento_edp(idEstadoPago) {
   $('#panel_documentos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idEstadoPago:idEstadoPago});
 }
 
-function subir_documento_edp() {
+function subir_documento_servicios() {
   const url_link      = document.getElementById('url_link').value;
   var inputTitulo     = document.getElementById('inputTitulo').value;
-  var inputEstadoPago = document.getElementById('inputEstadoPago').value;
+  var idFlete         = document.getElementById('idFlete').value;
+  var idTipoServicio  = document.getElementById('idTipoServicio').value;
 
   var foto            = ($('input[type="file"]'))[0].files[0]; 
   var archivo         = document.getElementById('input-b8').value;
-  var accion          = "subir_documento_edp";
+  var accion          = "subir_documento_servicios";
 
   if(inputTitulo.length == 0){
    $("#inputTitulo").focus();
     Swal.fire("Alerta", "** Ingresar Titulo **", "warning");
   } else {
       Swal.fire({
-        title:              'Desea subir documento a EDP ?',
+        title:              'Desea subir documento ?',
         showDenyButton:     false,
         showCancelButton:   true,
         confirmButtonText:  'SI',
@@ -1149,7 +1150,8 @@ function subir_documento_edp() {
                 data.append("accion", accion);
                 data.append("archivo", archivo);
                 data.append("inputTitulo", inputTitulo);
-                data.append("inputEstadoPago", inputEstadoPago);
+                data.append("idFlete", idFlete);
+                data.append("idTipoServicio", idTipoServicio);
 
             $("#panel_documentos").html('');
             $('#panel_documentos').load(url_link+"/app/recursos/img/loader.svg");
@@ -1192,6 +1194,49 @@ function subir_documento_edp() {
         }
       })
   }
+}
+
+function quitar_documento_servicios(idDocu){
+  const url_link = document.getElementById('url_link').value;
+  var accion     = "quitar_documento_servicios";
+
+  Swal.fire({
+          title:              'Quieres Quitar documento ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+  }).then((result) => {
+      if (result.isConfirmed) {
+      var formData = new FormData();
+          formData.append('idDocu', idDocu);
+          formData.append('accion', accion);
+              
+           $.ajax({
+              url:         "../../viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                    Swal.fire({
+                      title:              'Realizado correctamente',
+                      icon:               'success',
+                      showDenyButton:     false,
+                      showCancelButton:   false,
+                      confirmButtonText:  'OK',
+                      cancelButtonText:   'NO',
+                    }).then((result) => {
+                      location.reload();
+                    })  
+                  },
+                  error:       function(sec) {
+                    Swal.fire("Error", "Error", "error");
+                  }
+                });
+            }
+  })
 }
 
 function agregar_imagen_cotizacion(idCotizacion) {

@@ -6173,7 +6173,7 @@
         cancelClass: defBtnCss2,
         pauseIcon: '<i class="bi-pause-fill"></i>',
         pauseClass: defBtnCss2,
-        uploadIcon: '<i class="bi-upload" onClick="subir_documento_edp()"></i>',
+        uploadIcon: '<i class="bi-upload" onClick="subir_documento_servicios()"></i>',
         uploadClass: defBtnCss2,
         uploadUrl: null,
         uploadUrlThumb: null,

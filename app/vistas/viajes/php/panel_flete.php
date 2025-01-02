@@ -35,6 +35,10 @@
 
 <input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
 <input type="hidden" name="idServicio" id="idServicio" value="ALL">
+
+<input type="hidden" name="idFlete" id="idFlete" value="<?= $idFlete ?>">
+<input type="hidden" name="idTipoServicio" id="idTipoServicio" value="1">
+
   <div class="row scope-bottom-wrapper" id="procesar_venta">
     <div class="col-xxl-2 recent-xl-23 col-xl-3 box-col-3">
                 <div class="card"> 

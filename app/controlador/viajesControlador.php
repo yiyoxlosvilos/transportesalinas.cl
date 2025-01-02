@@ -3950,10 +3950,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
             }
 	    }
 
-	     public function traer_documentos_asociados($idTrabajador){
+	     public function traer_documentos_asociados($idServicio, $idTipoServicio){
 	    	$recursos = new Recursos();
-	    	$sql      = $this->selectQuery("SELECT * FROM documentos_flete
-					    				    WHERE  		  doc_trabajador = $idTrabajador");
+	    	$sql      = $this->selectQuery("SELECT * FROM documentos_servicios
+					    				    WHERE  		  doc_servicio 		= $idServicio
+					    				    AND  		  doc_tipo_servicio = $idTipoServicio");
 
 			$html     = '<table class="table table-striped">
 							<thead>
@@ -3972,10 +3973,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<td>'.$sql[$i]['doc_titulo'].'</td>
 							<td>'.$sql[$i]['doc_fin_documento'].'</td>
 							<td align="center">
-								<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/repositorio/documento_trabajador/'.$sql[$i]['doc_ruta'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1200"><i class="bi bi-eye"></i></button>
+								<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/repositorio/documento_servicios/'.$sql[$i]['doc_ruta'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1200"><i class="bi bi-eye"></i></button>
 							</td>
 							<td align="center">
-								<button class="btn btn-danger" type="button" onclick="quitar_documento_trabajador('.$sql[$i]['doc_id'].')"><i class="bi-trash"></i></button>
+								<button class="btn btn-danger" type="button" onclick="quitar_documento_servicios('.$sql[$i]['doc_id'].')"><i class="bi-trash"></i></button>
 							</td>
 						</tr>';
 			}
@@ -4034,6 +4035,30 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 			
+		}
+
+
+		public function grabar_insertar_documento($ruta, $inputTitulo, $idServicio, $idTipoServicio){
+
+			$grabar = $this->insert_query("INSERT INTO documentos_servicios(doc_servicio, doc_tipo_servicio, doc_titulo, doc_ruta, doc_estado) 
+					   VALUES('$idServicio', '$idTipoServicio', '$inputTitulo', '$ruta', 1)");
+
+			if($grabar){
+				return TRUE;
+			}else{
+				return FALSE;
+			}
+		}
+
+		public function quitar_documento_servicios($idDocu){
+			$grabar = $this->delete_query("DELETE FROM documentos_servicios
+					   					   WHERE       doc_id = $idDocu");
+
+			if($grabar){
+				return TRUE;
+			}else{
+				return FALSE;
+			}
 		}
 	    
 	   /**  FIN CENTRO COSTO  **/

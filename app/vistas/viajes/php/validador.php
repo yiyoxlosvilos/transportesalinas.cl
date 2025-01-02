@@ -1068,6 +1068,7 @@
 		case 'subir_documento_servicios':
 			$inputTitulo  = $_REQUEST['inputTitulo'];
 			$idTrabajador = $_REQUEST['idTrabajador'];
+			$idTipoServicio = $_REQUEST['idTipoServicio'];
 
 			if ($_FILES){
 
@@ -1080,7 +1081,7 @@
 				$carpeta            = "../../../repositorio/documento_servicios/";
 
 				if(move_uploaded_file($_FILES['file']['tmp_name'], $destino)){
-					$rrhh->grabar_insertar_documento($nombre, $inputTitulo, $idTrabajador);
+					$centroCosto->grabar_insertar_documento($nombre, $inputTitulo, $idTrabajador, $idTipoServicio);
 				
 				}else{
 			  		return false;
@@ -1092,7 +1093,7 @@
 		case 'quitar_documento_servicios':
 			$idDocu = $_REQUEST['idDocu'];
 
-			$grabar = $rrhh->quitar_documento_trabajador($idDocu);
+			$grabar = $centroCosto->quitar_documento_servicios($idDocu);
 		
 			if ($grabar > 0) {
 				return true;

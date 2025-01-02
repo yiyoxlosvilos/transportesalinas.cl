@@ -1108,7 +1108,7 @@
 				<div class="row col-10 justify-content-center mx-5 my-5">
 				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
 				    <label for="inputFecha"><b>* Fecha:</b></label>
-				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
 				    <br>
 				    <label for="inputMonto"><b>* Monto Abono:</b></label>
 				    <input type="number" name="inputAbono" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto Abono">
@@ -1159,6 +1159,86 @@
 			}else{
 				return false;
 			}
+			break;
+		case 'traer_procesar_pago':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$datos_fletes = $recursos->datos_fletes_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 1);
+
+			$valor 		= 0;
+			$descuento 	= 0;
+			$estadia 	= 0;
+
+			for ($j=0; $j < count($datos_fletes); $j++) {
+				$valor 		+= $datos_fletes[$j]['fle_valor'];
+				$descuento 	+= $datos_fletes[$j]['fle_descuento'];
+				$estadia 	+= $datos_fletes[$j]['fle_estadia'];
+			}
+
+			$valor_total = ($valor+$descuento+$estadia);
+
+			$abonado = 0;
+			for ($i=0; $i < count($datos_abonos); $i++) {
+				$abonado += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$total_restante = ($valor_total-$abonado);
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <!-- card -->
+		            <div class="card card-h-200 border shadow-sm">
+		              <!-- card body -->
+		              <div class="card-body">
+		                <div class="row align-items-center">
+		                  <div class="col">
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-success" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-success" data-target="'.$descuento.'">'.Utilidades::monto($descuento).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Estadia</span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-success" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border-top">Total a Pagar</span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-success" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
+		                    </h4>
+
+		                  </div>
+		                </div>
+		              </div><!-- end card body -->
+		            </div>
+		         	<!-- end card -->
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
+				    <br>
+				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
+				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar">
+				    <br>
+				    <div class="row">
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    	</div>
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    	</div>
+				  </div>
+	
+				</div>';
+
+			echo $html;
 			break;
 		default:
 			break;

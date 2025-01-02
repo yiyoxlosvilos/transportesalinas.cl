@@ -2112,3 +2112,12 @@ function quitar_abono(idAbono, idFlete) {
           }
         })
 }
+
+function traer_procesar_pago(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_procesar_pago";
+
+    $("#panel_montos").html('');
+    $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}

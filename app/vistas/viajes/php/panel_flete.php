@@ -163,9 +163,9 @@
                 </div>
                 <div class="col-md-15 mb-2">
                   <div class="row">
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-sm-6">
                       <!-- card -->
-                      <div class="card card-h-100">
+                      <div class="card card-h-100 border shadow-sm">
                         <!-- card body -->
                         <div class="card-body">
                           <div class="row align-items-center">

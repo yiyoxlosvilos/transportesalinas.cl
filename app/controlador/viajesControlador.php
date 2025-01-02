@@ -1190,7 +1190,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 					for ($aco=0; $aco < count($explorar_aco); $aco++) {
 						$acompanantes .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
+										<div class="col-6">'.$recursos->nombre_trabajador($explorar_aco[$aco]['fle_acompanante']).'</div>
 									</div>';
 
 						$cont_acomp++;

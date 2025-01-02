@@ -2198,7 +2198,6 @@ function grabar_pago(idFlete) {
             var formData = new FormData();
                 formData.append('idFlete', idFlete);
                 formData.append('inputMonto', inputMonto);
-                formData.append('inputDescripcion', inputDescripcion);
                 formData.append('inputFecha', inputFecha);
                 formData.append('tipo_dte', tipo_dte);
                 formData.append('accion', accion);

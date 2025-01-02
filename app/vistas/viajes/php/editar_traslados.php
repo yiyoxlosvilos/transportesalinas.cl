@@ -137,4 +137,16 @@
       removeItemButton: true,
     });
   });
+  $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#inputTrabajador", {
+      removeItemButton: true,
+    });
+  });
+
+  $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#inputAcompanante", {
+      removeItemButton: true,
+    });
+  });
+
 </script>

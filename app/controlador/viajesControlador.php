@@ -2865,9 +2865,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fecha2($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
-			$html.= '<div class="row">';
 			$html .= $this->mostrar_formulario_flete2($datos_cotizacion[0]['fle_id']);
-			$html.= '</div>';
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
 						<tr>

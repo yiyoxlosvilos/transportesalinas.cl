@@ -3647,12 +3647,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<th align="left">'.Utilidades::monto($neto).'</th>
 						</tr>
 						<tr>
-							<td colspan="3">&nbsp;</td>
+							<td colspan="5">&nbsp;</td>
 							<th align="right">IVA:</th>
 							<th align="left">'.Utilidades::monto($iva).'</th>
 						</tr>
 						<tr>
-							<td colspan="3">&nbsp;</td>
+							<td colspan="5">&nbsp;</td>
 							<th align="right">TOTAL:</th>
 							<th align="left">'.Utilidades::monto($total).'</th>
 						</tr>

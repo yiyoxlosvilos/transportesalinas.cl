@@ -2175,11 +2175,11 @@ function grabar_pago(idFlete) {
     var tipo_dte         = document.getElementById('tipo_dte').value;
     var nuevo_total      = document.getElementById('nuevo_total').value;
 
-    if (inputAbono == 0) {
-        $("#inputAbono").focus();
-        Swal.fire("Alerta", "** Ingresar Abono **", "warning");
+    if (inputMonto == 0) {
+        $("#inputMonto").focus();
+        Swal.fire("Alerta", "** Ingresar Monto **", "warning");
     } else if(parseInt(nuevo_total) < parseInt(inputMonto)) {
-        $("#inputAbono").focus();
+        $("#inputMonto").focus();
         Swal.fire("Alerta", "** Ingresar Abono Menor al monto Total **", "warning");
     } else if(inputFecha.length == 0) {
         $("#inputFecha").focus();

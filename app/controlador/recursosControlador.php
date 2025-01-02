@@ -2179,7 +2179,7 @@
 
 			for ($i=0; $i < count($sql); $i++) { 
 				if($sql[$i]['prod_cli_id'] == $idCliente){
-					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'" selected="selected">'.$sql[$i]['prod_cli_producto'].'</option>';
+					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'" selected="selected">'.$sql[$i]['prod_cli_producto'].' - '.$sql[$i]['prod_cli_patente'].'</option>';
 				}else{
 					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'">'.$sql[$i]['prod_cli_producto'].' - '.$sql[$i]['prod_cli_patente'].'</option>';
 				}

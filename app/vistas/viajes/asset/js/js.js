@@ -2218,6 +2218,8 @@ function grabar_pago(idFlete) {
                   cancelButtonText:   'NO',
                 }).then((result) => {
                     $("#panel_montos_up").hide();
+                    $("#traer_nuevo_abono").hide();
+                    $("#traer_procesar_pago").hide();
                   traer_finalizar_pagos(idFlete);
                 })  
               },

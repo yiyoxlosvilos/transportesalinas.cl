@@ -4418,9 +4418,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function cotizacion_traslados_ver($idCotizacion, $mes, $ano){
 	    	$recursos 		  = new Recursos();
 
-	    	$datos_cotizacion = $recursos->datos_fletes_id($idCotizacion);
+	    	$datos_cotizacion = $recursos->datos_traslados_id($idCotizacion);
 
-  			$datos_clientes   = $recursos->datos_clientes($datos_cotizacion[0]['fle_cliente']);
+  			$datos_clientes   = $recursos->datos_clientes($datos_cotizacion[0]['traslados_cliente']);
 
   			$anexos_datos     = $recursos->datos_cotizacion_anexos($idCotizacion);
 
@@ -4457,7 +4457,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
-			$html .= $this->mostrar_formulario_flete2($datos_cotizacion[0]['fle_id']);
+			$html .= $this->listado_de_traslados_id($datos_cotizacion[0]['traslados_id']);
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
 						<tr>
@@ -4469,6 +4469,112 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					</table>';
 
 	    	return $html;
+	    }
+
+	    public function listado_de_traslados_id($idServicio){
+	    	$recursos 	= new Recursos();
+	    	$desde      = $ano.'-'.$mes.'-01';
+	    	$ultimo_dia = date("t", strtotime($desde));
+	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
+	    	$hoy        = Utilidades::fecha_hoy();
+	    	$neto       = 0;
+	    	
+
+	    	$sql    	= $this->selectQuery("SELECT * FROM traslados
+										  	  WHERE    		traslados_id = $idServicio0
+										  	  ORDER BY      traslados_id ASC");
+
+			$html = ' <table id="listado_traslados" class="table shadow">
+			            <thead >
+			              	<tr class="table-info">
+								<th>TRASLADO</th>
+								<th>FECHAS</th>
+								<th>CLIENTE</th>
+								<th>ESTADO</th>
+								<th>CANTIDAD</th>
+								<th>VALOR</th>
+								<th>TOTAL</th>
+								<th>&nbsp;</th>
+							</tr>
+			            </thead>
+			            <tbody>';
+
+			for ($i=0; $i < count($sql); $i++) {
+
+				$mostrar_localidad 	= '';
+		    	$mostrar_fecha 		= '';
+
+				$cantidad_total = ($sql[$i]['traslados_cantidad']*$sql[$i]['traslados_valor']);
+				$fechas 		= trim($sql[$i]['traslados_fechas'], ';');
+				$explorar_fecha = explode(";", $fechas);
+				$explorar_local = explode(",", $sql[$i]['traslados']);
+				
+
+				if(count($explorar_fecha) > 0){
+
+					for ($j=0; $j < count($explorar_fecha); $j++) { 
+
+						$cambiar_fecha = explode("-", $explorar_fecha[$j]);
+
+						$mostrar_fecha  .= ''.$cambiar_fecha[2].'-'.$cambiar_fecha[1].', ';
+					}
+				}
+
+				if(count($explorar_local) > 0){
+
+					for ($k=0; $k < count($explorar_local); $k++) { 
+						$mostrar_localidad  .= ''.$recursos->nombre_localidad($explorar_local[$k]).' - ';
+					}
+
+				}
+
+				$html .= '<tr>
+				          	<td>'.trim($mostrar_localidad, '- ').'</td>
+				          	<td>'.trim($mostrar_fecha, ', ').'</td>
+				          	<td>'.$recursos->nombre_clientes($sql[$i]['traslados_cliente']).'</td>
+				          	<td>'.$recursos->nombre_tipos_estados_pagos($sql[$i]['traslados_estado_pago']).'</td>
+				          	<td>'.$sql[$i]['traslados_cantidad'].'</td>
+				          	<td>'.Utilidades::monto($sql[$i]['traslados_valor']).'</td>
+				          	<td>'.Utilidades::monto($cantidad_total).'</td>
+				          	<td align="center">
+
+				          		<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/editar_traslados.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+	    								<i class="fas fa-pencil-alt"></i>
+	    						</button>
+
+				          		<button class="btn btn-success" type="button" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/traslados_ver.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+	    								<i class="fas fa-print"></i>
+	    						</button>
+
+				          	</td>
+				          </tr>';
+				$neto += $cantidad_total;
+			}
+
+			$total = ($neto*1.19);
+			$iva   = ($total-$neto);
+
+			$html .= ' </tbody>
+						<tfooter>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+							<th align="right">NETO:</th>
+							<th align="left">'.Utilidades::monto($neto).'</th>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+							<th align="right">IVA:</th>
+							<th align="left">'.Utilidades::monto($iva).'</th>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+							<th align="right">TOTAL:</th>
+							<th align="left">'.Utilidades::monto($total).'</th>
+						</tr>
+						</tfooter>
+					  </table>';
+
+			return $html;
 	    }
 	    
 	   /**  FIN CENTRO COSTO  **/

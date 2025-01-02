@@ -54,23 +54,23 @@
           <div class="row" id="cantidad_fechas"></div>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
-          <h6>Chofer:</h6>
+          <b>Chofer:</b>
           <span class="text-dark">
             <?= $recursos->seleccionar_trabajadores() ?>
             </span>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
-          <h6>Acompañante/es:</h6>
+          <b>Acompañante/es:</b>
           <span class="text-dark">
             <?= $recursos->seleccionar_companante() ?>
             </span>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
-          <h6>Estado de Pago:</h6>
+          <b>Estado de Pago:</b>
           <?= $recursos->select_tipos_estados_pagos() ?>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
-          <h6>Cliente:</h6>
+          <b>Cliente:</b>
           <?= $recursos->select_clientes() ?>
         </div>
         <div class="col-lg-15 p-3 border">
@@ -101,4 +101,16 @@
       removeItemButton: true,
     });
   });
+  $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#inputTrabajador", {
+      removeItemButton: true,
+    });
+  });
+
+  $(document).ready(function() { 
+    var multipleCancelButton = new Choices("#inputAcompanante", {
+      removeItemButton: true,
+    });
+  });
+
 </script>

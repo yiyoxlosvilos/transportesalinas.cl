@@ -23,35 +23,55 @@
   <hr class="mt-2 mb-3"/>
     <div class="container mb-4 shadow p-4">
       <div class="row">
-        <div class="col-lg-4 p-3 mb-2 bg-white  border">
+        <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
           <h6>* Origen:</h6>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputOrigen', 0) ?>
           </span>
         </div>
-        <div class="col-lg-4 p-3 mb-2 bg-white  border">
+        <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
           <h6>* Destino:</h6>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputDestino', 0) ?>
           </span>
         </div>
-        <div class="col-lg-4 p-3 mb-2 bg-white  border">
+        <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
           <h6>Regreso:</h6>
           <span class="text-dark">
           <?= $recursos->seleccionar_localidad(0, 'inputRegreso', 0) ?>
           </span>
         </div>
-        <div class="col-lg-6 mb-2 p-3 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 mb-2 p-3 border">
           <label for="inputPrecio"><b>* Valor:</b></label>
             <input type="number" class="form-control shadow" id="inputValor" placeholder="Escribir Valor">
         </div>
-        <div class="col-lg-6 mb-2 p-3 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 mb-2 p-3 border">
           <label for="inputPrecio"><b>* Cantidad:</b></label>
             <input type="number" class="form-control shadow" id="inputCantidad" placeholder="Escribir Cantidad" onchange="agregar_fechas()">
         </div>
         <div class="col-lg-15 mb-2 p-3 border">
           <label for="inputMarca"><b>* Fecha/as:</b></label>
           <div class="row" id="cantidad_fechas"></div>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Chofer:</h6>
+          <span class="text-dark">
+            <?= $recursos->seleccionar_trabajadores() ?>
+            </span>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Acompañante/es:</h6>
+          <span class="text-dark">
+            <?= $recursos->seleccionar_companante() ?>
+            </span>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Estado de Pago:</h6>
+          <?= $recursos->select_tipos_estados_pagos() ?>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Cliente:</h6>
+          <?= $recursos->select_clientes() ?>
         </div>
         <div class="col-lg-15 p-3 border">
           <label for="inputSucursal"><b>Descripción</b></label>

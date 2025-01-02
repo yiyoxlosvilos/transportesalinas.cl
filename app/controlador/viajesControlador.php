@@ -3573,7 +3573,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			            <thead >
 			              	<tr class="table-info">
 								<th>TRASLADO</th>
-								<th>CANTIDAD PASAJEROS</th>
+								<th>CANTIDAD TRASLADOS</th>
 								<th>FECHAS</th>
 								<th>VALOR</th>
 								<th>TOTAL</th>

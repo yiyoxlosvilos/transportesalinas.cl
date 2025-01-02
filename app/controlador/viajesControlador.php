@@ -1198,7 +1198,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				}
 
 		        $html .= '
-		        <div class="row shadow-sm">';
+		        <div class="row">';
 		        $html .='<div class="col-4 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
@@ -1258,7 +1258,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						'.$acompanantes.'
 		            </div>';
 
-		        $html .='<div class="col-xxl-6 col-xl-3 col-sm-6 pt-3 ">
+		        $html .='
+		       		<div class="col-3 pt-3 ">
+						<h6>Valor Viaje:</h6>
+						<span class="text-dark">
+						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</h4>
+						 	</span>
+					</div>
+					<div class="col-3 pt-3 ">
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
@@ -1266,41 +1273,32 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                    </div>
 		                </div>
 		            </div>
-		            <div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Valor Viaje:</h6>
-								<span class="text-dark">
-								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</h4>
-						  		</span>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Descuentos:</h6>
-								<span class="text-dark">
-								<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
-						  		</span>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Total Viaje:</h6>
-								<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Estado de Pago:</h6>
-								'.$recursos->select_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Fecha de Viaje:</h6>
-								<span class="text-dark">
-								' . Utilidades::arreglo_fecha2($datos_flete[$i]['fle_fecha_pago']) . '
-		
-						  		</span>
-							</div>
-							<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
-								<h6>Cliente:</h6>
-								'.$recursos->nombre_clientes($datos_flete[$i]['fle_cliente']).'
-							</div>
-		            <div class="col-xxl-15 col-xl-15 col-sm-12 pt-3 ">
-		                <h6>Descripción del Trabajo:</h6>
-		                ' . $datos_flete[$i]['fle_glosa'] . '
-		            </div>
+					<div class="col-3 pt-3 ">
+						<h6>Descuentos:</h6>
+						<span class="text-dark">
+						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
+						 	</span>
+					</div>
+					<div class="col-3 pt-3 ">
+						<h6>Abonado:</h6>
+						<span class="text-dark">
+						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
+						 	</span>
+					</div>
+					<div class="col-15 pt-3 border">
+						<h4>Total Viaje:</h4>
+						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
+					</div>
+					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
+						<h6>Estado de Pago:</h6>
+						'.$recursos->nombre_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
+					</div>
+					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
+						<h6>Fecha de Pago:</h6>
+						<span class="text-dark">
+							' . Utilidades::arreglo_fechas_horas($datos_flete[$i]['fle_fecha_pagado']) . '
+						</span>
+					</div>
 		        </div>';
 		    }
 

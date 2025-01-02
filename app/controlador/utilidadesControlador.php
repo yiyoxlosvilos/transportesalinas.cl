@@ -152,6 +152,15 @@
 			return $fecha;
 		}
 
+		public static function arreglo_fechas_horas($fecha){
+			$saca_hora= explode(" ", $fecha);
+
+			$explorar = explode("-", $saca_hora[0]);
+			$fecha    = $explorar[2]."-".$explorar[1]."-".$explorar[0]." | ".$saca_hora[1];
+
+			return $fecha;
+		}
+
 		public static function arreglo_fecha3($fecha){
 			$explorar = explode("-", $fecha);
 			$fecha    = $explorar[2]."/".$explorar[1]."/".$explorar[0];

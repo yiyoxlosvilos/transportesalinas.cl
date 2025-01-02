@@ -1181,24 +1181,61 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="col-6">'.$recursos->nombre_localidad($datos_flete[$i]['fle_destino']).'</div>
 									</div>';
 				}
+
+
+		         $acompanantes .= '';
+			    if($datos_flete[$i]['fle_acompanante'] != ''){
+					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
+
+					for ($aco=0; $aco < count($explorar_aco); $aco++) {
+						$acompanantes .= '<div class="row">
+										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
+									</div>';
+					}
+
+				}
+
+		        
 		        
 
-		        $html .= '<div class="row shadow-sm">
+		        $html .= '
+		        <div class="row shadow-sm">
 		            <div class="col-3 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">
 		                    ' . $productos . '		                    
 		                </span>
-		            </div>
-		            <div class="col-3 pt-3 ">
+		            </div>';
+
+		        $datos_rampla = $recursos->datos_productos($datos_flete[$i]['fle_rampla']);
+
+		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-6 pt-3 ">
+		                <h6>Semirremolque:</h6>
+		                <div class="row">
+		                    <div class="col" id="semirremolque">
+		                        ' . ucfirst($datos_rampla[0]['prod_cli_producto']) . ' - ' . ucwords($datos_rampla[0]['prod_cli_patente']) . '
+		                    </div>
+		                </div>
+		            </div>';
+
+		        $html .='<div class="col-3 pt-3 ">
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
+		            </div>';
+		        $html .='<div class="col-3 pt-3 ">
+		                <h6>Chofer:</h6>
+		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
 		            </div>
 		            <div class="col-3 pt-3 ">
+						<h6>Acompañante/es:</h6>
+						'.$acompanantes.'
+					</div>';
+		        $html .= '
+		        	<div class="col-6 pt-3 ">
 		                <h6>Origen:</h6>
 		                ' . $origenes . '
 		            </div>
-		            <div class="col-3 pt-3 ">
+		            <div class="col-6 pt-3 ">
 		                <h6>Destino:</h6>
 		                ' . $destinos . '
 		            </div>
@@ -1215,40 +1252,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                 '.Utilidades::arreglo_fecha2($datos_flete[$i]['fle_descarga']).'
 		            </div>';
 
-
-
-		         $acompanantes .= '';
-			    if($datos_flete[$i]['fle_acompanante'] != ''){
-					$explorar_aco = explode(",", $datos_flete[$i]['fle_acompanante']);
-
-					for ($aco=0; $aco < count($explorar_aco); $aco++) {
-						$acompanantes .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_trabajador($explorar_origen[$aco]['fle_acompanante']).'</div>
-									</div>';
-					}
-
-				}
-
-		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-6 pt-3 ">
-		                <h6>Chofer:</h6>
-		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
-		            </div>
-		            <div class="col-xxl-6 col-xl-4 col-sm-6 pt-3 ">
-								<h6>Acompañante/es:</h6>
-								'.$acompanantes.'
-					</div>';
-
-			    $datos_rampla = $recursos->datos_productos($datos_flete[$i]['fle_rampla']);
-
-		        $html .='<div class="col-xxl-6 col-xl-4 col-sm-6 pt-3 ">
-		                <h6>Semirremolque:</h6>
-		                <div class="row">
-		                    <div class="col" id="semirremolque">
-		                        ' . ucfirst($datos_rampla[0]['prod_cli_producto']) . ' - ' . ucwords($datos_rampla[0]['prod_cli_patente']) . '
-		                    </div>
-		                </div>
-		            </div>
-		            <div class="col-xxl-6 col-xl-3 col-sm-6 pt-3 ">
+		        $html .='<div class="col-xxl-6 col-xl-3 col-sm-6 pt-3 ">
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">

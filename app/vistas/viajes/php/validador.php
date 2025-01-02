@@ -1101,6 +1101,47 @@
 				return false;
 			}
 			break;
+		case 'traer_nuevo_abono':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
+				    <br>
+				    <label for="inputMonto"><b>* Monto Abono:</b></label>
+				    <input type="date" name="inputMonto" id="inputMonto" class="form-control shadow">
+				    <br>
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <input type="text" name="inputDescripcion" id="inputDescripcion" class="form-control shadow">
+				    <br>
+				    <div class="row">
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    	</div>
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="cargar_montos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    	</div>
+				    </div>
+				    
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <textarea rows="8" class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
+				  </div>
+	
+				</div>';
+
+			echo $html;
+			break;
+		case 'quitar_documento_servicios':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = $centroCosto->traer_panel_pagos($idFlete);
+		
+			echo $html;
+			break;
 		default:
 			break;
 	}

@@ -4061,6 +4061,84 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				return FALSE;
 			}
 		}
+
+		public function traer_panel_pagos($idFlete){
+			$recursos = new Recursos();
+			$datos_fletes = $recursos->datos_fletes_id($idFlete);
+
+			$html = '<div class="row">
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-200 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Viaje</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_valor'].'">'.Utilidades::monto_color($datos_fletes[0]['fle_valor']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Estadia</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_estadia'].'">'.Utilidades::monto_color($datos_fletes[0]['fle_estadia']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_descuento'].'">'.Utilidades::monto_color(-$datos_fletes[0]['fle_descuento']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.(($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']).'">'.Utilidades::monto_color((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                  </div>
+                  <div class="row" id="panel_montos"></div>';
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

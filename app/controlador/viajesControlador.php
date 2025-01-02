@@ -3617,6 +3617,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				          	<td>'.trim($mostrar_localidad, '- ').'</td>
 				          	<td>'.trim($mostrar_fecha, ', ').'</td>
 				          	<td></td>
+				          	<td></td>
 				          	<td>'.$sql[$i]['traslados_cantidad'].'</td>
 				          	<td>'.Utilidades::monto($sql[$i]['traslados_valor']).'</td>
 				          	<td>'.Utilidades::monto($cantidad_total).'</td>

@@ -2157,6 +2157,14 @@
 			return ucfirst($sql[0]['tipo_nombre']);
 		}
 
+		public function datos_abonos_id($idServicio, $idTipoServicio){
+			$sql     = $this->selectQuery("SELECT * FROM abonos_servicios
+										   WHERE  		 abo_id 			= $idServicio
+										   AND  		 abo_tipo_servicio 	= $idTipoServicio");
+
+			return $sql;
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

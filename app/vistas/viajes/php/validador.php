@@ -1111,11 +1111,11 @@
 				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
 				    <br>
 				    <label for="inputMonto"><b>* Monto Abono:</b></label>
-				    <input type="number" name="inputMonto" id="inputMonto" class="form-control shadow" placeholder="Ingresar Monto Abono">
+				    <input type="number" name="inputAbono" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto Abono">
 				    <br>
 				    <div class="row">
 				    	<div class="col">
-				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_abono('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
 				    	</div>
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
@@ -1138,6 +1138,27 @@
 			$html = $centroCosto->traer_panel_pagos($idFlete);
 		
 			echo $html;
+			break;
+		case 'grabar_abono':
+			$idFlete 			= $_REQUEST['idFlete'];
+			$inputAbono 		= $_REQUEST['inputAbono'];
+			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
+			$inputFecha 		= $_REQUEST['inputFecha'];
+
+			$html = $centroCosto->grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, 1);
+
+			echo $html;
+			break;
+		case 'quitar_abono':
+			$idAbono 		= $_REQUEST['idAbono'];
+
+			$grabar = $centroCosto->quitar_abono($idAbono);
+		
+			if ($grabar > 0) {
+				return true;
+			}else{
+				return false;
+			}
 			break;
 		default:
 			break;

@@ -2002,3 +2002,113 @@ function traer_nuevo_abono(idFlete) {
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
 
+function grabar_abono(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "grabar_abono";
+
+    var inputFecha       = document.getElementById('inputFecha').value;
+    var inputDescripcion  = document.getElementById('inputDescripcion').value;
+    var inputAbono        = document.getElementById('inputAbono').value;
+
+    var nuevo_total        = document.getElementById('nuevo_total').value;
+
+
+    if (inputAbono == 0) {
+        $("#inputAbono").focus();
+        Swal.fire("Alerta", "** Ingresar Abono **", "warning");
+    } else if(inputDescripcion.length == 0) {
+        $("#inputDescripcion").focus();
+        Swal.fire("Alerta", "** Ingresar Descripción **", "warning");
+    }  else if(nuevo_total < inputAbono) {
+        $("#inputAbono").focus();
+        Swal.fire("Alerta", "** Ingresar Abono Menor al monto Total **", "warning");
+    } else if(inputFecha.length == 0) {
+        $("#inputFecha").focus();
+        Swal.fire("Alerta", "** Ingresar Fecha **", "warning");
+    } else {
+
+        Swal.fire({
+          title:              '¿ Desea agregar Abono ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idFlete', idFlete);
+                formData.append('inputAbono', inputAbono);
+                formData.append('inputDescripcion', inputDescripcion);
+                formData.append('inputFecha', inputFecha);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  traer_panel_pagos(idFlete);
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
+    }
+}
+
+function quitar_abono(idAbono, idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "quitar_abono";
+
+    Swal.fire({
+          title:              '¿ Desea quitar Abono ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idAbono', idAbono);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  traer_panel_pagos(idFlete);
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
+}

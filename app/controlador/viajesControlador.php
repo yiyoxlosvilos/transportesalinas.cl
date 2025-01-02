@@ -4065,6 +4065,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		public function traer_panel_pagos($idFlete){
 			$recursos = new Recursos();
 			$datos_fletes = $recursos->datos_fletes_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 1);
+
+			$abonos = 0;
+
+			for ($i=0; $i < count($datos_abonos); $i++) { 
+				$abonos += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$nuevo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])-$abonos);
 
 			$html = '<div class="row">
                     <div class="col-xl-3 col-sm-6">
@@ -4129,6 +4138,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
                               <h2 class="mb-3">
                                 <span class="counter-value" data-target="'.(($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']).'">'.Utilidades::monto_color((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])).'</span>
+
+                                <input type="number" name="nuevo_total" id="nuevo_total" value="'.$nuevo_total.'" hidden>
                               </h2>
                             </div>
                           </div>
@@ -4140,6 +4151,33 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                   <div class="row" id="panel_montos"></div>';
 
             return $html;
+		}
+
+
+		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio){
+			$hoy = Utilidades::fecha_hoy();
+
+			try {
+
+				$this->insert_query("INSERT INTO abonos_servicios (abo_servicio, abo_tipo_servicio, abo_monto, abo_descripcion, abo_fecha, abo_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputAbono', '$inputDescripcion', '$hoy', '1')");
+
+				return json_encode("realizado");
+			} catch (Exception $e) {
+				return $e;
+			}
+
+			
+		}
+
+		public function quitar_abono($idAbono){
+			$grabar = $this->delete_query("DELETE FROM abonos_servicios
+					   					   WHERE       abo_id = $idAbono");
+
+			if($grabar){
+				return TRUE;
+			}else{
+				return FALSE;
+			}
 		}
 	    
 	   /**  FIN CENTRO COSTO  **/

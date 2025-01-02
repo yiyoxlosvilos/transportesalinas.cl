@@ -170,7 +170,7 @@
                 </div>
                 <!-- !botones -->
 
-                <div class="col-md-15 mb-2 mt-5">
+                <div class="col-md-15 mb-2 mt-5" id="panel_de_pagos">
                   <?= $centroCostos->traer_panel_pagos($idFlete); ?>
                 </div>  
               </div>

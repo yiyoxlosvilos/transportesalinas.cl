@@ -1111,17 +1111,14 @@
 				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
 				    <br>
 				    <label for="inputMonto"><b>* Monto Abono:</b></label>
-				    <input type="date" name="inputMonto" id="inputMonto" class="form-control shadow">
-				    <br>
-				    <label for="inputDescripcion"><b>* Descripción:</b></label>
-				    <input type="text" name="inputDescripcion" id="inputDescripcion" class="form-control shadow">
+				    <input type="number" name="inputMonto" id="inputMonto" class="form-control shadow" placeholder="Ingresar Monto Abono">
 				    <br>
 				    <div class="row">
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
 				    	</div>
 				    	<div class="col">
-				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="cargar_montos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
 				    	</div>
 				    </div>
 				    

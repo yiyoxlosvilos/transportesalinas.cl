@@ -145,11 +145,11 @@
                 </div>
                 <div class="col-lg-15">
                   <div class="row mb-2">
-                      <div class="col-md-6 mb-2">
+                      <div class="col-8 mb-2">
                         <h3>Documentos.</h3>           
                       </div>
-                      <div class="col-md-6 mb-2">
-                        <button class="btn btn-success d-flex justify-content-center" onclick="traer_nuevo_documento()">Nuevo&nbsp;&nbsp;&nbsp;<i class="bi bi-filetype-pdf"></i></button>
+                      <div class="col">
+                        <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                       </div>
                       <div class="col-md-15 mb-2" id="panel_documentos">
                         <?= $centroCostos->traer_documentos_asociados($idFlete); ?>

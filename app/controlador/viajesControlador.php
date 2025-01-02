@@ -1116,6 +1116,14 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    $recursos    = new Recursos();
 		    $datos_flete = $recursos->datos_fletes_id($idFlete);
 
+		    $datos_abonos= $recursos->datos_abonos_id($idFlete, 1);
+
+		    $abonos = 0;
+
+			for ($i=0; $i < count($datos_abonos); $i++) { 
+				$abonos += $datos_abonos[$i]['abo_monto'];
+			}
+
 		    $html        = '';
 		    $data        = array();
 		    $productos   = '';
@@ -1282,12 +1290,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					<div class="col-3 pt-3 ">
 						<h6>Abonado:</h6>
 						<span class="text-dark">
-						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
+						<h4 class="text-primary">'.Utilidades::monto3($abonos).'</h4>
 						 	</span>
 					</div>
 					<div class="col-15 pt-3 border mb-3 mt-3">
 						<h4>Total Pagado:</h4>
-						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
+						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
 					</div>
 					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
 						<h6>Estado de Pago:</h6>

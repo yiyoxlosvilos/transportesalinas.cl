@@ -4224,7 +4224,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                      </div>
 		                    <!-- end card -->
 						</div>
-						<div class="col-xxl-6 col-xl-6 col-sm-12">
+						<div class="col-xxl-12 col-xl-12 col-sm-12">
 							'.$abono_data.'
 						</div>
 

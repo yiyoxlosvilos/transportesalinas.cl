@@ -1119,6 +1119,7 @@
 		                <option value="2">- Factura.</option>
 		                <option value="3" selected>- Comprobante.</option>
 		              </select>
+		              <br>
 				    <div class="row">
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_abono('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
@@ -1243,6 +1244,14 @@
 				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
 				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
 				    <br>
+				    <br>
+				    <label for="tipo_dte"><b>Forma de Pago:</b></label>
+				    <select id="tipo_dte" class="form-select bordes sombraPlana">
+		                <option value="1">- Boleta.</option>
+		                <option value="2">- Factura.</option>
+		                <option value="3" selected>- Comprobante.</option>
+		              </select>
+		              <br>
 				    <div class="row">
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Procesar Pago <i class="bi bi-save"></i></button>

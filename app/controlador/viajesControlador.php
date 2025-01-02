@@ -1221,7 +1221,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>N&deg; Guía:</h6>
 		                ' . $guias . '
 		            </div>';
-		        $ocultar = 'hidden';
+		        $ocultar = ' style="display: none;"';
 		        if($cont_acomp > 0){
 		        	$ocultar = '';
 		        }

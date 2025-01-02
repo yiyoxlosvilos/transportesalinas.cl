@@ -3960,7 +3960,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<thead>
 								<tr>
 									<th>Titulo</th>
-									<th>Fecha T&eacute;rmino</th>
+									<th>Fecha Creación</th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -3971,7 +3971,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$html  .= '
 						<tr class="cambiazo">
 							<td>'.$sql[$i]['doc_titulo'].'</td>
-							<td>'.$sql[$i]['doc_fin_documento'].'</td>
+							<td>'.$sql[$i]['doc_fecha'].'</td>
 							<td align="center">
 								<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/repositorio/documento_servicios/'.$sql[$i]['doc_ruta'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1200"><i class="bi bi-eye"></i></button>
 							</td>
@@ -4039,9 +4039,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 
 		public function grabar_insertar_documento($ruta, $inputTitulo, $idServicio, $idTipoServicio){
+			$hoy = Utilidades::fecha_hoy();
 
-			$grabar = $this->insert_query("INSERT INTO documentos_servicios(doc_servicio, doc_tipo_servicio, doc_titulo, doc_ruta, doc_estado) 
-					   VALUES('$idServicio', '$idTipoServicio', '$inputTitulo', '$ruta', 1)");
+			$grabar = $this->insert_query("INSERT INTO documentos_servicios(doc_servicio, doc_tipo_servicio, doc_titulo, doc_ruta, doc_estado, doc_fecha) 
+					   VALUES('$idServicio', '$idTipoServicio', '$inputTitulo', '$ruta', 1, '$hoy')");
 
 			if($grabar){
 				return TRUE;

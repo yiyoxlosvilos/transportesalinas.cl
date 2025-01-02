@@ -1371,6 +1371,15 @@
 		case 'traer_traslados':
 
 			$html = $centroCosto->listado_de_traslados('');
+
+			$html .= '<script>
+					  $(document).ready(function() {
+					    $("#listado_traslados").DataTable({     
+					      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+					      "iDisplayLength": 5
+					   });
+					  });
+					</script>';
 		
 			echo $html;
 			break;

@@ -1067,7 +1067,7 @@
 			break;
 		case 'subir_documento_servicios':
 			$inputTitulo  = $_REQUEST['inputTitulo'];
-			$idTrabajador = $_REQUEST['idTrabajador'];
+			$idFlete = $_REQUEST['idFlete'];
 			$idTipoServicio = $_REQUEST['idTipoServicio'];
 
 			if ($_FILES){
@@ -1081,7 +1081,7 @@
 				$carpeta            = "../../../repositorio/documento_servicios/";
 
 				if(move_uploaded_file($_FILES['file']['tmp_name'], $destino)){
-					$centroCosto->grabar_insertar_documento($nombre, $inputTitulo, $idTrabajador, $idTipoServicio);
+					$centroCosto->grabar_insertar_documento($nombre, $inputTitulo, $idFlete, $idTipoServicio);
 				
 				}else{
 			  		return false;

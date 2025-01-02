@@ -129,7 +129,7 @@
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Viaje</h3>
+                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Traslado</h3>
                 </div>
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="nueva_bitacora(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
@@ -140,15 +140,15 @@
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Viaje</h3>
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Traslado</h3>
                 </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_editar"><?= $centroCostos->formulario_editar_flete($idFlete); ?></div>   
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_editar"></div>   
               </div>
             </div>
             <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="fas fa-paperclip"></i> Anexos Viaje</h3>
+                  <h3 class="text-dark mb-2"><i class="fas fa-paperclip"></i> Anexos Traslados</h3>
                 </div>
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
@@ -208,4 +208,6 @@
       removeItemButton: true,
     });
   });
+
+  traer_traslados_editar(<?= $idTraslado ?>);
 </script>

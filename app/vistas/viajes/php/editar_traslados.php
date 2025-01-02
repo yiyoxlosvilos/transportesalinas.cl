@@ -4,7 +4,7 @@
   require_once __dir__."/../../../controlador/recursosControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
   require_once __dir__."/../../../controlador/centroCostoControlador.php";
-  require_once __dir__."/../../../recursos/head.php";
+  
   
   $centroCostos= new CentroCostos();
 
@@ -19,20 +19,12 @@
   $hoy         = Utilidades::fecha_hoy();
 
   $idTraslado  = $_REQUEST['idTraslado'];
-
   $datos_traslado = $recursos->datos_traslados_id($idTraslado);
 
   //origen destino regreso
   $explorar_localidad = explode(",", $datos_traslado[0]['traslados']);
   $explorar_fecha     = explode(" ", $datos_traslado[0]['traslados_fecha_pago']);
 ?>
-<script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
-<link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
-
-<link rel="stylesheet" href="<?= controlador::$rutaAPP ?>app/recursos/css/choices.css?v=<?= rand() ?>">
-<script src="<?= controlador::$rutaAPP ?>app/recursos/js/choice.js?v=<?= rand() ?>"></script>
-
-<input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
 <div class="row mb-4">
   <p align="left" class="text-info font-weight-light h3"><i class="fas fa-bus text-info"></i>&nbsp;&nbsp; Editar traslado</p>
   <hr class="mt-2 mb-3"/>

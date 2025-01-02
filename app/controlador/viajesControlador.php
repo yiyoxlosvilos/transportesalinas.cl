@@ -4291,6 +4291,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$grabar = $this->delete_query("DELETE FROM abonos_servicios
 					   					   WHERE       abo_id = $idAbono");
 
+			$this->delete_query("DELETE FROM caja_cliente
+					   			WHERE       c_cli_abono = $idAbono");
+
+			$this->delete_query("DELETE FROM ventascliente
+					   			 WHERE       ven_cli_abono_id = $idAbono");
+
 			if($grabar){
 				return TRUE;
 			}else{

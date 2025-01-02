@@ -1229,7 +1229,7 @@
 				    <br>
 				    <div class="row">
 				    	<div class="col">
-				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago('.$idFlete.')">Procesar Pago<i class="bi bi-save"></i></button>
 				    	</div>
 				    	<div class="col">
 				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>

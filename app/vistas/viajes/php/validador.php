@@ -1044,11 +1044,11 @@
 			echo $html;
 			break;
 		case 'traer_nuevo_documento':
-			$html = ' <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 mb-2">
+			$html = ' <div class="col-xxl-8 col-xl-8 col-sm-12 pt-3 mb-2 mx-2">
 				        <label for="inputTitulo"><b>Titulo</b></label>
 				        <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Titulo" autocomplete="off">
 				      </div>
-					  <div dir=rtl class="file-loading col-xxl-6 col-xl-6 col-sm-12 pt-3">
+					  <div dir=rtl class="file-loading col-xxl-15 col-xl-15 col-sm-12 pt-3">
 		    			<input id="input-b8" name="input-b8[]" multiple type="file">
 					  </div>
 

@@ -1276,32 +1276,32 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		       		<div class="col-3 pt-3 ">
 						<h6>Valor Viaje:</h6>
 						<span class="text-dark">
-						<h4 class="text-dark">'.Utilidades::monto3($datos_flete[$i]['fle_valor']).'</h4>
+						<h4 class="text-dark">'.Utilidades::monto($datos_flete[$i]['fle_valor']).'</h4>
 						 	</span>
 					</div>
 					<div class="col-3 pt-3 ">
 		                <h6>Estadía:</h6>
 		                <div class="row">
 		                    <div class="col" id="estadia">
-		                        <h4 class="text-dark">'.Utilidades::monto3($datos_flete[$i]['fle_estadia']).'</h4>
+		                        <h4 class="text-dark">'.Utilidades::monto($datos_flete[$i]['fle_estadia']).'</h4>
 		                    </div>
 		                </div>
 		            </div>
 					<div class="col-3 pt-3 ">
 						<h6>Descuentos:</h6>
 						<span class="text-dark">
-						<h4 class="text-dark">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
+						<h4 class="text-dark">'.Utilidades::monto($datos_flete[$i]['fle_descuento']).'</h4>
 						 	</span>
 					</div>
 					<div class="col-3 pt-3 ">
 						<h6>Abonado:</h6>
 						<span class="text-dark">
-						<h4 class="text-dark">'.Utilidades::monto3($abonos).'</h4>
+						<h4 class="text-dark">'.Utilidades::monto($abonos).'</h4>
 						 	</span>
 					</div>
 					<div class="col-15 pt-3 border mb-3 mt-3">
 						<h4>Total '.$titulo_pago.':</h4>
-						<h4 class="text-dark" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']+$datos_flete[$i]['fle_estadia']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
+						<h4 class="text-dark" id="total-viaje">' . Utilidades::monto($datos_flete[$i]['fle_valor']+$datos_flete[$i]['fle_estadia']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
 					</div>
 					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
 						<h6>Estado de Pago:</h6>

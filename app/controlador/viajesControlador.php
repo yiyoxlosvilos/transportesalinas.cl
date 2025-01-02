@@ -4454,7 +4454,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
 									<td><b>Rut:</b><br><small>'.Utilidades::rut($datos_clientes[0]['cli_rut']).'</small></td>
 									<td><b>Giro:</b><br><small>'.$datos_clientes[0]['cli_giro'].'</small></td>
-									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['fle_fecha_pago']).'</small></td>
+									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['traslados_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
 			$html .= $this->listado_de_traslados_id($datos_cotizacion[0]['traslados_id']);
@@ -4464,7 +4464,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<td align="center"><b>Terminos y Condiciones:</b></td>
 						</tr>
 						<tr>
-							<td><p class="text-justify">'.str_replace('.', '. ', $datos_cotizacion[0]['fle_glosa']).'</p></td>
+							<td><p class="text-justify">'.str_replace('.', '. ', $datos_cotizacion[0]['traslados_descripcion']).'</p></td>
 						</tr>
 					</table>';
 
@@ -4481,8 +4481,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	
 
 	    	$sql    	= $this->selectQuery("SELECT * FROM traslados
-										  	  WHERE    		traslados_id = $idServicio0
-										  	  ORDER BY      traslados_id ASC");
+										  	  WHERE    		traslados_id = $idServicio");
 
 			$html = ' <table id="listado_traslados" class="table shadow">
 			            <thead >

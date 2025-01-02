@@ -174,15 +174,15 @@
                   <div class="row">
                     <div class="col-xl-3 col-sm-6">
                       <!-- card -->
-                      <div class="card card-h-100 border shadow-sm">
+                      <div class="card card-h-200 border shadow-sm">
                         <!-- card body -->
                         <div class="card-body">
                           <div class="row align-items-center">
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Viaje</span>
-                              <h4 class="mb-3">
+                              <h3 class="mb-3">
                                 <span class="counter-value" data-target="<?= $datos_fletes[0]['fle_valor'] ?>"><?= Utilidades::monto_color($datos_fletes[0]['fle_valor']) ?></span>
-                              </h4>
+                              </h3>
                             </div>
                           </div>
                         </div><!-- end card body -->

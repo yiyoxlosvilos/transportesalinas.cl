@@ -24,6 +24,7 @@
 
   //origen destino regreso
   $explorar_localidad = explode(",", $datos_traslado[0]['traslados']);
+  $explorar_fecha     = explode(" ", $datos_traslado[0]['traslados_fecha_pago']);
 ?>
 <script src="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/js/js.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
@@ -101,7 +102,7 @@
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
           <h6>Fecha de Traslado:</h6>
           <span class="text-dark">
-            <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= $datos_traslado[0]['traslados_fecha_pago'] ?>" autocomplete="off" onchange="calcular_fecha_pago()">
+            <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= $explorar_fecha[0] ?>" autocomplete="off" onchange="calcular_fecha_pago()">
             <span class="text-danger" id="respuesta-pago"></span>
             </span>
         </div>

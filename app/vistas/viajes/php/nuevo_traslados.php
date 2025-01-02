@@ -21,7 +21,7 @@
 <div class="row mb-4">
   <p align="left" class="text-info font-weight-light h3"><i class="fas fa-bus text-info"></i>&nbsp;&nbsp; Ingresar nuevo traslado</p>
   <hr class="mt-2 mb-3"/>
-    <div class="container mb-4 shadow p-4">
+    <div class="container mb-4 p-4">
       <div class="row col-10 mx-3">
         <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
           <b>* Origen:</b>
@@ -76,16 +76,16 @@
             <span class="text-danger" id="respuesta-pago"></span>
             </span>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-2 ">
           <b>Cliente:</b>
           <?= $recursos->select_clientes() ?>
         </div>
-        <div class="col-lg-15 p-3 border">
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-2 border">
           <label for="inputSucursal"><b>Descripción</b></label>
             <span id="validador_curso"></span>
             <textarea class="form-control shadow" id="inputDescripcion" rows="5"></textarea>
         </div>
-        <div class="col-lg-2 mb-2">
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-2">
           <label for="inputTipo">&nbsp;</label>
           <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_traslado(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
         </div>

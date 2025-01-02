@@ -4448,7 +4448,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h3 class="text-primary my-2" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h3>
+							  <h3 class="text-primary my-2" align="center">Traslados N&deg;: 000'.$datos_cotizacion[0]['traslados_id'].'</h3>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
@@ -4493,7 +4493,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<th>CANTIDAD</th>
 								<th>VALOR</th>
 								<th>TOTAL</th>
-								<th>&nbsp;</th>
 							</tr>
 			            </thead>
 			            <tbody>';
@@ -4535,17 +4534,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				          	<td>'.$sql[$i]['traslados_cantidad'].'</td>
 				          	<td>'.Utilidades::monto($sql[$i]['traslados_valor']).'</td>
 				          	<td>'.Utilidades::monto($cantidad_total).'</td>
-				          	<td align="center">
-
-				          		<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/editar_traslados.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
-	    								<i class="fas fa-pencil-alt"></i>
-	    						</button>
-
-				          		<button class="btn btn-success" type="button" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/traslados_ver.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
-	    								<i class="fas fa-print"></i>
-	    						</button>
-
-				          	</td>
 				          </tr>';
 				$neto += $cantidad_total;
 			}

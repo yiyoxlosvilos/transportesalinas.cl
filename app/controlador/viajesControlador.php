@@ -2868,7 +2868,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h4 class="text-primary" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h4>
+							  <h3 class="text-primary my-2" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h3>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>

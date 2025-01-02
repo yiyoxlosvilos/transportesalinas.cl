@@ -1132,7 +1132,7 @@
 
 			echo $html;
 			break;
-		case 'quitar_documento_servicios':
+		case 'traer_panel_pagos':
 			$idFlete = $_REQUEST['idFlete'];
 
 			$html = $centroCosto->traer_panel_pagos($idFlete);

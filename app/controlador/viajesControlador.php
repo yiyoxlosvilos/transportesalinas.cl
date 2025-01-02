@@ -4241,6 +4241,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 
 		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio, $tipo_dte){
+			session_start();
 			$hoy = Utilidades::fecha_hoy();
 			$hora = Utilidades::hora();
 

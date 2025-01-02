@@ -993,7 +993,14 @@
 			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
 			$inputFecha_items 	= $_REQUEST['inputFecha_items'];
 
-			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items);
+			$inputTrabajador 	= $_REQUEST['inputTrabajador'];
+			$tipos_estados_pagos= $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
+			$clientes 			= $_REQUEST['clientes'];
+			$inputAcompanante 	= $_REQUEST['inputAcompanante'];
+
+
+			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante);
 			break;
 		case 'traer_bitacora':
 			$idFlete = $_REQUEST['idFlete'];

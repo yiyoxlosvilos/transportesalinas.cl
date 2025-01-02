@@ -3957,7 +3957,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
             }
 	    }
 
-	    public function editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items){
+	    public function editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante){
 			$hoy 		= Utilidades::fecha_hoy();
 
 			$mostrar_regreso = '';
@@ -3967,12 +3967,20 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$traslados = $inputOrigen.','.$inputDestino.''.$mostrar_regreso;
 
+			/*, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante*/
+
 			$sql = $this->update_query("UPDATE 	traslados
 										SET 	traslados 				= '$traslados', 
 												traslados_cantidad		= '$inputCantidad', 
 												traslados_fechas		= '$inputFecha_items', 
 												traslados_valor			= '$inputValor', 
-												traslados_descripcion 	= '$inputDescripcion'
+												traslados_descripcion 	= '$inputDescripcion',
+												traslados_chofer 		= '$inputTrabajador',
+												traslados_estado_pago 	= '$tipos_estados_pagos',
+												traslados_fecha_pago 	= '$inputFechaPago',
+												traslados_cliente 		= '$clientes',
+												traslados_acompanantes 	= '$inputAcompanante'
+
 										WHERE   traslados_id 			= $idTraslado");
 
 			if($sql){

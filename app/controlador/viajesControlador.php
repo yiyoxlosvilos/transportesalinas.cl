@@ -3575,6 +3575,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								<th>TRASLADO</th>
 								<th>CANTIDAD TRASLADOS</th>
 								<th>FECHAS</th>
+								<th>ESTADO</th>
 								<th>VALOR</th>
 								<th>TOTAL</th>
 								<th>&nbsp;</th>
@@ -3615,6 +3616,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				          	<td>'.trim($mostrar_localidad, '- ').'</td>
 				          	<td>'.$sql[$i]['traslados_cantidad'].'</td>
 				          	<td>'.trim($mostrar_fecha, ', ').'</td>
+				          	<td></td>
 				          	<td>'.Utilidades::monto($sql[$i]['traslados_valor']).'</td>
 				          	<td>'.Utilidades::monto($cantidad_total).'</td>
 				          	<td align="center">
@@ -3638,7 +3640,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$html .= ' </tbody>
 						<tfooter>
 						<tr>
-							<td colspan="3">&nbsp;</td>
+							<td colspan="4">&nbsp;</td>
 							<th align="right">NETO:</th>
 							<th align="left">'.Utilidades::monto($neto).'</th>
 						</tr>

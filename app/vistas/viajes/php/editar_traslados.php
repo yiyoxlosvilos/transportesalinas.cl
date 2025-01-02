@@ -82,6 +82,33 @@
             ?>
           </div>
         </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Chofer:</b>
+          <span class="text-dark">
+            <?= $recursos->seleccionar_trabajadores($datos_traslado[0]['traslados_chofer']) ?>
+            </span>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Acompañante/es:</b>
+          <span class="text-dark">
+            <?= $recursos->seleccionar_companante($datos_traslado[0]['traslados_acompanantes']) ?>
+            </span>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Estado de Pago:</b>
+          <?= $recursos->select_tipos_estados_pagos($datos_traslado[0]['traslados_estado_pago']) ?>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Fecha de Traslado:</h6>
+          <span class="text-dark">
+            <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= $datos_traslado[0]['traslados_fecha_pago'] ?>" autocomplete="off" onchange="calcular_fecha_pago()">
+            <span class="text-danger" id="respuesta-pago"></span>
+            </span>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-4 ">
+          <b>Cliente:</b>
+          <?= $recursos->select_clientes($datos_traslado[0]['traslados_cliente']) ?>
+        </div>
         <div class="col-lg-15 p-3 border">
           <label for="inputSucursal"><b>Descripción</b></label>
             <span id="validador_curso"></span>

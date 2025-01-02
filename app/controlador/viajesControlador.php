@@ -3618,7 +3618,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				          	<td>'.Utilidades::monto($sql[$i]['traslados_valor']).'</td>
 				          	<td>'.Utilidades::monto($cantidad_total).'</td>
 				          	<td align="center">
-				          		<i class="fas fa-pencil-alt text-primary ver" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_traslados.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200"></i>
+
+				          		<button class="btn btn-primary" type="button" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_traslados.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+	    								<i class="fas fa-pencil-alt"></i>
+	    						</button>
+
+				          		<button class="btn btn-success" type="button" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/ver_traslados.php?idTraslado='.$sql[$i]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+	    								<i class="fas fa-print"></i>
+	    						</button>
+
 				          	</td>
 				          </tr>';
 				$neto += $cantidad_total;

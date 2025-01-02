@@ -180,9 +180,9 @@
                           <div class="row align-items-center">
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Viaje</span>
-                              <h1 class="mb-3">
+                              <h2 class="mb-3">
                                 <span class="counter-value" data-target="<?= $datos_fletes[0]['fle_valor'] ?>"><?= Utilidades::monto_color($datos_fletes[0]['fle_valor']) ?></span>
-                              </h1>
+                              </h2>
                             </div>
                           </div>
                         </div><!-- end card body -->
@@ -197,9 +197,9 @@
                           <div class="row align-items-center">
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Estadia</span>
-                              <h1 class="mb-3">
+                              <h2 class="mb-3">
                                 <span class="counter-value" data-target="<?= $datos_fletes[0]['fle_estadia'] ?>"><?= Utilidades::monto_color($datos_fletes[0]['fle_estadia']) ?></span>
-                              </h1>
+                              </h2>
                             </div>
                           </div>
                         </div><!-- end card body -->
@@ -214,9 +214,9 @@
                           <div class="row align-items-center">
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
-                              <h1 class="mb-3">
+                              <h2 class="mb-3">
                                 <span class="counter-value" data-target="<?= $datos_fletes[0]['fle_descuento'] ?>"><?= Utilidades::monto_color(-$datos_fletes[0]['fle_descuento']) ?></span>
-                              </h1>
+                              </h2>
                             </div>
                           </div>
                         </div><!-- end card body -->
@@ -232,9 +232,9 @@
                           <div class="row align-items-center">
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
-                              <h1 class="mb-3">
+                              <h2 class="mb-3">
                                 <span class="counter-value" data-target="<?= (($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']) ?>"><?= Utilidades::monto_color((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])) ?></span>
-                              </h1>
+                              </h2>
                             </div>
                           </div>
                         </div><!-- end card body -->

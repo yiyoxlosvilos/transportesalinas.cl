@@ -3569,7 +3569,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										  	  WHERE    		traslados_estado     != 0
 										  	  ORDER BY      traslados_id ASC");
 
-			$html = ' <table id="listado_facturas_proveedores" class="table shadow">
+			$html = ' <table id="listado_traslados" class="table shadow">
 			            <thead >
 			              	<tr class="table-info">
 								<th>TRASLADO</th>
@@ -3627,7 +3627,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$total = ($neto*1.19);
 			$iva   = ($total-$neto);
 
-			$html .= ' 
+			$html .= ' </tbody>
+						<tfooter>
 						<tr>
 							<td colspan="3">&nbsp;</td>
 							<th align="right">NETO:</th>
@@ -3643,7 +3644,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<th align="right">TOTAL:</th>
 							<th align="left">'.Utilidades::monto($total).'</th>
 						</tr>
-						</tbody>
+						</tfooter>
 					  </table>';
 
 			return $html;

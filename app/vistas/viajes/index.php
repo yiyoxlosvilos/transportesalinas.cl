@@ -156,7 +156,7 @@
   });
 
   $(document).ready(function() {
-    $("#cotizaciones_pendientes").DataTable({     
+    $("#maquinarias").DataTable({     
       "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
       "iDisplayLength": 5
    });

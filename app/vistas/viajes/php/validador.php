@@ -946,7 +946,14 @@
 			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
 			$inputFecha_items 	= $_REQUEST['inputFecha_items'];
 
-			$centroCosto->grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items);
+			$inputTrabajador 	= $_REQUEST['inputTrabajador'];
+			$tipos_estados_pagos= $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
+			$clientes 			= $_REQUEST['clientes'];
+			$inputAcompanante 	= $_REQUEST['inputAcompanante'];
+
+
+			$centroCosto->grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante);
 			break;
 		case 'grabar_nuevo_arriendo':
 			$idServicio 		= $_REQUEST['idServicio'];

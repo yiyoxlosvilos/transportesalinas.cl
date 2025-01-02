@@ -3657,7 +3657,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			return $html;
 	    }
-	    public function grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items){
+	    public function grabar_nuevo_traslado($idServicio, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante){
 			$hoy 		= Utilidades::fecha_hoy();
 
 			$mostrar_regreso = '';
@@ -3667,8 +3667,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$traslados = $inputOrigen.','.$inputDestino.''.$mostrar_regreso;
 
-			$sql 		= $this->insert_query("INSERT INTO traslados(traslados_servicio, traslados, traslados_cantidad, traslados_fechas, traslados_valor, traslados_descripcion, traslados_estado) 
-											   VALUES('$idServicio', '$traslados', '$inputCantidad', '$inputFecha_items', '$inputValor', '$inputDescripcion', 1)");
+			$sql 		= $this->insert_query("INSERT INTO traslados(traslados, traslados_cantidad, traslados_fechas, traslados_valor, traslados_descripcion, traslados_estado, traslados_estado_pago, traslados_fecha_pago, traslados_chofer, traslados_acompanantes, traslados_cliente) VALUES('$traslados', '$inputCantidad', '$inputFecha_items', '$inputValor', '$inputDescripcion', 1, '$tipos_estados_pagos', '$inputFechaPago', '$inputTrabajador', '$inputAcompanante', '$clientes')");
 
 			if($sql){
                 return TRUE;

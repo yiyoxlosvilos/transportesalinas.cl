@@ -1381,90 +1381,6 @@ function agregar_fechas_edit() {
     }
 }
 
-
-function grabar_nuevo_traslado(idServicio) {
-    const url_link = document.getElementById('url_link').value;
-    var accion     = "grabar_nuevo_traslado";
-
-    var inputOrigen        = document.getElementById('inputOrigen').value;
-    var inputDestino       = document.getElementById('inputDestino').value;
-    var inputRegreso       = document.getElementById('inputRegreso').value;
-    var inputValor         = document.getElementById('inputValor').value;
-    var inputCantidad      = document.getElementById('inputCantidad').value;
-    var inputDescripcion   = document.getElementById('inputDescripcion').value;
-
-    var inputFecha         = document.getElementsByName('inputFecha[]');
-
-    var inputFecha_items   = "";
-
-    for (var loop   = 0; loop < inputFecha.length; loop++) {
-        var asssoc  = inputFecha[loop];
-        const valor = asssoc.value;
-
-        inputFecha_items = inputFecha_items + "" + valor + ";";
-    }
-
-    if (inputOrigen == 0) {
-        $("#inputOrigen").focus();
-        Swal.fire("Alerta", "** Ingresar Origen **", "warning");
-    } else if(inputDestino == 0) {
-        $("#inputGuia").focus();
-        Swal.fire("Alerta", "** Ingresar Destino **", "warning");
-    } else if(inputValor == 0) {
-        $("#inputValor").focus();
-        Swal.fire("Alerta", "** Ingresar Valor **", "warning");
-    } else if(inputCantidad == 0) {
-        $("#inputCantidad").focus();
-        Swal.fire("Alerta", "** ingresar Cantidad **", "warning");
-    } else {
-
-        Swal.fire({
-          title:              '¿ Desea Crear Traslado ?',
-          showDenyButton:     false,
-          showCancelButton:   true,
-          confirmButtonText:  'SI',
-          cancelButtonText:   'NO',
-          icon:               'question',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            var formData = new FormData();
-                formData.append('idServicio', idServicio);
-                formData.append('inputOrigen', inputOrigen);
-                formData.append('inputDestino', inputDestino);
-                formData.append('inputRegreso', inputRegreso);
-                formData.append('inputValor', inputValor);
-                formData.append('inputCantidad', inputCantidad);
-                formData.append('inputDescripcion', inputDescripcion);
-                formData.append('inputFecha_items', inputFecha_items);
-                formData.append('accion', accion);
-              
-            $.ajax({
-              url:         url_link+"app/vistas/viajes/php/validador.php",
-              type:        "POST",
-              data :       formData,
-              processData: false,
-              contentType: false,
-              success:     function(sec) {
-                Swal.fire({
-                  title:              'Registro Realizado correctamente',
-                  icon:               'success',
-                  showDenyButton:     false,
-                  showCancelButton:   false,
-                  confirmButtonText:  'OK',
-                  cancelButtonText:   'NO',
-                }).then((result) => {
-                  location.reload();
-                })  
-              },
-              error:       function(sec) {
-                Swal.fire("Error", "Error", "error");
-              }
-            });
-          }
-        })
-    }
-}
-
 function calcular_valor_item_arriendo(item) {
     var hrs_realizadas    = document.getElementById('hrs_realizadas'+item).value;
     var valor_hora        = document.getElementById('valor_hora'+item).value;
@@ -2248,4 +2164,102 @@ function traer_traslados() {
     $("#traer_traslados").html('');
     $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
+}
+
+
+function grabar_nuevo_traslado(idServicio) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "grabar_nuevo_traslado";
+
+    var inputOrigen        = document.getElementById('inputOrigen').value;
+    var inputDestino       = document.getElementById('inputDestino').value;
+    var inputRegreso       = document.getElementById('inputRegreso').value;
+    var inputValor         = document.getElementById('inputValor').value;
+    var inputCantidad      = document.getElementById('inputCantidad').value;
+    var inputDescripcion   = document.getElementById('inputDescripcion').value;
+
+    var inputTrabajador    = document.getElementById('inputTrabajador').value;
+    var tipos_estados_pagos= document.getElementById('tipos_estados_pagos').value;
+    var inputFechaPago     = document.getElementById('inputFechaPago').value;
+    var clientes           = document.getElementById('clientes').value;
+
+    var inputFecha         = document.getElementsByName('inputFecha[]');
+    var inputFecha_items   = "";
+
+    for (var loop   = 0; loop < inputFecha.length; loop++) {
+        var asssoc  = inputFecha[loop];
+        const valor = asssoc.value;
+
+        inputFecha_items = inputFecha_items + "" + valor + ";";
+    }
+
+    var inputAcompanante_items  = new Array();
+    $('#inputAcompanante option:selected').each(function(){
+        inputAcompanante_items.push($(this).val());
+    });
+
+    if (inputOrigen == 0) {
+        $("#inputOrigen").focus();
+        Swal.fire("Alerta", "** Ingresar Origen **", "warning");
+    } else if(inputDestino == 0) {
+        $("#inputGuia").focus();
+        Swal.fire("Alerta", "** Ingresar Destino **", "warning");
+    } else if(inputValor == 0) {
+        $("#inputValor").focus();
+        Swal.fire("Alerta", "** Ingresar Valor **", "warning");
+    } else if(inputCantidad == 0) {
+        $("#inputCantidad").focus();
+        Swal.fire("Alerta", "** ingresar Cantidad **", "warning");
+    } else {
+
+        Swal.fire({
+          title:              '¿ Desea Crear Traslado ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idServicio', idServicio);
+                formData.append('inputOrigen', inputOrigen);
+                formData.append('inputDestino', inputDestino);
+                formData.append('inputRegreso', inputRegreso);
+                formData.append('inputValor', inputValor);
+                formData.append('inputCantidad', inputCantidad);
+                formData.append('inputDescripcion', inputDescripcion);
+                formData.append('inputFecha_items', inputFecha_items);
+                formData.append('inputTrabajador', inputTrabajador);
+                formData.append('tipos_estados_pagos', tipos_estados_pagos);
+                formData.append('inputFechaPago', inputFechaPago);
+                formData.append('clientes', clientes);
+                formData.append('inputAcompanante', inputAcompanante_items);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  traer_traslados();
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
+    }
 }

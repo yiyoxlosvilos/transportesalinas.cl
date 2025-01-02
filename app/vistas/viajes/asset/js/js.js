@@ -1924,7 +1924,7 @@ function grabar_bitacora(idFlete) {
     } else {
 
         Swal.fire({
-          title:              '¿ Desea agregar bitacora ?',
+          title:              '¿ Desea agregar nota ?',
           showDenyButton:     false,
           showCancelButton:   true,
           confirmButtonText:  'SI',
@@ -2120,4 +2120,47 @@ function traer_procesar_pago(idFlete) {
     $("#panel_montos").html('');
     $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}
+
+function quitar_bitacora(idBitacora) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "quitar_bitacora";
+
+    Swal.fire({
+          title:              '¿ Desea quitar nota ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idBitacora', idBitacora);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  cargar_bitacora(idFlete);
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
 }

@@ -1264,6 +1264,17 @@
 
 			echo $html;
 			break;
+		case 'quitar_bitacora':
+			$idBitacora	= $_REQUEST['idBitacora'];
+
+			$grabar 	= $centroCosto->quitar_bitacora($idBitacora);
+		
+			if ($grabar > 0) {
+				return true;
+			}else{
+				return false;
+			}
+			break;
 		default:
 			break;
 	}

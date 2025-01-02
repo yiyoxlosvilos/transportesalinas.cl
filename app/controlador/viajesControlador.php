@@ -4311,6 +4311,17 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				return FALSE;
 			}
 		}
+
+		public function quitar_bitacora($idBitacora){
+			$this->delete_query("DELETE FROM bitacora_servicios
+					   			 WHERE       bit_id = $idBitacora");
+
+			if($grabar){
+				return TRUE;
+			}else{
+				return FALSE;
+			}
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

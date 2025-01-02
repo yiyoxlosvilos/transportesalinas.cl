@@ -1295,7 +1295,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					</div>
 					<div class="col-15 pt-3 border mb-3 mt-3">
 						<h4>Total Pagado:</h4>
-						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
+						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']+$datos_flete[$i]['fle_estadia']-$datos_flete[$i]['fle_descuento']-$abonos) . '</h4>
 					</div>
 					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
 						<h6>Estado de Pago:</h6>

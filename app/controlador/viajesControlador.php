@@ -1253,7 +1253,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                <h6>Chofer:</h6>
 		                ' . $recursos->nombre_trabajador($datos_flete[$i]['fle_chofer']) . '
 		                </div>';
-		        $html .='<div class="col-6 pt-3 border mb-3">
+		        $html .='<div class="col-6 pt-3 border">
 		                <h6 '.$ocultar.'>Acompañante/es:</h6>
 						'.$acompanantes.'
 		            </div>';
@@ -1293,7 +1293,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<h6>Estado de Pago:</h6>
 						'.$recursos->nombre_tipos_estados_pagos($datos_flete[$i]['fle_estado_pago']).'
 					</div>
-					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3 ">
+					<div class="col-xxl-4 col-xl-3 col-sm-6 pt-3  mb-3">
 						<h6>Fecha de Pago:</h6>
 						<span class="text-dark">
 							' . Utilidades::arreglo_fechas_horas($datos_flete[$i]['fle_fecha_pagado']) . '

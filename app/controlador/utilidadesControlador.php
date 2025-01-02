@@ -6,6 +6,12 @@
 			return $hoy;
 		}
 
+		public static function fecha_hoy_hora(){
+			$hoy = date("Y-m-d H:i:s");
+
+			return $hoy;
+		}
+
 		public static function tipos_estado($estado){
 			if($estado == 1){
 				$tipo = '<span class="text-success">Vigente</span>';

@@ -2165,3 +2165,67 @@ function quitar_bitacora(idBitacora, idServicio) {
           }
         })
 }
+
+function grabar_pago(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "grabar_pago";
+
+    var inputFecha       = document.getElementById('inputFecha').value;
+    var inputMonto       = document.getElementById('inputMonto').value;
+    var tipo_dte         = document.getElementById('tipo_dte').value;
+    var nuevo_total      = document.getElementById('nuevo_total').value;
+
+    if (inputAbono == 0) {
+        $("#inputAbono").focus();
+        Swal.fire("Alerta", "** Ingresar Abono **", "warning");
+    } else if(parseInt(nuevo_total) < parseInt(inputMonto)) {
+        $("#inputAbono").focus();
+        Swal.fire("Alerta", "** Ingresar Abono Menor al monto Total **", "warning");
+    } else if(inputFecha.length == 0) {
+        $("#inputFecha").focus();
+        Swal.fire("Alerta", "** Ingresar Fecha **", "warning");
+    } else {
+
+        Swal.fire({
+          title:              '¿ Desea procesar Pago ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idFlete', idFlete);
+                formData.append('inputMonto', inputMonto);
+                formData.append('inputDescripcion', inputDescripcion);
+                formData.append('inputFecha', inputFecha);
+                formData.append('tipo_dte', tipo_dte);
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  traer_panel_pagos(idFlete);
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
+    }
+}

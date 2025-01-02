@@ -1242,7 +1242,7 @@
 				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
 				    <br>
 				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
-				    <input type="number" name="inputMonto" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
+				    <input type="number" name="inputMonto" id="inputMonto" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
 				    <br>
 				    <label for="tipo_dte"><b>Forma de Pago:</b></label>
 				    <select id="tipo_dte" class="form-select bordes sombraPlana">
@@ -1274,6 +1274,20 @@
 			}else{
 				return false;
 			}
+			break;
+		case 'grabar_pago':
+			$usuario 			= $_SESSION['IDUSER'];
+			$empresa 			= $_SESSION['IDEMPRESA'];
+			$idSucursal 		= $_SESSION['IDSUCURSAL'];
+
+			$idFlete 			= $_REQUEST['idFlete'];
+			$inputMonto 		= $_REQUEST['inputMonto'];
+			$inputFecha 		= $_REQUEST['inputFecha'];
+			$tipo_dte 			= $_REQUEST['tipo_dte'];
+
+			$html = $centroCosto->grabar_pago($idFlete, $inputMonto, $inputFecha, 1, $tipo_dte, $usuario, $empresa, $idSucursal);
+
+			echo $html;
 			break;
 		default:
 			break;

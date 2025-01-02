@@ -2240,3 +2240,12 @@ function traer_finalizar_pagos(idFlete) {
     $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
+
+function traer_traslados() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_traslados";
+
+    $("#traer_traslados").html('');
+    $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
+}

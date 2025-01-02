@@ -76,7 +76,7 @@
             <span class="text-danger" id="respuesta-pago"></span>
             </span>
         </div>
-        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-2 ">
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-4 ">
           <b>Cliente:</b>
           <?= $recursos->select_clientes() ?>
         </div>
@@ -85,9 +85,13 @@
             <span id="validador_curso"></span>
             <textarea class="form-control shadow" id="inputDescripcion" rows="5"></textarea>
         </div>
-        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-2">
+        <div class="col-xxl-6 col-xl-6 col-sm-6 mb-2">
           <label for="inputTipo">&nbsp;</label>
           <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_traslado(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-sm-6 mb-2">
+          <label for="inputTipo">&nbsp;</label>
+          <button type="button" id="cancelar" class="btn btn-dark form-control shadow" onclick="traer_traslados()">Cancelar</button>
         </div>
       </div>
     </div>

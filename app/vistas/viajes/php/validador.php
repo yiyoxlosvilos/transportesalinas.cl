@@ -1368,6 +1368,12 @@
 
 
 			break;
+		case 'traer_traslados':
+
+			$html = $centroCosto->listado_de_traslados('');
+		
+			echo $html;
+			break;
 		default:
 			break;
 	}

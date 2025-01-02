@@ -4240,7 +4240,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		}
 
 
-		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio){
+		public function grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, $tipo_servicio, $tipo_dte){
 			$hoy = Utilidades::fecha_hoy();
 			$hora = Utilidades::hora();
 
@@ -4248,12 +4248,38 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$empresa = $_SESSION['IDEMPRESA'];
 			$idSucursal = $_SESSION['IDSUCURSAL'];
 
+			$datos_fletes = $recursos->datos_fletes_id($idFlete);
+			$cliente      = $datos_fletes[0]['fle_cliente'];
+
+
 			try {
 
 				$abono = $this->insert_query("INSERT INTO abonos_servicios (abo_servicio, abo_tipo_servicio, abo_monto, abo_descripcion, abo_fecha, abo_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputAbono', '$inputDescripcion', '$hoy', '1')");
 
-				$this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_abono) 
-					   VALUES(4, '$idFlete', '$tipo_servicio', '$inputAbono', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$abono')");
+
+				$glosa = "Ingreso de abono de FLETE N°: ".$idFlete." con el monto de: ".$inputAbono;
+
+				$caja = $this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_abono, c_cli_glosa) 
+					   VALUES(4, '$idFlete', '$tipo_servicio', '$inputAbono', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$abono', '$glosa')");
+
+
+				//$total 	MONTO CON DESCUENTO, 
+				//$total2 	MONTO SIN DESCUENTOS
+				//$tipo_dte 1=BOLETA, 2=FACTURA, 3=COMPROBANTE DE VENTA
+
+				if($tipo_dte == 2){
+					$new_monto= ($inputAbono/1.19);
+					$iva      = ($new_monto*1.19)-$new_monto;
+				}elseif($tipo_dte == 1){
+					$new_monto= $inputAbono;
+					$iva      = ($inputAbono*0.19);
+				}else{
+					$iva      = 0;
+					$new_monto= $inputAbono;
+				}
+
+				$this->insert_query("INSERT INTO ventascliente(ven_cli_operacion, ven_cli_montoInicial, ven_cli_montoReal, ven_iva, ven_cli_boleta, ven_cli_usuario, ven_cli_empresa, ven_cli_sucursal, ven_cli_fecha, ven_cli_hora, ven_clientes, ven_cli_abono_id, ven_cli_estado) 
+					   VALUES('$caja', '$inputAbono', '$new_monto', '$iva', '$tipo_dte', '$usuario', '$empresa', '$idSucursal', '$hoy', '$hora', '$cliente', '$abono', 1)");
 
 				return json_encode("realizado");
 			} catch (Exception $e) {

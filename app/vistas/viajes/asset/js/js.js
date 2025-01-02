@@ -2009,6 +2009,7 @@ function grabar_abono(idFlete) {
     var inputFecha       = document.getElementById('inputFecha').value;
     var inputDescripcion  = document.getElementById('inputDescripcion').value;
     var inputAbono        = document.getElementById('inputAbono').value;
+    var tipo_dte        = document.getElementById('tipo_dte').value;
 
     var nuevo_total        = document.getElementById('nuevo_total').value;
 
@@ -2041,6 +2042,7 @@ function grabar_abono(idFlete) {
                 formData.append('inputAbono', inputAbono);
                 formData.append('inputDescripcion', inputDescripcion);
                 formData.append('inputFecha', inputFecha);
+                formData.append('tipo_dte', tipo_dte);
                 formData.append('accion', accion);
               
             $.ajax({

@@ -1147,7 +1147,7 @@
 										  WHERE    		estado = 1");
 
 			$html   = '<select name="'.$nombre.'" id="'.$nombre.'" class="form-select shadow" '.$multiple_data.'>
-						<option value="0">Seleccionar Localidad</option>';
+						<option value="0">Localidad</option>';
 
 			for ($i=0; $i < count($sql); $i++) { 
 				if($sql[$i]['idComuna'] == $idLocalidad){

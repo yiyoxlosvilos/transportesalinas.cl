@@ -1209,8 +1209,8 @@
 		                    	<span class="counter-value text-dark" data-target="'.$estadia.'">'.Utilidades::monto($estadia).'</span>
 		                    </h4>
 
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border">Total a Pagar</span>
-		                    <h4 class="mb-3">
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate border-top">Total a Pagar</span>
+		                    <h4 class="mb-3 border">
 		                    	<span class="counter-value text-primary" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
 		                    </h4>
 

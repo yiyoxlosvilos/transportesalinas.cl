@@ -4085,7 +4085,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			$viejo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']));
 
-			$html = '<div class="row">
+			$html = '
+				<div class="row" id="panel_montos_up">
                     <div class="col-xl-3 col-sm-6">
                       <!-- card -->
                       <div class="card card-h-200 border shadow-sm">

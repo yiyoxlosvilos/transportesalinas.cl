@@ -2217,6 +2217,7 @@ function grabar_pago(idFlete) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
+                    $("#panel_montos_up").hide();
                   traer_finalizar_pagos(idFlete);
                 })  
               },

@@ -77,7 +77,7 @@
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
-                              <i class="fas fa-truck h6"></i>
+                              <i class="fas fa-paperclip h6"></i>
                             </div>
                           </div>
                           <div class="product-tab-content">
@@ -141,21 +141,12 @@
             <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Anexos Viaje</h3>
+                  <h3 class="text-dark mb-2"><i class="fas fa-paperclip"></i> Anexos Viaje</h3>
                 </div>
-                <div class="col-lg-15">
-                  <div class="row mb-2">
-                      <div class="col-8 mb-2">
-                        <h3>Documentos.</h3>           
-                      </div>
-                      <div class="col">
+                <div class="col">
                         <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                       </div>
-                      <div class="col-md-15 mb-2" id="panel_documentos">
-                        <?= $centroCostos->traer_documentos_asociados($idFlete); ?>
-                      </div>
-                  </div>
-                </div>   
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idFlete); ?></div>    
               </div>
             </div>
             <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">

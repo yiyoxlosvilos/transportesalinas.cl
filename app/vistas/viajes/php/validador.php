@@ -1187,7 +1187,7 @@
 
 			$html = '
 				<div class="row col-10 justify-content-center mx-5 my-5">
-				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				  <div class="col-lg-6 p-3 mb-2 bg-white">
 				    <!-- card -->
 		            <div class="card card-h-200 border shadow-sm">
 		              <!-- card body -->

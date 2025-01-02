@@ -4138,6 +4138,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
                   </div>
                   <div class="row" id="panel_montos"></div>';
+
+            return $html;
 		}
 	    
 	   /**  FIN CENTRO COSTO  **/

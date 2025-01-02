@@ -4217,9 +4217,9 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                          <div class="row align-items-center">
 		                            <div class="col">
 		                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Restante</span>
-		                              <h4 class="mb-3">
-		                                <span class="counter-value text-success" data-target="'.($nuevo_total-$abonado).'">'.Utilidades::monto($nuevo_total-$abonado).'</span>
-		                              </h4>
+		                              <h3 class="mb-3">
+		                                <span class="counter-value text-dark" data-target="'.($nuevo_total-$abonado).'">'.Utilidades::monto($nuevo_total-$abonado).'</span>
+		                              </h3>
 		                            </div>
 		                          </div>
 		                        </div><!-- end card body -->

@@ -83,23 +83,23 @@
             ?>
           </div>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <b>Chofer:</b>
           <span class="text-dark">
             <?= $recursos->seleccionar_trabajadores($datos_traslado[0]['traslados_chofer']) ?>
             </span>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <b>Acompañante/es:</b>
           <span class="text-dark">
             <?= $recursos->seleccionar_companante($datos_traslado[0]['traslados_acompanantes']) ?>
             </span>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <b>Estado de Pago:</b>
           <?= $recursos->select_tipos_estados_pagos($datos_traslado[0]['traslados_estado_pago']) ?>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <h6>Fecha de Traslado:</h6>
           <span class="text-dark">
             <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= $explorar_fecha[0] ?>" autocomplete="off" onchange="calcular_fecha_pago()">

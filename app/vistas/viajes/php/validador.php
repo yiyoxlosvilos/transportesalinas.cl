@@ -1355,7 +1355,7 @@
 		         	<!-- end card -->
 				  </div>
 				  <div class="col-lg-6 p-3 mb-2 bg-white">
-				    <div class="row justify-content-center">
+				    <div class="row">
 				    	<div class="col-12">
 				    		<h4 class="text-primary">Descargar e Imprimir Comprobante</h4>
 				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/viajes_ver.php?idCotizacion='.$datos_fletes[0]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>

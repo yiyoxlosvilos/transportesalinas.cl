@@ -4161,13 +4161,32 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			$abonos = $recursos->datos_abonos_id($idFlete, $tipo_servicio);
 
 			$abonado 	= 0;
-			$abono_data = '';
+			$abono_data = '<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Monto</th>
+									<th>Fecha</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>';
 			for ($i=0; $i < count($abonos); $i++) { 
 
 				$abono_data .= '';
 
 				$abonado += $abonos[$i]['abo_monto'];
+				$abono_data  .= '
+						<tr class="cambiazo">
+							<td>'.Utilidades::monto3($abonos[$i]['abo_monto']).'</td>
+							<td>'.Utilidades::arreglo_fecha2($abonos[$i]['abo_fecha']).'</td>
+							<td align="center">
+								<button class="btn btn-danger" type="button" onclick="quitar_abono('.$abonos[$i]['abo_id'].', '.$idFlete.')"><i class="bi-trash"></i></button>
+							</td>
+						</tr>';
 			}
+
+			$abono_data .= '</tbody>
+							</table>';
 
 			$html = '<div class="row">
 
@@ -4187,6 +4206,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                        </div><!-- end card body -->
 		                      </div>
 		                    <!-- end card -->
+						</div>
+						<div class="col-xxl-6 col-xl-6 col-sm-12">
 		                    <!-- card -->
 		                      <div class="card card-h-200 border shadow-sm">
 		                        <!-- card body -->

@@ -1285,7 +1285,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<h4 class="text-primary">'.Utilidades::monto3($datos_flete[$i]['fle_descuento']).'</h4>
 						 	</span>
 					</div>
-					<div class="col-15 pt-3 border mb-3">
+					<div class="col-15 pt-3 border mb-3 mt-3">
 						<h4>Total Pagado:</h4>
 						<h4 class="text-primary" id="total-viaje">' . Utilidades::monto3($datos_flete[$i]['fle_valor']-$datos_flete[$i]['fle_descuento']) . '</h4>
 					</div>

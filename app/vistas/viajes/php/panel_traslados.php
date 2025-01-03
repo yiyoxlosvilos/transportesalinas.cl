@@ -27,7 +27,7 @@
 <script src="<?= controlador::$rutaAPP ?>app/recursos/js/table.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/recursos/css/table.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 
-<script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/upload.js?v=<?= rand() ?>"></script>
+<script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/upload_traslados.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/recursos/css/upload.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="<?= controlador::$rutaAPP ?>app/recursos/css/choices.css?v=<?= rand() ?>">
@@ -37,7 +37,8 @@
 <input type="hidden" name="idServicio" id="idServicio" value="ALL">
 
 <input type="hidden" name="idTraslados" id="idTraslados" value="<?= $idTraslados ?>">
-<input type="hidden" name="idTipoServicio" id="idTipoServicio" value="1">
+<input type="hidden" name="idFlete" id="idFlete" value="<?= $idTraslados ?>">
+<input type="hidden" name="idTipoServicio" id="idTipoServicio" value="2">
 
   <div class="row scope-bottom-wrapper" id="procesar_venta">
     <div class="col-xxl-2 recent-xl-23 col-xl-3 box-col-3">

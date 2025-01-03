@@ -112,7 +112,7 @@
               <div class="tab-content" id="add-product-pills-tabContent">
                 <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                       <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                     </div>
                     <div class="col-3">

@@ -256,6 +256,14 @@
   });
 
   $(document).ready(function() {
+    $("#maquinarias_listas").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
+
+  $(document).ready(function() {
     $("#servicios_aceptados").DataTable({     
       "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
       "iDisplayLength": 5

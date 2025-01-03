@@ -564,10 +564,10 @@
 			$html .= '<option value="0" selected="selected">Seleccionar Gasto</option>';
 
 			for ($i=0; $i <= count($sql); $i++) { 
-				if($sql[$i]['tpgas_id'] === $idgasto){
+				if($sql[$i]['tpgas_id'] == $idgasto && $sql[$i]['tpgas_id'] > 0){
 					$html .= '<option value="'.$sql[$i]['tpgas_id'].'" selected="selected">'.$sql[$i]['tpgas_nombre'].'</option>';
 
-				}else{
+				}elseif($sql[$i]['tpgas_id'] > 0){
 					$html .= '<option value="'.$sql[$i]['tpgas_id'].'">'.$sql[$i]['tpgas_nombre'].'</option>';
 				}
 			}
@@ -601,7 +601,11 @@
 			$html .= '<option value="0" selected="selected">Seleccionar Tipo</option>';
 
 			for ($i=0; $i <= count($sql); $i++) { 
-				$html .= '<option value="'.$sql[$i]['cate_id'].'">'.$sql[$i]['cate_nombre'].'</option>';
+
+				if($sql[$i]['cate_id'] > 0){
+					$html .= '<option value="'.$sql[$i]['cate_id'].'">'.$sql[$i]['cate_nombre'].'</option>';
+				}
+				
 			}
 
             $html .='         </select>';

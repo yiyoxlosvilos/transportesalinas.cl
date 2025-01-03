@@ -64,9 +64,9 @@
         if($tipo == 2){
           $fac  = $recursos->datos_facturas_clientes($idFactura);
 
-          echo '<div id="pdf-viewer">
-                  <embed src="'.controlador::$rutaAPP.'app/repositorio/documento_edp/'.$fac[0]['fac_documento'].'" type="application/pdf" width="100%" height="600px" />
-                </div>';
+          // echo '<div id="pdf-viewer">
+          //         <embed src="'.controlador::$rutaAPP.'app/repositorio/documento_edp/'.$fac[0]['fac_documento'].'" type="application/pdf" width="100%" height="600px" />
+          //       </div>';
         }
 ?>
         

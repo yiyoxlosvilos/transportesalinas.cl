@@ -403,6 +403,13 @@
 			}
 		}
 
+		public function nombre_producto($idProducto){
+			$sql    = $this->selectQuery("SELECT * FROM product_cliente
+										  WHERE 		prod_cli_id = $idProducto");
+
+			return ucfirst($sql[0]['prod_cli_producto']);
+		}
+
 		public function datos_productos_codigo($codigo){
 			$sql    = $this->selectQuery("SELECT * FROM product_cliente
 										  WHERE 		prod_cli_codigo = '$codigo'");

@@ -420,6 +420,11 @@ function grabar_nuevo_gasto(idServicio) {
   var inputDescripcion        = document.getElementById('inputDescripcion').value;
   var inputFecha              = document.getElementById('inputFecha').value;
 
+  var tipo_servicio           = document.getElementById('tipo_servicio').value;
+  var servicio_cliente        = document.getElementById('servicio_cliente').value;
+  var servicio_prestado       = document.getElementById('servicio_prestado').value;
+
+
   if(inputNombre.length == 0){
     $("#inputNombre").focus();
     Swal.fire("Alerta", "** Ingresar Nombre **", "warning");
@@ -458,6 +463,11 @@ function grabar_nuevo_gasto(idServicio) {
                   formData.append('inputSucursal', inputSucursal);
                   formData.append('inputDescripcion', inputDescripcion);
                   formData.append('inputFecha', inputFecha);
+
+                  formData.append('tipo_servicio', tipo_servicio);
+                  formData.append('servicio_cliente', servicio_cliente);
+                  formData.append('servicio_prestado', servicio_prestado);
+
                   formData.append('accion', accion);
               
               $.ajax({

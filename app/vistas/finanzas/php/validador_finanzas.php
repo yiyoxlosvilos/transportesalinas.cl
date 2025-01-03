@@ -161,7 +161,12 @@
 			$inputDescripcion 		= $_REQUEST['inputDescripcion'];
 			$inputFecha 			= $_REQUEST['inputFecha'];
 
-			$grabar      			= $finanzas->grabar_nuevo_gasto($tipo_gastos, $tipo_gastos_categorias, $inputNombre, $inputDescripcion, $inputFecha, $inputSucursal, $inputPrecio, $idServicio);
+			$tipo_servicio 			= $_REQUEST['tipo_servicio'];
+			$servicio_cliente 		= $_REQUEST['servicio_cliente'];
+			$servicio_prestado 		= $_REQUEST['servicio_prestado'];
+
+
+			$grabar      			= $finanzas->grabar_nuevo_gasto($tipo_gastos, $tipo_gastos_categorias, $inputNombre, $inputDescripcion, $inputFecha, $inputSucursal, $inputPrecio, $idServicio, $tipo_servicio, $servicio_cliente, $servicio_prestado);
 
 			return $grabar;
 			break;

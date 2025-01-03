@@ -4622,11 +4622,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					
 					$fechas_traslados .= '<div class="row">
 										<div class="col-6">';
-					$cadena_fech_traslados = '':
+
+					$cadena_fech_traslados = '';
 					for ($pp=0; $pp < count($explorar_fechas); $pp++) {
-						$cadena_fech_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]).', ';
+
+						$cadena_fech_traslados .= Utilidades::arreglo_fecha2($explorar_fechas[$pp]).', ';
 					}
+
 					$fechas_traslados .=  preg_replace('/,$/', '', $cadena_fech_traslados);
+
 					$fechas_traslados .= '</div></div>';
 
 				}else{

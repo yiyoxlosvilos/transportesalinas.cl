@@ -1949,7 +1949,7 @@
 		case 'traer_servicio_prestado_cliente':
 			$tipo_servicio = $_REQUEST['tipo_servicio'];
 
-			echo $recursos->select_tipo_servicios_cliente('traer_servicio_prestado', $tipo_servicio);
+			echo $recursos->select_tipo_servicios_cliente('traer_servicio_prestado', $tipo_servicio, 0);
 			break;
 		case 'traer_servicio_prestado':
 			$tipo_servicio = $_REQUEST['tipo_servicio'];

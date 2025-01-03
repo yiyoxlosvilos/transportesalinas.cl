@@ -3061,7 +3061,7 @@ function buscar_traslados() {
     var ano         = document.getElementById('ano_traslados').value;
     var accion     = "buscar_traslados";
 
-    $("#traer_productos_categoria").html('');
-    $('#traer_productos_categoria').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
+    $("#traer_traslados").html('');
+    $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
 }

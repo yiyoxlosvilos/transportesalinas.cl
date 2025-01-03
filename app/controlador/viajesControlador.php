@@ -4602,7 +4602,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										<div class="col-6">';
 					$cadena_traslados = '';
 					for ($d=0; $d < count($explorar_origen); $d++) {
-						$cadena_traslados .= $recursos->nombre_localidad($explorar_origen[$d]).', ';
+						$cadena_traslados .= $recursos->nombre_localidad($explorar_origen[$d]).',';
 					}
 
 					$traslados .= rtrim($cadena_traslados, ',');

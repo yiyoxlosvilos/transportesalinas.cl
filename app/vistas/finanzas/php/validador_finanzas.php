@@ -232,8 +232,11 @@
 					          <label for="inputNombre"><b>E-Mail</b></label>
 					          <input type="text" class="form-control shadow" id="inputMail" placeholder="E-Mail" autocomplete="off">
 					        </div>
-					        <div class="col-10 mt-3">
+					        <div class="col-5 mt-3">
 					          <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_proveedor()">Grabar <i class="bi bi-save"></i></button>
+					        </div>
+					        <div class="col-5 mt-3">
+					          <button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="location.reload()">Cancelar</button>
 					        </div>
 					      </div>
 					    </div>

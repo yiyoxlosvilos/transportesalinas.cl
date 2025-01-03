@@ -2250,7 +2250,7 @@
 			$html = '<select id="tipo_servicio" class="form-control shadow">';
 			$html .= '<option value="0">Seleccionar</option>';
 
-			for ($i=0; $i <= count($sql); $i++) { 
+			for ($i=1; $i <= count($sql); $i++) { 
 				if($sql[$i]['tipo_id'] === $idgasto){
 					$html .= '<option value="'.$sql[$i]['tipo_id'].'" selected="selected">'.$sql[$i]['tipo_nombre'].'</option>';
 

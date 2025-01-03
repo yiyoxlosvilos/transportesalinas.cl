@@ -138,7 +138,7 @@
                         <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Arriendo</h3>
                       </div>
                     <div class="col">
-                      <button class="btn btn-sm btn-dark" onclick="asignar_arriendo()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Traslado</span></button>
+                      <button class="btn btn-sm btn-dark" onclick="asignar_arriendo()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Arriendo</span></button>
                     </div>
                     <div class="col-15 mt-3" id="traer_arriendos">
                       <?= $centroCostos->listado_de_arriendo('') ?>

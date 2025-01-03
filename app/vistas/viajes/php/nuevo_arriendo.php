@@ -28,21 +28,36 @@
   <hr class="mt-2 mb-3"/>
     <div class="mb-4 shadow p-4">
       <div class="row bg-soft-light">
-        <div class="col-lg-6 p-3 mb-2 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3">
           <label for="inputPrecio"><b>* Tipo de servicio:</b></label>
           <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">
         </div>
-        <div class="col-lg-6 p-3 mb-2 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3">
           <label for="inputPrecio"><b>* Proyecto:</b></label>
           <input type="text" class="form-control shadow" id="inputProyecto" placeholder="Escribir nombre Proyecto">
         </div>
-        <div class="col-lg-6 p-3 mb-2 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3">
           <label for="inputPrecio"><b>* Contacto:</b></label>
           <input type="text" class="form-control shadow" id="inputContacto" placeholder="Escribir Contacto">
         </div>
-        <div class="col-lg-6 p-3 mb-2 border">
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3">
           <label for="inputPrecio"><b>* Mes servicio:</b></label>
           <?= Utilidades::select_agrupacion_cards_mes('', 'mes', $mes) ?>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <b>Estado de Pago:</b>
+          <?= $recursos->select_tipos_estados_pagos() ?>
+        </div>
+        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+          <h6>Fecha de Traslado:</h6>
+          <span class="text-dark">
+            <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= Utilidades::fecha_hoy() ?>" autocomplete="off" onchange="calcular_fecha_pago()">
+            <span class="text-danger" id="respuesta-pago"></span>
+            </span>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-sm-12 mb-4 ">
+          <b>Cliente:</b>
+          <?= $recursos->select_clientes() ?>
         </div>
         <div class="col-lg-15 p-3 border">
           <label for="inputSucursal"><b>Descripción</b></label>

@@ -23,13 +23,17 @@
   <hr class="mt-2 mb-3"/>
     <div class="container mb-4">
       <div class="row">
-        <div class="card px-5 justify-content-center align-content-center" id="panel_proveedores">
-          <h4 class="text-primary">Crear Factura Proveedores</h4>
-          <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h6 class="ocultar text-white">Agregar</h6></button>
+        <div class="col border justify-content-center align-content-center" id="panel_proveedores">
+          <div class="row">
+            <div class="col"><h4 class="text-primary">Crear Factura Proveedores</h4></div>
+            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i></button></div>
+          </div>
         </div>
-        <div class="card px-5 justify-content-center align-content-center" id="panel_clientes">
-          <h4 class="text-primary">Crear Factura Clientes</h4>
-          <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h6 class="ocultar text-white">Agregar</h6></button>
+        <div class="col border justify-content-center align-content-center" id="panel_clientes">
+          <div class="row">
+            <div class="col"><h4 class="text-primary">Crear Factura Clientes</h4></div>
+            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i></button></div>
+          </div>
         </div>
       </div>
     </div>

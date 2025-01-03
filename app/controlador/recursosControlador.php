@@ -206,6 +206,21 @@
 			return $monto;
 		}
 
+		public function datos_arriendos_monto_id($idServicio){
+			$monto   = 0;
+			$sql     = $this->selectQuery("SELECT * FROM item_arriendo
+										   LEFT JOIN  	 arriendos
+										   ON 			 arriendos.arriendo_id 			= item_arriendo.item_arriendo_id
+										   WHERE  		 arriendos.arriendo_id IN($idServicio)
+										   AND    		 arriendos.arriendo_estado   	= 1");
+
+			for ($i=0; $i < count($sql); $i++) { 
+				$monto += $sql[$i]['item_total'];
+			}
+
+			return $monto;
+		}
+
 		public function datos_comuna($idComuna){
 			$sql  	= $this->selectQuery("SELECT * FROM cl_comuna
 										  WHERE    		idComuna = $idComuna

@@ -714,7 +714,7 @@
 			$sql    = $this->selectQuery("SELECT * FROM proveedor
 										  WHERE  		proveedor_estado = 1");
 
-			$html = ' <table id="proveedores_list" class="table table-hover shadow-lg" style="width:100%">
+			$html = ' <table id="proveedores_list" class="table table-hover" style="width:100%">
 			            <thead >
 			              <tr class="table-info">
 			                <th>Nombre</th>

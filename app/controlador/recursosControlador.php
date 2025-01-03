@@ -1437,7 +1437,7 @@
 										  $script
 				   						  ORDER BY   	cli_nombre ASC");
 
-			$html = ' <table id="clientes_list" class="table table-hover shadow-lg" style="width:100%">
+			$html = ' <table id="clientes_list" class="table table-hover" style="width:100%">
 			            <thead >
 			              <tr class="table-info">
 			                <th>Razon Social</th>

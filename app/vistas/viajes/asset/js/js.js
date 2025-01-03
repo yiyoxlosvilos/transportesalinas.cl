@@ -2738,7 +2738,7 @@ function grabar_bitacora_arriendos(idFlete) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  cargar_bitacora_traslados(idFlete);
+                  cargar_bitacora_arriendos(idFlete);
                 })  
               },
               error:       function(sec) {

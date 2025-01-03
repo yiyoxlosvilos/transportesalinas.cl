@@ -29,22 +29,12 @@
                 <li class="nav-item" role="presentation"> 
                   <a class="nav-link active" id="overview-project-tab" data-bs-toggle="pill" href="#overview-project" role="tab" aria-controls="overview-project" aria-selected="false" tabindex="-1">
                   <div class="absolute-border"></div>
-                  <div class="nav-rounded">
-                    <div class="product-icons">
-                      <i class="fas fa-shipping-fast h6"></i>
-                    </div>
-                  </div>
                   <div class="product-tab-content">
                     <h6>Proveedores</h6>
                   </div></a>
                 </li>
                 <li class="nav-item" role="presentation"> <a class="nav-link" id="target-project-tab" data-bs-toggle="pill" href="#target-project" role="tab" aria-controls="target-project" aria-selected="false" tabindex="-1">
                     <div class="absolute-border"></div>
-                    <div class="nav-rounded">
-                      <div class="product-icons">
-                        <i class="fas fa-bus h6"></i>
-                      </div>
-                    </div>
                     <div class="product-tab-content">
                       <h6>Clientes</h6>
                     </div></a>

@@ -4596,7 +4596,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			    $traslados .= '';
 			    $explorar_origen = explode(",", $datos_flete[$i]['traslados']);
-			    if(is_array($datos_flete[$i]['traslados'])){
+			    if(is_array($explorar_origen)){
 					
 
 					for ($d=0; $d < count($explorar_origen); $d++) {

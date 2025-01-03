@@ -4643,7 +4643,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        $html .='
 		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 		                <h6>Traslados:</h6>
-		                ' . $fechas_traslados . '
+		                ' . $traslados . '
 		            </div>';
 
 
@@ -4683,7 +4683,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
 						<h6>Fecha de Traslados:</h6>
 						<span class="text-dark">
-						' . Utilidades::arreglo_fecha2($datos_flete[$i]['traslados_fecha_pago']) . '
+						' . $fechas_traslados . '
 				  		</span>
 					</div>
 					<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">

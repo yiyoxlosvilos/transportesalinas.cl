@@ -4868,6 +4868,56 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			
 		}
+
+		public function detalle_de_arriendo($idArriendo){
+	    	$recursos 	= new Recursos();
+	    	$desde      = $ano.'-'.$mes.'-01';
+
+	    	$ultimo_dia = date("t", strtotime($desde));
+	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
+	    	$hoy        = Utilidades::fecha_hoy();
+
+	    	$neto       = 0;
+	    	
+	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
+										  	  WHERE    		arriendo_estado = 1
+										  	  ORDER BY      arriendo_id  ASC");
+
+	    	$html = '';
+	    	$j 	  = 1;
+	    	$total=0;
+			for ($i=0; $i < count($sql); $i++) {
+
+				$html .= ' 
+						<div class="row p-3">
+		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
+		    					<div class="row">
+			    					<div class="col text-center">
+			    						<span class="p-2 fas fa-pencil-alt text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    					</div>
+
+			    					<div class="col text-center">
+			    						<span class="p-2 fas fa-print text-success cursor" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    					</div>
+		    					</div>
+		    				</div>
+		    				<div class="col border"><strong>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</strong></div>
+		    				<div class="col border"><strong>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</strong></div>
+		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
+		    				<div class="col border"><center><strong>Mes de:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>
+		    				<div class="col-15 mt-2 p-1 bg-light"><strong>Descripción:<br>'.$sql[$i]['arriendo_descripcion'].'</strong></div>';
+				$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
+
+				$html .= '</div>';
+
+				$total += $recursos->datos_arriendos_monto_id($sql[$i]['arriendo_id']);
+			}
+
+				$html .= '';
+
+
+			return $html;
+	    }
 	    
 	   /**  FIN CENTRO COSTO  **/
 

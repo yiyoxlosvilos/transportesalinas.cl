@@ -122,9 +122,9 @@
             <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
               <div class="row">
                 <div class="col-12">
-                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalle Traslados</h3>
+                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalle Arriendo</h3>
                 </div> 
-                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->mostrar_formulario_traslados($idTraslados); ?></div> 
+                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->detalle_de_arriendo($idTraslados); ?></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">

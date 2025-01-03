@@ -4935,7 +4935,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 
-			$cantidad_total = $recursos->datos_arriendos_monto_id($idFlete);
+			$cantidad_total = ($recursos->datos_arriendos_monto_id($idFlete)*1.19);
 
 			$nuevo_total = ($cantidad_total-$abonos);
 

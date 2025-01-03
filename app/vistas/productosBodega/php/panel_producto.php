@@ -10,7 +10,6 @@ ini_set('display_errors', 1);
   require_once __dir__."/../../../recursos/head_panel.php";
 
   $productos   = new ProductosBodega();
-  $utilidades  = new Utilidades();
   $mvc2        = new controlador();
   $recursos    = new Recursos();
 

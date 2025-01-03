@@ -3,7 +3,7 @@
   require_once __dir__."/../../../controlador/finanzasControlador.php";
   require_once __dir__."/../../../controlador/recursosControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
-  require_once __dir__."/../../../recursos/head.php";
+  require_once __dir__."/../../../recursos/head_panel.php";
 
   $finanzas    = new Finanzas();
   $recursos    = new Recursos();

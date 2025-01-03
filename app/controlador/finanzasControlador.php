@@ -1136,7 +1136,7 @@
 
 			$html .= ' 
 						<tr>
-							<td colspan="2">&nbsp;</td>
+							<td colspan="3">&nbsp;</td>
 							<th align="right">Total:</th>
 							<th align="left">'.Utilidades::monto3($total).'</th>
 							<td align="center">&nbsp;</td>

@@ -3943,7 +3943,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$this->delete_query("DELETE FROM item_arriendo WHERE item_arriendo_id = $idArriendo");
 	    }
 
-	    public function editar_arriendo($idArriendo, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items){
+	    public function editar_arriendo($idArriendo, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items, $tipos_estados_pagos, $inputFechaPago, $clientes){
 	    	$recursos 	= new Recursos();
 			$hoy 		= Utilidades::fecha_hoy();
 
@@ -3952,7 +3952,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 												arriendo_proyecto		= $inputProyecto, 
 												arriendo_contacto		= $inputContacto, 
 												arriendo_mes			= $mes, 
-												arriendo_descripcion	= $inputDescripcion
+												arriendo_descripcion	= $inputDescripcion,
+												arriendo_cliente 		= $clientes,
+												arriendo_estado_pago 	= $tipos_estados_pagos,
+												arriendo_fecha  		= $inputFechaPago
 										WHERE   arriendo_id 			= $idArriendo');
 
 			$this->eliminar_registros_previos($idArriendo);

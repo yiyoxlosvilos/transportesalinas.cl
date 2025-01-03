@@ -987,7 +987,11 @@
 			$valor_items 		= $_REQUEST['valor_items'];
 			$hr_realizada_items = $_REQUEST['hr_realizada_items'];
 
-			$centroCosto->editar_arriendo($idArriendo, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items);
+			$tipos_estados_pagos= $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
+			$clientes 			= $_REQUEST['clientes'];
+
+			$centroCosto->editar_arriendo($idArriendo, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items, $tipos_estados_pagos, $inputFechaPago, $clientes);
 			break;
 		case 'editar_traslado':
 			$idTraslado 		= $_REQUEST['idTraslado'];

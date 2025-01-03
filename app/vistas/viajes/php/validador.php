@@ -1402,13 +1402,22 @@
 
 			break;
 		case 'traer_traslados':
-		$ano = Utilidades::fecha_ano();
-		$mes = Utilidades::fecha_mes();
-			$html = $centroCosto->listado_de_traslados($mes, $ano, '', '');
+			$ano = Utilidades::fecha_ano();
+			$mes = Utilidades::fecha_mes();
+			$html = '<h3 class="mt-5 mb-4 text-success">Vigentes</h3>';
+			$html .= $centroCosto->listado_de_traslados($mes, $ano, '', '');
+			$html .= '<h3 class="mt-5 mb-4 text-danger">Pagados</h3>';
+			$html .= $centroCosto->listado_de_traslados($mes, $ano, '', 2);
 
 			$html .= '<script>
 					  $(document).ready(function() {
 					    $("#listado_traslados").DataTable({     
+					      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+					      "iDisplayLength": 5
+					   });
+					  });
+					  $(document).ready(function() {
+					    $("#listado_traslados_listas").DataTable({     
 					      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
 					      "iDisplayLength": 5
 					   });

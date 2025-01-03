@@ -74,15 +74,16 @@
 
                 </div>
                 <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
-                  <div class="row">
-                    <div class="col-8">
-                        <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Traslados</h3>
+                  <div class="row" id="procesar_venta">
+                    <div class="d-flex flex-wrap align-items-center mb-4">
+                      <span class="h2 animate__animated animate__pulse"><i class="bi bi-search"></i> <span class="ocultar">Panel Cliente</span></span>
+                      <div class="ms-auto">
+                        <button class="btn btn-success" onclick="nuevo_cliente_control()"><i class="bi bi-person-bounding-box h4 text-white"></i> <span class="ocultar">Nuevo</span></button>
                       </div>
-                    <div class="col">
-                      <button class="btn btn-sm btn-dark" onclick="asignar_traslados()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Traslado</span></button>
                     </div>
-                    <div class="col-15 mt-3" id="traer_traslados">
-                      <?= $centroCostos->listado_de_traslados('') ?>
+                    <hr class="mt-2 mb-3"/>
+                    <div class="col-lg-15 p-2 mt-2 mb-2 ml-2 animate__animated animate__fadeIn shadow" id="panel_caja">
+                      <?= $recursos->traer_clientes_consulta(); ?>
                     </div>
                   </div>
                 </div>

@@ -1661,7 +1661,7 @@
 				    <div class="row">
 				    	<div class="col-12">
 				    		<h4 class="text-primary">Descargar e Imprimir Comprobante</h4>
-				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/traslados_ver.php?idCotizacion='.$datos_fletes[0]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
+				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/traslados_ver.php?idTraslado='.$datos_fletes[0]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
 				    	</div>
 				  </div>
 	

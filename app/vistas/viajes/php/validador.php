@@ -1671,6 +1671,9 @@
 
 
 			break;
+		case 'traer_listado_camion':
+			echo $recursos->select_productos_multiple(0);
+			break;
 		default:
 			break;
 	}

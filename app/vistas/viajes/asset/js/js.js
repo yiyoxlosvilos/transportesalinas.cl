@@ -1506,8 +1506,21 @@ function grabar_nuevo_arriendo(idServicio) {
 
 function agregar_arriendo() {
     var camion              = document.getElementsByName('camion[]');
+
+    var resultado    =  $.ajax({
+                                url:       url_link+"app/vistas/viajes/php/validador.php",
+                                type:      'POST', // o 'POST',
+                                async:     false,    
+                                cache:     false, 
+                                data:      { accion: "traer_listado_camion"},
+                                dataType:  'json',
+                                success: function(datos) {
+                                    return datos;
+                                }
+                            });
+
     i = (camion.length)+1;
-    $('#listar_productos').append('<tr id="row'+i+'"><td><input type="text" name="camion[]" placeholder="Nombre" class="form-control name_list" /></td><td><input type="number" name="hors_contratadas[]" placeholder="Horas Contratadas" class="form-control titulo_list" /></td><td><input type="number" name="valor_hora[]" placeholder="Valor horas" class="form-control titulo_list" id="valor_hora'+i+'" onchange="calcular_valor_item_arriendo('+i+')" /></td><td><input type="number" name="hrs_realizadas[]" placeholder="Horas realizadas" class="form-control titulo_list" id="hrs_realizadas'+i+'"  onchange="calcular_valor_item_arriendo('+i+')"/></td><td><span id="total_item'+i+'" class="text-dark"></span></td><td><span class="fas fa-trash text-danger cursor btn_remove" name="remove" id="'+i+'" onClick="quitar_arriendo('+i+')"></span></td></tr>');
+    $('#listar_productos').append('<tr id="row'+i+'"><td>'+resultado.responseText+'</td><td><input type="number" name="hors_contratadas[]" placeholder="Horas Contratadas" class="form-control titulo_list" /></td><td><input type="number" name="valor_hora[]" placeholder="Valor horas" class="form-control titulo_list" id="valor_hora'+i+'" onchange="calcular_valor_item_arriendo('+i+')" /></td><td><input type="number" name="hrs_realizadas[]" placeholder="Horas realizadas" class="form-control titulo_list" id="hrs_realizadas'+i+'"  onchange="calcular_valor_item_arriendo('+i+')"/></td><td><span id="total_item'+i+'" class="text-dark"></span></td><td><span class="fas fa-trash text-danger cursor btn_remove" name="remove" id="'+i+'" onClick="quitar_arriendo('+i+')"></span></td></tr>');
 }
 
 function quitar_arriendo(id) {

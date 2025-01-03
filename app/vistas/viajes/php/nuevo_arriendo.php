@@ -49,7 +49,7 @@
           <?= $recursos->select_tipos_estados_pagos() ?>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
-          <h6>Fecha de Traslado:</h6>
+          <h6>Fecha de Arriendo:</h6>
           <span class="text-dark">
             <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= Utilidades::fecha_hoy() ?>" autocomplete="off" onchange="calcular_fecha_pago()">
             <span class="text-danger" id="respuesta-pago"></span>

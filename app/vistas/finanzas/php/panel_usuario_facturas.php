@@ -48,30 +48,18 @@
             <div class="col-12">
               <div class="tab-content" id="add-product-pills-tabContent">
                 <div class="tab-pane fade active show" id="overview-project" role="tabpanel" aria-labelledby="overview-project-tab">
-                  <div class="row">
-                    <div class="col-lg-15 mb-2 shadow">
-                      <div class="container mb-4">
-                        <div class="row">
-                          <div class="col">
-                            <div class="col-lg-3 mb-2">
-                              <p align="center" class="text-secondary font-weight-light h4">Proveedores</p>
-                            </div> 
-                          </div>
-                          <div class="col">
-                            <div class="col-lg-3 mb-2">
-                              <span class="btn btn-success w-lg waves-effect waves-light w-100 waves-effect waves-light " type="button" onclick="nuevo_proveedor()">
-                                <i class="bi bi-plus-circle-dotted"></i>
-                              </span>
-                            </div>
-                          </div>
-                          <div class="col-15" id="nuevo_proveedor">
-                            <?= $finanzas->listado_proveedores() ?>
-                          </div>
-                        </div>
+                    <div class="d-flex flex-wrap align-items-center mb-4">
+                      <span class="h2 animate__animated animate__pulse"><i class="bi bi-search"></i> <span class="ocultar">Panel Proveedores</span></span>
+                      <div class="ms-auto">
+                        <button class="btn btn-success" onclick="nuevo_proveedor()"><i class="bi bi-person-bounding-box h4 text-white"></i> <span class="ocultar">Nuevo</span></button>
                       </div>
                     </div>
-                  </div>
-
+                    <hr class="mt-2 mb-3"/>
+                    <div class="row" >
+                      <div class="col-15" id="nuevo_proveedor">
+                        <?= $finanzas->listado_proveedores() ?>
+                      </div>
+                    </div>                
                 </div>
                 <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
                   <div class="row" id="procesar_venta">

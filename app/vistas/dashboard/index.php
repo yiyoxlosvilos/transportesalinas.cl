@@ -71,11 +71,26 @@
                     <div class="d-flex flex-wrap align-items-center mb-4">
                         <h5 class="card-title me-2">Facturas Proveedores</h5>
                         <div class="ms-auto">
-                            <?= Utilidades::select_agrupacion_cards('mostrar_facturas_compras', 'fecha_meta_compras', $ano, $mes) ?>
+                            <?= Utilidades::select_agrupacion_cards('mostrar_facturas_compras', 'fecha_factura_compras', $ano, $mes) ?>
                         </div>
                     </div>
                     <div class="row align-items-center" id="mostrar_facturas_compras">
                         <?= $dash->panel_card_facturas_compra($ano, $mes); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 mb-4">
+            <div class="card card-h-100 shadow">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap align-items-center mb-4">
+                        <h5 class="card-title me-2">Facturas Clientes</h5>
+                        <div class="ms-auto">
+                            <?= Utilidades::select_agrupacion_cards('mostrar_facturas_ventas', 'fecha_factura_ventas', $ano, $mes) ?>
+                        </div>
+                    </div>
+                    <div class="row align-items-center" id="mostrar_facturas_ventas">
+                        <?= $dash->panel_card_facturas_ventas($ano, $mes); ?>
                     </div>
                 </div>
             </div>
@@ -96,7 +111,7 @@
               </div>
           </div>
         </div>
-        <div class="col-xl-15 mb-4">
+        <div class="col-xl-6 mb-4">
             <div class="card card-h-100 shadow">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center">

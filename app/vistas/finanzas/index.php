@@ -29,8 +29,8 @@
       <!--<button class="btn btn-primary" onclick="location.reload()">Pagos Pendientes&nbsp;&nbsp;<i class="bi bi-wallet2"></i></button>-->
       <button class="btn btn-success bg-gradient" onclick="gastos_empresa()">Gastos Empresa&nbsp;&nbsp;<i class="bi bi-credit-card"></i></button>
       <button class="btn btn-info bg-gradient" onclick="facturas_proveedores()">Facturas Proveedores&nbsp;&nbsp;<i class="bi bi-cash-stack"></i></button>
-      <button class="btn btn-primary bg-gradient" onclick="facturas_clientes_panel()">Facturas Clientes&nbsp;&nbsp;<i class="bi bi-cash-stack"></i></button>
-      <!-- <button class="btn btn-danger bg-gradient" onclick="metas_ventas()">Metas&nbsp;&nbsp;<i class="bi bi-speedometer"></i></button> -->
+      <button hidden class="btn btn-primary bg-gradient" onclick="facturas_clientes_panel()">Facturas Clientes&nbsp;&nbsp;<i class="bi bi-cash-stack"></i></button>
+      <button class="btn btn-danger bg-gradient" onclick="metas_ventas()">Metas&nbsp;&nbsp;<i class="bi bi-speedometer"></i></button>
     </div>
     <hr class="mt-2 mb-3"/>
     <div class="row overflow-auto" id="traer_finanzas">

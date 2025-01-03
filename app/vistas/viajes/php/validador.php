@@ -1452,6 +1452,66 @@
 
 			echo $html;
 			break;
+		case 'traer_nuevo_abono_traslado':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
+				    <br>
+				    <label for="inputMonto"><b>* Monto Abono:</b></label>
+				    <input type="number" name="inputAbono" id="inputAbono" class="form-control shadow" placeholder="Ingresar Monto Abono">
+				    <br>
+				    <label for="tipo_dte"><b>Forma de Pago:</b></label>
+				    <select id="tipo_dte" class="form-select bordes sombraPlana">
+		                <option value="1">- Boleta.</option>
+		                <option value="2">- Factura.</option>
+		                <option value="3" selected>- Comprobante.</option>
+		              </select>
+		              <br>
+				    <div class="row">
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_abono_traslados('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    	</div>
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos_traslados('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    	</div>
+				    </div>
+				    
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <textarea rows="8" class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
+				  </div>
+	
+				</div>';
+
+			echo $html;
+			break;
+		case 'grabar_abono_traslados':
+			$usuario = $_SESSION['IDUSER'];
+			$empresa = $_SESSION['IDEMPRESA'];
+			$idSucursal = $_SESSION['IDSUCURSAL'];
+
+			$idFlete 			= $_REQUEST['idFlete'];
+			$inputAbono 		= $_REQUEST['inputAbono'];
+			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
+			$inputFecha 		= $_REQUEST['inputFecha'];
+			$tipo_dte 		= $_REQUEST['tipo_dte'];
+
+			$html = $centroCosto->grabar_abono($idFlete, $inputAbono, $inputDescripcion, $inputFecha, 2, $tipo_dte, $usuario, $empresa, $idSucursal);
+
+			echo $html;
+			break;
+		case 'traer_panel_pagos_traslados':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = $centroCosto->traer_panel_pagos_traslados($idFlete);
+		
+			echo $html;
+			break;
 		default:
 			break;
 	}

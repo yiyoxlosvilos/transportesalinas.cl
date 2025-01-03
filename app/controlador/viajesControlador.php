@@ -4594,16 +4594,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        	$productos .= ucfirst($datos_nombre[0]['prod_cli_producto']) . ' - ' . ucwords($datos_nombre[0]['prod_cli_patente']);
 			    }
 
-			    $traslados .= '';
+			    $traslados = '';
 			    $explorar_origen = explode(",", $datos_flete[$i]['traslados']);
 			    if(is_array($explorar_origen)){
 					
-
+			    	$traslados .= '<div class="row">
+										<div class="col-6">';
 					for ($d=0; $d < count($explorar_origen); $d++) {
-						$traslados .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]).' </div>
-									</div>';
+						$traslados .= $recursos->nombre_localidad($explorar_origen[$d]).', ';
 					}
+
+					$traslados .= '</div>
+									</div>';
 
 				}else{
 					$traslados .= '<div class="row">

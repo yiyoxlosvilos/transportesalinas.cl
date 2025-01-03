@@ -4612,11 +4612,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$fechas_traslados .= '';
 			    if(is_array($datos_flete[$i]['traslados_fechas'])){
-					$explorar_origen = explode(";", $datos_flete[$i]['traslados_fechas']);
+					$explorar_fechas = explode(";", $datos_flete[$i]['traslados_fechas']);
 					$fechas_traslados .= '<div class="row">
 										<div class="col-6">';
-					for ($d=0; $d < count($explorar_origen); $d++) {
-						$fechas_traslados .= ''.Utilidades::arreglo_fecha2($explorar_origen[$d]['traslados_fechas']).'<br>';
+					for ($pp=0; $pp < count($explorar_fechas); $pp++) {
+						$fechas_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]['traslados_fechas']).'<br>';
 					}
 					$fechas_traslados .= '</div></div>';
 

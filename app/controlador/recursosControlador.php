@@ -211,8 +211,7 @@
 			$sql     = $this->selectQuery("SELECT * FROM item_arriendo
 										   LEFT JOIN  	 arriendos
 										   ON 			 arriendos.arriendo_id 			= item_arriendo.item_arriendo_id
-										   WHERE  		 arriendos.arriendo_id IN($idServicio)
-										   AND    		 arriendos.arriendo_estado   	= 1");
+										   WHERE  		 arriendos.arriendo_id IN($idServicio)");
 
 			for ($i=0; $i < count($sql); $i++) { 
 				$monto += $sql[$i]['item_total'];

@@ -1893,10 +1893,6 @@
 			$datos_fletes = $recursos->datos_arriendos_id($idFlete);
 			$datos_abonos = $recursos->datos_abonos_id($idFlete, 3);
 
-			$valor 		= 0;
-			$descuento 	= 0;
-			$estadia 	= 0;
-
 			$valor_total = ($recursos->datos_arriendos_monto_id($idFlete)*1.19);
 
 			$abonado = 0;

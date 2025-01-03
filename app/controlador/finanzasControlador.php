@@ -1100,6 +1100,7 @@
 								<th>N&deg; Factura</th>
 								<th>Fecha Pago</th>
 								<th>Dias Restantes</th>
+								<th>Cliente</th>
 								<th>Monto Pago</th>
 								<th>Estado</th>
 								<th>&nbsp;</th>
@@ -1122,6 +1123,7 @@
 				$html .= '<tr>
 				          	<td>'.$sql[$i]['fac_folio'].'</td>
 				          	<td>'.Utilidades::arreglo_fecha2($sql[$i]['fac_fecha_pago']).'</td>
+				          	<td>'.$recursos->nombre_clientes($sql[$i]['fac_cliente']).'</td>
 				          	<td>'.$mostramos.'</td>
 				          	<td>'.Utilidades::monto3($sql[$i]['fac_bruto']).'</td>
 				          	<td>'.$factura_estado[0]['tip_nombre'].'</td>

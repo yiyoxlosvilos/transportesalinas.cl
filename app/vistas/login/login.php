@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 ">
-                                        <span class="btn btn-success w-lg waves-effect waves-light w-100 waves-effect waves-light " type="button" onclick="ingresar()">Ingresar&nbsp;&nbsp;<li class="fas fa-check font-size-14">&nbsp;&nbsp;</li></span>
+                                        <span class="btn btn-primary w-lg waves-effect waves-light w-100 waves-effect waves-light " type="button" onclick="ingresar()">Ingresar&nbsp;&nbsp;<li class="fas fa-check font-size-14">&nbsp;&nbsp;</li></span>
                                     </div>
                                 </form>
                             </div>

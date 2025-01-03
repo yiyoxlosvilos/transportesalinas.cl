@@ -3818,7 +3818,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 							<th align="left">'.Utilidades::monto($total).'</th>
 						</tr>
 						</tfooter>
-					  </table></div>';
+					  </table>';
 
 
 			return $html;

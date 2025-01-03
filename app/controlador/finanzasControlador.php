@@ -249,7 +249,6 @@
 								<th align="left">Categoria</th>
 								<th align="left">Tipo</th>
 								<th align="left">Fecha</th>
-								<th align="left">Trabajador</th>
 								<th align="left">Descripción</th>
 								<th align="left">Monto</th>
 								<th align="left">&nbsp;</th>
@@ -265,7 +264,6 @@
 									<td>'.$sql[$i]['tpgas_nombre'].'</td>
 									<td>'.$sql[$i]['cate_nombre'].'</td>
 									<td>'.Utilidades::arreglo_fecha2($sql[$i]['gas_fecha']).'</td>
-									<td>'.$sql[$i]['tra_nombre'].'</td>
 									<td>'.$sql[$i]['gas_descripcion'].'</td>
 									<td>'.Utilidades::monto3($sql[$i]['gas_monto']).'</td>
 									<td><li class="fas fa-window-close text-danger cursor" onclick="quitar_gasto('.$sql[$i]['gas_id'].')"></li></td>				

@@ -1143,12 +1143,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm align-self-center">
-                            <div class="mt-4 mt-sm-0">
-                                <p class="mb-1">Monto Total</p>
-                                <h4 class="counter-value" data-target="'.$monto_servicio.'">0</h4>
-                            </div>
                         </div>';
             return $html;
 		}

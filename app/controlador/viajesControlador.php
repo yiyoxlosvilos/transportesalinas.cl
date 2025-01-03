@@ -3792,15 +3792,16 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$total=0;
 			for ($i=0; $i < count($sql); $i++) {
 
-				$html .= '<tr><td colspan="3"><div class="row p-3">
+				$html .= '<tr><td colspan="3">
+						<div class="row p-3">
 		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
 		    					<div class="row">
 			    					<div class="col text-center">
-			    						<span class="p-2 fas fa-pencil-alt text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 fas fa-pencil-alt text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 
 			    					<div class="col text-center">
-			    						<span class="p-2 fas fa-print text-success cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 fas fa-print text-success cursor" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 		    					</div>
 		    				</div>
@@ -3811,7 +3812,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col-15 mt-2 p-1 bg-light"><strong>Descripción:<br>'.$sql[$i]['arriendo_descripcion'].'</strong></div>';
 				//$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
 
-				$html .= '</div></td></tr>';
+				$html .= '</div>
+				</td></tr>';
 
 				$total += $recursos->datos_arriendos_monto_id($sql[$i]['arriendo_id']);
 			}

@@ -1205,8 +1205,8 @@
 									      <td scope="col">'.$trabajador[0]['tra_nombre'].'</td>
 									    </tr>
 									    <tr>
-									      <th >Origen<br><span class="text-info">'.$origen[0]['nombre'].'</span></td>
-									      <th >Destino:<br><span class="text-danger">'.$destino[0]['nombre'].'</span></td>
+									      <th scope="col">Origen<br><span class="text-info">'.$origen[0]['nombre'].'</span></td>
+									      <th scope="col">Destino:<br><span class="text-danger">'.$destino[0]['nombre'].'</span></td>
 									    </tr>
 									    <tr>
 									      <th scope="col">Tracto:</th>
@@ -1266,12 +1266,6 @@
             $html .= '                  </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm align-self-center">
-                            <div class="mt-4 mt-sm-0">
-                                <p class="mb-1">Monto Total</p>
-                                <h4 class="counter-value" data-target="'.$monto_servicio.'">0</h4>
                             </div>
                         </div>';
             return $html;

@@ -3796,11 +3796,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
 		    					<div class="row">
 			    					<div class="col text-center">
-			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 fas fa-pencil-alt text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 
 			    					<div class="col text-center">
-			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 fas fa-print text-success cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 		    					</div>
 		    				</div>

@@ -610,8 +610,8 @@
 										ON   		caja_cliente.c_cli_prod_cliente    = product_cliente.prod_cli_id
 										WHERE 		caja_cliente.c_cli_fecha   	       BETWEEN '$desde' AND '$hasta'
 										$script
-										AND    		caja_cliente.c_cli_tipoMovimiento  = 3
-		    		   					AND    		caja_cliente.c_cli_estado          = 2
+										AND    		caja_cliente.c_cli_tipoMovimiento  IN(3, 4)
+		    		   					AND    		caja_cliente.c_cli_estado          IN(1, 2)
 										GROUP BY 	caja_cliente.c_cli_prod_cliente");
 
 	    	for ($i=0; $i < count($sql); $i++) { 

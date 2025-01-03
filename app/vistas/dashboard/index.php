@@ -206,7 +206,7 @@ var spark1 = {
     }
   },
   subtitle: {
-    text: 'Fletes',
+    text: 'INGRESOS',
     offsetX: 30,
     style: {
       fontSize: '14px',
@@ -232,7 +232,7 @@ var spark2 = {
     opacity: 1,
   },
   series: [{
-    name: 'Gastos',
+    name: 'SALIDAS',
     data: randomizeArray(dataGastos)
   }],
   labels: [...Array(<?= date("t") ?>).keys()].map(n => `<?= date("Y") ?>-<?= date("m") ?>-0${n+1}`),

@@ -1026,12 +1026,17 @@
 			$html 	  = "";
 		
 
-			$sql    = $this->selectQuery("SELECT * FROM servicios
-										  LEFT JOIN 	fletes
-										  ON 			fletes.fle_servicio 	= servicios.serv_id
-					   					  WHERE    		servicios.serv_estado 	= 1
-					   					  AND           fletes.fle_carga      	= '$hoy'
-					   					  ORDER BY 		servicios.serv_id DESC");
+			// $sql    = $this->selectQuery("SELECT * FROM servicios
+			// 							  LEFT JOIN 	fletes
+			// 							  ON 			fletes.fle_servicio 	= servicios.serv_id
+			// 		   					  WHERE    		servicios.serv_estado 	= 1
+			// 		   					  AND           fletes.fle_carga      	= '$hoy'
+			// 		   					  ORDER BY 		servicios.serv_id DESC");
+
+			$sql    = $this->selectQuery("SELECT * FROM fletes
+					   					  WHERE    		fletes.fle_estado 	IN(1, 2)
+					   					  AND           fletes.fle_carga    = '$hoy'
+					   					  ORDER BY 		fletes.fle_id DESC");
 
 			$html = '<div class="col-sm">
                         <div class="card shadow-white card-h-100">
@@ -1044,10 +1049,6 @@
 				//calulo progreso
 				$dias_obra   = 0;
 				$dias_espera = 0;
-
-				$nombre_cliente = $recursos->datos_clientes($sql[$i]['serv_cliente']);
-				$datos_flete    = $recursos->datos_fletes($sql[$i]['serv_id']);
-				$monto_servicio = $recursos->datos_fletes_monto($sql[$i]['serv_id']);
 
 				$producto   	= $recursos->datos_productos($sql[$i]['fle_producto']);
 				$rampla     	= $recursos->datos_productos($sql[$i]['fle_rampla']);

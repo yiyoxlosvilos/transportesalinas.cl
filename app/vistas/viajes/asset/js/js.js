@@ -2552,3 +2552,12 @@ function traer_panel_pagos_traslados(idFlete) {
     $('#panel_de_pagos').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_de_pagos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
+
+function traer_procesar_pago_traslado(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_procesar_pago_traslado";
+
+    $("#panel_montos").html('');
+    $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}

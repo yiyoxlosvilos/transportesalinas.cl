@@ -1512,6 +1512,84 @@
 		
 			echo $html;
 			break;
+		case 'traer_procesar_pago_traslado':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$datos_fletes = $recursos->datos_traslados_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 2);
+
+			$valor 		= 0;
+
+			for ($j=0; $j < count($datos_fletes); $j++) {
+				$valor 		+= ($datos_fletes[$j]['traslados_agregados']*$datos_fletes[$j]['traslados_cantidad']);
+			}
+
+			$valor_total = ($valor+$descuento+$estadia);
+
+			$abonado = 0;
+			for ($i=0; $i < count($datos_abonos); $i++) {
+				$abonado += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$total_restante = ($valor_total-$abonado);
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white">
+				    <!-- card -->
+		            <div class="card card-h-200 border shadow-sm">
+		              <!-- card body -->
+		              <div class="card-body">
+		                <div class="row align-items-center">
+		                  <div class="col">
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Abonos: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$abonado.'">'.Utilidades::monto($abonado).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate ">Total a Pagar</span>
+		                    <h3 class="mb-3 border">
+		                    	<span class="counter-value text-primary" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
+		                    </h3>
+
+		                  </div>
+		                </div>
+		              </div><!-- end card body -->
+		            </div>
+		         	<!-- end card -->
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow" value="'.Utilidades::fecha_hoy().'">
+				    <br>
+				    <label for="inputMonto"><b>* Monto a Pagar:</b></label>
+				    <input type="number" name="inputMonto" id="inputMonto" class="form-control shadow" placeholder="Ingresar Monto a Pagar" value="'.$total_restante.'">
+				    <br>
+				    <label for="tipo_dte"><b>Forma de Pago:</b></label>
+				    <select id="tipo_dte" class="form-select bordes sombraPlana">
+		                <option value="1">- Boleta.</option>
+		                <option value="2">- Factura.</option>
+		                <option value="3" selected>- Comprobante.</option>
+		              </select>
+		              <br>
+				    <div class="row">
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_pago_traslados('.$idFlete.')">Procesar Pago <i class="bi bi-save"></i></button>
+				    	</div>
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="traer_panel_pagos_traslados('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    	</div>
+				  </div>
+	
+				</div>';
+
+			echo $html;
+			break;
 		default:
 			break;
 	}

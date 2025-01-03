@@ -3782,7 +3782,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										  	  ORDER BY      arriendo_id  ASC");
 
 	    	$html = '<table id="listado_arriendos" class="table shadow">
-	    				<thead >
+	    				<thead>
 			              	<tr class="table-info">
 								<th colspan="3">&nbsp;</th>
 							</tr>
@@ -3810,15 +3810,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
 		    				<div class="col border"><center><strong>Mes de:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>
 		    				<div class="col-15 mt-2 p-1 bg-light"><strong>Descripción:<br>'.$sql[$i]['arriendo_descripcion'].'</strong></div>';
-				//$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
-
+				$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
 				$html .= '</div>
 				</td></tr>';
 
 				$total += $recursos->datos_arriendos_monto_id($sql[$i]['arriendo_id']);
 			}
 
-				$html .= '</tbody>
+				$html .= '
+						</tbody>
 						<tfooter>
 						<tr>
 							<th>&nbsp;</th>

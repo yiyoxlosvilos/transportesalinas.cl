@@ -3,13 +3,13 @@
   require_once __dir__."/../../../controlador/productosControlador.php";
   require_once __dir__."/../../../controlador/recursosControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
-  require_once __dir__."/../../../controlador/centroCostoControlador.php";
+  require_once __dir__."/../../../controlador/viajesControlador.php";
 
   $productos   = new Productos();
   $recursos    = new Recursos();
   $utilidades  = new Utilidades();
   $mvc2        = new controlador();
-  $centroCostos= new CentroCostos();
+  $centroCostos= new Viajes();
 
   $dia         = Utilidades::fecha_dia();
   $mes         = Utilidades::fecha_mes();

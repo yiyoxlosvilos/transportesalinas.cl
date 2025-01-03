@@ -156,7 +156,7 @@
                       </div>
                     <div class="col">
                       <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Agregar Gasto</span></button>
-                      <button class="btn btn-dark" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_finanzas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+                      <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_finanzas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
                       <i class="bi bi-gear-wide-connected"></i>
                     </button>
                     </div>

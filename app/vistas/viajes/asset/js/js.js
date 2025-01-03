@@ -1348,9 +1348,9 @@ function asignar_arriendo() {
 
     var idServicio  = "";
 
-    $("#traer_menu").html('');
-    $('#traer_menu').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_menu').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idServicio:idServicio});
+    $("#traer_arriendos").html('');
+    $('#traer_arriendos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_arriendos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idServicio:idServicio});
 }
 
 function agregar_fechas() {

@@ -1700,9 +1700,9 @@
 		$ano = Utilidades::fecha_ano();
 		$mes = Utilidades::fecha_mes();
 			echo '<h3 class="mt-5 mb-4 text-success">Vigentes</h3>';
-			echo $centroCosto->listado_de_arriendo($ano, $mes, '', '');
+			echo $centroCosto->listado_de_arriendo($mes, $ano, '', '');
 			echo '<h3 class="mt-5 mb-4 text-danger">Pagados</h3>';
-			echo $centroCosto->listado_de_arriendo($ano, $mes, '', 2);
+			echo $centroCosto->listado_de_arriendo($mes, $ano, '', 2);
 
 			break;
 		case 'traer_bitacora_arriendos':

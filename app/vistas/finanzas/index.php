@@ -34,7 +34,7 @@
     </div>
     <hr class="mt-2 mb-3"/>
     <div class="row overflow-auto" id="traer_finanzas">
-      <?= $finanzas->gastos_empresa($mes, $ano) ?>
+      <?= $finanzas->gastos_empresa($mes, $ano, '') ?>
     </div>
   </div>
 </body>

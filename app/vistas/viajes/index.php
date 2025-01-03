@@ -171,6 +171,17 @@
                         <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Facturas</h3>
                       </div>
                     <div class="col">
+                      <table width="100%">
+                        <tr>
+                          <td><?= Utilidades::select_agrupacion_cards('', 'mes_facturas', $ano, $mes) ?></td>
+                          <td><?= Utilidades::select_agrupacion_anos('', 'ano_facturas', $ano) ?></td>
+                          <td>
+                            <button class="btn btn-primary" onclick="buscar_facturas_proveedores()">
+                              <i class="bi bi-search"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </table>
                       <button class="btn btn-sm btn-dark" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
                       <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_usuario_facturas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
                         <i class="bi bi-gear-wide-connected"></i>

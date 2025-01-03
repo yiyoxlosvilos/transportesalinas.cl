@@ -40,9 +40,9 @@ function buscar_facturas_proveedores() {
     var ano         = document.getElementById('ano').value;
     var accion      = "buscar_facturas_proveedores";
 
-    $("#traer_finanzas").html('');
-    $('#traer_finanzas').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_finanzas').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion, mes:mes, ano:ano});
+    $("#traer_facturas").html('');
+    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion, mes:mes, ano:ano});
 }
 
 function buscar_pagos_pendientes() {

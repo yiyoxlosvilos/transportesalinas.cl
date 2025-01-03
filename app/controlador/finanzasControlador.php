@@ -456,24 +456,6 @@
 		public function facturas_proveedores($mes, $ano, $idServicio = 0){
 			$recursos = new Recursos();
 	    	$html 	  = '
-	    			 <div class="col-xl-6">
-	    				<table width="100%">
-	    					<tr>';
-
-	    	if ($idServicio == 0) {
-	    		$html 	 .=    '<td>'.Utilidades::select_agrupacion_cards('', 'mes', $ano, $mes).'</td>
-	    						<td>'.Utilidades::select_agrupacion_anos('', 'ano', $ano).'</td>
-	    						<td>
-	    							<button class="btn btn-primary" onclick="buscar_facturas_proveedores()">
-	    								<i class="bi bi-search"></i>
-	    							</button>
-	    						</td>';
-	    	}
-
-	    	$html 	 .=    '
-	    					</tr>
-	    				</table>
-	    			 </div>
 	    			 <hr class="mt-2 mb-3"/>
 	    			 <div class="col-xl-15 animate__animated animate__fadeInLeft">
 	    			 	<h3>Facturas Proveedores</h3>

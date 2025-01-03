@@ -1404,6 +1404,54 @@
 		
 			echo $html;
 			break;
+		case 'traer_bitacora_traslados':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputTitulo"><b>* Titulo:</b></label>
+				    <input type="text" class="form-control shadow" id="inputTitulo" placeholder="Escribir Tipo de servicio">
+				    <br>
+				    <label for="inputFecha"><b>* Fecha:</b></label>
+				    <input type="date" name="inputFecha" id="inputFecha" class="form-control shadow">
+				    <br>
+				    <div class="row">
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_bitacora_traslados('.$idFlete.')">Grabar <i class="bi bi-save"></i></button>
+				    	</div>
+				    	<div class="col">
+				    		<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="cargar_bitacora_traslados('.$idFlete.')">Cancelar <i class="icofont icofont-refresh"></i></button>
+				    	</div>
+				    </div>
+				    
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white  border">
+				    <label for="inputDescripcion"><b>* Descripción:</b></label>
+				    <textarea rows="8" class="form-control shadow" id="inputDescripcion" name="inputDescripcion" placeholder="Escribir Descripción"></textarea>
+				  </div>
+	
+				</div>';
+
+			echo $html;
+			break;
+		case 'grabar_bitacora_traslados':
+			$idFlete 			= $_REQUEST['idFlete'];
+			$inputTitulo 		= $_REQUEST['inputTitulo'];
+			$inputDescripcion 	= $_REQUEST['inputDescripcion'];
+			$inputFecha 		= $_REQUEST['inputFecha'];
+
+			$html = $centroCosto->grabar_bitacora($idFlete, $inputTitulo, $inputDescripcion, $inputFecha, 2);
+
+			echo $html;
+			break;
+		case 'cargar_bitacora_traslados':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = $centroCosto->cargar_bitacora($idFlete, 2);
+
+			echo $html;
+			break;
 		default:
 			break;
 	}

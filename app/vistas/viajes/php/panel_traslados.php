@@ -132,9 +132,9 @@
                   <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Traslado</h3>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora_traslados(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idTraslados, 1); ?></div> 
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idTraslados, 2); ?></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">

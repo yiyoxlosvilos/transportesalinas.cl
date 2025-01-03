@@ -3819,13 +3819,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 				$html .= '</tbody>
-						<tfooter>
-						<tr>
-							<th>&nbsp;</th>
-							<th align="right" >TOTAL:</th>
-							<th align="left">'.Utilidades::monto($total).'</th>
-						</tr>
-						</tfooter>
 					  </table>';
 
 

@@ -706,5 +706,10 @@
 	        return strtoupper($patente);
 	    }
 
+	    public static function generarCorrelativo($numero, $longitud = 5) {
+		    // Formatea el número con ceros a la izquierda para que tenga la longitud especificada
+		    return str_pad($numero, $longitud, '0', STR_PAD_LEFT);
+		}
+
 	}
 ?>

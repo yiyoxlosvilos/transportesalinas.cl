@@ -2871,7 +2871,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h3 class="text-primary my-2" align="center">Viaje N&deg;: 000'.$datos_cotizacion[0]['fle_id'].'</h3>
+							  <h3 class="text-primary my-2" align="center">Viaje N&deg;: '.Utilidades::generarCorrelativo($datos_cotizacion[0]['fle_id']).'</h3>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
@@ -4479,7 +4479,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h3 class="text-primary my-2" align="center">Traslados N&deg;: 000'.$datos_cotizacion[0]['traslados_id'].'</h3>
+							  <h3 class="text-primary my-2" align="center">Traslados N&deg;: '.Utilidades::generarCorrelativo($datos_cotizacion[0]['traslados_id']).'</h3>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>
@@ -5100,7 +5100,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<img src="'.controlador::$rutaAPP.'app/recursos/img/'.$parametros[0]['par_logo'].'" width="40%" align="center"></td>
 								</tr>
 							  </table>
-							  <h3 class="text-primary my-2" align="center">Arriendo N&deg;: 000'.$datos_cotizacion[0]['arriendo_id'].'</h3>
+							  <h3 class="text-primary my-2" align="center">Arriendo N&deg;: '.Utilidades::generarCorrelativo($datos_cotizacion[0]['arriendo_id']).'</h3>
 							  <table width="100%" align="center" class="border table" cellpadding="1">
 								<tr>
 									<td><b>Raz&oacute;n Social:</b><br><small>'.$datos_clientes[0]['cli_nombre'].'</small></td>

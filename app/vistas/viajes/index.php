@@ -2,12 +2,16 @@
   require_once __dir__."/../../controlador/utilidadesControlador.php";
   require_once __dir__."/../../controlador/recursosControlador.php";
   require_once __dir__."/../../controlador/viajesControlador.php";
+  require_once __dir__."/../../controlador/finanzasControlador.php";
   require_once __dir__."/../../recursos/head.php";
 
   $centroCostos= new Viajes();
   $recursos    = new Recursos();
   $mvc2        = new controlador();
   $mvc2->iniciar_sesion();
+
+  $finanzas    = new Finanzas();
+  
 	$dia         = Utilidades::fecha_dia();
 	$mes         = Utilidades::fecha_mes();
   $ano         = Utilidades::fecha_ano();
@@ -146,6 +150,17 @@
                   </div>
                 </div>
                 <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
+                  <div class="row">
+                    <div class="col-8">
+                        <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Gastos</h3>
+                      </div>
+                    <div class="col">
+                      <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Agregar Gasto</span></button>
+                    </div>
+                    <div class="col-15 mt-3" id="traer_arriendos">
+                      <?= $finanzas->listado_gastos(0, 0, '') ?>
+                    </div>
+                  </div>
                 </div>
                 <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab"></div>
                 <div class="tab-pane fade" id="activity-project" role="tabpanel" aria-labelledby="activity-project-tab"> </div>

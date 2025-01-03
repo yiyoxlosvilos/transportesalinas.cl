@@ -393,7 +393,7 @@ function gastos_empresa() {
 
     $("#traer_gastos").html('');
     $('#traer_gastos').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_gastos').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion, idServicio:idServicio});
+    $('#traer_gastos').load(url_link+"app/vistas/finanzas/php/nuevo_gasto.php", {accion:accion, idServicio:idServicio});
 }
 
 function quitar_gasto(idGasto) {

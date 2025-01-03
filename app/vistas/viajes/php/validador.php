@@ -1968,6 +1968,22 @@
                       '.$centroCosto->traer_fletes_asigandos($mes, $ano, '').'
                       <h3 class="mt-3 text-danger">Viajes Pagados</h3>
                       '.$centroCosto->traer_fletes_asigandos($mes, $ano, 2);
+
+            $html .= '<script>
+            		$(document).ready(function() {
+    $("#maquinarias").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
+  $(document).ready(function() {
+    $("#maquinarias_listas").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+            	</script>';
             echo $html;
 			break;
 		default:

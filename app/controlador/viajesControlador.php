@@ -4878,9 +4878,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$hoy        = Utilidades::fecha_hoy();
 
 	    	$neto       = 0;
+
+	    	$script = '';
+	    	if($idArriendo != ''){
+	    		$script = ' AND arriendo_id ='.$idArriendo;
+	    	}
 	    	
 	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
 										  	  WHERE    		arriendo_estado = 1
+										  	  $script
 										  	  ORDER BY      arriendo_id  ASC");
 
 	    	$html = '';

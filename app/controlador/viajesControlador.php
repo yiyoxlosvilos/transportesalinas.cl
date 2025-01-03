@@ -4612,7 +4612,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$fechas_traslados .= '';
 			    if(is_array($datos_flete[$i]['traslados_fechas'])){
-					$explorar_origen = explode(",", $datos_flete[$i]['traslados_fechas']);
+					$explorar_origen = explode(";", $datos_flete[$i]['traslados_fechas']);
 					$fechas_traslados .= '<div class="row">
 										<div class="col-6">';
 					for ($d=0; $d < count($explorar_origen); $d++) {

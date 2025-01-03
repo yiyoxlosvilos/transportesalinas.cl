@@ -2669,3 +2669,12 @@ function traer_arriendos() {
     $('#traer_arriendos').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_arriendos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
 }
+
+function traer_arriendos_editar(idTraslado) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_traslados";
+
+    $("#panel_editar").html('');
+    $('#panel_editar').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_editar').load(url_link+"app/vistas/viajes/php/editar_arriendo.php", {accion:accion, idArriendo:idTraslado});
+}

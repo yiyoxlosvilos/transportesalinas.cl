@@ -2749,3 +2749,12 @@ function grabar_bitacora_arriendos(idFlete) {
         })
     }
 }
+
+function cargar_bitacora_arriendos(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "cargar_bitacora_arriendos";
+
+    $("#panel_bitacora").html('');
+    $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_bitacora').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}

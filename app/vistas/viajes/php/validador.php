@@ -1723,6 +1723,13 @@
 
 			echo $html;
 			break;
+		case 'cargar_bitacora_arriendos':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$html = $centroCosto->cargar_bitacora($idFlete, 3);
+
+			echo $html;
+			break;
 		default:
 			break;
 	}

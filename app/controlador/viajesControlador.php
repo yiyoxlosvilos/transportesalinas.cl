@@ -5061,7 +5061,8 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									<td><b>Fecha:</b><br><small>'.Utilidades::arreglo_fechas_horas($datos_cotizacion[0]['traslados_fecha_pago']).'</small></td>
 								</tr>
 							  </table>';
-			$html .= $this->detalle_de_arriendo($datos_cotizacion[0]['arriendo_id']);
+
+			$html .= $this->detalle_de_arriendo($idCotizacion);
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
 						<tr>

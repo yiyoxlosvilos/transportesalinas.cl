@@ -3052,5 +3052,5 @@ function buscar_viajes() {
 
     $("#traer_productos_categoria").html('');
     $('#traer_productos_categoria').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_productos_categoria').load(url_link+"app/vistas/finanzas/php/validador.php", {accion:accion, mes:mes, ano:ano});
+    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
 }

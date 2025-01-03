@@ -2360,7 +2360,7 @@
 										   ON            clientes.cli_id 	= fletes.fle_cliente
 					   				   	   WHERE  		 fletes.fle_estado 	> 0
 					   				   	   AND           fletes.fle_cliente = $idCliente");
-				$nombre = 'Flete';
+				$nombre = 'Viaje';
 			}elseif($idTipoServicio == 2){
 				$sql = $this->selectQuery("SELECT 		 traslados.traslados_id AS id, clientes.cli_nombre
 										   FROM 		 traslados
@@ -2392,7 +2392,7 @@
 				if($sql[$i]['id'] === $idServicio){
 					$html .= '<option value="'.$sql[$i]['id'].'" selected="selected">'.$nombre.' N°: '.$sql[$i]['id'].', '.$sql[$i]['cli_nombre'].'</option>';
 
-				}elseif($sql[$i]['id'] != ''){
+				}elseif($sql[$i]['id'] > 0){
 					$html .= '<option value="'.$sql[$i]['id'].'">'.$nombre.' N°: '.$sql[$i]['id'].', '.$sql[$i]['cli_nombre'].'</option>';
 				}
 			}

@@ -105,7 +105,7 @@ function grabar_nuevo_producto() {
                       confirmButtonText:  'OK',
                       cancelButtonText:   'NO',
                     }).then((result) => {
-                      location.reload();
+                      parent.location.reload();
                       parent.productos_ver();
                     })  
                   },

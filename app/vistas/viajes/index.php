@@ -161,7 +161,7 @@
                     </button>
                     </div>
                     <div class="col-15 mt-3" id="traer_gastos">
-                      <?= $finanzas->listado_gastos(0, 0, '') ?>
+                      <?= $finanzas->listado_gastos($mes, $ano, '') ?>
                     </div>
                   </div>
                 </div>

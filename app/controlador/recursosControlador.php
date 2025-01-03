@@ -2190,6 +2190,31 @@
 			return $html;
 		}
 
+		public function select_productos_multiple($idCliente, $idCategoria = 0){
+			$script = '';
+			if ($idCategoria > 0) {
+				$script .= " AND prod_cli_categoria = $idCategoria";
+			}
+			
+			$sql  	= $this->selectQuery("SELECT * FROM product_cliente
+										  WHERE    		prod_cli_estado = 1".$script);
+
+			$html   = '<select name="camion[]" id="camion" class="form-select shadow">
+						<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i < count($sql); $i++) { 
+				if($sql[$i]['prod_cli_id'] == $idCliente){
+					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'" selected="selected">'.$sql[$i]['prod_cli_producto'].' - '.$sql[$i]['prod_cli_patente'].'</option>';
+				}else{
+					$html   .= '<option value="'.$sql[$i]['prod_cli_id'].'">'.$sql[$i]['prod_cli_producto'].' - '.$sql[$i]['prod_cli_patente'].'</option>';
+				}
+			}
+
+			$html   .= '</select>';
+
+			return $html;
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

@@ -28,19 +28,19 @@
   <hr class="mt-2 mb-3"/>
     <div class="mb-4 shadow p-4">
       <div class="row bg-soft-light">
-        <div class="col-lg-6 p-3 mb-2 bg-white  border">
+        <div class="col-lg-6 p-3 mb-2 border">
           <label for="inputPrecio"><b>* Tipo de servicio:</b></label>
           <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">
         </div>
-        <div class="col-lg-6 p-3 mb-2 bg-white  border">
+        <div class="col-lg-6 p-3 mb-2 border">
           <label for="inputPrecio"><b>* Proyecto:</b></label>
           <input type="text" class="form-control shadow" id="inputProyecto" placeholder="Escribir nombre Proyecto">
         </div>
-        <div class="col-lg-6 p-3 mb-2 bg-white  border">
+        <div class="col-lg-6 p-3 mb-2 border">
           <label for="inputPrecio"><b>* Contacto:</b></label>
           <input type="text" class="form-control shadow" id="inputContacto" placeholder="Escribir Contacto">
         </div>
-        <div class="col-lg-6 p-3 mb-2 bg-white  border">
+        <div class="col-lg-6 p-3 mb-2 border">
           <label for="inputPrecio"><b>* Mes servicio:</b></label>
           <?= Utilidades::select_agrupacion_cards_mes('', 'mes', $mes) ?>
         </div>
@@ -63,7 +63,7 @@
             </tr>
               <tr>
                 <td>
-                  <input type="text" name="camion[]" placeholder="Identificación" class="form-control titulo_list" />
+                  <?= $recursos->select_productos_multiple(0)  ?>
                 </td>
                 <td>
                    <input type="number" name="hors_contratadas[]" placeholder="Horas Contratadas" class="form-control titulo_list" />

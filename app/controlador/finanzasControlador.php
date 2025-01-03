@@ -456,9 +456,6 @@
 		public function facturas_proveedores($mes, $ano, $idServicio = 0){
 			$recursos = new Recursos();
 	    	$html 	  = '
-	    				<div class="col-xl-6 text-success">
-	    				<h3 class="text-success"><i class="fas fa-receipt text-success"></i>&nbsp;&nbsp; Facturas Proveedores.</h3>
-	    			 </div>
 	    			 <div class="col-xl-6">
 	    				<table width="100%">
 	    					<tr>';
@@ -473,25 +470,14 @@
 	    						</td>';
 	    	}
 
-	    	if ($idServicio > 0) {
-	    		$html 	 .=    '<td>
-	    							<button class="btn btn-success" type="button" href="'.controlador::$rutaAPP.'app/vistas/finanzas/php/nueva_factura.php?idServicio='.$idServicio.'" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
-	    								<i class="bi bi-plus-square"></i>
-	    							</button>
-	    						</td>';
-	    	}
-
-	    	$html 	 .=    '	<td>
-	    							<button class="btn btn-dark" type="button" href="'.controlador::$rutaAPP.'app/vistas/finanzas/php/panel_proveedores.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
-	    								<i class="bi bi-gear-wide-connected"></i>
-	    							</button>
-	    						</td>
+	    	$html 	 .=    '
 	    					</tr>
 	    				</table>
 	    			 </div>
 	    			 <hr class="mt-2 mb-3"/>
 	    			 <div class="col-xl-15 animate__animated animate__fadeInLeft">
 	    			 	'.$this->listado_facturas_proveedores($mes, $ano, $idServicio).'
+	    			 	'.$this->listado_facturas_clientes($mes, $ano, $idServicio).'
 	    			 </div>';
 
 			return $html;

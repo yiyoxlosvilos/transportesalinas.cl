@@ -3005,3 +3005,12 @@ function traer_servicio_prestado() {
     $('#select_servicio_prestado').load(url_link+"/app/recursos/img/loader.svg");
     $('#select_servicio_prestado').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, tipo_servicio:tipo_servicio, servicio_cliente:servicio_cliente});
 }
+
+function nueva_factura() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "nueva_factura";
+
+    $("#traer_facturas").html('');
+    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
+}

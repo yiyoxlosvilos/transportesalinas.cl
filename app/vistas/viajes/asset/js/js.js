@@ -2413,7 +2413,7 @@ function grabar_bitacora_traslados(idFlete) {
 
 function cargar_bitacora_traslados(idFlete) {
     const url_link = document.getElementById('url_link').value;
-    var accion     = "cargar_bitacora";
+    var accion     = "cargar_bitacora_traslados";
 
     $("#panel_bitacora").html('');
     $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");

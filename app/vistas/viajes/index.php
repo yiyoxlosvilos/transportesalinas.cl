@@ -165,7 +165,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
+                <div class="tab-pane fade" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
                   <div class="row">
                     <div class="col-8">
                         <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Facturas</h3>

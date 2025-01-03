@@ -4880,8 +4880,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$neto       = 0;
 
 	    	$script = '';
+	    	$oculto = '';
 	    	if($idArriendo != ''){
 	    		$script = ' AND arriendo_id ='.$idArriendo;
+	    		$oculto = ' style="display: none;"';
+
 	    	}
 	    	
 	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
@@ -4897,7 +4900,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$html .= ' 
 						<div class="row p-3">
 		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
-		    					<div class="row">
+		    					<div class="row" '.$oculto.'>
 			    					<div class="col text-center">
 			    						<span class="p-2 fas fa-pencil-alt text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/viajes/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>

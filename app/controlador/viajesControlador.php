@@ -3734,16 +3734,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    }
 
 
-	    public function grabar_nuevo_arriendo($idServicio, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items){
+	    public function grabar_nuevo_arriendo($idServicio, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items, $tipos_estados_pagos, $inputFechaPago, $clientes){
 	    	$recursos 	= new Recursos();
 			$hoy 		= Utilidades::fecha_hoy();
 
-			$sql= $this->insert_query("INSERT INTO arriendos (arriendo_servicio_id, arriendo_tipo_servicio, arriendo_proyecto, arriendo_contacto, arriendo_mes, arriendo_descripcion, arriendo_creacion, arriendo_estado) VALUES ('$idServicio', '$inputTipoServicio', '$inputProyecto', '$inputContacto', '$mes', '$inputDescripcion', '$hoy', 1)");
+			$sql= $this->insert_query("INSERT INTO arriendos (arriendo_servicio_id, arriendo_tipo_servicio, arriendo_proyecto, arriendo_contacto, arriendo_mes, arriendo_descripcion, arriendo_creacion, arriendo_estado, arriendo_cliente, arriendo_estado_pago, arriendo_fecha) VALUES ('$idServicio', '$inputTipoServicio', '$inputProyecto', '$inputContacto', '$mes', '$inputDescripcion', '$hoy', 1, '$clientes', '$tipos_estados_pagos', '$inputFechaPago')");
 
-
-			$datos_arriendos_ultimo = $recursos->datos_arriendos_ultimo($idServicio);
-
-			$ultimo_id 			= $datos_arriendos_ultimo[0]['arriendo_id'];
+			$ultimo_id 			= $sql;
 
 			$explode_camion 	= explode(";", $camion_items);
 			$explode_hors_cont 	= explode(";", $hors_contrata_items);

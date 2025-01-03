@@ -968,7 +968,12 @@
 			$valor_items 		= $_REQUEST['valor_items'];
 			$hr_realizada_items = $_REQUEST['hr_realizada_items'];
 
-			$centroCosto->grabar_nuevo_arriendo($idServicio, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items);
+			$tipos_estados_pagos= $_REQUEST['tipos_estados_pagos'];
+			$inputFechaPago 	= $_REQUEST['inputFechaPago'];
+			$clientes 			= $_REQUEST['clientes'];
+
+
+			$centroCosto->grabar_nuevo_arriendo($idServicio, $inputTipoServicio, $inputProyecto, $inputContacto, $mes, $inputDescripcion, $camion_items, $hors_contrata_items, $valor_items, $hr_realizada_items, $tipos_estados_pagos, $inputFechaPago, $clientes);
 			break;
 		case 'editar_arriendo':
 			$idArriendo 		= $_REQUEST['idArriendo'];
@@ -1673,6 +1678,9 @@
 			break;
 		case 'traer_listado_camion':
 	        echo $string = preg_replace("/[\r\n|\n|\r]+/", PHP_EOL, $recursos->select_productos_multiple(0));
+			break;
+		case 'traer_arriendos':
+			echo $centroCostos->listado_de_arriendo('');
 			break;
 		default:
 			break;

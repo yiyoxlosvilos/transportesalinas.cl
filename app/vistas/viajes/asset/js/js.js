@@ -1402,6 +1402,11 @@ function grabar_nuevo_arriendo(idServicio) {
     var mes                 = document.getElementById('mes').value;
     var inputDescripcion    = document.getElementById('inputDescripcion').value;
 
+    var tipos_estados_pagos = document.getElementById('tipos_estados_pagos').value;
+    var inputFechaPago      = document.getElementById('inputFechaPago').value;
+    var clientes            = document.getElementById('clientes').value;
+
+
     var camion              = document.getElementsByName('camion[]');
     var hors_contratadas    = document.getElementsByName('hors_contratadas[]');
     var valor_hora          = document.getElementsByName('valor_hora[]');
@@ -1474,7 +1479,11 @@ function grabar_nuevo_arriendo(idServicio) {
                 formData.append('hors_contrata_items', hors_contrata_items);
                 formData.append('valor_items', valor_items);
                 formData.append('hr_realizada_items', hr_realizada_items);
-            
+
+                formData.append('tipos_estados_pagos', tipos_estados_pagos);
+                formData.append('inputFechaPago', inputFechaPago);
+                formData.append('clientes', clientes);
+
                 formData.append('accion', accion);
               
             $.ajax({
@@ -1506,7 +1515,7 @@ function grabar_nuevo_arriendo(idServicio) {
 
 function agregar_arriendo() {
     const url_link = document.getElementById('url_link').value;
-    
+
     var camion              = document.getElementsByName('camion[]');
 
     var resultado    =  $.ajax({
@@ -2650,4 +2659,13 @@ function traer_finalizar_pagos_traslados(idFlete) {
     $("#panel_montos").html('');
     $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
+}
+
+function traer_arriendos() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_arriendos";
+
+    $("#traer_arriendos").html('');
+    $('#traer_arriendos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_arriendos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
 }

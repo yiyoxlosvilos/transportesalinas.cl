@@ -1957,7 +1957,7 @@ function traer_procesar_pago(idFlete) {
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
 
-function quitar_bitacora(idBitacora, idServicio) {
+function quitar_bitacora(idBitacora, idServicio, tipo_servicio) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "quitar_bitacora";
 
@@ -1971,7 +1971,6 @@ function quitar_bitacora(idBitacora, idServicio) {
         }).then((result) => {
           if (result.isConfirmed) {
             var formData = new FormData();
-                formData.append('idServicio', idServicio);
                 formData.append('idBitacora', idBitacora);
                 formData.append('accion', accion);
               
@@ -1990,7 +1989,12 @@ function quitar_bitacora(idBitacora, idServicio) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  cargar_bitacora(idServicio);
+                    if (tipo_servicio == 1) {
+                        cargar_bitacora(idServicio);
+                    } else if (tipo_servicio == 2) {
+                        cargar_bitacora_traslados(idServicio);
+                    }
+                  
                 })  
               },
               error:       function(sec) {

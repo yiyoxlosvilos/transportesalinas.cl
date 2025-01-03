@@ -4051,7 +4051,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	                            			<h5 class="my-0 text-primary">'.$sql[$i]['bit_titulo'].'</h5>
 	                            		</div>
 	                            		<div class="col-2">
-	                            			<h5 class="my-0 text-primary"><i class="fas fa-times text-danger me-3 cursor" onclick="quitar_bitacora('.$sql[$i]['bit_id'].', '.$idServicio.')"></i></h5>
+	                            			<h5 class="my-0 text-primary"><i class="fas fa-times text-danger me-3 cursor" onclick="quitar_bitacora('.$sql[$i]['bit_id'].', '.$idServicio.', '.$bit_tipo_servicio.')"></i></h5>
 	                            		</div>
 	                            	</div>
 	                                

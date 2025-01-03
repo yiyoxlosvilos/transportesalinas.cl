@@ -1964,9 +1964,9 @@
 			$mes = $_REQUEST['mes'];
 			$ano = $_REQUEST['ano'];
 
-			$html ='   <h3 class="mt-5 text-success">Viajes Vigentes</h3>
+			$html ='   <h3 class="mt-5 mb-5 text-success">Viajes Vigentes</h3>
                       '.$centroCosto->traer_fletes_asigandos($mes, $ano, '').'
-                      <h3 class="mt-5 text-danger">Viajes Pagados</h3>
+                      <h3 class="mt-5 mb-5 text-danger">Viajes Pagados</h3>
                       '.$centroCosto->traer_fletes_asigandos($mes, $ano, 2);
 
             $html .= '<script>

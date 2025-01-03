@@ -3947,16 +3947,16 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$recursos 	= new Recursos();
 			$hoy 		= Utilidades::fecha_hoy();
 
-			$sql = $this->update_query('UPDATE  arriendos
-										SET     arriendo_tipo_servicio	= $inputTipoServicio, 
-												arriendo_proyecto		= $inputProyecto, 
-												arriendo_contacto		= $inputContacto, 
-												arriendo_mes			= $mes, 
-												arriendo_descripcion	= $inputDescripcion,
-												arriendo_cliente 		= $clientes,
-												arriendo_estado_pago 	= $tipos_estados_pagos,
-												arriendo_fecha  		= $inputFechaPago
-										WHERE   arriendo_id 			= $idArriendo');
+			$sql = $this->update_query("UPDATE  arriendos
+										SET     arriendo_tipo_servicio	= '$inputTipoServicio',
+												arriendo_proyecto		= '$inputProyecto',
+												arriendo_contacto		= '$inputContacto',
+												arriendo_mes			= '$mes',
+												arriendo_descripcion	= '$inputDescripcion',
+												arriendo_cliente 		= '$clientes',
+												arriendo_estado_pago 	= '$tipos_estados_pagos',
+												arriendo_fecha  		= '$inputFechaPago'
+										WHERE   arriendo_id 			= $idArriendo");
 
 			$this->eliminar_registros_previos($idArriendo);
 

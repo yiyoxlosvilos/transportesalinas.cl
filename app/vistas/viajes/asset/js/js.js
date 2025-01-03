@@ -3065,3 +3065,14 @@ function buscar_traslados() {
     $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
 }
+
+function buscar_arriendo() {
+    const url_link = document.getElementById('url_link').value;
+    var mes         = document.getElementById('mes_arriendo').value;
+    var ano         = document.getElementById('ano_arriendo').value;
+    var accion     = "buscar_arriendo";
+
+    $("#traer_traslados").html('');
+    $('#traer_traslados').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_traslados').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
+}

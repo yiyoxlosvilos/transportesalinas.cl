@@ -1703,7 +1703,21 @@
 			echo $centroCosto->listado_de_arriendo($mes, $ano, '', '');
 			echo '<h3 class="mt-5 mb-4 text-danger">Pagados</h3>';
 			echo $centroCosto->listado_de_arriendo($mes, $ano, '', 2);
+			echo '<script>
+			            		$(document).ready(function() {
+			    $("#listado_arriendos").DataTable({     
+			      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+			      "iDisplayLength": 5
+			   });
+			  });
 
+			  $(document).ready(function() {
+			    $("#listado_arriendos_listas").DataTable({     
+			      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+			      "iDisplayLength": 5
+			   });
+			  });
+			            	</script>';
 			break;
 		case 'traer_bitacora_arriendos':
 			$idFlete = $_REQUEST['idFlete'];
@@ -2027,6 +2041,30 @@
   });
             	</script>';
             echo $html;
+			break;
+		case 'buscar_arriendo':
+			$mes = $_REQUEST['mes'];
+			$ano = $_REQUEST['ano'];
+
+			echo '<h3 class="mt-5 mb-4 text-success">Vigentes</h3>';
+			echo $centroCosto->listado_de_arriendo($mes, $ano, '', '');
+			echo '<h3 class="mt-5 mb-4 text-danger">Pagados</h3>';
+			echo $centroCosto->listado_de_arriendo($mes, $ano, '', 2);
+			echo '<script>
+			            		$(document).ready(function() {
+			    $("#listado_arriendos").DataTable({     
+			      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+			      "iDisplayLength": 5
+			   });
+			  });
+
+			  $(document).ready(function() {
+			    $("#listado_arriendos_listas").DataTable({     
+			      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+			      "iDisplayLength": 5
+			   });
+			  });
+			            	</script>';
 			break;
 		default:
 			break;

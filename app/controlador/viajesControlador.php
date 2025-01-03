@@ -4635,7 +4635,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		        $html .= '<div class="row">';
 
 		        $html .='
-		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		        	<div class="col-xxl-4 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Tracto:</h6>
 		                <span class="text-dark">
 		                    ' . $productos . '		                    
@@ -4654,11 +4654,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				}
 
-		        $html .='<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		        $html .='<div class="col-xxl-4 col-xl-4 col-sm-12 pt-3 ">
 		                <h6>Chofer:</h6>
 		                ' . $recursos->nombre_trabajador($datos_flete[$i]['traslados_chofer']) . '
 		            </div>
-		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		            <div class="col-xxl-4 col-xl-4 col-sm-12 pt-3 ">
 								<h6>Acompañante/es:</h6>
 								'.$acompanantes.'
 					</div>';

@@ -4926,7 +4926,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 	    public function traer_panel_pagos_arriendos($idFlete){
 			$recursos = new Recursos();
-			$datos_fletes = $recursos->datos_arriendos_id($idFlete);
 			$datos_abonos = $recursos->datos_abonos_id($idFlete, 3);
 
 			$abonos = 0;
@@ -4936,7 +4935,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 
-			$cantidad_total = $recursos->datos_arriendos_monto($idFlete);
+			$cantidad_total = $recursos->datos_arriendos_monto_id($idFlete);
 
 			$nuevo_total = ($cantidad_total-$abonos);
 

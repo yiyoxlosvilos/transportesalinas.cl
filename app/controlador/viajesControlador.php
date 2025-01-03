@@ -195,14 +195,27 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			return $mostrar;
 		}
 
-		public function traer_fletes_asigandos(){
+		public function traer_fletes_asigandos($mes, $ano, $estado){
+			$desde      = $ano.'-'.$mes.'-01';
+	    	$ultimo_dia = date("t", strtotime($desde));
+	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
+
 			$recursos= new Recursos();
+
+			if($estado == ''){
+				$script = 'AND    		 fle_estado = 1';
+				$id_tabla='maquinarias';
+			}else{
+				$script = 'AND    		 fle_estado = '.$estado;
+				$id_tabla='maquinarias_listas';
+			}
 
 			$sql     = $this->selectQuery("SELECT * FROM fletes
 										   WHERE  		 fle_venta  > 0
-										   AND    		 fle_estado = 1");
+										   AND           fle_creacion BETWEEN '$desde' AND '$hasta'
+										   $script");
 
-			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow-sm border" id="maquinarias">
+			$html    = '<table width="100%" cellspacing="3" class="table table-sm shadow-sm border" id="'.$id_tabla.'">
 							<thead>
 							<tr class="table-info">
 								<th align="left">Tracto</th>

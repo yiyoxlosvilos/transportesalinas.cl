@@ -3951,7 +3951,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										SET     arriendo_tipo_servicio	= $inputTipoServicio, 
 												arriendo_proyecto		= $inputProyecto, 
 												arriendo_contacto		= $inputContacto, 
-												arriendo_mes			= '$mes', 
+												arriendo_mes			= $mes, 
 												arriendo_descripcion	= $inputDescripcion,
 												arriendo_cliente 		= $clientes,
 												arriendo_estado_pago 	= $tipos_estados_pagos,

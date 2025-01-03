@@ -4768,7 +4768,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                             <div class="col">
                               <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Traslado</span>
                               <h2 class="mb-3">
-                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_valor'].'">'.Utilidades::monto_color($datos_fletes[0]['fle_valor']).'</span>
+                                <span class="counter-value" data-target="'.$viejo_total.'">'.Utilidades::monto_color($viejo_total).'</span>
                               </h2>
                             </div>
                           </div>

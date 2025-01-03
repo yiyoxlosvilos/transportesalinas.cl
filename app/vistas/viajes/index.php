@@ -131,7 +131,7 @@
                     <div class="col-3">
                       <button class="btn btn-sm btn-dark" onclick="traer_menu('asignar_producto')"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Nuevo Viaje</span></button>
                     </div>
-                    <div class="col-15 mt-3" id="traer_productos_categoria">
+                    <div class="col-15 border-top" id="traer_productos_categoria">
                       <h3 class="mt-5 mb-4 text-success">Viajes Vigentes</h3>
                       <?= $centroCostos->traer_fletes_asigandos($mes, $ano, '') ?>
                       <h3 class="mt-5 mb-4 text-danger">Viajes Pagados</h3>

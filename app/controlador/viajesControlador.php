@@ -3572,20 +3572,29 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			return $html;
 	    }
 
-	    public function listado_de_traslados($idServicio){
+	    public function listado_de_traslados($mes, $ano, $idServicio, $estado){
 	    	$recursos 	= new Recursos();
 	    	$desde      = $ano.'-'.$mes.'-01';
 	    	$ultimo_dia = date("t", strtotime($desde));
 	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
 	    	$hoy        = Utilidades::fecha_hoy();
 	    	$neto       = 0;
+
+	    	if($estado == ''){
+				$script = 'AND    		 traslados_estado = 1';
+				$id_tabla='listado_traslados';
+			}else{
+				$script = 'AND    		 traslados_estado = '.$estado;
+				$id_tabla='listado_traslados_listas';
+			}
 	    	
 
 	    	$sql    	= $this->selectQuery("SELECT * FROM traslados
-										  	  WHERE    		traslados_estado = 1
+										  	  WHERE    		traslados_fecha_pago BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59'
+										  	  $script
 										  	  ORDER BY      traslados_id ASC");
 
-			$html = ' <table id="listado_traslados" class="table shadow">
+			$html = ' <table id="'.$id_tabla.'" class="table shadow">
 			            <thead >
 			              	<tr class="table-info">
 								<th>TRASLADO</th>

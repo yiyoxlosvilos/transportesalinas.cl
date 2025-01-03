@@ -3784,7 +3784,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$html = '<table id="listado_arriendos" class="table shadow">
 	    				<thead >
 			              	<tr class="table-info">
-								<th colspan="3">1&nbsp;</th>
+								<th colspan="3">&nbsp;</th>
 							</tr>
 			            </thead>
 			            <tbody>';
@@ -3819,6 +3819,13 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			}
 
 				$html .= '</tbody>
+						<tfooter>
+						<tr>
+							<th>&nbsp;</th>
+							<th align="right" >TOTAL:</th>
+							<th align="left">'.Utilidades::monto($total).'</th>
+						</tr>
+						</tfooter>
 					  </table>';
 
 

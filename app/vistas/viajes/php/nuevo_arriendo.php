@@ -27,7 +27,7 @@
   <p align="left" class="text-primary font-weight-light h3"><i class="fas fa-truck text-primary"></i>&nbsp;&nbsp; Ingresar nuevo arriendo</p>
   <hr class="mt-2 mb-3"/>
     <div class="mb-4 shadow p-4">
-      <div class="row">
+      <div class="row bg-soft-light">
         <div class="col-lg-6 p-3 mb-2 bg-white  border">
           <label for="inputPrecio"><b>* Tipo de servicio:</b></label>
           <input type="text" class="form-control shadow" id="inputTipoServicio" placeholder="Escribir Tipo de servicio">

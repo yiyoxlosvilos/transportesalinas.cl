@@ -4883,7 +4883,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	}
 	    	
 	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
-										  	  WHERE    		arriendo_estado = 1
+										  	  WHERE    		arriendo_estado > 0
 										  	  $script
 										  	  ORDER BY      arriendo_id  ASC");
 
@@ -5062,7 +5062,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								</tr>
 							  </table>';
 
-			$html .= $this->detalle_de_arriendo($idCotizacion);
+			$html .= $this->detalle_de_arriendo($datos_cotizacion[0]['arriendo_id']);
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
 						<tr>

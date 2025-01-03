@@ -112,7 +112,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-6 mb-4">
+    <!-- <div class="col-xl-6 mb-4">
         <div class="card card-h-100 shadow">
             <div class="card-body">
                 <div id="bar"></div>
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
 <script>

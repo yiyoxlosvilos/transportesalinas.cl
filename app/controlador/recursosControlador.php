@@ -2351,7 +2351,7 @@
             return $html;
 		}
 
-		public function select_tipo_servicios_cliente($funcion, $idTipoServicio, $idServicio){
+		public function select_tipo_servicios_id($funcion, $idTipoServicio, $idServicio){
 
 			if($idTipoServicio == 1){
 				$sql = $this->selectQuery("SELECT 		 fletes.fle_id AS id, clientes.cli_nombre

@@ -4926,7 +4926,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 	    public function traer_panel_pagos_arriendos($idFlete){
 			$recursos = new Recursos();
-			$datos_fletes = $recursos->datos_traslados_id($idFlete);
+			$datos_fletes = $recursos->datos_arriendos_id($idFlete);
 			$datos_abonos = $recursos->datos_abonos_id($idFlete, 3);
 
 			$abonos = 0;
@@ -4935,9 +4935,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$abonos += $datos_abonos[$i]['abo_monto'];
 			}
 
-			$nuevo_total = (($datos_fletes[0]['traslados_valor']*$datos_fletes[0]['traslados_cantidad'])-$abonos);
 
-			$viejo_total = ($datos_fletes[0]['traslados_valor']*$datos_fletes[0]['traslados_cantidad']);
+			$cantidad_total = $recursos->datos_arriendos_monto($idFlete);
+
+			$nuevo_total = ($cantidad_total-$abonos);
+
+			$viejo_total = $cantidad_total;
 
 			$html = '
 				<div class="row" id="panel_montos_up">
@@ -4948,7 +4951,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                         <div class="card-body">
                           <div class="row align-items-center">
                             <div class="col">
-                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Traslado</span>
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Arriendo</span>
                               <h2 class="mb-3">
                                 <span class="counter-value" data-target="'.$viejo_total.'">'.Utilidades::monto_color($viejo_total).'</span>
                               </h2>

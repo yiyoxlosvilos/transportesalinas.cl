@@ -45,7 +45,7 @@
             <div class="card card-h-100 shadow">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center mb-4">
-                        <h5 class="card-title me-2">Fletes Hoy</h5>
+                        <h5 class="card-title me-2">Viajes Hoy</h5>
                     </div>
                     <div class="row align-items-center">
                         <?= $dash->panel_card_venta_hoy($hoy); ?>

@@ -3014,3 +3014,21 @@ function nueva_factura() {
     $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
 }
+
+function nueva_factura_proveedores() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "nueva_factura_proveedores";
+
+    $("#traer_facturas").html('');
+    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
+}
+
+function nueva_factura_cliente() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "nueva_factura_cliente";
+
+    $("#traer_facturas").html('');
+    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
+}

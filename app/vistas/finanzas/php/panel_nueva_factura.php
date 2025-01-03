@@ -24,15 +24,15 @@
     <div class="container mb-4">
       <div class="row">
         <div class="col border justify-content-center align-content-center" id="panel_proveedores">
-          <div class="row">
+          <div class="row m-3">
             <div class="col"><h4 class="text-primary">Crear Factura Proveedores</h4></div>
-            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i></button></div>
+            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura_proveedores()"><i class="fas fa-receipt text-white"></i></button></div>
           </div>
         </div>
         <div class="col border justify-content-center align-content-center" id="panel_clientes">
-          <div class="row">
+          <div class="row m-3">
             <div class="col"><h4 class="text-primary">Crear Factura Clientes</h4></div>
-            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i></button></div>
+            <div class="col-3"><button class="btn btn-sm btn-success" onclick="nueva_factura_cliente()"><i class="fas fa-receipt text-white"></i></button></div>
           </div>
         </div>
       </div>

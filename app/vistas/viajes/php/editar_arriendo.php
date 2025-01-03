@@ -47,11 +47,11 @@
           <label for="inputPrecio"><b>* Mes servicio:</b></label>
           <?= Utilidades::select_agrupacion_cards_mes('', 'mes', $datos_arriendos[0]['arriendo_mes']) ?>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <b>Estado de Pago:</b>
           <?= $recursos->select_tipos_estados_pagos($datos_arriendos[0]['arriendo_estado_pago']) ?>
         </div>
-        <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
+        <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
           <h6>Fecha de Arriendo:</h6>
           <span class="text-dark">
             <input type="date" class="form-control shadow" id="inputFechaPago" value="<?= $datos_arriendos[0]['arriendo_fecha'] ?>" autocomplete="off" onchange="calcular_fecha_pago()">

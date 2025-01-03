@@ -3794,14 +3794,15 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$html .= '<tr><td colspan="3"><div class="row p-3">
 		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
-		    					<div class="col text-center">
-		    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
-		    					</div>
+		    					<div class="row">
+			    					<div class="col text-center">
+			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    					</div>
 
-		    					<div class="col text-center">
-		    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    					<div class="col text-center">
+			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    					</div>
 		    					</div>
-		    					
 		    				</div>
 		    				<div class="col border"><strong>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</strong></div>
 		    				<div class="col border"><strong>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</strong></div>

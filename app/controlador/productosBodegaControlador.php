@@ -58,7 +58,7 @@
 		public function seleccion_categorias_producto($id){
 
 			$data   = 0;
-			$sql    = $this->selectQuery("SELECT * FROM categoria_producto
+			$sql    = $this->selectQuery("SELECT * FROM categoria_productos
 					   					  WHERE  		cate_estado = 1
 					   					  ORDER BY 		cate_nombre ASC");
 

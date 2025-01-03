@@ -23,11 +23,11 @@
   <hr class="mt-2 mb-3"/>
     <div class="container mb-4">
       <div class="row">
-        <div class="col" id="panel_proveedores">
+        <div class="col justify-content-center align-content-center" id="panel_proveedores">
           <h4 class="text-primary">Crear Factura Proveedores</h4>
           <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h6 class="ocultar text-white">Agregar</h6></button>
         </div>
-        <div class="col" id="panel_clientes">
+        <div class="col justify-content-center align-content-center" id="panel_clientes">
           <h4 class="text-primary">Crear Factura Clientes</h4>
           <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h6 class="ocultar text-white">Agregar</h6></button>
         </div>

@@ -2370,7 +2370,7 @@
 					   				   	   AND      	 traslados.traslados_cliente  = $idCliente");
 				$nombre = 'Traslado';
 			}elseif($idTipoServicio == 3){
-				$sql = $this->selectQuery("SELECT 		 arriendos.arriendo_id, clientes.cli_nombre
+				$sql = $this->selectQuery("SELECT 		 arriendos.arriendo_id AS id, clientes.cli_nombre
 										   FROM 		 arriendos
 										   LEFT JOIN     clientes
 										   ON            clientes.cli_id = arriendos.arriendo_creacion 

@@ -168,7 +168,7 @@
                 <!-- !botones -->
 
                 <div class="col-md-15 mb-2 mt-5" id="panel_de_pagos">
-                  <?= $centroCostos->traer_panel_pagos_traslados($idTraslados); ?>
+                  <?= $centroCostos->traer_panel_pagos_arriendos($idTraslados); ?>
                 </div>
 
               </div>

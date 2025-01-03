@@ -4923,6 +4923,49 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 			return $html;
 	    }
+
+	    public function traer_panel_pagos_arriendos($idFlete){
+			$recursos = new Recursos();
+			$datos_fletes = $recursos->datos_traslados_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 3);
+
+			$abonos = 0;
+
+			for ($i=0; $i < count($datos_abonos); $i++) { 
+				$abonos += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$nuevo_total = (($datos_fletes[0]['traslados_valor']*$datos_fletes[0]['traslados_cantidad'])-$abonos);
+
+			$viejo_total = ($datos_fletes[0]['traslados_valor']*$datos_fletes[0]['traslados_cantidad']);
+
+			$html = '
+				<div class="row" id="panel_montos_up">
+                    <div class="col-xl-12 col-sm-12">
+                      <!-- card -->
+                      <div class="card card-h-200 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Traslado</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$viejo_total.'">'.Utilidades::monto_color($viejo_total).'</span>
+                              </h2>
+                              <input type="number" name="nuevo_total" id="nuevo_total" value="'.$nuevo_total.'" hidden>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                  </div>
+                  <div class="row" id="panel_montos">
+                  	'.$this->panel_abonos($idFlete, 3, $nuevo_total).'
+                  </div>';
+
+            return $html;
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

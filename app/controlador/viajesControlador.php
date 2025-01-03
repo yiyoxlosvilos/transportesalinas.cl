@@ -3796,11 +3796,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col border"><strong>N&deg;: '.$j++.' </strong>
 		    					<div class="row">
 			    					<div class="col text-center">
-			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/panel_arriendos.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 
 			    					<div class="col text-center">
-			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/editar_arriendo.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
+			    						<span class="p-2 far fa-eye text-primary cursor" href="'.controlador::$rutaAPP.'app/vistas/centro_costo/php/arriendos_ver.php?idArriendo='.$sql[$i]['arriendo_id'].'" data-fancybox data-type="iframe" data-preload="true" data-width="100%" data-height="1300"></span>
 			    					</div>
 		    					</div>
 		    				</div>
@@ -3809,7 +3809,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
 		    				<div class="col border"><center><strong>Mes de:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>
 		    				<div class="col-15 mt-2 p-1 bg-light"><strong>Descripción:<br>'.$sql[$i]['arriendo_descripcion'].'</strong></div>';
-				$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
+				//$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
 
 				$html .= '</div></td></tr>';
 

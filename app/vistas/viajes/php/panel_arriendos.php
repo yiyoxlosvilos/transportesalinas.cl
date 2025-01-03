@@ -139,12 +139,7 @@
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
-              <div class="row">
-                <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Traslado</h3>
-                </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_editar"></div>   
-              </div>
+              <div class="row py-3" style="background-color: #f7f7f7" id="panel_editar"></div> 
             </div>
             <div class="tab-pane fade" id="budget-project" role="tabpanel" aria-labelledby="budget-project-tab">
               <div class="row">

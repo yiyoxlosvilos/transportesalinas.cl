@@ -3919,7 +3919,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$cantidad_total = ($sql[$i]['item_valor_hr']*$sql[$i]['item_hr_realizadas']);
 
 				$html .= '<tr  id="row'.$j.'">
-				          	<td><input type="text" name="camion[]" placeholder="Identificación" class="form-control titulo_list" value="'.$sql[$i]['item_camion'].'" /></td>
+				          	<td>'.$recursos->select_productos_multiple($sql[$i]['item_camion']).'</td>
 				          	<td><input type="number" name="hors_contratadas[]" placeholder="Horas Contratadas" class="form-control titulo_list" value="'.$sql[$i]['item_hrs_contratadas'].'" /></td>
 				          	<td><input type="number" name="valor_hora[]" id="valor_hora0" placeholder="Valor horas" class="form-control titulo_list" onchange="calcular_valor_item_arriendo(0)" value="'.$sql[$i]['item_valor_hr'].'" /></td>
 				          	<td><input type="number" name="hrs_realizadas[]" id="hrs_realizadas0" placeholder="Horas realizadas" class="form-control titulo_list" onchange="calcular_valor_item_arriendo(0)" value="'.$sql[$i]['item_hr_realizadas'].'" /></td>

@@ -3035,8 +3035,8 @@ function nueva_factura_cliente() {
 
 function buscar_facturas_proveedores() {
     const url_link  = document.getElementById('url_link').value;
-    var mes         = document.getElementById('mes').value;
-    var ano         = document.getElementById('ano').value;
+    var mes         = document.getElementById('mes_facturas').value;
+    var ano         = document.getElementById('ano_facturas').value;
     var accion      = "buscar_facturas_proveedores";
 
     $("#traer_facturas").html('');

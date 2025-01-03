@@ -167,10 +167,10 @@
                 </div>
                 <div class="tab-pane fade" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-6">
                         <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Facturas</h3>
                       </div>
-                    <div class="col">
+                    <div class="col-3">
                       <table width="100%">
                         <tr>
                           <td><?= Utilidades::select_agrupacion_cards('', 'mes_facturas', $ano, $mes) ?></td>
@@ -182,11 +182,12 @@
                           </td>
                         </tr>
                       </table>
+                    </div>
+                    <div class="col-3">
                       <button class="btn btn-sm btn-dark" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
                       <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_usuario_facturas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
                         <i class="bi bi-gear-wide-connected"></i>
                       </button>
-                    </button>
                     </div>
                     <div class="col-15 mt-3" id="traer_facturas">
                       <?= $finanzas->facturas_proveedores($mes, $ano, '') ?>

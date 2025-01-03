@@ -65,7 +65,7 @@
         </div>
         <div class="col-lg-2 mb-2">
           <label for="inputTipo">&nbsp;</label>
-          <button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="location.reload()">Cancelar <i class="bi bi-save"></i></button>
+          <button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="location.reload()">Cancelar</button>
         </div>
       </div>
     </div>

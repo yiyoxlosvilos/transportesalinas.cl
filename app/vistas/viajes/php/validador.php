@@ -1680,7 +1680,7 @@
 	        echo $string = preg_replace("/[\r\n|\n|\r]+/", PHP_EOL, $recursos->select_productos_multiple(0));
 			break;
 		case 'traer_arriendos':
-			echo $centroCostos->listado_de_arriendo('');
+			echo $centroCosto->listado_de_arriendo('');
 			break;
 		default:
 			break;

@@ -65,9 +65,9 @@
 				$fechainicio = $ano.'-'.$mes."-".$dia;
 				$sql         = $this->selectQuery(" SELECT 		SUM(c_cli_monto) monto 
 										  	    	FROM 		caja_cliente
-					   					  	    	WHERE    	c_cli_tipoMovimiento = 3
+					   					  	    	WHERE    	c_cli_tipoMovimiento IN(3, 4)
 					   					  	    	AND      	c_cli_fecha          = '$fechainicio'
-					   					  	    	AND      	c_cli_estado         = 2
+					   					  	    	AND      	c_cli_estado         IN(1, 2)
 					   					  	    	ORDER BY 	c_cli_fecha ASC");
 				if($sql[0]['monto'] > 0){
 					$data .= $sql[0]['monto'].',';

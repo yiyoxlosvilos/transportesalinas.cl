@@ -3054,3 +3054,14 @@ function buscar_viajes() {
     $('#traer_productos_categoria').load(url_link+"/app/recursos/img/loader.svg");
     $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
 }
+
+function buscar_traslados() {
+    const url_link = document.getElementById('url_link').value;
+    var mes         = document.getElementById('mes_traslados').value;
+    var ano         = document.getElementById('ano_traslados').value;
+    var accion     = "buscar_traslados";
+
+    $("#traer_productos_categoria").html('');
+    $('#traer_productos_categoria').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_productos_categoria').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, mes:mes, ano:ano});
+}

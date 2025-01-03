@@ -257,6 +257,13 @@
    });
   });
 
+   $(document).ready(function() {
+    $("#listado_traslados_listas").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
   $(document).ready(function() {
     $("#listado_arriendos").DataTable({     
       "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],

@@ -1986,6 +1986,32 @@
             	</script>';
             echo $html;
 			break;
+		case 'buscar_traslados':
+			$mes = $_REQUEST['mes'];
+			$ano = $_REQUEST['ano'];
+
+			$html ='   <h3 class="mt-5 mb-4 text-success">Vigentes</h3>
+                      '.$centroCosto->listado_de_traslados($mes, $ano, '', '').'
+                      <h3 class="mt-5 mb-4 text-danger">Pagados</h3>
+                      '.$centroCosto->listado_de_traslados($mes, $ano, '', 2);
+
+            $html .= '<script>
+            		$(document).ready(function() {
+    $("#listado_traslados").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
+  $(document).ready(function() {
+    $("#listado_traslados_listas").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+            	</script>';
+            echo $html;
+			break;
 		default:
 			break;
 	}

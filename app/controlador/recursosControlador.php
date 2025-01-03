@@ -2247,8 +2247,8 @@
 				$script = '';
 			}
 
-			$html = '<select id="tipo_servicio" class="form-control shadow" '.$script.'>';
-			$html .= '<option value="0" selected="selected">Seleccionar</option>';
+			$html = '<select id="tipo_servicio" class="form-control shadow">';
+			$html .= '<option value="0">Seleccionar</option>';
 
 			for ($i=0; $i <= count($sql); $i++) { 
 				if($sql[$i]['tipo_id'] === $idgasto){
@@ -2259,7 +2259,7 @@
 				}
 			}
 
-            $html .='         </select>';
+            $html .='</select>';
 
             return $html;
 		}

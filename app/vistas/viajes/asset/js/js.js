@@ -3032,3 +3032,14 @@ function nueva_factura_cliente() {
     $('#panel_clientes').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_clientes').load(url_link+"app/vistas/finanzas/php/nueva_factura_cliente.php", {accion:accion});
 }
+
+function buscar_facturas_proveedores() {
+    const url_link  = document.getElementById('url_link').value;
+    var mes         = document.getElementById('mes').value;
+    var ano         = document.getElementById('ano').value;
+    var accion      = "buscar_facturas_proveedores";
+
+    $("#traer_facturas").html('');
+    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion, mes:mes, ano:ano});
+}

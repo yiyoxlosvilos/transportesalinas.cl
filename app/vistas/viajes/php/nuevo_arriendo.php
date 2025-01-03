@@ -3,7 +3,6 @@
   require_once __dir__."/../../../controlador/productosControlador.php";
   require_once __dir__."/../../../controlador/recursosControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
-  require_once __dir__."/../../../recursos/head.php";
 
   $productos   = new Productos();
   $recursos    = new Recursos();
@@ -17,8 +16,8 @@
 
   $idServicio  = $_REQUEST['idServicio'];
 ?>
-<script src="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/js/js.js?v=<?= rand() ?>"></script>
-<link href="<?= controlador::$rutaAPP ?>app/vistas/centro_costo/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
+<script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
+<link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="<?= controlador::$rutaAPP ?>app/recursos/css/choices.css?v=<?= rand() ?>">
 <script src="<?= controlador::$rutaAPP ?>app/recursos/js/choice.js?v=<?= rand() ?>"></script>

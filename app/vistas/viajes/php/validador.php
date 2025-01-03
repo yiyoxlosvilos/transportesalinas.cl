@@ -1897,11 +1897,7 @@
 			$descuento 	= 0;
 			$estadia 	= 0;
 
-			for ($j=0; $j < count($datos_fletes); $j++) {
-				$valor 		+= ($datos_fletes[$j]['traslados_valor']*$datos_fletes[$j]['traslados_cantidad']);
-			}
-
-			$valor_total = ($valor);
+			$valor_total = ($recursos->datos_arriendos_monto_id($idFlete)*1.19);
 
 			$abonado = 0;
 			for ($i=0; $i < count($datos_abonos); $i++) {
@@ -1919,7 +1915,7 @@
 		              <div class="card-body">
 		                <div class="row align-items-center">
 		                  <div class="col">
-		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Traslado: </span>
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Arriendo: </span>
 		                    <h4 class="mb-3">
 		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
 		                    </h4>
@@ -1944,7 +1940,7 @@
 				    <div class="row">
 				    	<div class="col-12">
 				    		<h4 class="text-primary">Descargar e Imprimir Comprobante</h4>
-				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/arriendos_ver.php?idTraslado='.$datos_fletes[0]['traslados_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
+				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/arriendos_ver.php?idTraslado='.$datos_fletes[0]['arriendo_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
 				    	</div>
 				  </div>
 	

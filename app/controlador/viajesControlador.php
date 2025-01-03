@@ -4642,13 +4642,6 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		                </span>
 		            </div>';
 
-		        $html .='
-		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
-		                <h6>Traslados:</h6>
-		                ' . $traslados . '
-		            </div>';
-
-
 		         $acompanantes .= '';
 			    if($datos_flete[$i]['traslados_acompanantes'] != ''){
 					$explorar_aco = explode(",", $datos_flete[$i]['traslados_acompanantes']);
@@ -4670,6 +4663,18 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								'.$acompanantes.'
 					</div>';
 
+				 $html .='
+		        	<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+		                <h6>Traslados:</h6>
+		                ' . $traslados . '
+		            </div>
+		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
+						<h6>Fecha de Traslados:</h6>
+						<span class="text-dark">
+						' . $fechas_traslados . '
+				  		</span>
+					</div>';
+
 		        $html .='
 		      
 		            <div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
@@ -4682,12 +4687,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 						<h6>Estado de Pago:</h6>
 						'.$recursos->nombre_tipos_estados_pagos($datos_flete[$i]['traslados_estado_pago']).'
 					</div>
-					<div class="col-xxl-6 col-xl-6 col-sm-12 pt-3 ">
-						<h6>Fecha de Traslados:</h6>
-						<span class="text-dark">
-						' . $fechas_traslados . '
-				  		</span>
-					</div>
+					
 					<div class="col-xxl-4 col-xl-6 col-sm-12 pt-3 ">
 						<h6>Cliente:</h6>
 						'.$recursos->nombre_clientes($datos_flete[$i]['traslados_cliente']).'

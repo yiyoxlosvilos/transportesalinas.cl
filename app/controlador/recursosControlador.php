@@ -403,11 +403,11 @@
 			}
 		}
 
-		public function nombre_producto($idProducto){
+		public function nombre_producto_patente($idProducto){
 			$sql    = $this->selectQuery("SELECT * FROM product_cliente
 										  WHERE 		prod_cli_id = $idProducto");
 
-			return ucfirst($sql[0]['prod_cli_producto']);
+			return ucfirst($sql[0]['prod_cli_producto']).' '.ucwords($sql[0]['prod_cli_patente']);
 		}
 
 		public function datos_productos_codigo($codigo){

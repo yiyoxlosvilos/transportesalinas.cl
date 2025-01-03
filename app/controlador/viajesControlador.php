@@ -3853,7 +3853,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$cantidad_total = ($sql[$i]['item_valor_hr']*$sql[$i]['item_hr_realizadas']);
 
 				$html .= '<tr>
-				          	<td>'.$recursos->nombre_producto($sql[$i]['item_camion']).'</td>
+				          	<td>'.$recursos->nombre_producto_patente($sql[$i]['item_camion']).'</td>
 				          	<td>'.$sql[$i]['item_hrs_contratadas'].'</td>
 				          	<td>'.Utilidades::monto($sql[$i]['item_valor_hr']).'</td>
 				          	<td>'.$sql[$i]['item_hr_realizadas'].'</td>

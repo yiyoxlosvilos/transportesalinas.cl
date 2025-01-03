@@ -90,4 +90,10 @@
         "iDisplayLength": 10
     });
   });
+  $(document).ready(function() {
+    $("#clientes_list").DataTable({     
+        "aLengthMenu": [[5, 10, 20], [5, 10, 20]],
+        "iDisplayLength": 10
+    });
+  });
 </script>

@@ -2017,6 +2017,8 @@ function quitar_bitacora(idBitacora, idServicio, tipo_servicio) {
                         cargar_bitacora(idServicio);
                     } else if (tipo_servicio == 2) {
                         cargar_bitacora_traslados(idServicio);
+                    } else if (tipo_servicio == 3) {
+                        cargar_bitacora_arriendos(idServicio);
                     }
                   
                 })  

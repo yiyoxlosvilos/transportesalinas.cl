@@ -172,8 +172,9 @@
                       </div>
                     <div class="col">
                       <button class="btn btn-sm btn-dark" onclick="facturas_proveedores()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
-                      <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_finanzas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
-                      <i class="bi bi-gear-wide-connected"></i>
+                      <button class="btn btn-dark" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_usuario_facturas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+                        <i class="bi bi-gear-wide-connected"></i>
+                      </button>
                     </button>
                     </div>
                     <div class="col-15 mt-3" id="traer_gastos">

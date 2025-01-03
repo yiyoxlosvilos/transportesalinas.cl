@@ -3569,7 +3569,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	
 
 	    	$sql    	= $this->selectQuery("SELECT * FROM traslados
-										  	  WHERE    		traslados_estado     != 0
+										  	  WHERE    		traslados_estado = 1
 										  	  ORDER BY      traslados_id ASC");
 
 			$html = ' <table id="listado_traslados" class="table shadow">

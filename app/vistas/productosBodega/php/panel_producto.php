@@ -3,6 +3,9 @@ ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
 
+try {
+  
+
   require_once __dir__."/../../../controlador/controlador.php";
   require_once __dir__."/../../../controlador/productosBodegaControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
@@ -57,3 +60,8 @@ ini_set('display_errors', 1);
     </div>
   </div>
 </div>
+<?php
+  } catch (Exception $e) {
+  return $e;
+}
+?>

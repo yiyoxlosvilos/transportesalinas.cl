@@ -23,7 +23,7 @@
 <script src="<?= controlador::$rutaAPP ?>app/recursos/js/choice.js?v=<?= rand() ?>"></script>
 
 <input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
-<div class="row mb-4">
+<div class="row mb-4 mx-5">
   <p align="left" class="text-primary font-weight-light h3"><i class="fas fa-truck text-primary"></i>&nbsp;&nbsp; Ingresar nuevo arriendo</p>
   <hr class="mt-2 mb-3"/>
     <div class="mb-4 shadow p-4">

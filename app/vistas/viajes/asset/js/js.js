@@ -2679,7 +2679,7 @@ function traer_arriendos_editar(idTraslado) {
     $('#panel_editar').load(url_link+"app/vistas/viajes/php/editar_arriendo.php", {accion:accion, idArriendo:idTraslado});
 }
 
-function traer_bitacora_arriendos(idFlete) {
+function nueva_bitacora_arriendos(idFlete) {
     const url_link = document.getElementById('url_link').value;
     var accion     = "traer_bitacora_arriendos";
 

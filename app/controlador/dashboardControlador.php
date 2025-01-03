@@ -36,9 +36,9 @@
 	    	$final 	 = date("Y-m-t", strtotime($inicio));
 
 			$sql    = $this->selectQuery("SELECT * FROM caja_cliente
-					   					  WHERE    	 	c_cli_tipoMovimiento = 3
+					   					  WHERE    	 	c_cli_tipoMovimiento IN(3, 4)
 					   					  AND      	 	c_cli_fecha          BETWEEN '$inicio' AND '$final'
-					   					  AND      	 	c_cli_estado         = 2
+					   					  AND      	 	c_cli_estado         IN(1,2)
 					   					  ORDER BY 	 	c_cli_fecha_fin ASC");
 
 			for ($i=0; $i < count($sql); $i++) { 

@@ -180,7 +180,7 @@ function grabar_flete() {
                   cancelButtonText:   'NO',
                 }).then((result) => {
                     console.log(sec);
-                  //location.reload();
+                  location.reload();
                 })  
               },
               error:       function(sec) {

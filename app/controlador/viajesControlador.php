@@ -4601,7 +4601,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
 						$traslados .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['traslados']).' '.$explorar_origen[$d].'</div>
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]).' '.$explorar_origen[$d].'</div>
 									</div>';
 					}
 
@@ -4617,7 +4617,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					$fechas_traslados .= '<div class="row">
 										<div class="col-6">';
 					for ($pp=0; $pp < count($explorar_fechas); $pp++) {
-						$fechas_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]['traslados_fechas']).'<br>';
+						$fechas_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]).'<br>';
 					}
 					$fechas_traslados .= '</div></div>';
 

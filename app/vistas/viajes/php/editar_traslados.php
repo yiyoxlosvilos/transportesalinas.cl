@@ -117,7 +117,7 @@
         </div>
         <div class="col-lg-2 mb-2">
           <label for="inputTipo">&nbsp;</label>
-          <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="anular_traslado(<?= $idTraslado ?>)">Anular <i class="bi bi-save"></i></button>
+          <button type="button" id="grabar" class="btn btn-danger form-control shadow" onclick="anular_traslado(<?= $idTraslado ?>)">Anular <i class="fas fa-trash-alt"></i></button>
         </div>
       </div>
     </div>

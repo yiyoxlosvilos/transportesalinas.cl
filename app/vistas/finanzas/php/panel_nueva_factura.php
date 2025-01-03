@@ -25,11 +25,11 @@
       <div class="row">
         <div class="col" id="panel_proveedores">
           <h4 class="text-primary">Crear Factura Proveedores</h4>
-          <button class="btn btn-sm btn-danger h4" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
+          <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h4 class="ocultar">Agregar Factura</h4></button>
         </div>
         <div class="col" id="panel_clientes">
           <h4 class="text-primary">Crear Factura Clientes</h4>
-          <button class="btn btn-sm btn-danger h4" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
+          <button class="btn btn-sm btn-danger" onclick="nueva_factura()"><i class="fas fa-receipt text-white"></i> <h4 class="ocultar">Agregar Factura</h4></button>
         </div>
       </div>
     </div>

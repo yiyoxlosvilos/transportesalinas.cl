@@ -66,7 +66,7 @@
                             </div>
                           </div>
                           <div class="product-tab-content">
-                            <h6>Bitácora</h6>
+                            <h6>Notas</h6>
                           </div></a>
                       </li>
 

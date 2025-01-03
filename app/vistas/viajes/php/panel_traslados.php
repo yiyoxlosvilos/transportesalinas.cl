@@ -19,7 +19,7 @@
 
   $idTraslados = $_REQUEST['idTraslados'];
 
-  $datos_fletes = $recursos->datos_fletes_id($idTraslados);
+  $datos_fletes = $recursos->datos_traslados_id($idTraslados);
 ?>
 <script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
@@ -67,7 +67,7 @@
                             </div>
                           </div>
                           <div class="product-tab-content">
-                            <h6>Bitácora</h6>
+                            <h6>Notas</h6>
                           </div></a>
                       </li>
 
@@ -173,7 +173,7 @@
                 <!-- !botones -->
 
                 <div class="col-md-15 mb-2 mt-5" id="panel_de_pagos">
-                  <?= $centroCostos->traer_panel_pagos($idTraslados); ?>
+                  <?= $centroCostos->traer_panel_pagos_traslados($idTraslados); ?>
                 </div>
 
               </div>
@@ -183,7 +183,7 @@
                 <div class="col-8">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Descargar e Imprimir</h3>
                   <div class="col-lg-15">
-                    <button class="btn btn-danger fas fa-file-pdf text-white h1" href="<?= controlador::$rutaAPP?>/app/vistas/viajes/php/viajes_ver.php?idCotizacion=<?= $datos_fletes[0]['fle_id'] ?>" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
+                    <button class="btn btn-danger fas fa-file-pdf text-white h1" href="<?= controlador::$rutaAPP?>/app/vistas/viajes/php/viajes_ver.php?idCotizacion=<?= $datos_fletes[0]['traslados_id'] ?>" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
                   </div>
                 </div>    
               </div>

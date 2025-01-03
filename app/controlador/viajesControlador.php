@@ -4741,6 +4741,102 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                 return FALSE;
             }
 	    }
+
+		public function traer_panel_pagos_traslados($idFlete){
+			$recursos = new Recursos();
+			$datos_fletes = $recursos->datos_traslados_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 2);
+
+			$abonos = 0;
+
+			for ($i=0; $i < count($datos_abonos); $i++) { 
+				$abonos += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$nuevo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])-$abonos);
+
+			$viejo_total = ((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']));
+
+			$html = '
+				<div class="row" id="panel_montos_up">
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-200 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Viaje</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_valor'].'">'.Utilidades::monto_color($datos_fletes[0]['fle_valor']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Valor Estadia</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_estadia'].'">'.Utilidades::monto_color($datos_fletes[0]['fle_estadia']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Descuentos</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.$datos_fletes[0]['fle_descuento'].'">'.Utilidades::monto_color(-$datos_fletes[0]['fle_descuento']).'</span>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+
+                    <div class="col-xl-3 col-sm-6">
+                      <!-- card -->
+                      <div class="card card-h-100 border shadow-sm">
+                        <!-- card body -->
+                        <div class="card-body">
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <span class="text-muted mb-3 lh-1 d-block text-truncate">Total</span>
+                              <h2 class="mb-3">
+                                <span class="counter-value" data-target="'.(($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento']).'">'.Utilidades::monto_color((($datos_fletes[0]['fle_valor']+$datos_fletes[0]['fle_estadia'])-$datos_fletes[0]['fle_descuento'])).'</span>
+
+                                <input type="number" name="nuevo_total" id="nuevo_total" value="'.$nuevo_total.'" hidden>
+                              </h2>
+                            </div>
+                          </div>
+                        </div><!-- end card body -->
+                      </div><!-- end card -->
+                    </div>
+
+                  </div>
+                  <div class="row" id="panel_montos">
+                  	'.$this->panel_abonos($idFlete, 1, $nuevo_total).'
+                  </div>';
+
+            return $html;
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

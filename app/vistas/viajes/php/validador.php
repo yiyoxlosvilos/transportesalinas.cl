@@ -1672,7 +1672,7 @@
 
 			break;
 		case 'traer_listado_camion':
-			echo $recursos->select_productos_multiple(0);
+	        echo $string = preg_replace("/[\r\n|\n|\r]+/", PHP_EOL, $recursos->select_productos_multiple(0));
 			break;
 		default:
 			break;

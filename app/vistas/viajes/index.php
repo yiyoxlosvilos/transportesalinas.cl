@@ -155,7 +155,7 @@
                         <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Gastos</h3>
                       </div>
                     <div class="col">
-                      <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Agregar Gasto</span></button>
+                      <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-dollar-sign text-white"></i> <span class="ocultar">Agregar Gasto</span></button>
                       <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_finanzas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
                       <i class="bi bi-gear-wide-connected"></i>
                     </button>
@@ -165,7 +165,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab"></div>
+                <div class="tab-pane fade active show" id="attachment" role="tabpanel" aria-labelledby="attachment-tab">
+                  <div class="row">
+                    <div class="col-8">
+                        <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Facturas</h3>
+                      </div>
+                    <div class="col">
+                      <button class="btn btn-sm btn-dark" onclick="facturas_proveedores()"><i class="fas fa-receipt text-white"></i> <span class="ocultar">Agregar Factura</span></button>
+                      <button class="btn btn-success" type="button" href="<?= controlador::$rutaAPP ?>app/vistas/finanzas/php/panel_finanzas.php" data-fancybox="" data-type="iframe" data-preload="true" data-width="100%" data-height="1200">
+                      <i class="bi bi-gear-wide-connected"></i>
+                    </button>
+                    </div>
+                    <div class="col-15 mt-3" id="traer_gastos">
+                      <?= $finanzas->listado_gastos($mes, $ano, '') ?>
+                    </div>
+                  </div>
+                </div>
                 <div class="tab-pane fade" id="activity-project" role="tabpanel" aria-labelledby="activity-project-tab"> </div>
               </div>
             </div>

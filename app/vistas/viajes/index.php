@@ -11,7 +11,7 @@
   $mvc2->iniciar_sesion();
 
   $finanzas    = new Finanzas();
-  
+
 	$dia         = Utilidades::fecha_dia();
 	$mes         = Utilidades::fecha_mes();
   $ano         = Utilidades::fecha_ano();
@@ -157,7 +157,7 @@
                     <div class="col">
                       <button class="btn btn-sm btn-dark" onclick="gastos_empresa()"><i class="fas fa-shipping-fast text-white"></i> <span class="ocultar">Agregar Gasto</span></button>
                     </div>
-                    <div class="col-15 mt-3" id="traer_arriendos">
+                    <div class="col-15 mt-3" id="traer_gastos">
                       <?= $finanzas->listado_gastos(0, 0, '') ?>
                     </div>
                   </div>

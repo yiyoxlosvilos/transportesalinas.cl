@@ -515,6 +515,137 @@ function nuevo_cliente_control() {
     $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
 }
 
+function grabar_nuevo_cliente_control(){
+  var inputRazonSocial  = document.getElementById('inputRazonSocial').value;
+  var inputGiro         = document.getElementById('inputGiro').value;
+  var inputRut          = document.getElementById('inputRut').value;
+  var inputTelefono     = document.getElementById('inputTelefono').value;
+  var inputEmail        = document.getElementById('inputEmail').value;
+  var inputDireccion    = document.getElementById('inputDireccion').value;
+  var inputLocalidad    = document.getElementById('inputLocalidad').value;
+
+  const url_link        = document.getElementById('url_link').value;
+  var accion            = "grabar_nuevo_cliente_control";
+
+  if(inputRazonSocial.length == 0){
+   $("#inputRazonSocial").focus();
+    Swal.fire("Alerta", "** Ingresar Razon Social **", "warning");
+  } else if(inputGiro.length == 0){
+   $("#inputGiro").focus();
+    Swal.fire("Alerta", "** Ingresar Giro **", "warning");
+  } else if(inputRut.length == 0) {
+    $("#inputRut").focus();
+    Swal.fire("Alerta", "** Ingresar Rut**", "warning");
+  } else if(inputTelefono == 0) {
+    $("#inputTelefono").focus();
+    Swal.fire("Alerta", "** Ingresar Teléfono **", "warning");
+  } else if(inputEmail.length == 0) {
+    $("#inputEmail").focus();
+    Swal.fire("Alerta", "** Ingresar E-Mail **", "warning");
+  } else if(inputDireccion.length == 0) {
+    $("#inputDireccion").focus();
+    Swal.fire("Alerta", "** Ingresar Dirección **", "warning");
+  } else if(inputLocalidad.length == 0) {
+    $("#inputLocalidad").focus();
+    Swal.fire("Alerta", "** Ingresar Localidad **", "warning");
+  } else {
+    Swal.fire({
+          title:              'Desea Crear cliente ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          $("#panel_caja").html('');
+          $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
+          $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
+        }
+    })
+  } 
+}
+
+function traer_editar_cliente(idCliente) {
+  const url_link = document.getElementById('url_link').value;
+  var accion     = "traer_editar_cliente";
+
+  $("#editar_trabajador").html('');
+  $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
+  $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente});
+}
+
+function grabar_editar_cliente_control(idCliente){
+  var inputRazonSocial  = document.getElementById('inputRazonSocial').value;
+  var inputGiro         = document.getElementById('inputGiro').value;
+  var inputRut          = document.getElementById('inputRut').value;
+  var inputTelefono     = document.getElementById('inputTelefono').value;
+  var inputEmail        = document.getElementById('inputEmail').value;
+  var inputDireccion    = document.getElementById('inputDireccion').value;
+  var inputLocalidad    = document.getElementById('inputLocalidad').value;
+
+  const url_link        = document.getElementById('url_link').value;
+  var accion            = "grabar_editar_cliente_control";
+
+  if(inputRazonSocial.length == 0){
+   $("#inputRazonSocial").focus();
+    Swal.fire("Alerta", "** Ingresar Razon Social **", "warning");
+  } else if(inputGiro.length == 0){
+   $("#inputGiro").focus();
+    Swal.fire("Alerta", "** Ingresar Giro **", "warning");
+  } else if(inputRut.length == 0) {
+    $("#inputRut").focus();
+    Swal.fire("Alerta", "** Ingresar Rut**", "warning");
+  } else if(inputTelefono == 0) {
+    $("#inputTelefono").focus();
+    Swal.fire("Alerta", "** Ingresar Teléfono **", "warning");
+  } else if(inputEmail.length == 0) {
+    $("#inputEmail").focus();
+    Swal.fire("Alerta", "** Ingresar E-Mail **", "warning");
+  } else if(inputDireccion.length == 0) {
+    $("#inputDireccion").focus();
+    Swal.fire("Alerta", "** Ingresar Dirección **", "warning");
+  } else if(inputLocalidad.length == 0) {
+    $("#inputLocalidad").focus();
+    Swal.fire("Alerta", "** Ingresar Localidad **", "warning");
+  } else {
+    Swal.fire({
+          title:              'Desea Editar cliente ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          $("#editar_trabajador").html('');
+          $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
+          $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente, inputRazonSocial:inputRazonSocial, inputGiro:inputGiro, inputRut:inputRut, inputTelefono:inputTelefono, inputEmail:inputEmail, inputDireccion:inputDireccion, inputLocalidad:inputLocalidad});
+        }
+    })
+  } 
+}
+
+function quitar_cliente(idCliente){
+    const url_link        = document.getElementById('url_link').value;
+    var accion            = "quitar_cliente";
+
+    Swal.fire({
+          title:              'Desea quitar cliente ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          $("#editar_trabajador").html('');
+          $('#editar_trabajador').load(url_link+"/app/recursos/img/loader.svg");
+          $('#editar_trabajador').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idCliente:idCliente});
+        }
+    }) 
+}
+
 function grabar_nuevo_proveedor() {
   const url_link    = document.getElementById('url_link').value;
   var accion        = "grabar_nuevo_proveedor";

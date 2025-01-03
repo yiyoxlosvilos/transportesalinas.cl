@@ -445,7 +445,7 @@
 
 		public function grabar_nuevo_gasto($tipo_gastos, $tipo_gastos_categorias, $inputNombre, $inputDescripcion, $inputFecha, $inputSucursal, $inputPrecio, $idServicio, $tipo_servicio, $servicio_cliente, $servicio_prestado){
 
-			$grabar = $this->insert_query("INSERT INTO gastos_empresa(gas_categoria, gas_tipo, gas_monto, gas_fecha, gas_nombre, gas_descripcion, gas_estado, gas_sucursal, gas_servicio) VALUES('$tipo_gastos', '$tipo_gastos_categorias', '$inputPrecio', '$inputFecha', '$inputNombre', '$inputDescripcion', 1, '$inputSucursal', '$idServicio', '$tipo_servicio', '$servicio_cliente', '$servicio_prestado')");
+			$grabar = $this->insert_query("INSERT INTO gastos_empresa(gas_categoria, gas_tipo, gas_monto, gas_fecha, gas_nombre, gas_descripcion, gas_estado, gas_sucursal, gas_servicio, gas_tipo_servicio, gas_servicio_prestado) VALUES('$tipo_gastos', '$tipo_gastos_categorias', '$inputPrecio', '$inputFecha', '$inputNombre', '$inputDescripcion', 1, '$inputSucursal', '$idServicio', '$tipo_servicio', '$servicio_cliente', '$servicio_prestado')");
 
 			if($grabar > 0){
 				return TRUE;

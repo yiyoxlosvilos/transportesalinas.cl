@@ -476,7 +476,9 @@
 	    			 </div>
 	    			 <hr class="mt-2 mb-3"/>
 	    			 <div class="col-xl-15 animate__animated animate__fadeInLeft">
+	    			 	<h3>Facuas Proveedores</h3>
 	    			 	'.$this->listado_facturas_proveedores($mes, $ano, $idServicio).'
+	    			 	<h3>Facuas Clientes</h3>
 	    			 	'.$this->listado_facturas_clientes($mes, $ano, $idServicio).'
 	    			 </div>';
 

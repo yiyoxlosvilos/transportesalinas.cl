@@ -4924,6 +4924,54 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 			return $html;
 	    }
 
+	    public function detalle_de_arriendo2($idArriendo){
+	    	$recursos 	= new Recursos();
+	    	$desde      = $ano.'-'.$mes.'-01';
+
+	    	$ultimo_dia = date("t", strtotime($desde));
+	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
+	    	$hoy        = Utilidades::fecha_hoy();
+
+	    	$neto       = 0;
+
+	    	$script = '';
+	    	$oculto = '';
+	    	if($idArriendo != ''){
+	    		$script = ' AND arriendo_id ='.$idArriendo;
+	    		$oculto = ' style="display: none;"';
+
+	    	}
+	    	
+	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
+										  	  WHERE    		arriendo_estado > 0
+										  	  $script
+										  	  ORDER BY      arriendo_id  ASC");
+
+	    	$html = '';
+	    	$j 	  = 1;
+	    	$total=0;
+			for ($i=0; $i < count($sql); $i++) {
+
+				$html .= ' 
+						<div class="row p-3">
+		    				<div class="col border"><strong>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</strong></div>
+		    				<div class="col border"><strong>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</strong></div>
+		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
+		    				<div class="col border"><center><strong>MES DE:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>';
+
+				$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
+
+				$html .= '</div>';
+
+				$total += $recursos->datos_arriendos_monto_id($sql[$i]['arriendo_id']);
+			}
+
+				$html .= '';
+
+
+			return $html;
+	    }
+
 	    public function traer_panel_pagos_arriendos($idFlete){
 			$recursos = new Recursos();
 			$datos_abonos = $recursos->datos_abonos_id($idFlete, 3);
@@ -5062,7 +5110,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 								</tr>
 							  </table>';
 
-			$html .= $this->detalle_de_arriendo($datos_cotizacion[0]['arriendo_id']);
+			$html .= $this->detalle_de_arriendo2($datos_cotizacion[0]['arriendo_id']);
 
 			$html.= '<table width="100%" align="center" class="border table" cellpadding="1">
 						<tr>

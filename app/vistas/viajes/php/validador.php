@@ -1209,7 +1209,7 @@
 				$estadia 	+= $datos_fletes[$j]['fle_estadia'];
 			}
 
-			$valor_total = ($valor+$descuento+$estadia);
+			$valor_total = ($valor+$estadia)-$descuento;
 
 			$abonado = 0;
 			for ($i=0; $i < count($datos_abonos); $i++) {

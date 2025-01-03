@@ -115,7 +115,7 @@
                     <div class="col-6">
                       <h3 class="text-dark mb-2"><span class="mdi mdi-format-list-bulleted"></span> Detalles Viajes</h3>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 mb-1">
                       <table width="100%">
                         <tr>
                           <td><?= Utilidades::select_agrupacion_cards('', 'mes_viajes', $ano, $mes) ?></td>

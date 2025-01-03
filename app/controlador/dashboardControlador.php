@@ -1205,8 +1205,8 @@
 									      <td scope="col">'.$trabajador[0]['tra_nombre'].'</td>
 									    </tr>
 									    <tr>
-									      <th scope="col">Origen<br><span class="text-info">'.$origen[0]['nombre'].'</span></td>
-									      <th scope="col">Destino:<br><span class="text-danger">'.$destino[0]['nombre'].'</span></td>
+									      <th >Origen<br><span class="text-info">'.$origen[0]['nombre'].'</span></td>
+									      <th >Destino:<br><span class="text-danger">'.$destino[0]['nombre'].'</span></td>
 									    </tr>
 									    <tr>
 									      <th scope="col">Tracto:</th>

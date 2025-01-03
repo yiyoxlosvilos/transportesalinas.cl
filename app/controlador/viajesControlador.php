@@ -4313,7 +4313,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 				$abono = $this->insert_query("INSERT INTO abonos_servicios (abo_servicio, abo_tipo_servicio, abo_monto, abo_descripcion, abo_fecha, abo_estado) VALUES ('$idFlete', '$tipo_servicio', '$inputAbono', '$inputDescripcion', '$hoy', '1')");
 
 
-				$glosa = "Ingreso de abono de FLETE N°: ".$idFlete." con el monto de: ".$inputAbono;
+				$glosa = "Ingreso de abono N°: ".$idFlete." con el monto de: ".$inputAbono;
 
 				$caja = $this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_abono, c_cli_glosa) 
 					   VALUES(4, '$idFlete', '$tipo_servicio', '$inputAbono', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$abono', '$glosa')");
@@ -4392,7 +4392,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 									 		fle_estado_pago		= 1
 									 WHERE  fle_id 		 		= $idFlete");
 
-				$glosa = "Ingreso de pago de FLETE N°: ".$idFlete." con el monto de: ".$inputMonto;
+				$glosa = "Ingreso de pago N°: ".$idFlete." con el monto de: ".$inputMonto;
 
 				$caja = $this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_glosa) 
 					   VALUES(3, '$idFlete', '$tipo_servicio', '$inputMonto', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$glosa')");

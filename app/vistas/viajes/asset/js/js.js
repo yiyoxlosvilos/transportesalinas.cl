@@ -3019,16 +3019,16 @@ function nueva_factura_proveedores() {
     const url_link = document.getElementById('url_link').value;
     var accion     = "nueva_factura_proveedores";
 
-    $("#traer_facturas").html('');
-    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
+    $("#panel_proveedores").html('');
+    $('#panel_proveedores').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_proveedores').load(url_link+"app/vistas/finanzas/php/nueva_factura.php", {accion:accion});
 }
 
 function nueva_factura_cliente() {
     const url_link = document.getElementById('url_link').value;
     var accion     = "nueva_factura_cliente";
 
-    $("#traer_facturas").html('');
-    $('#traer_facturas').load(url_link+"/app/recursos/img/loader.svg");
-    $('#traer_facturas').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura.php", {accion:accion});
+    $("#panel_clientes").html('');
+    $('#panel_clientes').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_clientes').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura_cliente.php", {accion:accion});
 }

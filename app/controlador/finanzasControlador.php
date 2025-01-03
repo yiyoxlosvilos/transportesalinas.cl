@@ -243,7 +243,7 @@
 									   		  $script
 									   		  ORDER BY 	 	gastos_empresa.gas_fecha ASC"); 
 
-			$html   	= '<table width="100%" class="table shadow">
+			$html   	= '<table width="100%" class="table shadow" id="listado_gastos">
 							<thead>
 							<tr class="table-info">
 								<th align="left">Categoria</th>

@@ -54,6 +54,16 @@
             <span id="validador_curso"></span>
             <input type="date" class="form-control shadow" id="inputFecha" value="<?= $hoy ?>">
         </div>
+        <div class="col-lg-5 mb-2">
+          <label for="inputSucursal"><b>Tipo Servicio</b></label>
+            <span id="validador_curso"></span>
+            <?= $recursos->select_tipo_servicio('', 0); ?>
+        </div>
+        <div class="col-lg-5 mb-2">
+          <label for="inputSucursal"><b>Servicio Prestado</b></label>
+            <span id="validador_curso"></span>
+            <span id="validador_servicio"></span>
+        </div>
         <div class="col-lg-15">
           <label for="inputSucursal"><b>Descripción</b></label>
             <span id="validador_curso"></span>

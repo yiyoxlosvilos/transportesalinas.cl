@@ -2236,6 +2236,33 @@
 			return $html;
 		}
 
+		public function select_tipo_servicio($funcion, $idgasto){
+
+			$sql = $this->selectQuery("SELECT * FROM tipos_servicios
+					   				   WHERE  		 tipo_estado = 1");
+
+			if(strlen($funcion) > 0){
+				$script = ' onchange="'.$funcion.'()"';
+			}else{
+				$script = '';
+			}
+
+			$html = '<select id="tipo_servicio" class="form-control shadow" '.$script.'>';
+			$html .= '<option value="0" selected="selected">Seleccionar</option>';
+
+			for ($i=0; $i <= count($sql); $i++) { 
+				if($sql[$i]['tipo_id'] === $idgasto){
+					$html .= '<option value="'.$sql[$i]['tipo_id'].'" selected="selected">'.$sql[$i]['tipo_nombre'].'</option>';
+
+				}else{
+					$html .= '<option value="'.$sql[$i]['tipo_id'].'">'.$sql[$i]['tipo_nombre'].'</option>';
+				}
+			}
+
+            $html .='         </select>';
+
+            return $html;
+		}
 
 	} // FIN CONTROLADOR
 ?>

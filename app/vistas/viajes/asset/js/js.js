@@ -2679,9 +2679,9 @@ function traer_arriendos_editar(idTraslado) {
     $('#panel_editar').load(url_link+"app/vistas/viajes/php/editar_arriendo.php", {accion:accion, idArriendo:idTraslado});
 }
 
-function nueva_bitacora_traslados(idFlete) {
+function traer_bitacora_arriendos(idFlete) {
     const url_link = document.getElementById('url_link').value;
-    var accion     = "nueva_bitacora_traslados";
+    var accion     = "traer_bitacora_arriendos";
 
     $("#panel_bitacora").html('');
     $('#panel_bitacora').load(url_link+"/app/recursos/img/loader.svg");

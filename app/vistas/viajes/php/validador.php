@@ -1682,7 +1682,7 @@
 		case 'traer_arriendos':
 			echo $centroCosto->listado_de_arriendo('');
 			break;
-		case 'traer_bitacora_traslados':
+		case 'traer_bitacora_arriendos':
 			$idFlete = $_REQUEST['idFlete'];
 
 			$html = '

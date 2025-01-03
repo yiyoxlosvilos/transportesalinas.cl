@@ -3050,7 +3050,7 @@ function buscar_viajes() {
     var ano         = document.getElementById('ano_viajes').value;
     var accion     = "buscar_viajes";
 
-    $("#panel_clientes").html('');
-    $('#panel_clientes').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_clientes').load(url_link+"app/vistas/finanzas/php/validador.php", {accion:accion, mes:mes, ano:ano});
+    $("#traer_productos_categoria").html('');
+    $('#traer_productos_categoria').load(url_link+"/app/recursos/img/loader.svg");
+    $('#traer_productos_categoria').load(url_link+"app/vistas/finanzas/php/validador.php", {accion:accion, mes:mes, ano:ano});
 }

@@ -4600,9 +4600,12 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					
 			    	$traslados .= '<div class="row">
 										<div class="col-6">';
+					$cadena_traslados = '';
 					for ($d=0; $d < count($explorar_origen); $d++) {
-						$traslados .= $recursos->nombre_localidad($explorar_origen[$d]).', ';
+						$cadena_traslados .= $recursos->nombre_localidad($explorar_origen[$d]).',';
 					}
+
+					$traslados .= preg_replace('/,$/', '', $cadena_traslados);
 
 					$traslados .= '</div>
 									</div>';
@@ -4619,9 +4622,11 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 					
 					$fechas_traslados .= '<div class="row">
 										<div class="col-6">';
+					$cadena_fech_traslados = '':
 					for ($pp=0; $pp < count($explorar_fechas); $pp++) {
-						$fechas_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]).'<br>';
+						$cadena_fech_traslados .= ''.Utilidades::arreglo_fecha2($explorar_fechas[$pp]).', ';
 					}
+					$fechas_traslados .=  preg_replace('/,$/', '', $cadena_fech_traslados);
 					$fechas_traslados .= '</div></div>';
 
 				}else{

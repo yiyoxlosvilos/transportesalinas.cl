@@ -4601,7 +4601,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 					for ($d=0; $d < count($explorar_origen); $d++) {
 						$traslados .= '<div class="row">
-										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['traslados']).' '.$explorar_origen[$d]['traslados'].'</div>
+										<div class="col-6">'.$recursos->nombre_localidad($explorar_origen[$d]['traslados']).' '.$explorar_origen[$d].'</div>
 									</div>';
 					}
 

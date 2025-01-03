@@ -29,7 +29,7 @@
       <button class="btn btn-primary bg-gradient" onclick="location.reload()">Flujo Diario&nbsp;&nbsp;<i class="bi bi-cash"></i></button>
       <button class="btn btn-success bg-gradient" onclick="flujo_mensual()">Flujo Mensual&nbsp;&nbsp;<i class="bi bi-cash-coin"></i></button>
       <button hidden class="btn btn-info bg-gradient" onclick="informe_ventas()">Informe&nbsp;&nbsp;<i class="bi bi-file-bar-graph"></i></button>
-      <button hidden class="btn btn-warning bg-gradient" onclick="reporte_financiero()">Reporte&nbsp;&nbsp;<i class="bi bi-bank"></i></button>
+      <button class="btn btn-warning bg-gradient" onclick="reporte_financiero()">Reporte&nbsp;&nbsp;<i class="bi bi-bank"></i></button>
       <button hidden class="btn btn-primary bg-gradient" onclick="estado_pago()">Estados de Pago&nbsp;&nbsp;<i class="fas fa-hand-holding-usd"></i></button>
     </div>
     <hr class="mt-2 mb-3"/>

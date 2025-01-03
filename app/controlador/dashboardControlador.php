@@ -907,11 +907,11 @@
                                 <div class="text-center p-4">
                                     <i class="bi bi-currency-dollar widget-box-1-icon"></i>
                                     <div class="avatar-md m-auto">
-                                        <span class="avatar-title rounded-circle bg-soft-light text-white font-size-24">
+                                        <span class="avatar-title rounded-circle bg-soft-light font-size-24">
                                             <i class="bi bi-currency-dollar"></i>
                                         </span>
                                     </div>
-                                    <table width="100%" class="table table-borderless text-white font-size-14">
+                                    <table width="100%" class="table table-borderless font-size-14">
 									  <thead>
 									    <tr>
 									      <th scope="col">Folio N&deg;:</th>

@@ -17,7 +17,7 @@
   $ano         = Utilidades::fecha_ano();
   $hoy         = Utilidades::fecha_hoy();
 
-  $idTraslados = $_REQUEST['idTraslados'];
+  $idTraslados = $_REQUEST['idArriendo'];
 
   $datos_fletes = $recursos->datos_arriendos_id($idTraslados);
 ?>
@@ -36,7 +36,7 @@
 <input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
 <input type="hidden" name="idServicio" id="idServicio" value="ALL">
 
-<input type="hidden" name="idTraslados" id="idTraslados" value="<?= $idTraslados ?>">
+<input type="hidden" name="idArriendo" id="idArriendo" value="<?= $idTraslados ?>">
 <input type="hidden" name="idFlete" id="idFlete" value="<?= $idTraslados ?>">
 <input type="hidden" name="idTipoServicio" id="idTipoServicio" value="2">
 

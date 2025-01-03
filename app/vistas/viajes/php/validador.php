@@ -1521,7 +1521,7 @@
 			$valor 		= 0;
 
 			for ($j=0; $j < count($datos_fletes); $j++) {
-				$valor 		+= ($datos_fletes[$j]['traslados_agregados']*$datos_fletes[$j]['traslados_cantidad']);
+				$valor 		+= ($datos_fletes[$j]['traslados_valor']*$datos_fletes[$j]['traslados_cantidad']);
 			}
 
 			$valor_total = ($valor+$descuento+$estadia);

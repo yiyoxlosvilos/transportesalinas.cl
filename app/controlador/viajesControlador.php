@@ -3806,6 +3806,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 		    				<div class="col border"><strong>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</strong></div>
 		    				<div class="col border"><strong>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</strong></div>
 		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
+		    				<div class="col border"><strong>CLIENTE:<br>'.$recursos->nombre_clientes($sql[$i]['arriendo_cliente']).'</strong></div>
 		    				<div class="col border"><center><strong>Mes de:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>
 		    				<div class="col-15 mt-2 p-1 bg-light"><strong>Descripción:<br>'.$sql[$i]['arriendo_descripcion'].'</strong></div>';
 				//$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);

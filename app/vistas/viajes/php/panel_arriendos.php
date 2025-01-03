@@ -160,10 +160,10 @@
                 </div>
                 <!-- botones -->
                 <div class="col">
-                  <button class="btn btn-sm btn-danger" onclick="traer_nuevo_abono_traslado(<?= $idTraslados; ?>)" id="traer_nuevo_abono"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
+                  <button class="btn btn-sm btn-danger" onclick="traer_nuevo_abono_arriendo(<?= $idTraslados; ?>)" id="traer_nuevo_abono"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago_traslado(<?= $idTraslados; ?>)" id="traer_procesar_pago"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago_arriendo(<?= $idTraslados; ?>)" id="traer_procesar_pago"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>
                 </div>
                 <!-- !botones -->
 

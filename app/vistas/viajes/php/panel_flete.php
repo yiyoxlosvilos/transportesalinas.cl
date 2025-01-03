@@ -20,6 +20,13 @@
   $idFlete     = $_REQUEST['idFlete'];
 
   $datos_fletes = $recursos->datos_fletes_id($idFlete);
+
+  $estado_flete = '';
+
+  if($datos_fletes[0]['fle_estado'] == 2){
+    $estado_flete = 'hidden';
+
+  }
 ?>
 <script src="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/js/js.js?v=<?= rand() ?>"></script>
 <link href="<?= controlador::$rutaAPP ?>app/vistas/viajes/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
@@ -70,7 +77,7 @@
                           </div></a>
                       </li>
 
-                      <li class="nav-item" role="presentation"> <a class="nav-link" id="target-project-tab" data-bs-toggle="pill" href="#target-project" role="tab" aria-controls="target-project" aria-selected="false" tabindex="-1">
+                      <li class="nav-item" role="presentation"> <a class="nav-link" id="target-project-tab" data-bs-toggle="pill" href="#target-project" role="tab" aria-controls="target-project" aria-selected="false" tabindex="-1"  <?= $estado_flete ?>>
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
@@ -90,7 +97,7 @@
                           <div class="product-tab-content">
                             <h6>Anexos</h6>
                           </div></a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" id="team-project-tab" data-bs-toggle="pill" href="#team-project" role="tab" aria-controls="team-project" aria-selected="false" tabindex="-1">
+                      <li class="nav-item" role="presentation"><a class="nav-link" id="team-project-tab" data-bs-toggle="pill" href="#team-project" role="tab" aria-controls="team-project" aria-selected="false" tabindex="-1"  <?= $estado_flete ?>>
                           <div class="absolute-border"></div>
                           <div class="nav-rounded">
                             <div class="product-icons">
@@ -137,7 +144,7 @@
                 <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idFlete, 1); ?></div> 
               </div>
             </div>
-            <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
+            <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab"  <?= $estado_flete ?>>
               <div class="row">
                 <div class="col-8">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Editar Viaje</h3>
@@ -156,7 +163,7 @@
                 <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idFlete, 1); ?></div>    
               </div>
             </div>
-            <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
+            <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab"  <?= $estado_flete ?>>
               <div class="row">
 
                 <div class="col-8">

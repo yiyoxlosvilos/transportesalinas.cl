@@ -3778,8 +3778,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 	    	$neto       = 0;
 	    	
 	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
-										  	  WHERE    		arriendo_estado     	!= 0
-										  	  AND 			arriendo_servicio_id 	 = $idArriendo
+										  	  WHERE    		arriendo_estado     	= 1
 										  	  ORDER BY      arriendo_id  ASC");
 
 	    	$html = '';

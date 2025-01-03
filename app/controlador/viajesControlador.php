@@ -4954,10 +4954,10 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 				$html .= ' 
 						<div class="row p-3">
-		    				<div class="col border"><strong>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</strong></div>
-		    				<div class="col border"><strong>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</strong></div>
-		    				<div class="col border"><strong>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</strong></div>
-		    				<div class="col border"><center><strong>MES DE:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</strong></center></div>';
+		    				<div class="col border"><b>TIPO DE SERVICIO:<br>'.$sql[$i]['arriendo_tipo_servicio'].'</b></div>
+		    				<div class="col border"><b>PROYECTO:<br>'.$sql[$i]['arriendo_proyecto'].'</b></div>
+		    				<div class="col border"><b>CONTACTO:<br>'.$sql[$i]['arriendo_contacto'].'</b></div>
+		    				<div class="col border"><center><b>MES DE:<br>'.Utilidades::mostrar_mes($sql[$i]['arriendo_mes']).'</b></center></div>';
 
 				$html .= $this->mostrar_listado_de_arriendo($sql[$i]['arriendo_id']);
 

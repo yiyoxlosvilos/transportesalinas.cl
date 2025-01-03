@@ -123,7 +123,7 @@
                 <div class="col-12">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalle Traslados</h3>
                 </div> 
-                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->mostrar_formulario_traslados($idFlete); ?></div> 
+                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->mostrar_formulario_traslados($idTraslados); ?></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">
@@ -132,9 +132,9 @@
                   <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Traslado</h3>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idFlete, 1); ?></div> 
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idTraslados, 1); ?></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="target-project" role="tabpanel" aria-labelledby="target-project-tab">
@@ -151,9 +151,9 @@
                   <h3 class="text-dark mb-2"><i class="fas fa-paperclip"></i> Anexos Traslados</h3>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idFlete; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idFlete, 1); ?></div>    
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idTraslados, 1); ?></div>    
               </div>
             </div>
             <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">
@@ -164,15 +164,15 @@
                 </div>
                 <!-- botones -->
                 <div class="col">
-                  <button class="btn btn-sm btn-danger" onclick="traer_nuevo_abono(<?= $idFlete; ?>)" id="traer_nuevo_abono"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
+                  <button class="btn btn-sm btn-danger" onclick="traer_nuevo_abono(<?= $idTraslados; ?>)" id="traer_nuevo_abono"><i class="fas fa-plus text-white"></i> <span class="ocultar">Abonar</span></button>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago(<?= $idFlete; ?>)" id="traer_procesar_pago"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="traer_procesar_pago(<?= $idTraslados; ?>)" id="traer_procesar_pago"><i class="fas fa-plus text-white"></i> <span class="ocultar">Procesar Pago</span></button>
                 </div>
                 <!-- !botones -->
 
                 <div class="col-md-15 mb-2 mt-5" id="panel_de_pagos">
-                  <?= $centroCostos->traer_panel_pagos($idFlete); ?>
+                  <?= $centroCostos->traer_panel_pagos($idTraslados); ?>
                 </div>
 
               </div>

@@ -63,6 +63,10 @@
           <label for="inputTipo">&nbsp;</label>
           <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_gasto(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
         </div>
+        <div class="col-lg-2 mb-2">
+          <label for="inputTipo">&nbsp;</label>
+          <button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="location.reload()">Cancelar <i class="bi bi-save"></i></button>
+        </div>
       </div>
     </div>
 </div>

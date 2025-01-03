@@ -1402,8 +1402,9 @@
 
 			break;
 		case 'traer_traslados':
-
-			$html = $centroCosto->listado_de_traslados('');
+		$ano = Utilidades::fecha_ano();
+		$mes = Utilidades::fecha_mes();
+			$html = $centroCosto->listado_de_traslados($mes, $ano, '');
 
 			$html .= '<script>
 					  $(document).ready(function() {
@@ -1687,7 +1688,9 @@
 	        echo $string = preg_replace("/[\r\n|\n|\r]+/", PHP_EOL, $recursos->select_productos_multiple(0));
 			break;
 		case 'traer_arriendos':
-			echo $centroCosto->listado_de_arriendo('');
+		$ano = Utilidades::fecha_ano();
+		$mes = Utilidades::fecha_mes();
+			echo $centroCosto->listado_de_arriendo($ano, $mes, '');
 			break;
 		case 'traer_bitacora_arriendos':
 			$idFlete = $_REQUEST['idFlete'];

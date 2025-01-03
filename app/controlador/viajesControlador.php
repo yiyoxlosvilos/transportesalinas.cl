@@ -3786,7 +3786,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
             }
 	    }
 
-	    public function listado_de_arriendo($idArriendo){
+	    public function listado_de_arriendo($mes, $ano, $idArriendo){
 	    	$recursos 	= new Recursos();
 	    	$desde      = $ano.'-'.$mes.'-01';
 

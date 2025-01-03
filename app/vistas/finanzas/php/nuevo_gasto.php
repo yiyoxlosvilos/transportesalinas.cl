@@ -62,12 +62,20 @@
         <div class="col-lg-5 mb-2">
           <label for="inputSucursal"><b>Cliente</b></label>
             <span id="validador_curso"></span>
-            <div id="select_cliente"></div>
+            <div id="select_cliente">
+              <select id="servicio_cliente" class="form-select shadow">
+                <option value="0">Seleccionar</option>
+              </select>
+            </div>
         </div>
         <div class="col-lg-5 mb-2">
           <label for="inputSucursal"><b>Servicio Prestado</b></label>
             <span id="validador_curso"></span>
-            <div id="select_servicio_prestado"></div>
+            <div id="select_servicio_prestado">
+              <select id="servicio_prestado" class="form-select shadow">
+                <option value="0">Seleccionar</option>
+              </select>
+            </div>
         </div>
         <div class="col-lg-15">
           <label for="inputSucursal"><b>Descripción</b></label>

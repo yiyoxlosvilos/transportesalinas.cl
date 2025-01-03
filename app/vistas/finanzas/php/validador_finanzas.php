@@ -152,7 +152,7 @@
 			break;
 		case 'grabar_nuevo_gasto':
 			
-			$idServicio 			= $_REQUEST['idServicio'];
+			$idServicio 			= '';
 			$inputNombre 			= $_REQUEST['inputNombre'];
 			$inputPrecio 			= $_REQUEST['inputPrecio'];
 			$tipo_gastos 			= $_REQUEST['tipo_gastos'];

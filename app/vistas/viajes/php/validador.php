@@ -1699,7 +1699,11 @@
 		case 'traer_arriendos':
 		$ano = Utilidades::fecha_ano();
 		$mes = Utilidades::fecha_mes();
-			echo $centroCosto->listado_de_arriendo($ano, $mes, '');
+			echo '<h3 class="mt-5 mb-4 text-success">Vigentes</h3>';
+			echo $centroCosto->listado_de_arriendo($ano, $mes, '', '');
+			echo '<h3 class="mt-5 mb-4 text-danger">Pagados</h3>';
+			echo $centroCosto->listado_de_arriendo($ano, $mes, '', 2);
+
 			break;
 		case 'traer_bitacora_arriendos':
 			$idFlete = $_REQUEST['idFlete'];

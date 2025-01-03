@@ -3786,21 +3786,30 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
             }
 	    }
 
-	    public function listado_de_arriendo($mes, $ano, $idArriendo){
+	    public function listado_de_arriendo($mes, $ano, $idArriendo, $estado = ''){
 	    	$recursos 	= new Recursos();
-	    	$desde      = $ano.'-'.$mes.'-01';
 
+	    	$desde      = $ano.'-'.$mes.'-01';
 	    	$ultimo_dia = date("t", strtotime($desde));
 	    	$hasta  	= $ano.'-'.$mes.'-'.$ultimo_dia;
 	    	$hoy        = Utilidades::fecha_hoy();
 
+	    	if($estado == ''){
+				$script = 'AND    		 arriendo_estado = 1';
+				$id_tabla='listado_arriendos';
+			}else{
+				$script = 'AND    		 arriendo_estado = '.$estado;
+				$id_tabla='listado_arriendos_listas';
+			}
+
 	    	$neto       = 0;
 	    	
 	    	$sql    	= $this->selectQuery("SELECT * FROM arriendos
-										  	  WHERE    		arriendo_estado = 1
+										  	  WHERE    		arriendo_fecha BETWEEN '$desde' AND '$hasta'
+										  	  $script
 										  	  ORDER BY      arriendo_id  ASC");
 
-	    	$html = '<table id="listado_arriendos" class="table shadow">
+	    	$html = '<table id="'.$id_tabla.'" class="table shadow">
 	    				<thead>
 			              	<tr class="table-info">
 								<th colspan="3">&nbsp;</th>

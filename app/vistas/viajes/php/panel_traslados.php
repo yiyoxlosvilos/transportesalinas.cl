@@ -123,7 +123,7 @@
                 <div class="col-12">
                   <h3 class="text-dark mb-2"><i class="mdi mdi-format-list-bulleted"></i> Detalle Traslados</h3>
                 </div> 
-                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->mostrar_formulario_flete($idFlete); ?></div> 
+                <div class="col-12" style="background-color: #f7f7f7"><?= $centroCostos->mostrar_formulario_traslados($idFlete); ?></div> 
               </div>
             </div>
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">

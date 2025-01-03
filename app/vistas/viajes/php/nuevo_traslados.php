@@ -56,7 +56,7 @@
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">
           <b>Tracto:</b>
           <span class="text-dark">
-            <?= $recursos->select_productos_simple() ?>
+            <?= $recursos->select_productos_simple(0) ?>
             </span>
         </div>
         <div class="col-xxl-6 col-xl-4 col-sm-12 pt-3 ">

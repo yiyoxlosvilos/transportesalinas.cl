@@ -358,6 +358,9 @@
 										<td>
 											<button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nuevo_cliente_control()">Grabar <i class="bi bi-save"></i></button>
 										</td>
+										<td>
+											<button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="location.reload()">Cancelar</button>
+										</td>
 									</tr>
 								</table>
 							</td>

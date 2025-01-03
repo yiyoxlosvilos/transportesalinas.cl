@@ -55,6 +55,30 @@
 			return $html;
 		}
 
+		public function seleccion_categorias_producto($id){
+
+			$data   = 0;
+			$sql    = $this->selectQuery("SELECT * FROM categoria_producto
+					   					  WHERE  		cate_estado = 1
+					   					  ORDER BY 		cate_nombre ASC");
+
+			$html   = '<select name="inputCategoria" id="inputCategoria" class="form-select shadow">
+						<option value="0">Seleccionar Categoría</option>';
+
+			for ($i=0; $i < count($sql); $i++) { 
+				if($sql[$i]['cate_id'] == $id){
+					$html   .= '<option value="'.$sql[$i]['cate_id'].'" selected="selected">'.utf8_encode($sql[$i]['cate_nombre']).'</option>';
+				}else{
+					$html   .= '<option value="'.$sql[$i]['cate_id'].'">'.utf8_encode($sql[$i]['cate_nombre']).'</option>';
+				}
+			}
+
+
+			$html   .= '</select>';
+
+			return $html;
+		}
+
 		public function seleccion_marcas($idMarca){
 			$data   = 0;
 			$sql    = $this->selectQuery("SELECT * FROM marca_producto_bodega
@@ -443,7 +467,7 @@
 					        </div>
 					        <div class="col-lg-4">
 					          <label for="inputCategoria"><b>Categor&iacute;a</b></label>
-					          '.$this->seleccion_categorias($sql[$i]['prod_cli_categoria']).'
+					          '.$this->seleccion_categorias_producto($sql[$i]['prod_cli_categoria']).'
 					        </div>
 					        <div class="col-lg-3 mb-2">
 					          <label for="inputPrecioCompra"><b>Monto de Compra</b></label>

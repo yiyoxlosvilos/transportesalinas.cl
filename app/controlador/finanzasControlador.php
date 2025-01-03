@@ -272,7 +272,7 @@
 
 				$html .= '<tr class="plomo">
 							<th align="right" colspan="5">Total</th>
-							<th align="left" colspan="2"><h5>'.Utilidades::monto3($sum).'</h5></th>					
+							<th align="left" colspan="1"><h5>'.Utilidades::monto3($sum).'</h5></th>					
 						</tr>';
 			}else{
 				$html .= '<tr id="cambiazo2">

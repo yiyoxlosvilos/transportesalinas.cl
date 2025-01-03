@@ -506,6 +506,15 @@ function nuevo_proveedor(){
   $('#nuevo_proveedor').load(url_link+"app/vistas/finanzas/php/validador_finanzas.php", {accion:accion});
 }
 
+function nuevo_cliente_control() {
+   const url_link  = document.getElementById('url_link').value;
+    var accion      = "nuevo_cliente_control";
+
+    $("#panel_caja").html('');
+    $('#panel_caja').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_caja').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion});
+}
+
 function grabar_nuevo_proveedor() {
   const url_link    = document.getElementById('url_link').value;
   var accion        = "grabar_nuevo_proveedor";

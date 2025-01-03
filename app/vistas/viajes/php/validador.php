@@ -1404,7 +1404,7 @@
 		case 'traer_traslados':
 		$ano = Utilidades::fecha_ano();
 		$mes = Utilidades::fecha_mes();
-			$html = $centroCosto->listado_de_traslados($mes, $ano, '');
+			$html = $centroCosto->listado_de_traslados($mes, $ano, '', '');
 
 			$html .= '<script>
 					  $(document).ready(function() {

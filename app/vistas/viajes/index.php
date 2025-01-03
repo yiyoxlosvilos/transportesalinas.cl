@@ -182,7 +182,20 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="activity-project" role="tabpanel" aria-labelledby="activity-project-tab"> </div>
+                <div class="tab-pane fade" id="activity-project" role="tabpanel" aria-labelledby="activity-project-tab">
+                  <div class="row" id="procesar_venta">
+                    <div class="d-flex flex-wrap align-items-center mb-4">
+                      <span class="h2 animate__animated animate__pulse"><i class="bi bi-search"></i> <span class="ocultar">Panel Cliente</span></span>
+                      <div class="ms-auto">
+                        <button class="btn btn-success" onclick="nuevo_cliente_control()"><i class="bi bi-person-bounding-box h4 text-white"></i> <span class="ocultar">Nuevo</span></button>
+                      </div>
+                    </div>
+                    <hr class="mt-2 mb-3"/>
+                    <div class="col-lg-15 p-2 mt-2 mb-2 ml-2 animate__animated animate__fadeIn shadow" id="panel_caja">
+                      <?= $recursos->traer_clientes_consulta(); ?>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

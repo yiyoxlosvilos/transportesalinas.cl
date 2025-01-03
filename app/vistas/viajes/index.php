@@ -221,12 +221,32 @@
   });
 
   $(document).ready(function() {
-    $("#listado_gastos").DataTable({     
+    $("#maquinarias").DataTable({     
       "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
       "iDisplayLength": 5
    });
   });
 
+  $(document).ready(function() {
+    $("#servicios_aceptados").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
+  $(document).ready(function() {
+    $("#cotizaciones_aceptados").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
+
+  $(document).ready(function() {
+    $("#EDP_aceptados").DataTable({     
+      "aLengthMenu": [[5, 10, 20, 30, -1], [5, 10, 20, 30, "Todos"]],
+      "iDisplayLength": 5
+   });
+  });
 
   $(document).ready(function() {
     $("#clientes_list").DataTable({     

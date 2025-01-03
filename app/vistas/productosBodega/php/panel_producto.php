@@ -6,13 +6,16 @@ ini_set('display_errors', 1);
 try {
   
 
-  require_once __dir__."/../../../controlador/controlador.php";
+    require_once __dir__."/../../../controlador/controlador.php";
   require_once __dir__."/../../../controlador/productosBodegaControlador.php";
+  require_once __dir__."/../../../controlador/bodegaProductosControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
   require_once __dir__."/../../../controlador/recursosControlador.php";
-  require_once __dir__."/../../../recursos/head_panel.php";
+  require_once __dir__."/../../../recursos/head.php";
 
+  $bodega      = new Bodega();
   $productos   = new ProductosBodega();
+  $utilidades  = new Utilidades();
   $mvc2        = new controlador();
   $recursos    = new Recursos();
 
@@ -26,9 +29,9 @@ try {
   $prod        = $recursos->datos_productos($idProducto);
 
   if($prod[0]['prod_cli_tipo'] == 0){
-    $stock     = $recursos->alerta_stock($recursos->stock_producto($prod[0]['prod_cli_id']), 1);
+    $stock     = $recursos->alerta_stock($bodega->stock_producto($prod[0]['prod_cli_id']), 1);
   }elseif($prod[0]['prod_cli_tipo'] == 1){
-    $stock     = $recursos->alerta_stock($recursos->stock_producto_granel($prod[0]['prod_cli_id']), 2);
+    $stock     = $recursos->alerta_stock($bodega->stock_producto_granel($prod[0]['prod_cli_id']), 2);
   }
 ?>
 <script src="<?= controlador::$rutaAPP ?>app/vistas/productosBodega/asset/js/js.js?v=<?= rand() ?>"></script>

@@ -2982,3 +2982,26 @@ function traer_finalizar_pagos_arriendo(idFlete) {
     $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
     $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }
+
+function traer_servicio_prestado_cliente() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_servicio_prestado_cliente";
+
+    var tipo_servicio = document.getElementById('tipo_servicio').value;
+
+    $("#select_cliente").html('');
+    $('#select_cliente').load(url_link+"/app/recursos/img/loader.svg");
+    $('#select_cliente').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, tipo_servicio:tipo_servicio});
+}
+
+function traer_servicio_prestado() {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_servicio_prestado";
+
+    var tipo_servicio    = document.getElementById('tipo_servicio').value;
+    var servicio_cliente = document.getElementById('servicio_cliente').value;
+
+    $("#select_servicio_prestado").html('');
+    $('#select_servicio_prestado').load(url_link+"/app/recursos/img/loader.svg");
+    $('#select_servicio_prestado').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, tipo_servicio:tipo_servicio, servicio_cliente:servicio_cliente});
+}

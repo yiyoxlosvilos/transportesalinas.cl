@@ -57,12 +57,17 @@
         <div class="col-lg-5 mb-2">
           <label for="inputSucursal"><b>Tipo Servicio</b></label>
             <span id="validador_curso"></span>
-            <?= $recursos->select_tipo_servicio('', 0); ?>
+            <?= $recursos->select_tipo_servicio('traer_servicio_prestado_cliente', 0); ?>
+        </div>
+        <div class="col-lg-5 mb-2">
+          <label for="inputSucursal"><b>Cliente</b></label>
+            <span id="validador_curso"></span>
+            <div id="select_cliente"></div>
         </div>
         <div class="col-lg-5 mb-2">
           <label for="inputSucursal"><b>Servicio Prestado</b></label>
             <span id="validador_curso"></span>
-            <span id="validador_servicio"></span>
+            <div id="select_servicio_prestado"></div>
         </div>
         <div class="col-lg-15">
           <label for="inputSucursal"><b>Descripción</b></label>

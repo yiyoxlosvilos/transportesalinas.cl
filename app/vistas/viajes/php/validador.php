@@ -1946,6 +1946,17 @@
 
 
 			break;
+		case 'traer_servicio_prestado_cliente':
+			$tipo_servicio = $_REQUEST['tipo_servicio'];
+
+			echo $recursos->select_tipo_servicios_cliente('traer_servicio_prestado', $tipo_servicio);
+			break;
+		case 'traer_servicio_prestado':
+			$tipo_servicio = $_REQUEST['tipo_servicio'];
+			$servicio_cliente = $_REQUEST['servicio_cliente'];
+
+			echo $recursos->select_tipo_servicios_id('', $tipo_servicio, $servicio_cliente);
+			break;
 		default:
 			break;
 	}

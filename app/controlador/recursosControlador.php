@@ -2247,7 +2247,7 @@
 				$script = '';
 			}
 
-			$html = '<select id="tipo_servicio" class="form-control shadow">';
+			$html = '<select id="tipo_servicio" class="form-select shadow" '.$script.'>';
 			$html .= '<option value="0">Seleccionar</option>';
 
 			for ($i=0; $i <= count($sql); $i++) { 
@@ -2263,6 +2263,145 @@
 
             return $html;
 		}
+
+		public function select_servicios_id($funcion, $idTipoServicio, $idServicio){
+
+			if($idTipoServicio == 1){
+				$sql = $this->selectQuery("SELECT * FROM fletes
+					   				   	   WHERE  		 fle_estado > 0
+					   				   	   ORDER BY 	 fle_id DESC LIMIT 50");
+			}elseif($idTipoServicio == 2){
+				$sql = $this->selectQuery("SELECT * FROM fletes
+					   				   	   WHERE  		 fle_estado > 0
+					   				   	   ORDER BY 	 fle_id DESC LIMIT 50");
+			}elseif($idTipoServicio == 2){
+				$sql = $this->selectQuery("SELECT * FROM fletes
+					   				   	   WHERE  		 fle_estado > 0
+					   				   	   ORDER BY 	 fle_id DESC LIMIT 50");
+			}
+
+			if(strlen($funcion) > 0){
+				$script = ' onchange="'.$funcion.'()"';
+			}else{
+				$script = '';
+			}
+
+			$html = '<select id="tipo_servicio" class="form-select shadow" '.$script.'>';
+			$html .= '<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i <= count($sql); $i++) { 
+				if($sql[$i]['tipo_id'] === $idgasto){
+					$html .= '<option value="'.$sql[$i]['tipo_id'].'" selected="selected">'.$sql[$i]['tipo_nombre'].'</option>';
+
+				}elseif($sql[$i]['tipo_id'] != ''){
+					$html .= '<option value="'.$sql[$i]['tipo_id'].'">'.$sql[$i]['tipo_nombre'].'</option>';
+				}
+			}
+
+            $html .='</select>';
+
+            return $html;
+		}
+
+		public function select_tipo_servicios_cliente($funcion, $idTipoServicio, $idCliente){
+
+			if($idTipoServicio == 1){
+				$sql = $this->selectQuery("SELECT 		 clientes.cli_id, clientes.cli_nombre
+										   FROM 		 fletes
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id 	= fletes.fle_cliente
+					   				   	   WHERE  		 fletes.fle_estado 	> 0
+					   				   	   GROUP BY 	 fletes.fle_cliente");
+			}elseif($idTipoServicio == 2){
+				$sql = $this->selectQuery("SELECT 		 clientes.cli_id, clientes.cli_nombre
+										   FROM 		 traslados
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id = traslados.traslados_cliente
+					   				   	   WHERE  		 traslados.traslados_estado > 0
+					   				   	   GROUP BY 	 traslados.traslados_cliente");
+			}elseif($idTipoServicio == 3){
+				$sql = $this->selectQuery("SELECT 		 clientes.cli_id, clientes.cli_nombre
+										   FROM 		 arriendos
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id = arriendos.arriendo_creacion 
+					   				   	   WHERE  		 arriendos.arriendo_estado > 0
+					   				   	   GROUP BY 	 arriendos.arriendo_creacion");
+			}
+
+			if(strlen($funcion) > 0){
+				$script = ' onchange="'.$funcion.'()"';
+			}else{
+				$script = '';
+			}
+
+			$html = '<select id="servicio_cliente" class="form-select shadow" '.$script.'>';
+			$html .= '<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i <= count($sql); $i++) { 
+				if($sql[$i]['cli_id'] === $idCliente){
+					$html .= '<option value="'.$sql[$i]['cli_id'].'" selected="selected">'.$sql[$i]['cli_nombre'].'</option>';
+
+				}elseif($sql[$i]['cli_id'] != ''){
+					$html .= '<option value="'.$sql[$i]['cli_id'].'">'.$sql[$i]['cli_nombre'].'</option>';
+				}
+			}
+
+            $html .='</select>';
+
+            return $html;
+		}
+
+		public function select_tipo_servicios_cliente($funcion, $idTipoServicio, $idServicio){
+
+			if($idTipoServicio == 1){
+				$sql = $this->selectQuery("SELECT 		 fletes.fle_id AS id, clientes.cli_nombre
+										   FROM 		 fletes
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id 	= fletes.fle_cliente
+					   				   	   WHERE  		 fletes.fle_estado 	> 0
+					   				   	   AND           fletes.fle_cliente = $idCliente");
+				$nombre = 'Flete';
+			}elseif($idTipoServicio == 2){
+				$sql = $this->selectQuery("SELECT 		 traslados.traslados_id AS id, clientes.cli_nombre
+										   FROM 		 traslados
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id = traslados.traslados_cliente
+					   				   	   WHERE  		 traslados.traslados_estado > 0
+					   				   	   AND      	 traslados.traslados_cliente  = $idCliente");
+				$nombre = 'Traslado';
+			}elseif($idTipoServicio == 3){
+				$sql = $this->selectQuery("SELECT 		 arriendos.arriendo_id, clientes.cli_nombre
+										   FROM 		 arriendos
+										   LEFT JOIN     clientes
+										   ON            clientes.cli_id = arriendos.arriendo_creacion 
+					   				   	   WHERE  		 arriendos.arriendo_estado > 0
+					   				   	   AND 	     	 arriendos.arriendo_creacion = $idCliente");
+				$nombre = 'Arriendo';
+			}
+
+			if(strlen($funcion) > 0){
+				$script = ' onchange="'.$funcion.'()"';
+			}else{
+				$script = '';
+			}
+
+			$html = '<select id="servicio_prestado" class="form-select shadow" '.$script.'>';
+			$html .= '<option value="0">Seleccionar</option>';
+
+			for ($i=0; $i <= count($sql); $i++) { 
+				if($sql[$i]['id'] === $idServicio){
+					$html .= '<option value="'.$sql[$i]['id'].'" selected="selected">'.$nombre.' N°: '.$sql[$i]['id'].', '.$sql[$i]['cli_nombre'].'</option>';
+
+				}elseif($sql[$i]['id'] != ''){
+					$html .= '<option value="'.$sql[$i]['id'].'">'.$nombre.' N°: '.$sql[$i]['id'].', '.$sql[$i]['cli_nombre'].'</option>';
+				}
+			}
+
+            $html .='</select>';
+
+            return $html;
+		}
+
 
 	} // FIN CONTROLADOR
 ?>

@@ -21,7 +21,7 @@
 <div class="row mb-4">
   <p align="left" class="text-info font-weight-light h3"><i class="fas fa-bus text-info"></i>&nbsp;&nbsp; Ingresar nuevo traslado</p>
   <hr class="mt-2 mb-3"/>
-    <div class="container mb-4 p-4">
+    <div class="container mb-4 p-4 bg-light">
       <div class="row col-10 mx-3">
         <div class="col-xxl-4 col-xl-4 col-sm-12 p-3 mb-2 bg-white  border">
           <b>* Origen:</b>

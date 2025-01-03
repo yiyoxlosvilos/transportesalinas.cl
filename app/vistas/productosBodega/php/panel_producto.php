@@ -62,6 +62,6 @@ try {
 </div>
 <?php
   } catch (Exception $e) {
-  return $e;
+  echo $e;
 }
 ?>

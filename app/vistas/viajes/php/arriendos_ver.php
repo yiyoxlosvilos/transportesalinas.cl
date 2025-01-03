@@ -20,7 +20,7 @@
 
 
 <?php 
-  echo $centroCostos->cotizacion_traslados_ver($idTraslado, $mes, $ano);
+  echo $centroCostos->cotizacion_arriendos_ver($idTraslado, $mes, $ano);
   
   echo '<script>
               window.print();

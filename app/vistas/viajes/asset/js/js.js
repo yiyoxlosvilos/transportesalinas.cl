@@ -2616,7 +2616,7 @@ function grabar_pago_traslados(idFlete) {
                     $("#panel_montos_up").hide();
                     $("#traer_nuevo_abono").hide();
                     $("#traer_procesar_pago").hide();
-                  traer_finalizar_pagos(idFlete);
+                  traer_finalizar_pagos_traslados(idFlete);
                 })  
               },
               error:       function(sec) {
@@ -2626,4 +2626,13 @@ function grabar_pago_traslados(idFlete) {
           }
         })
     }
+}
+
+function traer_finalizar_pagos_traslados(idFlete) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "traer_finalizar_pagos_traslados";
+
+    $("#panel_montos").html('');
+    $('#panel_montos').load(url_link+"/app/recursos/img/loader.svg");
+    $('#panel_montos').load(url_link+"app/vistas/viajes/php/validador.php", {accion:accion, idFlete:idFlete});
 }

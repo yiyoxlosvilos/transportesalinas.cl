@@ -1604,6 +1604,73 @@
 
 			echo $html;
 			break;
+		case 'traer_finalizar_pagos_traslados':
+			$idFlete = $_REQUEST['idFlete'];
+
+			$datos_fletes = $recursos->datos_traslados_id($idFlete);
+			$datos_abonos = $recursos->datos_abonos_id($idFlete, 2);
+
+			$valor 		= 0;
+			$descuento 	= 0;
+			$estadia 	= 0;
+
+			for ($j=0; $j < count($datos_fletes); $j++) {
+				$valor 		+= ($datos_fletes[$j]['traslados_valor']*$datos_fletes[$j]['traslados_cantidad']);
+			}
+
+			$valor_total = ($valor);
+
+			$abonado = 0;
+			for ($i=0; $i < count($datos_abonos); $i++) {
+				$abonado += $datos_abonos[$i]['abo_monto'];
+			}
+
+			$total_restante = ($valor_total-$abonado);
+
+			$html = '
+				<div class="row col-10 justify-content-center mx-5 my-5">
+				  <div class="col-lg-6 p-3 mb-2 bg-white">
+				    <!-- card -->
+		            <div class="card card-h-200 border shadow-sm">
+		              <!-- card body -->
+		              <div class="card-body">
+		                <div class="row align-items-center">
+		                  <div class="col">
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Traslado: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$valor_total.'">'.Utilidades::monto($valor_total).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Abonado: </span>
+		                    <h4 class="mb-3">
+		                    	<span class="counter-value text-dark" data-target="'.$abonado.'">'.Utilidades::monto($abonado).'</span>
+		                    </h4>
+
+		                    <span class="text-muted mb-3 lh-1 d-block text-truncate ">Total</span>
+		                    <h3 class="mb-3 border">
+		                    	<span class="counter-value text-primary" data-target="'.$total_restante.'">'.Utilidades::monto($total_restante).'</span>
+		                    </h3>
+
+		                  </div>
+		                </div>
+		              </div><!-- end card body -->
+		            </div>
+		         	<!-- end card -->
+				  </div>
+				  <div class="col-lg-6 p-3 mb-2 bg-white">
+				    <div class="row">
+				    	<div class="col-12">
+				    		<h4 class="text-primary">Descargar e Imprimir Comprobante</h4>
+				    		<button class="btn btn-danger fas fa-file-pdf text-white h1" href="'.controlador::$rutaAPP.'/app/vistas/viajes/php/traslados_ver.php?idCotizacion='.$datos_fletes[0]['fle_id'].'" data-fancybox="" data-type="iframe" data-preload="true" data-width="1200" data-height="800"></button>
+				    	</div>
+				  </div>
+	
+				</div>';
+
+			echo $html;
+
+
+			break;
 		default:
 			break;
 	}

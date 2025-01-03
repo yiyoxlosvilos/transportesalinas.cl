@@ -252,7 +252,7 @@ var spark2 = {
     }
   },
   subtitle: {
-    text: 'Gastos',
+    text: 'SALIDAS',
     offsetX: 30,
     style: {
       fontSize: '14px',

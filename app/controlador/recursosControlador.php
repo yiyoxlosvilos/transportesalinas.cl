@@ -2389,7 +2389,7 @@
 			$html .= '<option value="0">Seleccionar</option>';
 
 			for ($i=0; $i <= count($sql); $i++) { 
-				if($sql[$i]['id'] === $idServicio){
+				if($sql[$i]['id'] == $idServicio && $sql[$i]['id'] > 0){
 					$html .= '<option value="'.$sql[$i]['id'].'" selected="selected">'.$nombre.' N°: '.$sql[$i]['id'].', '.$sql[$i]['cli_nombre'].'</option>';
 
 				}elseif($sql[$i]['id'] > 0){

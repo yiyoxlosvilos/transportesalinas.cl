@@ -1600,7 +1600,7 @@
 			$inputFecha 		= $_REQUEST['inputFecha'];
 			$tipo_dte 			= $_REQUEST['tipo_dte'];
 
-			$html = $centroCosto->grabar_pago($idFlete, $inputMonto, $inputFecha, 2, $tipo_dte, $usuario, $empresa, $idSucursal);
+			$html = $centroCosto->grabar_pago_traslados($idFlete, $inputMonto, $inputFecha, 2, $tipo_dte, $usuario, $empresa, $idSucursal);
 
 			echo $html;
 			break;

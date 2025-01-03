@@ -4790,6 +4790,57 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
             return $html;
 		}
+
+		public function grabar_pago_traslados($idFlete, $inputMonto, $inputFecha, $tipo_servicio, $tipo_dte, $usuario, $empresa, $idSucursal){
+			$recursos = new Recursos();
+
+			$date  = Utilidades::fecha_hoy_hora();
+			$hoy   = Utilidades::fecha_hoy();
+			$hora  = Utilidades::hora();
+
+			$datos_fletes = $recursos->datos_fletes_id($idFlete);
+			$cliente      = $datos_fletes[0]['fle_cliente'];
+
+
+			try {
+
+				$this->update_query("UPDATE traslados
+									 SET 	traslados_fecha_pago 	= '$date', 
+									 		traslados_estado			= 2, 
+									 		traslados_estado_pago		= 1
+									 WHERE  traslados_id  		 		= $idFlete");
+
+				$glosa = "Ingreso de pago N°: ".$idFlete." con el monto de: ".$inputMonto;
+
+				$caja = $this->insert_query("INSERT INTO caja_cliente(c_cli_tipoMovimiento, c_cli_prod_cliente, c_cli_tipo_servicio, c_cli_monto, c_cli_user_cli, c_cli_fecha, c_cli_hora, c_cli_estado, c_cli_sucursal, c_cli_empresa, c_cli_glosa) 
+					   VALUES(3, '$idFlete', '$tipo_servicio', '$inputMonto', '$usuario', '$hoy', '$hora', 1, '$idSucursal', '$empresa', '$glosa')");
+
+
+				//$total 	MONTO CON DESCUENTO, 
+				//$total2 	MONTO SIN DESCUENTOS
+				//$tipo_dte 1=BOLETA, 2=FACTURA, 3=COMPROBANTE DE VENTA
+
+				if($tipo_dte == 2){
+					$new_monto= ($inputMonto/1.19);
+					$iva      = ($new_monto*1.19)-$new_monto;
+				}elseif($tipo_dte == 1){
+					$new_monto= $inputMonto;
+					$iva      = ($inputMonto*0.19);
+				}else{
+					$iva      = 0;
+					$new_monto= $inputMonto;
+				}
+
+				$this->insert_query("INSERT INTO ventascliente(ven_cli_operacion, ven_cli_montoInicial, ven_cli_montoReal, ven_iva, ven_cli_boleta, ven_cli_usuario, ven_cli_empresa, ven_cli_sucursal, ven_cli_fecha, ven_cli_hora, ven_clientes, ven_cli_servicio_id, ven_cli_tipo_servicio, ven_cli_estado) 
+					   VALUES('$caja', '$inputMonto', '$new_monto', '$iva', '$tipo_dte', '$usuario', '$empresa', '$idSucursal', '$hoy', '$hora', '$cliente', '$idFlete', '$tipo_servicio', 1)");
+
+				return json_encode("realizado");
+			} catch (Exception $e) {
+				return $e;
+			}
+
+			
+		}
 	    
 	   /**  FIN CENTRO COSTO  **/
 

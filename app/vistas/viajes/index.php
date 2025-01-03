@@ -89,17 +89,17 @@
                     </div>
                   </div>
                   <div class="product-tab-content">
-                    <h6>Facturas Proveedores</h6>
+                    <h6>Facturas</h6>
                   </div></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" id="activity-project-tab" data-bs-toggle="pill" href="#activity-project" role="tab" aria-controls="activity-project" aria-selected="false" tabindex="-1">
                   <div class="absolute-border"></div>
                   <div class="nav-rounded">
                     <div class="product-icons">
-                      <i class="fas fa-receipt h6"></i>
+                      <i class="fas fa-user-tie h6"></i>
                     </div>
                   </div>
                   <div class="product-tab-content">
-                    <h6>Facturas Clientes</h6>
+                    <h6>Clientes</h6>
                   </div></a>
                 </li>
               </ul>

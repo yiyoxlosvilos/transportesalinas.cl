@@ -3030,5 +3030,5 @@ function nueva_factura_cliente() {
 
     $("#panel_clientes").html('');
     $('#panel_clientes').load(url_link+"/app/recursos/img/loader.svg");
-    $('#panel_clientes').load(url_link+"app/vistas/finanzas/php/panel_nueva_factura_cliente.php", {accion:accion});
+    $('#panel_clientes').load(url_link+"app/vistas/finanzas/php/nueva_factura_cliente.php", {accion:accion});
 }

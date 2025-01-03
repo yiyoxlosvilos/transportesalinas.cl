@@ -61,9 +61,13 @@
             <span id="validador_curso"></span>
             <textarea class="form-control shadow" id="inputDescripcion" rows="5"></textarea>
         </div>
-        <div class="col-lg-2 mb-2">
+        <div class="col-5 mb-2">
           <label for="inputTipo">&nbsp;</label>
           <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="grabar_nueva_factura(<?= $idServicio ?>)">Grabar <i class="bi bi-save"></i></button>
+        </div>
+        <div class="col-5 mb-2">
+          <label for="inputTipo">&nbsp;</label>
+          <button type="button" id="grabar" class="btn btn-dark form-control shadow" onclick="nueva_factura()">Cancelar </button>
         </div>
       </div>
     </div>

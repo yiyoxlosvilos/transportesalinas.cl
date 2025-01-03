@@ -4769,6 +4769,29 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 
 		    return $html;
 		}
+
+		 public function anular_traslado($idTraslado){
+			$hoy 		= Utilidades::fecha_hoy();
+
+			$mostrar_regreso = '';
+			if($inputRegreso > 0){
+				$mostrar_regreso = ','.$inputRegreso;
+			}
+
+			$traslados = $inputOrigen.','.$inputDestino.''.$mostrar_regreso;
+
+			/*, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante*/
+
+			$sql = $this->update_query("UPDATE 	traslados
+										SET 	traslados_estado     	= 0
+										WHERE   traslados_id 			= $idTraslado");
+
+			if($sql){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+	    }
 	    
 	   /**  FIN CENTRO COSTO  **/
 

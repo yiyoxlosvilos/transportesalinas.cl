@@ -1004,6 +1004,11 @@
 
 			$centroCosto->editar_traslado($idTraslado, $inputOrigen, $inputDestino, $inputRegreso, $inputValor, $inputCantidad, $inputDescripcion, $inputFecha_items, $inputTrabajador, $tipos_estados_pagos, $inputFechaPago, $clientes, $inputAcompanante, $productos);
 			break;
+		case 'anular_traslado':
+			$idTraslado 		= $_REQUEST['idTraslado'];
+
+			$centroCosto->anular_traslado($idTraslado);
+			break;
 		case 'traer_bitacora':
 			$idFlete = $_REQUEST['idFlete'];
 

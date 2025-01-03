@@ -2275,7 +2275,7 @@ function editar_traslado(idTraslado) {
                   confirmButtonText:  'OK',
                   cancelButtonText:   'NO',
                 }).then((result) => {
-                  location.reload();
+                  traer_traslados_editar(idTraslado);
                 })  
               },
               error:       function(sec) {
@@ -2285,6 +2285,49 @@ function editar_traslado(idTraslado) {
           }
         })
     }
+}
+
+function anular_traslado(idTraslado) {
+    const url_link = document.getElementById('url_link').value;
+    var accion     = "anular_traslado";
+
+    Swal.fire({
+          title:              '¿ Desea Anular Traslado ?',
+          showDenyButton:     false,
+          showCancelButton:   true,
+          confirmButtonText:  'SI',
+          cancelButtonText:   'NO',
+          icon:               'question',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData();
+                formData.append('idTraslado', idTraslado);                
+                formData.append('accion', accion);
+              
+            $.ajax({
+              url:         url_link+"app/vistas/viajes/php/validador.php",
+              type:        "POST",
+              data :       formData,
+              processData: false,
+              contentType: false,
+              success:     function(sec) {
+                Swal.fire({
+                  title:              'Registro Realizado correctamente',
+                  icon:               'success',
+                  showDenyButton:     false,
+                  showCancelButton:   false,
+                  confirmButtonText:  'OK',
+                  cancelButtonText:   'NO',
+                }).then((result) => {
+                  traer_traslados_editar(idTraslado);
+                })  
+              },
+              error:       function(sec) {
+                Swal.fire("Error", "Error", "error");
+              }
+            });
+          }
+        })
 }
 
 

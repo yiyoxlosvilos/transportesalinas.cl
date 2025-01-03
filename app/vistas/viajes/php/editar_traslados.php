@@ -26,8 +26,6 @@
   $explorar_fecha     = explode(" ", $datos_traslado[0]['traslados_fecha_pago']);
 ?>
 <div class="row mb-4">
-  <p align="left" class="text-info font-weight-light h3"><i class="fas fa-bus text-info"></i>&nbsp;&nbsp; Editar traslado</p>
-  <hr class="mt-2 mb-3"/>
     <div class="container mb-4 shadow p-4">
       <div class="row">
         <div class="col-lg-4 p-3 mb-2 bg-white  border">
@@ -117,6 +115,10 @@
           <label for="inputTipo">&nbsp;</label>
           <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="editar_traslado(<?= $idTraslado ?>)">Editar <i class="bi bi-save"></i></button>
         </div>
+        <div class="col-lg-2 mb-2">
+          <label for="inputTipo">&nbsp;</label>
+          <button type="button" id="grabar" class="btn btn-primary form-control shadow" onclick="anular_traslado(<?= $idTraslado ?>)">Anular <i class="bi bi-save"></i></button>
+        </div>
       </div>
     </div>
 </div>
@@ -132,7 +134,7 @@
       removeItemButton: true,
     });
   });
-  
+
   $(document).ready(function() { 
     var multipleCancelButton = new Choices("#inputDestino", {
       removeItemButton: true,

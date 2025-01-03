@@ -1505,6 +1505,8 @@ function grabar_nuevo_arriendo(idServicio) {
 }
 
 function agregar_arriendo() {
+    const url_link = document.getElementById('url_link').value;
+    
     var camion              = document.getElementsByName('camion[]');
 
     var resultado    =  $.ajax({

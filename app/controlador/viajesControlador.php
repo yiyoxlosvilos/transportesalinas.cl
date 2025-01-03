@@ -4770,6 +4770,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
                               <h2 class="mb-3">
                                 <span class="counter-value" data-target="'.$viejo_total.'">'.Utilidades::monto_color($viejo_total).'</span>
                               </h2>
+                              <input type="number" name="nuevo_total" id="nuevo_total" value="'.$nuevo_total.'" hidden>
                             </div>
                           </div>
                         </div><!-- end card body -->

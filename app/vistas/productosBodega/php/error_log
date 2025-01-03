@@ -1,0 +1,2 @@
+[09-Mar-2023 15:12:09 America/Santiago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/centroc1/public_html/demos/supermarket/app/vistas/productos/php/validador.php on line 388
+[09-Mar-2023 15:13:36 America/Santiago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/centroc1/public_html/demos/supermarket/app/vistas/productos/php/validador.php on line 388

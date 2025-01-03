@@ -880,7 +880,7 @@
 			$pagadas 	= 0;
 			$pendientes = 0;
 
-			$sql    	= $this->selectQuery("SELECT * FROM facturas_venta  
+			$sql    	= $this->selectQuery("SELECT * FROM facturas_clientes  
 										  	  WHERE 		fac_fecha  		BETWEEN '$inicio' AND '$final'
 										  	  AND 			fac_estado 		> 0");
 

@@ -881,7 +881,7 @@
 			$pendientes = 0;
 
 			$sql    	= $this->selectQuery("SELECT * FROM facturas_clientes  
-										  	  WHERE 		fac_fecha  		BETWEEN '$inicio' AND '$final'
+										  	  WHERE 		fac_fecha_factura  		BETWEEN '$inicio' AND '$final'
 										  	  AND 			fac_estado 		> 0");
 
 			$html = '<div class="col-sm">

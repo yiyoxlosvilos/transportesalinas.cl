@@ -154,7 +154,7 @@
                 <div class="col">
                   <button class="btn btn-sm btn-dark" onclick="traer_nuevo_documento(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
-                <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idTraslados, 1); ?></div>    
+                <div class="row py-3" style="background-color: #f7f7f7" id="panel_documentos"><?= $centroCostos->traer_documentos_asociados($idTraslados, 2); ?></div>    
               </div>
             </div>
             <div class="tab-pane fade" id="team-project" role="tabpanel" aria-labelledby="team-project-tab">

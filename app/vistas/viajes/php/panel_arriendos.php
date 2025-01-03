@@ -38,7 +38,7 @@
 
 <input type="hidden" name="idArriendo" id="idArriendo" value="<?= $idTraslados ?>">
 <input type="hidden" name="idFlete" id="idFlete" value="<?= $idTraslados ?>">
-<input type="hidden" name="idTipoServicio" id="idTipoServicio" value="2">
+<input type="hidden" name="idTipoServicio" id="idTipoServicio" value="3">
 
   <div class="row scope-bottom-wrapper" id="procesar_venta">
     <div class="col-xxl-2 recent-xl-23 col-xl-3 box-col-3">
@@ -130,10 +130,10 @@
             <div class="tab-pane fade" id="overview-bitacora" role="tabpanel" aria-labelledby="overview-bitacora-tab">
               <div class="row">
                 <div class="col-8">
-                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Traslado</h3>
+                  <h3 class="text-dark mb-2"><i class="fas fa-book"></i> Notas de Arriendos</h3>
                 </div>
                 <div class="col">
-                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora_traslados(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
+                  <button class="btn btn-sm btn-dark" onclick="nueva_bitacora_arriendos(<?= $idTraslados; ?>)"><i class="fas fa-plus text-white"></i> <span class="ocultar">Agregar</span></button>
                 </div>
                 <div class="row py-3" style="background-color: #f7f7f7" id="panel_bitacora"><?= $centroCostos->cargar_bitacora($idTraslados, 3); ?></div> 
               </div>

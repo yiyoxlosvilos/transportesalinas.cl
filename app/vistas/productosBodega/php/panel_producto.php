@@ -2,12 +2,12 @@
 ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-  
+
   require_once __dir__."/../../../controlador/controlador.php";
   require_once __dir__."/../../../controlador/productosBodegaControlador.php";
   require_once __dir__."/../../../controlador/utilidadesControlador.php";
   require_once __dir__."/../../../controlador/recursosControlador.php";
-  require_once __dir__."/../../../recursos/head.php";
+  require_once __dir__."/../../../recursos/head_panel.php";
 
   $productos   = new ProductosBodega();
   $utilidades  = new Utilidades();

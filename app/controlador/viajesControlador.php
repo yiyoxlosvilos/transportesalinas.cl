@@ -3781,7 +3781,7 @@ ini_set('error_log', __DIR__ . '/php_errors.log');
 										  	  WHERE    		arriendo_estado = 1
 										  	  ORDER BY      arriendo_id  ASC");
 
-	    	$html = '<table id="listado_traslados" class="table shadow">
+	    	$html = '<table id="listado_arriendos" class="table shadow">
 	    				<thead >
 			              	<tr class="table-info">
 								<th colspan="3">&nbsp;</th>

@@ -1960,6 +1960,16 @@
 
 			echo $recursos->select_tipo_servicios_id('', $tipo_servicio, $servicio_cliente);
 			break;
+		case 'buscar_viajes':
+			$mes = $_REQUEST['mes'];
+			$ano = $_REQUEST['ano'];
+
+			$html ='   <h3 class="text-success">Viajes Vigentes</h3>
+                      '.$centroCosto->traer_fletes_asigandos($mes, $ano, '').'
+                      <h3 class="mt-3 text-danger">Viajes Pagados</h3>
+                      '.$centroCosto->traer_fletes_asigandos($mes, $ano, 2);
+            echo $html;
+			break;
 		default:
 			break;
 	}

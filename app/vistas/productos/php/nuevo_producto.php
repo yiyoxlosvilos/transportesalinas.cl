@@ -17,7 +17,7 @@
 <link href="<?= controlador::$rutaAPP ?>app/vistas/productos/asset/css/css.css?v=<?= rand() ?>" rel="stylesheet" type="text/css" />
 <input type="hidden" name="url_link" id="url_link" value="<?= controlador::$rutaAPP ?>">
 <div class="row mb-4">
-  <p align="left" class="text-success font-weight-light h3">Nuevo Producto</p>
+  <p align="left" class="text-success font-weight-light h3">Nueva Maquinaria</p>
   <hr class="mt-2 mb-3"/>
     <div class="container mb-4">
       <div class="row">

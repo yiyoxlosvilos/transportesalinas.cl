@@ -180,7 +180,7 @@
 					$por    = 'text-success';
 					break;
 				case 2:
-					$titulo = '<h6 class="text-info">Flete</h6>';
+					$titulo = '<h6 class="text-info">Viajes</h6>';
 					$box    = 'box2';
 					$por    = 'text-info';
 					break;

@@ -36,10 +36,11 @@
               Configuracion&nbsp;&nbsp;&nbsp;<i class="bi bi-gear-wide-connected"></i>
       </button>
     </div>
+    <hr class="mt-2 mb-3"/>
     <div class="row">
             <div class="col"><h2 align="center" class=" me-2 text-primary"> <i class='bi bi-truck nav_icon h2'></i> Maquinaria</h2></div>
           </div>
-    <hr class="mt-2 mb-3"/>
+    
     <?= $productos->traer_productos_cards(1) ?>
     <?= $productos->traer_productos_cards(2) ?>
     <?= $productos->traer_productos_cards(3) ?>
